@@ -22,7 +22,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint './src/**/*.{ts,tsx,js,jsx}'",
-    "lint:fix": "eslint --fix './src/**/*.{ts,tsx,js,jsx}'"
+    "lint:fix": "eslint --fix './src/**/*.{ts,tsx,js,jsx}'",
+    "prettier": "prettier --write --config ./.prettierrc './src/**/*.{ts.tsx}'"
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +47,12 @@
     "@typescript-eslint/eslint-plugin": "^4.15.1",
     "@typescript-eslint/parser": "^4.15.1",
     "eslint": "^7.19.0",
-    "eslint-plugin-react": "^7.22.0"
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.2.1"
   }
 }
