@@ -1,7 +1,11 @@
 import React from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import '../css/Landingpage.css';
 
 function Landingpage() {
+  AOS.init();
   return (
     <>
       <div className="greyLine1"></div>
@@ -35,7 +39,11 @@ function Landingpage() {
             </div>
           </div>
           <div className="LBNTbestNovelList">
-            <div className="LBNT1">
+            <div
+              className="LBNT1"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+            >
               <div className="LBNT1-thumb">
                 <div className="LBNT1-stamp"></div>
               </div>
@@ -52,7 +60,12 @@ function Landingpage() {
                 </p>
               </div>
             </div>
-            <div className="LBNT2">
+            <div
+              className="LBNT2"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              data-aos-offset="300"
+            >
               <div className="LBNT2-thumb">
                 <div className="LBNT2-stamp"></div>
               </div>
@@ -68,7 +81,12 @@ function Landingpage() {
                 </p>
               </div>
             </div>
-            <div className="LBNT3">
+            <div
+              className="LBNT3"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              data-aos-offset="500"
+            >
               <div className="LBNT3-thumb">
                 <div className="LBNT3-stamp"></div>
               </div>
@@ -80,8 +98,7 @@ function Landingpage() {
                   짊어지기 버거운 삶의 무게에 병원 옥상에서 투신자살을
                   택하는데...... 그런데 어라? 정신차려보니 아무것도 안보이는
                   캄캄한 곳─용의 알이라고?! 감옥에서 단 둘이 은밀한 시간을
-                  보내거나, 알몸으로 거리 배회, 주인님과 노예 플레이......
-                  신에게 부여받은 마지막 기회.
+                  보내거나, 알몸으로 거리 배회, 신에게 부여받은 마지막 기회.
                 </p>
               </div>
             </div>
