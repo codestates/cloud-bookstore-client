@@ -1,7 +1,6 @@
 import React from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
 import '../css/Landingpage.css';
 
 function Landingpage() {
@@ -217,11 +216,7 @@ function Landingpage() {
                 <div id="productText" className="firstFooterText">
                   PRODUCT
                 </div>
-                <a
-                  href="https://www.kudapach.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href="https://kudapach.com" target="_blank" rel="noreferrer">
                   <div className="KUDAPACH_TODOLIST">KUDAPACH_TODOLIST</div>
                 </a>
                 <a
