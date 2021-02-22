@@ -1,29 +1,3 @@
-.threeLines {
-  position: absolute;
-  top: 48px;
-  /* top: 1025px; */
-  left: -1px;
-  width: 100%;
-  height: 5476px;
-  display: flex;
-}
-
-.lineBoxes {
-  flex: 1 1 auto;
-  /* border: 1px red solid; */
-}
-
-#lineBox2 {
-  opacity: 0.15;
-  border-left: 1px #d8d8d8 solid;
-  border-right: 1px #d8d8d8 solid;
-}
-
-#lineBox3 {
-  opacity: 0.15;
-  border-right: 1px #d8d8d8 solid;
-}
-
 .greyLine1,
 .greyLine2,
 .greyLine3 {
@@ -44,7 +18,7 @@
 }
 
 .landingHeader {
-  height: 1048px;
+  height: 1010px;
 }
 
 .landingMenuBar{
@@ -110,15 +84,129 @@
 }
 
 .landingContent {
-  border: 1px blue solid;
   background-color: #1e2024;
   height: 4459px;
 }
 
 .landingBestNovel {
-  border: 1px #808080 solid;
-  height: 1574px;
-  margin: 152px 0;
+  height: 1878px;
+  margin: 0;
+}
+
+.landingBestNovelText {
+  position: relative;
+  width: 427px;
+  height: 266px;
+  top: 153px;
+  left: 25%;
+}
+
+.LBNTbold > p{
+  margin: 10px 0;
+  color: #ffffff;
+  font-size: 64px;
+  font-weight: 400;
+}
+
+.LBNTbold > p:nth-last-child(1) {
+  font-weight: bold;
+}
+
+.LBNTlight {
+  margin: 10px 0 0 0;
+}
+
+.LBNTlight > p {
+  margin: 10px 0;
+  color: #9f9f9f;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.LBNTbestNovelList {
+  /* border: 1px red solid; */
+  position: relative;
+  top: 235px;
+  left: 25%;
+  width: 1440px;
+  height: 1224px;
+  display: flex;
+}
+
+.LBNT1,
+.LBNT2,
+.LBNT3 { 
+  flex: 1 1 479px;
+  height: 992px;
+  cursor: pointer;
+}
+
+.LBNT2 {
+  margin-top: 80px;
+}
+
+.LBNT3 {
+  margin-top: 160px;
+}
+
+.LBNT1-thumb,
+.LBNT2-thumb,
+.LBNT3-thumb {
+  margin: 0;
+  width: 479px;
+  height: 693px;
+  opacity: 0.6;
+}
+
+.LBNT1-thumb:hover,
+.LBNT2-thumb:hover,
+.LBNT3-thumb:hover {
+  opacity: 1;
+}
+
+.LBNT1-thumb {
+  background-image: url('../asset/landingpage/fakeBest1.png');
+}
+.LBNT2-thumb {
+  background-image: url('../asset/landingpage/fakeBest2.png');
+}
+.LBNT3-thumb {
+  background-image: url('../asset/landingpage/fakeBest3.png');
+}
+
+.LBNT1-stamp,
+.LBNT2-stamp,
+.LBNT3-stamp {
+  position: relative;
+  top: 607px;
+  left: 411px;
+  width: 38px;
+  height: 54px;
+  background-image: url('../asset/landingpage/cloudStamp.svg');
+}
+
+.LBNT1-text,
+.LBNT2-text,
+.LBNT3-text {
+  margin: 24px 0 0 0;
+  width: 312px;
+  height: 275px;
+}
+
+.LBNT1-subject,
+.LBNT2-subject,
+.LBNT3-subject {
+  font-size: 24px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.LBNT1-description,
+.LBNT2-description,
+.LBNT3-description {
+  font-size: 16px;
+  font-weight: 500;
+  color: #7e7e7e;
 }
 
 .landingWriteNovel {
