@@ -1,3 +1,29 @@
+.threeLines {
+  position: absolute;
+  top: 48px;
+  /* top: 1025px; */
+  left: -1px;
+  width: 100%;
+  height: 5476px;
+  display: flex;
+}
+
+.lineBoxes {
+  flex: 1 1 auto;
+  /* border: 1px red solid; */
+}
+
+#lineBox2 {
+  opacity: 0.15;
+  border-left: 1px #d8d8d8 solid;
+  border-right: 1px #d8d8d8 solid;
+}
+
+#lineBox3 {
+  opacity: 0.15;
+  border-right: 1px #d8d8d8 solid;
+}
+
 .landingHeader {
   height: 1048px;
 }
@@ -16,7 +42,7 @@
 }
 
 .landingMenuToolBox {
-  flex: 0 1 960px;
+  flex: 0 1 980px;
   height: 24px;
   display: flex;
   justify-content: space-between;
@@ -26,6 +52,7 @@
 .landingHeaderStart {
   width: 75px;
   height: 24px;
+  margin: 0 10px;
   cursor: pointer;
 }
 
@@ -43,19 +70,23 @@
 }
 
 .landingHeaderContent{
-  height: 1010px;
+  height: 1020px;
   background-image: url('../asset/landingpage/header.png');
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .landingHeaderText {
+  width: 961px;
   position: relative;
-  left: 477px;
-  top: 400px;
+  /* left: 477px;
+  top: 400px; */
 }
 
 .landingHeaderText > p {
   margin: 16px 0;
-  font-size: 64px;
+  font-size: 380%;
   color: #ffffff;
 }
 
