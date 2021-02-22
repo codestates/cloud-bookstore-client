@@ -1,8 +1,9 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
 import '../css/Landingpage.css';
+// import App from '../App';
 
 function Landingpage() {
   AOS.init();
@@ -14,7 +15,9 @@ function Landingpage() {
       <div className="landingHeader">
         <div className="landingMenuBar">
           <div className="landingMenuToolBox">
-            <div className="landingHeaderLogo"></div>
+            <a href="https://cloud-bookstore.com/">
+              <div className="landingHeaderLogo"></div>
+            </a>
             <div className="landingHeaderStart">소설읽기</div>
           </div>
         </div>
@@ -217,11 +220,7 @@ function Landingpage() {
                 <div id="productText" className="firstFooterText">
                   PRODUCT
                 </div>
-                <a
-                  href="https://www.kudapach.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <a href="https://kudapach.com" target="_blank" rel="noreferrer">
                   <div className="KUDAPACH_TODOLIST">KUDAPACH_TODOLIST</div>
                 </a>
                 <a
@@ -289,4 +288,4 @@ function Landingpage() {
   );
 }
 
-export default Landingpage;
+export default withRouter(Landingpage);
