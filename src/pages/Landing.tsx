@@ -5,8 +5,19 @@ function Landing() {
   return (
     <>
       <div className="landingHeader">
-        <div className="landingMenuBar">menu</div>
-        <div className="landingHeaderContent">header-content</div>
+        <div className="landingMenuBar">
+          <div className="landingMenuToolBox">
+            <div className="landingHeaderLogo"></div>
+            <div className="landingHeaderStart">소설읽기</div>
+          </div>
+        </div>
+        <div className="landingHeaderContent">
+          <div className="landingHeaderText">
+            <p>포근한 구름처럼</p>
+            <p>당신을 편안하게 해주는 글</p>
+            <p>구름책방</p>
+          </div>
+        </div>
       </div>
       <div className="landingContent">
         <div className="landingBestNovel">독자들이 선택한 최고의 작품들</div>

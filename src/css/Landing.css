@@ -1,16 +1,62 @@
 .landingHeader {
-  border: 1px red solid;
   height: 1048px;
 }
 
 .landingMenuBar{
-  border: 1px #808080 solid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  z-index: 1;
+}
+
+.landingMenuToolBox {
+  flex: 0 1 960px;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.landingHeaderLogo,
+.landingHeaderStart {
+  width: 75px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.landingHeaderLogo {
+  background-image: url('../asset/landingpage/landingLogo.svg');
+}
+
+.landingHeaderStart {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .landingHeaderContent{
-  border: 1px #808080 solid;
-  height: 1000px;
+  height: 1010px;
+  background-image: url('../asset/landingpage/header.png');
+}
+
+.landingHeaderText {
+  position: relative;
+  left: 477px;
+  top: 400px;
+}
+
+.landingHeaderText > p {
+  margin: 16px 0;
+  font-size: 64px;
+  color: #ffffff;
 }
 
 .landingContent {
