@@ -124,7 +124,78 @@ function Landingpage() {
           </div>
         </div>
         <div className="landingWatchFunction">
-          한 눈에 살펴보는 구름책방의 기능들
+          <div className="landingWatchFunctionText">
+            <div className="LWFTbold">
+              <p>한눈에 살펴보는</p>
+              <p>구름책방의 기능들</p>
+            </div>
+          </div>
+          <div className="LandingWatchFunctionList">
+            <div className="LWFlist1">
+              <div id="createNovelFun" className="funcList">
+                <div className="funcLogoText">
+                  <div id="createLogo" className="funcLogos"></div>
+                  <div id="createText" className="funcTexts">
+                    <p>작품등록</p>
+                    <p>간편하게 자신의</p>
+                    <p>작품을 만들어요!</p>
+                  </div>
+                </div>
+              </div>
+              <div id="readNovelFun" className="funcList">
+                <div className="funcLogoText">
+                  <div id="readLogo" className="funcLogos"></div>
+                  <div id="readText" className="funcTexts">
+                    <p>작품감상</p>
+                    <p>다양한 작품을</p>
+                    <p>즐겁게 감상해요!</p>
+                  </div>
+                </div>
+              </div>
+              <div id="giveCloudFun" className="funcList">
+                <div className="funcLogoText">
+                  <div id="giveLogo" className="funcLogos"></div>
+                  <div id="giveText" className="funcTexts">
+                    <p>구름주기</p>
+                    <p>응원하고 싶은 작품에</p>
+                    <p>구름을 주어요!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="LWFlist2">
+              <div id="favoriteFun" className="funcList">
+                <div className="funcLogoText">
+                  <div id="favoriteLogo" className="funcLogos"></div>
+                  <div id="favoriteText" className="funcTexts">
+                    <p>관심기능</p>
+                    <p>흥미로운 작품은</p>
+                    <p>관심작품으로 등록해요!</p>
+                  </div>
+                </div>
+              </div>
+              <div id="commentFun" className="funcList">
+                <div className="funcLogoText">
+                  <div id="commentLogo" className="funcLogos"></div>
+                  <div id="commentText" className="funcTexts">
+                    <p>댓글달기</p>
+                    <p>작가 및 다른 독자들과</p>
+                    <p>의견을 나누어요!</p>
+                  </div>
+                </div>
+              </div>
+              <div id="earnCloudFun" className="funcList">
+                <div className="funcLogoText">
+                  <div id="earnLogo" className="funcLogos"></div>
+                  <div id="earnText" className="funcTexts">
+                    <p>구름받기</p>
+                    <p>매일 출석을 통해</p>
+                    <p>구름을 얻어요!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="footer">footer</div>
