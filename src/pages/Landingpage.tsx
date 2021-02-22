@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../css/Landingpage.css';
@@ -284,4 +285,4 @@ function Landingpage() {
   );
 }
 
-export default Landingpage;
+export default withRouter(Landingpage);
