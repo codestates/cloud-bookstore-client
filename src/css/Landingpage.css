@@ -24,6 +24,25 @@
   border-right: 1px #d8d8d8 solid;
 }
 
+.greyLine1,
+.greyLine2,
+.greyLine3 {
+  position: absolute;
+  left: 25%;
+  width: 1px;
+  height: 5510px;
+  opacity: 0.15;
+  background-color: #d8d8d8;
+}
+
+.greyLine2 {
+  left: 50%;
+}
+
+.greyLine3 {
+  left: 75%;
+}
+
 .landingHeader {
   height: 1048px;
 }
@@ -92,6 +111,7 @@
 
 .landingContent {
   border: 1px blue solid;
+  background-color: #1e2024;
   height: 4459px;
 }
 

@@ -4,12 +4,9 @@ import '../css/Landingpage.css';
 function Landingpage() {
   return (
     <>
-      <div className="threeLines">
-        <div className="lineBoxes"></div>
-        <div id="lineBox2" className="lineBoxes"></div>
-        <div id="lineBox3" className="lineBoxes"></div>
-        <div className="lineBoxes"></div>
-      </div>
+      <div className="greyLine1"></div>
+      <div className="greyLine2"></div>
+      <div className="greyLine3"></div>
       <div className="landingHeader">
         <div className="landingMenuBar">
           <div className="landingMenuToolBox">
