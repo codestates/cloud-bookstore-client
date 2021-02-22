@@ -1,9 +1,8 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../css/Landingpage.css';
-// import App from '../App';
 
 function Landingpage() {
   AOS.init();
@@ -18,7 +17,9 @@ function Landingpage() {
             <a href="https://cloud-bookstore.com/">
               <div className="landingHeaderLogo"></div>
             </a>
-            <div className="landingHeaderStart">소설읽기</div>
+            <Link to="/mainpage">
+              <div className="landingHeaderStart">소설읽기</div>
+            </Link>
           </div>
         </div>
         <div className="landingHeaderContent">
