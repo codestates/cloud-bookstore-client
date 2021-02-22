@@ -1,7 +1,7 @@
 import React from 'react';
-import '../css/Landing.css';
+import '../css/Landingpage.css';
 
-function Landing() {
+function Landingpage() {
   return (
     <>
       <div className="landingHeader">
@@ -33,4 +33,4 @@ function Landing() {
   );
 }
 
-export default Landing;
+export default Landingpage;
