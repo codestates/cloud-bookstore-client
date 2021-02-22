@@ -1,7 +1,12 @@
 import React from 'react';
+import Landing from './pages/Landing';
 
 function App() {
-  return <div className="App">Hello FinalProject World! :)</div>;
+  return (
+    <>
+      <Landing />
+    </>
+  );
 }
 
 export default App;
