@@ -1,0 +1,118 @@
+.threeLines {
+  position: absolute;
+  top: 48px;
+  /* top: 1025px; */
+  left: -1px;
+  width: 100%;
+  height: 5476px;
+  display: flex;
+}
+
+.lineBoxes {
+  flex: 1 1 auto;
+  /* border: 1px red solid; */
+}
+
+#lineBox2 {
+  opacity: 0.15;
+  border-left: 1px #d8d8d8 solid;
+  border-right: 1px #d8d8d8 solid;
+}
+
+#lineBox3 {
+  opacity: 0.15;
+  border-right: 1px #d8d8d8 solid;
+}
+
+.landingHeader {
+  height: 1048px;
+}
+
+.landingMenuBar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  z-index: 1;
+}
+
+.landingMenuToolBox {
+  flex: 0 1 980px;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.landingHeaderLogo,
+.landingHeaderStart {
+  width: 75px;
+  height: 24px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.landingHeaderLogo {
+  background-image: url('../asset/landingpage/landingLogo.svg');
+}
+
+.landingHeaderStart {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.landingHeaderContent{
+  height: 1020px;
+  background-image: url('../asset/landingpage/header.png');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landingHeaderText {
+  width: 961px;
+  position: relative;
+  /* left: 477px;
+  top: 400px; */
+}
+
+.landingHeaderText > p {
+  margin: 16px 0;
+  font-size: 380%;
+  color: #ffffff;
+}
+
+.landingContent {
+  border: 1px blue solid;
+  height: 4459px;
+}
+
+.landingBestNovel {
+  border: 1px #808080 solid;
+  height: 1574px;
+  margin: 152px 0;
+}
+
+.landingWriteNovel {
+  border: 1px #808080 solid;
+  height: 864px;
+}
+
+.landingWatchFunction {
+  border: 1px #808080 solid;
+  height: 1216px;
+  margin: 250px 0;
+}
+
+.footer {
+  border: 1px green solid;
+  height: 498px;
+}
