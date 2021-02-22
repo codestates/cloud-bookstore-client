@@ -7,6 +7,7 @@
   height: 5510px;
   opacity: 0.15;
   background-color: #d8d8d8;
+  z-index: 1;
 }
 
 .greyLine2 {
@@ -93,30 +94,39 @@
   margin: 0;
 }
 
-.landingBestNovelText {
+.landingBestNovelText,
+.landingWriteNovelText {
   position: relative;
-  width: 427px;
+  width: 460px;
   height: 266px;
   top: 153px;
   left: 25%;
 }
 
-.LBNTbold > p{
+.landingWriteNovelText {
+  top: 0;
+}
+
+.LBNTbold > p,
+.LWNTbold > p {
   margin: 10px 0;
   color: #ffffff;
   font-size: 64px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
-.LBNTbold > p:nth-last-child(1) {
+.LBNTbold > p:nth-last-child(1),
+.LWNTbold > p:nth-last-child(1) {
   font-weight: bold;
 }
 
-.LBNTlight {
-  margin: 10px 0 0 0;
+.LBNTlight,
+.LWNTlight {
+  margin: 30px 0 0 0;
 }
 
-.LBNTlight > p {
+.LBNTlight > p,
+.LWNTlight > p  {
   margin: 10px 0;
   color: #9f9f9f;
   font-size: 24px;
@@ -212,6 +222,46 @@
 .landingWriteNovel {
   border: 1px #808080 solid;
   height: 864px;
+}
+
+.landingWriteImg {
+  position: relative;
+  top: 62px;
+  left: 12.5%;
+  width: 1440px;
+  height: 524px;
+  background-image: url('../asset/landingpage/writeNovel.png');
+  display: flex;
+  justify-content: flex-end;
+}
+
+.landingWriteLure {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.landingWriteLure > p {
+  margin: 10px 72px 0 0;
+  font-size: 24px;
+  font-weight: 300;
+  text-align: right;
+  color: #ffffff;
+}
+
+.landingWriteBtn {
+  display: flex;
+  margin: 18px 72px 72px 0;
+  padding: 0 14px;
+  width: 136px;
+  height: 36px;
+  font-size: 24px;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
 }
 
 .landingWatchFunction {
