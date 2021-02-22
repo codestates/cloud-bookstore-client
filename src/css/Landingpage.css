@@ -288,8 +288,8 @@
 }
 
 .funcList {
-  width : 479.5px;
-  height: 479.5px;
+  width : 480px;
+  height: 480px;
   background-image: url('../asset/landingpage/cloudBg.png');
   display: flex;
   justify-content: flex-end;
