@@ -46,12 +46,6 @@
   z-index: 1;
 }
 
-/* .landingMenuToolBox {
-  flex: 0 1 980px;
-  height: 24px;
-  display: flex;
-  justify-content: space-between;
-} */
 .landingDummyDiv {
   flex: 0 1 25%;
 }
@@ -256,6 +250,7 @@
   background-image: url('../asset/landingpage/writeNovel.png');
   display: flex;
   justify-content: flex-end;
+  z-index: 2;
 }
 
 .landingWriteLure {
