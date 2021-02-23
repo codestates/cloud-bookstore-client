@@ -7,10 +7,12 @@ import '../css/Landingpage.css';
 function Landingpage() {
   AOS.init();
   return (
-    <>
-      <div className="greyLine1"></div>
-      <div className="greyLine2"></div>
-      <div className="greyLine3"></div>
+    <div className="wholeLandingWrapper">
+      <div className="threeLinesWrapper">
+        <div className="greyLine1"></div>
+        <div className="greyLine2"></div>
+        <div className="greyLine3"></div>
+      </div>
       <div className="landingHeader">
         <div className="landingMenuBar">
           <div className="landingMenuToolBox">
@@ -285,7 +287,7 @@ function Landingpage() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
