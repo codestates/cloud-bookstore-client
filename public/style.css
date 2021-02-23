@@ -1,0 +1,15 @@
+.blackBg {
+  margin: 0 auto;
+  background-color: #000000;
+  font-family: 'NotoSansKR', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.whiteBg {
+  margin: 0 auto;
+  background-color: #ffffff;
+  font-family: 'NotoSansKR', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
