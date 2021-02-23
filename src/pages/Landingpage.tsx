@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../css/Landingpage.css';
@@ -24,9 +24,10 @@ const Landingpage: React.FC = () => {
             </a>
           </div>
           <div id="landingDummyDiv3" className="landingDummyDiv">
-            <Link to="/mainpage">
+            {/* <a href="https://cloud-bookstore.com/mainpage"> */}
+            <a href="http://localhost:3000/mainpage">
               <div className="landingHeaderStart">소설읽기</div>
-            </Link>
+            </a>
           </div>
           <div className="landingDummyDiv"></div>
         </div>

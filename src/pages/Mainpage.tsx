@@ -1,8 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-function Mainpage() {
-  return <>hello Mainpage World!! :)</>;
-}
+const Mainpage: React.FC = () => {
+  return <div>hello Mainpage World!!</div>;
+};
 
 export default withRouter(Mainpage);
