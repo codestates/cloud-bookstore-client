@@ -3,10 +3,11 @@
 import React, { useState } from 'react';
 import './App.css';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
+
 import Landingpage from './pages/Landingpage';
 import Mainpage from './pages/Mainpage';
 
-function App() {
+const App: React.FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(false);
 
   return (
@@ -26,6 +27,6 @@ function App() {
       </Switch>
     </div>
   );
-}
+};
 
 export default withRouter(App);
