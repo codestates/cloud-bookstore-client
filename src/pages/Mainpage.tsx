@@ -12,6 +12,28 @@ const Mainpage: React.FC = () => {
       <div className="wholeMainPageWrapper">
         <UserNav />
         <CategoryNav />
+        <div className="mainpageContentWrapper">
+          <div className="sliderWrapper">
+            <p>
+              <span>나는</span>
+              <span>내일</span>
+            </p>
+            <p>어제의</p>
+            <p>너와 만난다</p>
+          </div>
+          <div id="novelRankingWrapper" className="mainPageNovelWrapper">
+            랭킹
+          </div>
+          <div id="novelFantasyWrapper" className="mainPageNovelWrapper">
+            판타지
+          </div>
+          <div id="novelMartialartWrapper" className="mainPageNovelWrapper">
+            무협
+          </div>
+          <div id="novelRomanceWrapper" className="mainPageNovelWrapper">
+            로맨스
+          </div>
+        </div>
       </div>
       <Footer />
     </div>
