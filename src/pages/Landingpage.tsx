@@ -15,14 +15,20 @@ function Landingpage() {
       </div>
       <div className="landingHeader">
         <div className="landingMenuBar">
-          <div className="landingMenuToolBox">
+          {/* <div className="landingMenuToolBox"> */}
+          <div className="landingDummyDiv"></div>
+          <div className="landingDummyDiv">
             <a href="https://cloud-bookstore.com/">
               <div className="landingHeaderLogo"></div>
             </a>
+          </div>
+          <div id="landingDummyDiv3" className="landingDummyDiv">
             <Link to="/mainpage">
               <div className="landingHeaderStart">소설읽기</div>
             </Link>
           </div>
+          <div className="landingDummyDiv"></div>
+          {/* </div> */}
         </div>
         <div className="landingHeaderContent">
           <div className="landingHeaderText">

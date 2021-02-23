@@ -33,31 +33,40 @@
 }
 
 .landingMenuBar{
-  position: fixed;
+  position: relative;
   top: 0;
   left: 50%;
   margin-left: -960px;
-  width: 1920px;
+  width: 100%;
   height: 48px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: #000000;
   z-index: 1;
 }
 
-.landingMenuToolBox {
+/* .landingMenuToolBox {
   flex: 0 1 980px;
   height: 24px;
   display: flex;
   justify-content: space-between;
+} */
+.landingDummyDiv {
+  flex: 0 1 25%;
+}
+
+#landingDummyDiv3 {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .landingHeaderLogo,
 .landingHeaderStart {
+  flex: 0 1 480px;
   width: 75px;
   height: 24px;
-  margin: 0 10px;
+  /* margin: 0 10px; */
   cursor: pointer;
 }
 
