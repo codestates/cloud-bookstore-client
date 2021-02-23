@@ -15,7 +15,6 @@ function Landingpage() {
       </div>
       <div className="landingHeader">
         <div className="landingMenuBar">
-          {/* <div className="landingMenuToolBox"> */}
           <div className="landingDummyDiv"></div>
           <div className="landingDummyDiv">
             <a href="https://cloud-bookstore.com/">
@@ -28,7 +27,6 @@ function Landingpage() {
             </Link>
           </div>
           <div className="landingDummyDiv"></div>
-          {/* </div> */}
         </div>
         <div className="landingHeaderContent">
           <div className="landingHeaderText">
