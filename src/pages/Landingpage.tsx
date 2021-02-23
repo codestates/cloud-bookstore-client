@@ -24,8 +24,7 @@ const Landingpage: React.FC = () => {
             </a>
           </div>
           <div id="landingDummyDiv3" className="landingDummyDiv">
-            {/* <a href="https://cloud-bookstore.com/mainpage"> */}
-            <a href="http://localhost:3000/mainpage">
+            <a href="https://cloud-bookstore.com/mainpage">
               <div className="landingHeaderStart">소설읽기</div>
             </a>
           </div>
