@@ -7,6 +7,8 @@ import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import Landingpage from './pages/Landingpage';
 import Mainpage from './pages/Mainpage';
 
+
+
 const App: React.FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(false);
 
