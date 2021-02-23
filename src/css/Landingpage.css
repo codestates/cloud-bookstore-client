@@ -1,8 +1,18 @@
+.wholeLandingWrapper {
+  width: 1920px;
+  margin: 0 auto;
+}
+.threeLinesWrapper {
+  position: absolute;
+  width: 1919px;
+  display: flex;
+  justify-content: space-evenly;
+}
 .greyLine1,
 .greyLine2,
 .greyLine3 {
-  position: absolute;
-  left: 25%;
+  margin: 0;
+  padding: 0;
   width: 1px;
   height: 5166px;
   opacity: 0.15;
@@ -25,8 +35,9 @@
 .landingMenuBar{
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  margin-left: -960px;
+  width: 1920px;
   height: 48px;
   display: flex;
   justify-content: center;
