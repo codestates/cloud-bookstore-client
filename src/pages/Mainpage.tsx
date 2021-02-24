@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import { withRouter } from 'react-router-dom';
 import '../css/Mainpage.css';
 
@@ -34,7 +34,9 @@ const Mainpage: React.FC = () => {
             <div className="mainNovelInnerWrapper">
               <div id="novelListFristRow" className="novelListRow">
                 <div className="novelList">
-                  <img className="thumbnail" alt='' src={fakeData.ranking[0].thumbnail} />
+                  <div className="thumbnail" style={{backgroundImage: `url(${fakeData.ranking[0].thumbnail})`}}>
+                    <div className="novelListCompleteObject">완결</div>
+                  </div>
                   <div className="novelListContentWrapper">
                     <div className="countCloud">
                       <div className="countCloudText">누적구름 {fakeData.ranking[0].cloud}</div>
