@@ -1,15 +1,17 @@
 .wholeMainPageWrapper {
-  width: 1916px;
-  height: 3066px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column wrap;
 }
 
 .mainpageContentWrapper {
   border-top: solid 1px #f2f2f2;
-  width: 100%;
-  height: 2915px;
+  width: 943px;
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
   align-items: center;
+  margin: 0 auto;
 }
 
 .sliderWrapper {
@@ -42,9 +44,13 @@
 }
 
 .mainPageNovelWrapper {
+  display: flex;
+  flex-flow: column wrap;
   margin: 88px 0 0 0;
-  width: 943px;
-  height: 534px; 
+}
+
+.mainPageNovelWrapper:nth-last-child(1) {
+  margin-bottom: 88px;
 }
 
 .mainNovelTextWrapper {
@@ -75,18 +81,9 @@
 .mainNovelInnerWrapper {
   margin: 16px 0 0 0;
   width: 943px;
-  height: 492px;
-}
-
-.novelListRow {
-  width: 943px;
-  height: 238px;
-  display: flex;
-  justify-content: space-between;
-}
-
-#novelListFristRow {
-  margin: 0 0 16px 0;
+  display: inline-flex;
+  flex-flow: row wrap;
+  gap: 12px;
 }
 
 .novelList {
@@ -206,4 +203,77 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* 컴퓨터에서 줄였을 때 */
+@media (max-width: 943px) {
+  .mainpageContentWrapper,
+  .mainNovelInnerWrapper,
+  .sliderWrapper {
+    width: 704px;
+  }
+}
+/* 아이패드 크기 */
+@media (max-width: 767px) {
+  .mainpageContentWrapper,
+  .mainNovelInnerWrapper,
+  .sliderWrapper {
+    width: 469px;
+  }
+}
+/* 핸드폰 크기 */
+@media (max-width: 375px) {
+  .mainpageContentWrapper,
+  .mainNovelInnerWrapper,
+  .sliderWrapper {
+    width: 410px;
+  }
+  .mainNovelWrapperSubject {
+    position: relative;
+    left: 3px;
+  }
+  .mainNovelTextWrapper {
+    position: relative;
+    left: 3px;
+    width: 402px;
+  }
+  .mainNovelInnerWrapper {
+    margin: 16px 0 0 3px;
+    gap: 10px;
+  }
+  .novelList {
+    width: 195px;
+    height: 214px;
+  }
+  .novelListCompleteObject {
+    font-size: 11px;
+    width: 43px;
+    height: 15px;
+  }
+  .thumbnail{
+    width: 195px;
+    height: 140px;
+  }
+  .novelListContentWrapper {
+    margin: 5px 0 0 5px;
+  }
+  .countCloudText {
+    font-size: 12px;
+  }
+  .novelListSubject {
+    margin: 1px 0 0 1px;
+    line-height: 4px;
+    font-size: 15px;
+  }
+  .novelListNewObject {
+    font-size: 11px;
+    width: 43px;
+    height: 15px;
+  }
+  .novelListAuthor {
+    font-size: 11px;
+  }
+  .novelListFavorite {
+    font-size: 10px;
+  }
 }

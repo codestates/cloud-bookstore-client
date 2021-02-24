@@ -4,19 +4,19 @@ import '../css/CategoryNav.css';
 
 const CategoryNav: React.FC = () => {
   const [isCategoryOn, setIsCategoryOn] = useState<string>('home');
-  const handleHomeOn = () => {
+  const handleHomeOn = (): void => {
     setIsCategoryOn('home');
   };
-  const handleFantasyOn = () => {
+  const handleFantasyOn = (): void => {
     setIsCategoryOn('fantasy');
   };
-  const handleMartialartOn = () => {
+  const handleMartialartOn = (): void => {
     setIsCategoryOn('martialart');
   };
-  const handleRomanceOn = () => {
+  const handleRomanceOn = (): void => {
     setIsCategoryOn('romance');
   };
-  const handleMyOn = () => {
+  const handleMyOn = (): void => {
     setIsCategoryOn('my');
   };
 
