@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { MdSearch } from 'react-icons/md';
 import '../css/CategoryNav.css';
 
 const CategoryNav: React.FC = () => {
@@ -79,7 +80,9 @@ const CategoryNav: React.FC = () => {
             className="navSearchBox"
             placeholder="검색해주세요."
           ></input>
-          <div className="navSearchBtn"></div>
+          <div className="navSearchBtn">
+            <MdSearch />
+          </div>
         </div>
       </div>
     </div>
