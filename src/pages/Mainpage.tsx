@@ -24,16 +24,81 @@ const Mainpage: React.FC = () => {
             </div>
           </div>
           <div id="novelRankingWrapper" className="mainPageNovelWrapper">
-            랭킹
+            <div className="mainNovelWrapperSubject">랭킹</div>
+            <div className="mainNovelInnerWrapper">
+              <div id="novelListFristRow" className="novelListRow">
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+              </div>
+              <div className="novelListRow">
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+              </div>
+            </div>
           </div>
           <div id="novelFantasyWrapper" className="mainPageNovelWrapper">
-            판타지
+            <div className="mainNovelTextWrapper">
+              <div className="mainNovelWrapperSubject">판타지</div>
+              <div className="mainNovelMoreView">더보기</div>
+            </div>
+            <div className="mainNovelInnerWrapper">
+              <div id="novelListFristRow" className="novelListRow">
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+              </div>
+              <div className="novelListRow">
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+              </div>
+            </div>
           </div>
           <div id="novelMartialartWrapper" className="mainPageNovelWrapper">
-            무협
+            <div className="mainNovelTextWrapper">
+              <div className="mainNovelWrapperSubject">무협</div>
+              <div className="mainNovelMoreView">더보기</div>
+            </div>
+            <div className="mainNovelInnerWrapper">
+              <div id="novelListFristRow" className="novelListRow">
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+              </div>
+              <div className="novelListRow">
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+              </div>
+            </div>
           </div>
           <div id="novelRomanceWrapper" className="mainPageNovelWrapper">
-            로맨스
+            <div className="mainNovelTextWrapper">
+              <div className="mainNovelWrapperSubject">로맨스</div>
+              <div className="mainNovelMoreView">더보기</div>
+            </div>
+            <div className="mainNovelInnerWrapper">
+              <div id="novelListFristRow" className="novelListRow">
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+              </div>
+              <div className="novelListRow">
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+                <div className="novelList"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
