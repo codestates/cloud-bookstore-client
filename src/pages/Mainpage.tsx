@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import '../css/Mainpage.css';
@@ -6,7 +8,11 @@ import UserNav from './UserNav';
 import CategoryNav from './CategoryNav';
 import Footer from './Footer';
 
+// 가짜 데이터용
+import fakeData from '../asset/fakeData/fakeData';
+
 const Mainpage: React.FC = () => {
+  console.log(fakeData);
   return (
     <div>
       <div className="wholeMainPageWrapper">
@@ -27,7 +33,23 @@ const Mainpage: React.FC = () => {
             <div className="mainNovelWrapperSubject">랭킹</div>
             <div className="mainNovelInnerWrapper">
               <div id="novelListFristRow" className="novelListRow">
-                <div className="novelList"></div>
+                <div className="novelList">
+                  <img className="thumbnail" alt='' src={fakeData.ranking[0].thumbnail} />
+                  <div className="novelListContentWrapper">
+                    <div className="countCloud">
+                      <div className="countCloudText">누적구름 {fakeData.ranking[0].cloud}</div>
+                      <div className="countCloudImg" />
+                    </div>
+                    <div className="novelListSubjectWrapper">
+                      <div className="novelListSubject">{fakeData.ranking[0].title}</div>
+                      <div className="novelListNewObject">NEW</div>
+                    </div>
+                    <div className="novelListAuthorFavWrapper">
+                      <div className="novelListAuthor">{fakeData.ranking[0].author}</div>
+                      <div className="novelListFavorite">관심 {fakeData.ranking[0].userLike}</div>
+                    </div>
+                  </div>
+                </div>
                 <div className="novelList"></div>
                 <div className="novelList"></div>
                 <div className="novelList"></div>
