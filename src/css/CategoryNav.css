@@ -1,9 +1,10 @@
 .wholeCategoryNav {
-  width: 1920px;
+  width: 100%;
   height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 
 .categoryNavWrapper {
@@ -69,4 +70,33 @@
   width: 17px;
   height: 17px;
   cursor: pointer;
+}
+
+/* 컴퓨터에서 줄였을 때 */
+@media (max-width: 943px) {
+  .wholeCategoryNav {
+    width: 704px;
+  }
+}
+/* 아이패드 크기 */
+@media (max-width: 767px) {
+  .wholeCategoryNav {
+    width: 469px;
+  }
+}
+/* 핸드폰 크기 */
+@media (max-width: 375px) {
+  .wholeCategoryNav {
+    width: 430px;
+  }
+  .categoryNavWrapper {
+    padding: 0 0 0 5px;
+  }
+  .navSearchWrapper {
+    margin: 0 10px 0 0;
+    width: 174px;
+  }
+  .navSearchBox {
+    width: 130px;
+  }
 }

@@ -32,7 +32,6 @@ const Mainpage: React.FC = () => {
           <div id="novelRankingWrapper" className="mainPageNovelWrapper">
             <div className="mainNovelWrapperSubject">랭킹</div>
             <div className="mainNovelInnerWrapper">
-              <div id="novelListFristRow" className="novelListRow">
                 <div className="novelList">
                   <div className="thumbnail" style={{backgroundImage: `url(${fakeData.ranking[0].thumbnail})`}}>
                     <div className="novelListCompleteObject">완결</div>
@@ -55,13 +54,10 @@ const Mainpage: React.FC = () => {
                 <div className="novelList"></div>
                 <div className="novelList"></div>
                 <div className="novelList"></div>
-              </div>
-              <div className="novelListRow">
                 <div className="novelList"></div>
                 <div className="novelList"></div>
                 <div className="novelList"></div>
-                <div className="novelList"></div>
-              </div>
+                {/* <div className="novelList"></div> */}
             </div>
           </div>
           <div id="novelFantasyWrapper" className="mainPageNovelWrapper">
@@ -70,18 +66,14 @@ const Mainpage: React.FC = () => {
               <div className="mainNovelMoreView">더보기</div>
             </div>
             <div className="mainNovelInnerWrapper">
-              <div id="novelListFristRow" className="novelListRow">
                 <div className="novelList"></div>
                 <div className="novelList"></div>
                 <div className="novelList"></div>
                 <div className="novelList"></div>
-              </div>
-              <div className="novelListRow">
                 <div className="novelList"></div>
                 <div className="novelList"></div>
                 <div className="novelList"></div>
                 <div className="novelList"></div>
-              </div>
             </div>
           </div>
           <div id="novelMartialartWrapper" className="mainPageNovelWrapper">
@@ -90,18 +82,14 @@ const Mainpage: React.FC = () => {
               <div className="mainNovelMoreView">더보기</div>
             </div>
             <div className="mainNovelInnerWrapper">
-              <div id="novelListFristRow" className="novelListRow">
                 <div className="novelList"></div>
                 <div className="novelList"></div>
                 <div className="novelList"></div>
                 <div className="novelList"></div>
-              </div>
-              <div className="novelListRow">
                 <div className="novelList"></div>
                 <div className="novelList"></div>
                 <div className="novelList"></div>
                 <div className="novelList"></div>
-              </div>
             </div>
           </div>
           <div id="novelRomanceWrapper" className="mainPageNovelWrapper">
@@ -110,18 +98,14 @@ const Mainpage: React.FC = () => {
               <div className="mainNovelMoreView">더보기</div>
             </div>
             <div className="mainNovelInnerWrapper">
-              <div id="novelListFristRow" className="novelListRow">
                 <div className="novelList"></div>
                 <div className="novelList"></div>
                 <div className="novelList"></div>
                 <div className="novelList"></div>
-              </div>
-              <div className="novelListRow">
                 <div className="novelList"></div>
                 <div className="novelList"></div>
                 <div className="novelList"></div>
                 <div className="novelList"></div>
-              </div>
             </div>
           </div>
         </div>
