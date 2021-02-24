@@ -14,12 +14,14 @@ const Mainpage: React.FC = () => {
         <CategoryNav />
         <div className="mainpageContentWrapper">
           <div className="sliderWrapper">
-            <p>
-              <span>나는</span>
-              <span>내일</span>
-            </p>
-            <p>어제의</p>
-            <p>너와 만난다</p>
+            <div className="sliderText">
+              <p>
+                <span>나는</span>
+                <span> 내일</span>
+              </p>
+              <p>어제의</p>
+              <p>너와 만난다</p>
+            </div>
           </div>
           <div id="novelRankingWrapper" className="mainPageNovelWrapper">
             랭킹

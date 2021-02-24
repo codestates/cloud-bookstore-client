@@ -13,10 +13,32 @@
 }
 
 .sliderWrapper {
-  border: 1px red solid;
   margin: 36px 0 0 0;
   width: 943px;
   height: 303px;
+  background-image: url('../asset/mainpage/slider.png');
+}
+
+.sliderText {
+  margin: 78px 0 0 92px;
+  width: 174px;
+  height: 147px;
+}
+
+.sliderText > p {
+  color: #ffffff;
+  margin: 0;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1.36;
+}
+
+.sliderText > p:nth-child(1) > span:nth-child(1) {
+  font-weight: bold;
+}
+
+.sliderText >p:nth-last-child(1) {
+  font-weight: bold;
 }
 
 .mainPageNovelWrapper {
