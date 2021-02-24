@@ -1,6 +1,72 @@
 .wholeCategoryNav {
-  border: 1px yellowgreen solid;
   width: 1920px;
   height: 48px;
-  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categoryNavWrapper {
+  padding: 0 0 0 16px;
+  width: 224px;
+  height: 32px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.categoryBtn {
+  height: 46px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 48px;
+  color: #202020;
+  cursor: pointer;
+}
+
+.categoryBtn:hover {
+  line-height: 53px;
+  color: #2b79fe;
+  border-bottom: 4px #2b79fe solid;
+}
+
+#categoryOn {
+  line-height: 53px;
+  color: #2b79fe;
+  border-bottom: 4px #2b79fe solid;
+}
+
+.categoryNavInnerWrapper {
+  width: 943px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navSearchWrapper {
+  width: 224px;
+  height: 32px;
+  padding: 0 5px;
+  border-radius: 5px;
+  border: solid 1px #e7e7e7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navSearchBox {
+  width: 180px;
+  height: 20px;
+  padding: 4px 10px;
+  border: none;
+}
+
+.navSearchBox::placeholder {
+  color: #7a7a7a;
+}
+
+.navSearchBtn {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
 }

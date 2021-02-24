@@ -1,6 +1,33 @@
 .WholeUserNav {
-  border: 1px blue solid;
-  width: 1920px;
+  width: 1917px;
   height: 48px;
-  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  border-bottom: solid 1px #f2f2f2;
+}
+
+.UserNavInnerWrapper {
+  width: 943px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userNavLogo {
+  width: 75px;
+  height: 24px;
+  background-image: url('../asset/usernav/userNav.svg');
+  cursor: pointer;
+}
+
+.loginBtn {
+  width: 45px;
+  height: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #202020;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
 }

@@ -1,0 +1,70 @@
+.loginModalGreyBg {
+  position: fixed;
+  left:0;
+  opacity: 0.51;
+  background-color: #000000;
+  width: 1920px;
+  height: 1080px;
+}
+
+.loginPopup {
+  position: fixed;
+  top: 282px;
+  left: 707px;
+  width: 480px;
+  height: 405px;
+  background: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.14);
+  z-index: 1;
+}
+
+.mdClose {
+  position: fixed;
+  top: 298px;
+  left: 1147px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.loginPopupLogo {
+  position: relative;
+  background-image: url('../../asset/usernav/loginModalLogo.svg');
+  margin: 60px 0 0 127px;
+  width: 220px;
+  height: 78px;
+}
+
+.oauthLoginWrapper {
+  position: relative;
+  margin: 59px 0 0 32px;
+  width: 416px;
+  height: 176px;
+}
+
+.oauthLoginBox {
+  width: 416px;
+  height: 48px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#googleLogin {
+  background-color: #4285f4;
+}
+
+#kakaoLogin {
+  margin: 16px 0;
+  background-color: #3f1d1d;
+}
+
+#facebookLogin {
+  background-color: #4285f4;
+}
