@@ -9,12 +9,22 @@ const CategoryNav: React.FC = () => {
   const handleFantasyOn = () => {
     setIsCategoryOn('fantasy');
   };
+  const handleMartialartOn = () => {
+    setIsCategoryOn('martialart');
+  };
+  const handleRomanceOn = () => {
+    setIsCategoryOn('romance');
+  };
+  const handleMyOn = () => {
+    setIsCategoryOn('my');
+  };
   return (
     <div className="wholeCategoryNav">
       <div className="categoryNavInnerWrapper">
         <div className="categoryNavWrapper">
           <div
-            role="presentation"
+            role="button"
+            tabIndex={0}
             id={isCategoryOn === 'home' ? 'categoryOn' : ''}
             className="categoryBtn"
             onClick={handleHomeOn}
@@ -23,21 +33,43 @@ const CategoryNav: React.FC = () => {
             홈
           </div>
           <div
-            role="presentation"
+            role="button"
+            tabIndex={0}
             id={isCategoryOn === 'fantasy' ? 'categoryOn' : ''}
             className="categoryBtn"
             onClick={handleFantasyOn}
-            onKeyDown={handleFantasyOn}
+            onKeyPress={handleFantasyOn}
           >
             판타지
           </div>
-          <div id="categoryOn" className="categoryBtn">
+          <div
+            role="button"
+            tabIndex={0}
+            id={isCategoryOn === 'martialart' ? 'categoryOn' : ''}
+            className="categoryBtn"
+            onClick={handleMartialartOn}
+            onKeyPress={handleMartialartOn}
+          >
             무협
           </div>
-          <div id="categoryOn" className="categoryBtn">
+          <div
+            role="button"
+            tabIndex={0}
+            id={isCategoryOn === 'romance' ? 'categoryOn' : ''}
+            className="categoryBtn"
+            onClick={handleRomanceOn}
+            onKeyPress={handleRomanceOn}
+          >
             로맨스
           </div>
-          <div id="categoryOn" className="categoryBtn">
+          <div
+            role="button"
+            tabIndex={0}
+            id={isCategoryOn === 'my' ? 'categoryOn' : ''}
+            className="categoryBtn"
+            onClick={handleMyOn}
+            onKeyPress={handleMyOn}
+          >
             MY
           </div>
         </div>
