@@ -69,6 +69,35 @@
   background-color: #4285f4;
 }
 
+/* 애매한 크기 */
+@media (max-width: 1188px) {
+  .loginPopup {
+    left: 415px;
+    width: 360px;
+    height: 380px;
+  }
+  .mdClose {
+    left: 733px;
+  }
+  .loginPopupLogo {
+    background-image: url('../../asset/usernav/loginModalLogo75.svg');
+    top: 10px;
+    left: -53px;
+  }
+  .oauthLoginWrapper {
+    top: 15px;
+    left: -3px;
+  }
+  .oauthLoginBox {
+    width: 300px;
+    height: 40px;
+    font-size: 14px;
+  }
+  #kakaoLogin {
+    margin: 10px 0;
+    background-color: #3f1d1d;
+  }
+}
 /* 컴퓨터에서 줄였을 때 */
 @media (max-width: 943px) {
   .loginPopup {
@@ -129,6 +158,15 @@
   #kakaoLogin {
     margin: 8px 0;
     background-color: #3f1d1d;
+  }
+}
+/* 컴퓨터 최소화 */
+@media (max-width: 592px) {
+  .loginPopup {
+    left: 95px;
+  }
+  .mdClose {
+    left: 354px;
   }
 }
 /* 핸드폰 크기 */
