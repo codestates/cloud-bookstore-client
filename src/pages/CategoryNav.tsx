@@ -19,6 +19,7 @@ const CategoryNav: React.FC = () => {
   const handleMyOn = () => {
     setIsCategoryOn('my');
   };
+
   return (
     <div className="wholeCategoryNav">
       <div className="categoryNavInnerWrapper">
@@ -74,7 +75,12 @@ const CategoryNav: React.FC = () => {
             MY
           </div>
         </div>
-        <div className="navSearchWrapper">
+        <form
+          className="navSearchWrapper"
+          name="google_search"
+          method="get"
+          action="https://www.google.co.kr/search"
+        >
           <input
             type="text"
             className="navSearchBox"
@@ -83,7 +89,7 @@ const CategoryNav: React.FC = () => {
           <div className="navSearchBtn">
             <MdSearch />
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
