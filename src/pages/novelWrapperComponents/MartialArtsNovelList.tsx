@@ -14,9 +14,19 @@ interface MartialArtsDataProps {
   };
 }
 
+const getToday = (): string => {
+  const date: Date = new Date();
+  const year: number = date.getFullYear();
+  const month: string = ('0' + (1 + date.getMonth())).slice(-2);
+  const day: string = ('0' + date.getDate()).slice(-2);
+  return `${year}-${month}-${day}`;
+};
+
 const NovelList: React.FC<MartialArtsDataProps> = (
   props: MartialArtsDataProps,
 ) => {
+  const refinedCreatedAt: string = props.martialArtsData.createdAt.slice(0, 10);
+
   return (
     <div className="novelList">
       <div
@@ -25,7 +35,11 @@ const NovelList: React.FC<MartialArtsDataProps> = (
           backgroundImage: `url(${props.martialArtsData.thumbnail})`,
         }}
       >
-        <div className="novelListCompleteObject">완결</div>
+        {props.martialArtsData.complete ? (
+          <div className="novelListCompleteObject">완결</div>
+        ) : (
+          <></>
+        )}
       </div>
       <div className="novelListContentWrapper">
         <div className="countCloud">
@@ -36,7 +50,11 @@ const NovelList: React.FC<MartialArtsDataProps> = (
         </div>
         <div className="novelListSubjectWrapper">
           <div className="novelListSubject">{props.martialArtsData.title}</div>
-          <div className="novelListNewObject">NEW</div>
+          {refinedCreatedAt === getToday() ? (
+            <div className="novelListNewObject">NEW</div>
+          ) : (
+            <></>
+          )}
         </div>
         <div className="novelListAuthorFavWrapper">
           <div className="novelListAuthor">{props.martialArtsData.author}</div>
