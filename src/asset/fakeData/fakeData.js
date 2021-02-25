@@ -10,7 +10,7 @@ export const fakeData = {
         'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
       complete: false,
       createdAt: '2021-02-24T00:00:00.925Z',
-      updatedAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-26T00:00:00.925Z',
     },
     {
       id: 2,
