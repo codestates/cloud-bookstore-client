@@ -1,6 +1,8 @@
 import React from 'react';
 import './NovelWrapperStyle.css';
 
+import NovelList from './NovelList';
+
 const NovelFantasyWrapper: React.FC = () => {
   return (
     <div id="novelFantasyWrapper" className="mainPageNovelWrapper">
@@ -9,14 +11,14 @@ const NovelFantasyWrapper: React.FC = () => {
         <div className="mainNovelMoreView">더보기</div>
       </div>
       <div className="mainNovelInnerWrapper">
-        <div className="novelList"></div>
-        <div className="novelList"></div>
-        <div className="novelList"></div>
-        <div className="novelList"></div>
-        <div className="novelList"></div>
-        <div className="novelList"></div>
-        <div className="novelList"></div>
-        <div className="novelList"></div>
+        <NovelList />
+        <NovelList />
+        <NovelList />
+        <NovelList />
+        <NovelList />
+        <NovelList />
+        <NovelList />
+        <NovelList />
       </div>
     </div>
   );
