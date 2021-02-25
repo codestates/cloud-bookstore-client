@@ -10,6 +10,9 @@ import NovelFantasyWrapper from './novelWrapperComponents/NovelFantasyWrapper';
 import NovelMartialartWrapper from './novelWrapperComponents/NovelMartialartWrapper';
 import NovelRomanceWrapper from './novelWrapperComponents/NovelRomanceWrapper';
 
+// 가짜 데이터용
+import fakeData from '../asset/fakeData/fakeData';
+
 const Mainpage: React.FC = () => {
   return (
     <div>
@@ -27,10 +30,10 @@ const Mainpage: React.FC = () => {
               <p>너와 만난다</p>
             </div>
           </div>
-          <NovelRankingWrapper />
-          <NovelFantasyWrapper />
-          <NovelMartialartWrapper />
-          <NovelRomanceWrapper />
+          <NovelRankingWrapper rankingData={fakeData.ranking} />
+          <NovelFantasyWrapper fantasyData={fakeData.fantasy} />
+          <NovelMartialartWrapper martialArtsData={fakeData.martialArts} />
+          <NovelRomanceWrapper romanceData={fakeData.romance} />
         </div>
       </div>
       <Footer />

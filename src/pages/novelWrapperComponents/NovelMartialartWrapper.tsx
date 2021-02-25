@@ -1,9 +1,24 @@
 import React from 'react';
 import './NovelWrapperStyle.css';
 
-import NovelList from './NovelList';
+import MartialArtsNovelList from './MartialArtsNovelList';
 
-const NovelMartialartWrapper: React.FC = () => {
+interface MartialArtsDataProps {
+  martialArtsData: {
+    id: number;
+    title: string;
+    author: string;
+    cloud: number;
+    userLike: number;
+    thumbnail: string;
+    complete: boolean;
+    createdAt: string;
+  }[];
+}
+
+const NovelMartialartWrapper: React.FC<MartialArtsDataProps> = (
+  props: MartialArtsDataProps,
+) => {
   return (
     <div id="novelMartialartWrapper" className="mainPageNovelWrapper">
       <div className="mainNovelTextWrapper">
@@ -11,14 +26,9 @@ const NovelMartialartWrapper: React.FC = () => {
         <div className="mainNovelMoreView">더보기</div>
       </div>
       <div className="mainNovelInnerWrapper">
-        <NovelList />
-        <NovelList />
-        <NovelList />
-        <NovelList />
-        <NovelList />
-        <NovelList />
-        <NovelList />
-        <NovelList />
+        {props.martialArtsData.map((data) => (
+          <MartialArtsNovelList key={data.id} martialArtsData={data} />
+        ))}
       </div>
     </div>
   );

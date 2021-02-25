@@ -1,16 +1,28 @@
 import React from 'react';
 import './NovelList.css';
 
-// 가짜 데이터용
-import fakeData from '../../asset/fakeData/fakeData';
+interface MartialArtsDataProps {
+  martialArtsData: {
+    id: number;
+    title: string;
+    author: string;
+    cloud: number;
+    userLike: number;
+    thumbnail: string;
+    complete: boolean;
+    createdAt: string;
+  };
+}
 
-const NovelList: React.FC = () => {
+const NovelList: React.FC<MartialArtsDataProps> = (
+  props: MartialArtsDataProps,
+) => {
   return (
     <div className="novelList">
       <div
         className="thumbnail"
         style={{
-          backgroundImage: `url(${fakeData.ranking[0].thumbnail})`,
+          backgroundImage: `url(${props.martialArtsData.thumbnail})`,
         }}
       >
         <div className="novelListCompleteObject">완결</div>
@@ -18,18 +30,18 @@ const NovelList: React.FC = () => {
       <div className="novelListContentWrapper">
         <div className="countCloud">
           <div className="countCloudText">
-            누적구름 {fakeData.ranking[0].cloud}
+            누적구름 {props.martialArtsData.cloud}
           </div>
           <div className="countCloudImg" />
         </div>
         <div className="novelListSubjectWrapper">
-          <div className="novelListSubject">{fakeData.ranking[0].title}</div>
+          <div className="novelListSubject">{props.martialArtsData.title}</div>
           <div className="novelListNewObject">NEW</div>
         </div>
         <div className="novelListAuthorFavWrapper">
-          <div className="novelListAuthor">{fakeData.ranking[0].author}</div>
+          <div className="novelListAuthor">{props.martialArtsData.author}</div>
           <div className="novelListFavorite">
-            관심 {fakeData.ranking[0].userLike}
+            관심 {props.martialArtsData.userLike}
           </div>
         </div>
       </div>
