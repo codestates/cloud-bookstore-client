@@ -11,6 +11,7 @@ interface RomanceDataProps {
     thumbnail: string;
     complete: boolean;
     createdAt: string;
+    updatedAt: string;
   };
 }
 
@@ -23,7 +24,18 @@ const getToday = (): string => {
 };
 
 const NovelList: React.FC<RomanceDataProps> = (props: RomanceDataProps) => {
-  const refinedCreatedAt: string = props.romanceData.createdAt.slice(0, 10);
+  const refinedupdatedAt: string = props.romanceData.updatedAt.slice(0, 10);
+
+  const sliceTitle: string = props.romanceData.title.slice(0, 6);
+  const sliceAuthor: string = props.romanceData.author.slice(0, 8);
+  const getBoolTitleLength = (): boolean => {
+    if (props.romanceData.title.length > 6) return true;
+    else return false;
+  };
+  const getBoolAuthorLength = (): boolean => {
+    if (props.romanceData.author.length > 8) return true;
+    else return false;
+  };
 
   return (
     <div className="novelList">
@@ -47,15 +59,23 @@ const NovelList: React.FC<RomanceDataProps> = (props: RomanceDataProps) => {
           <div className="countCloudImg" />
         </div>
         <div className="novelListSubjectWrapper">
-          <div className="novelListSubject">{props.romanceData.title}</div>
-          {refinedCreatedAt === getToday() ? (
+          <div className="novelListSubject">
+            {getBoolTitleLength()
+              ? `${sliceTitle} ...`
+              : props.romanceData.title}
+          </div>
+          {refinedupdatedAt === getToday() ? (
             <div className="novelListNewObject">NEW</div>
           ) : (
             <></>
           )}
         </div>
         <div className="novelListAuthorFavWrapper">
-          <div className="novelListAuthor">{props.romanceData.author}</div>
+          <div className="novelListAuthor">
+            {getBoolAuthorLength()
+              ? `${sliceAuthor} ...`
+              : props.romanceData.author}
+          </div>
           <div className="novelListFavorite">
             관심 {props.romanceData.userLike}
           </div>

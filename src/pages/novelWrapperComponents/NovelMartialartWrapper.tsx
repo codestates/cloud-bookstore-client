@@ -13,6 +13,7 @@ interface MartialArtsDataProps {
     thumbnail: string;
     complete: boolean;
     createdAt: string;
+    updatedAt: string;
   }[];
 }
 

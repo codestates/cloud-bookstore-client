@@ -11,6 +11,7 @@ interface MartialArtsDataProps {
     thumbnail: string;
     complete: boolean;
     createdAt: string;
+    updatedAt: string;
   };
 }
 
@@ -25,7 +26,18 @@ const getToday = (): string => {
 const NovelList: React.FC<MartialArtsDataProps> = (
   props: MartialArtsDataProps,
 ) => {
-  const refinedCreatedAt: string = props.martialArtsData.createdAt.slice(0, 10);
+  const refinedupdatedAt: string = props.martialArtsData.updatedAt.slice(0, 10);
+
+  const sliceTitle: string = props.martialArtsData.title.slice(0, 6);
+  const sliceAuthor: string = props.martialArtsData.author.slice(0, 8);
+  const getBoolTitleLength = (): boolean => {
+    if (props.martialArtsData.title.length > 6) return true;
+    else return false;
+  };
+  const getBoolAuthorLength = (): boolean => {
+    if (props.martialArtsData.author.length > 8) return true;
+    else return false;
+  };
 
   return (
     <div className="novelList">
@@ -49,15 +61,23 @@ const NovelList: React.FC<MartialArtsDataProps> = (
           <div className="countCloudImg" />
         </div>
         <div className="novelListSubjectWrapper">
-          <div className="novelListSubject">{props.martialArtsData.title}</div>
-          {refinedCreatedAt === getToday() ? (
+          <div className="novelListSubject">
+            {getBoolTitleLength()
+              ? `${sliceTitle} ...`
+              : props.martialArtsData.title}
+          </div>
+          {refinedupdatedAt === getToday() ? (
             <div className="novelListNewObject">NEW</div>
           ) : (
             <></>
           )}
         </div>
         <div className="novelListAuthorFavWrapper">
-          <div className="novelListAuthor">{props.martialArtsData.author}</div>
+          <div className="novelListAuthor">
+            {getBoolAuthorLength()
+              ? `${sliceAuthor} ...`
+              : props.martialArtsData.author}
+          </div>
           <div className="novelListFavorite">
             관심 {props.martialArtsData.userLike}
           </div>

@@ -13,6 +13,7 @@ interface FantasyDataProps {
     thumbnail: string;
     complete: boolean;
     createdAt: string;
+    updatedAt: string;
   }[];
 }
 

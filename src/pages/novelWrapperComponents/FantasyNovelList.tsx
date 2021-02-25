@@ -11,6 +11,7 @@ interface FantasyDataProps {
     thumbnail: string;
     complete: boolean;
     createdAt: string;
+    updatedAt: string;
   };
 }
 
@@ -23,7 +24,18 @@ const getToday = (): string => {
 };
 
 const NovelList: React.FC<FantasyDataProps> = (props: FantasyDataProps) => {
-  const refinedCreatedAt: string = props.fantasyData.createdAt.slice(0, 10);
+  const refinedupdatedAt: string = props.fantasyData.updatedAt.slice(0, 10);
+
+  const sliceTitle: string = props.fantasyData.title.slice(0, 6);
+  const sliceAuthor: string = props.fantasyData.author.slice(0, 8);
+  const getBoolTitleLength = (): boolean => {
+    if (props.fantasyData.title.length > 6) return true;
+    else return false;
+  };
+  const getBoolAuthorLength = (): boolean => {
+    if (props.fantasyData.author.length > 8) return true;
+    else return false;
+  };
 
   return (
     <div className="novelList">
@@ -47,15 +59,23 @@ const NovelList: React.FC<FantasyDataProps> = (props: FantasyDataProps) => {
           <div className="countCloudImg" />
         </div>
         <div className="novelListSubjectWrapper">
-          <div className="novelListSubject">{props.fantasyData.title}</div>
-          {refinedCreatedAt === getToday() ? (
+          <div className="novelListSubject">
+            {getBoolTitleLength()
+              ? `${sliceTitle} ...`
+              : props.fantasyData.title}
+          </div>
+          {refinedupdatedAt === getToday() ? (
             <div className="novelListNewObject">NEW</div>
           ) : (
             <></>
           )}
         </div>
         <div className="novelListAuthorFavWrapper">
-          <div className="novelListAuthor">{props.fantasyData.author}</div>
+          <div className="novelListAuthor">
+            {getBoolAuthorLength()
+              ? `${sliceAuthor} ...`
+              : props.fantasyData.author}
+          </div>
           <div className="novelListFavorite">
             관심 {props.fantasyData.userLike}
           </div>

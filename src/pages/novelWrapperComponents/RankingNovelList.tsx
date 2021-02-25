@@ -10,7 +10,8 @@ interface RankingDataProps {
     userLike: number;
     thumbnail: string;
     complete: boolean;
-    createdAt: string; // ! 신규 에피소드의 createdAt이 가능한지 확인필요
+    createdAt: string;
+    updatedAt: string;
   };
 }
 
@@ -23,7 +24,18 @@ const getToday = (): string => {
 };
 
 const NovelList: React.FC<RankingDataProps> = (props: RankingDataProps) => {
-  const refinedCreatedAt: string = props.rankingData.createdAt.slice(0, 10);
+  const refinedupdatedAt: string = props.rankingData.updatedAt.slice(0, 10);
+
+  const sliceTitle: string = props.rankingData.title.slice(0, 6);
+  const sliceAuthor: string = props.rankingData.author.slice(0, 8);
+  const getBoolTitleLength = (): boolean => {
+    if (props.rankingData.title.length > 6) return true;
+    else return false;
+  };
+  const getBoolAuthorLength = (): boolean => {
+    if (props.rankingData.author.length > 8) return true;
+    else return false;
+  };
 
   return (
     <div className="novelList">
@@ -47,15 +59,23 @@ const NovelList: React.FC<RankingDataProps> = (props: RankingDataProps) => {
           <div className="countCloudImg" />
         </div>
         <div className="novelListSubjectWrapper">
-          <div className="novelListSubject">{props.rankingData.title}</div>
-          {refinedCreatedAt === getToday() ? (
+          <div className="novelListSubject">
+            {getBoolTitleLength()
+              ? `${sliceTitle} ...`
+              : props.rankingData.title}
+          </div>
+          {refinedupdatedAt === getToday() ? (
             <div className="novelListNewObject">NEW</div>
           ) : (
             <></>
           )}
         </div>
         <div className="novelListAuthorFavWrapper">
-          <div className="novelListAuthor">{props.rankingData.author}</div>
+          <div className="novelListAuthor">
+            {getBoolAuthorLength()
+              ? `${sliceAuthor} ...`
+              : props.rankingData.author}
+          </div>
           <div className="novelListFavorite">
             관심 {props.rankingData.userLike}
           </div>
