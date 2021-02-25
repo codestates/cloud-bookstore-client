@@ -9,7 +9,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-26T00:00:00.925Z',
     },
     {
       id: 2,
@@ -19,8 +20,9 @@ export const fakeData = {
       userLike: 100,
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985710-aea31600-76d4-11eb-90f3-18303fe9f995.png',
-      complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      complete: true,
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 3,
@@ -31,7 +33,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 4,
@@ -42,7 +45,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985390-553ae700-76d4-11eb-8d09-edbce901e69a.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 5,
@@ -53,7 +57,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985293-3b999f80-76d4-11eb-9722-20480644a8ff.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 6,
@@ -64,7 +69,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985390-553ae700-76d4-11eb-8d09-edbce901e69a.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 7,
@@ -75,7 +81,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 8,
@@ -85,8 +92,9 @@ export const fakeData = {
       userLike: 100,
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985468-6e439800-76d4-11eb-8c5a-dd839a8a1b2a.png',
-      complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      complete: true,
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
   ],
   fantasy: [
@@ -98,8 +106,9 @@ export const fakeData = {
       userLike: 100,
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108984040-d6917a00-76d2-11eb-8d17-afbf800fba3d.png',
-      complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      complete: true,
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 2,
@@ -110,7 +119,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985293-3b999f80-76d4-11eb-9722-20480644a8ff.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 3,
@@ -121,7 +131,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985390-553ae700-76d4-11eb-8d09-edbce901e69a.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 4,
@@ -131,8 +142,9 @@ export const fakeData = {
       userLike: 100,
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985468-6e439800-76d4-11eb-8c5a-dd839a8a1b2a.png',
-      complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      complete: true,
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 5,
@@ -143,7 +155,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985560-87e4df80-76d4-11eb-8249-bad8b8603133.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 6,
@@ -154,7 +167,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 7,
@@ -165,7 +179,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985710-aea31600-76d4-11eb-90f3-18303fe9f995.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 8,
@@ -176,7 +191,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985984-00e43700-76d5-11eb-80b5-2a2ca547c3ad.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
   ],
   martialArts: [
@@ -189,7 +205,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108984040-d6917a00-76d2-11eb-8d17-afbf800fba3d.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 2,
@@ -200,7 +217,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985293-3b999f80-76d4-11eb-9722-20480644a8ff.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 3,
@@ -210,8 +228,9 @@ export const fakeData = {
       userLike: 100,
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985390-553ae700-76d4-11eb-8d09-edbce901e69a.png',
-      complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      complete: true,
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 4,
@@ -222,7 +241,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985468-6e439800-76d4-11eb-8c5a-dd839a8a1b2a.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 5,
@@ -233,7 +253,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985560-87e4df80-76d4-11eb-8249-bad8b8603133.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 6,
@@ -244,7 +265,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 7,
@@ -255,7 +277,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985710-aea31600-76d4-11eb-90f3-18303fe9f995.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 8,
@@ -265,8 +288,9 @@ export const fakeData = {
       userLike: 100,
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985984-00e43700-76d5-11eb-80b5-2a2ca547c3ad.png',
-      complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      complete: true,
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
   ],
   romance: [
@@ -279,7 +303,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108984040-d6917a00-76d2-11eb-8d17-afbf800fba3d.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 2,
@@ -290,7 +315,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985293-3b999f80-76d4-11eb-9722-20480644a8ff.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 3,
@@ -301,7 +327,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985390-553ae700-76d4-11eb-8d09-edbce901e69a.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 4,
@@ -312,7 +339,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985468-6e439800-76d4-11eb-8c5a-dd839a8a1b2a.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 5,
@@ -322,8 +350,9 @@ export const fakeData = {
       userLike: 100,
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985560-87e4df80-76d4-11eb-8249-bad8b8603133.png',
-      complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      complete: true,
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 6,
@@ -334,7 +363,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 7,
@@ -345,7 +375,8 @@ export const fakeData = {
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985710-aea31600-76d4-11eb-90f3-18303fe9f995.png',
       complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
     {
       id: 8,
@@ -355,8 +386,9 @@ export const fakeData = {
       userLike: 100,
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985984-00e43700-76d5-11eb-80b5-2a2ca547c3ad.png',
-      complete: false,
-      createdAt: '2021-02-24 00:00:00',
+      complete: true,
+      createdAt: '2021-02-24T00:00:00.925Z',
+      updatedAt: '2021-02-24T00:00:00.925Z',
     },
   ],
 };
