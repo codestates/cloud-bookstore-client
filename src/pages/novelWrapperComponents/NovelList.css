@@ -116,10 +116,10 @@
   justify-content: center;
   align-items: center;
 }
-/* 핸드폰 크기 */
-@media (max-width: 375px) {
+/* 스마트폰(max) 크기 */
+@media (max-width: 414px) {
   .novelList {
-    width: 195px;
+    width: 178px;
     height: 214px;
   }
   .novelListCompleteObject {
@@ -128,7 +128,7 @@
     height: 15px;
   }
   .thumbnail{
-    width: 195px;
+    width: 178px;
     height: 140px;
   }
   .novelListContentWrapper {
@@ -143,6 +143,8 @@
     font-size: 15px;
   }
   .novelListNewObject {
+    position: relative;
+    left: -20px;
     font-size: 11px;
     width: 43px;
     height: 15px;
@@ -151,6 +153,8 @@
     font-size: 11px;
   }
   .novelListFavorite {
+    position: relative;
+    left: -20px;
     font-size: 10px;
   }
 }

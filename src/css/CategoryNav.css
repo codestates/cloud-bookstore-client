@@ -84,19 +84,27 @@
     width: 469px;
   }
 }
-/* 핸드폰 크기 */
-@media (max-width: 375px) {
+/* 스마트폰(max) 크기 */
+@media (max-width: 414px) {
   .wholeCategoryNav {
-    width: 430px;
+    width: 370px;
   }
   .categoryNavWrapper {
     padding: 0 0 0 5px;
   }
+  .categoryNavInnerWrapper {
+    width: 370px;
+  }
   .navSearchWrapper {
-    margin: 0 10px 0 0;
-    width: 174px;
+    margin: 0;
+    width: 120px;
   }
   .navSearchBox {
-    width: 130px;
+    width: 90px;
+  }
+  .navSearchBtn {
+    position: relative;
+    top: -1px;
+    left : -9px;
   }
 }

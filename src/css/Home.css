@@ -36,17 +36,30 @@
   font-weight: bold;
 }
 
+/* 컴퓨터에서 줄였을 때 */
+@media (max-width: 943px) {
+  .mainpageContentWrapper,
+  .sliderWrapper {
+    width: 700px;
+  }
+}
+
 /* 아이패드 크기 */
 @media (max-width: 767px) {
   .mainpageContentWrapper,
+  .mainNovelTextWrapper,
   .sliderWrapper {
     width: 469px;
   }
 }
 /* 핸드폰 크기 */
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .mainpageContentWrapper,
+  .mainNovelTextWrapper,
   .sliderWrapper {
-    width: 410px;
+    width: 370px;
+  }
+  .mainPageNovelWrapper {
+    width: 370px;
   }
 }
