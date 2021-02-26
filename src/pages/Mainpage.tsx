@@ -9,6 +9,7 @@ import UserNav from './UserNav';
 import CategoryNav from './CategoryNav';
 import Footer from './Footer';
 import Home from './Home';
+import Mypage from './Mypage';
 
 // 가짜 데이터용
 import fakeData from '../asset/fakeData/fakeData';
@@ -28,6 +29,7 @@ const Mainpage: React.FC = () => {
         <UserNav />
         <CategoryNav />
         <Home novelData={fakeData} />
+        <Mypage />
       </div>
       <Footer />
     </div>
