@@ -1,0 +1,71 @@
+.mywholeCategoryNav {
+    width: 100%;
+    background-color: #f4f3f3;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  .mycategoryNavWrapper {
+    padding: 0 0 0 16px;
+    width: 224px;
+    height: 32px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .mycategoryBtn {
+    height: 46px;
+    font-size: 16px;
+    font-weight: regular;
+    line-height: 48px;
+    color: #202020;
+    cursor: pointer;
+  }
+  
+  .mycategoryBtn:hover {
+    line-height: 53px;
+    font-weight: bold;
+    color: #2b79fe;
+    border-bottom: 4px #2b79fe solid;
+  }
+  
+  #mycategoryOn {
+    line-height: 53px;
+    font-weight: bold;
+    color: #2b79fe;
+    border-bottom: 4px #2b79fe solid;
+  }
+  
+  .mycategoryNavInnerWrapper {
+    width: 943px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* 컴퓨터에서 줄였을 때 */
+  @media (max-width: 943px) {
+    .mywholeCategoryNav {
+      width: 704px;
+    }
+  }
+  /* 아이패드 크기 */
+  @media (max-width: 767px) {
+    .mywholeCategoryNav {
+      width: 469px;
+    }
+  }
+  /* 핸드폰 크기 */
+  @media (max-width: 375px) {
+    .mywholeCategoryNav {
+      width: 430px;
+    }
+    .mycategoryNavWrapper {
+      padding: 0 0 0 5px;
+    }
+  }
+  
