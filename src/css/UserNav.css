@@ -56,14 +56,10 @@
     width: 469px;
   }
 }
-/* 핸드폰 크기 */
-@media (max-width: 375px) {
+/* 스마트폰(max) 크기 */
+@media (max-width: 414px) {
   .WholeUserNav,
   .userNavGreyUnderLine {
-    width: 410px;
-  }
-  .loginBtn {
-    position: relative;
-    top: 1px;
+    width: 370px;
   }
 }

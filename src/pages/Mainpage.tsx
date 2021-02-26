@@ -1,40 +1,33 @@
-import React from 'react';
+/* eslint-disable */
+
+import React, { useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import '../css/Mainpage.css';
+import axios from 'axios';
 
 import UserNav from './UserNav';
 import CategoryNav from './CategoryNav';
 import Footer from './Footer';
-import NovelRankingWrapper from './novelWrapperComponents/NovelRankingWrapper';
-import NovelFantasyWrapper from './novelWrapperComponents/NovelFantasyWrapper';
-import NovelMartialartWrapper from './novelWrapperComponents/NovelMartialartWrapper';
-import NovelRomanceWrapper from './novelWrapperComponents/NovelRomanceWrapper';
+import Home from './Home';
 
 // 가짜 데이터용
 import fakeData from '../asset/fakeData/fakeData';
 
 const Mainpage: React.FC = () => {
+  let novelData: object = {};
+  useEffect(() => {
+    axios.get('https://server.cloud-bookstore.com/novels').then((res) => {
+      novelData = res;
+    });
+  });
+  console.log(novelData);
+
   return (
     <div>
       <div className="wholeMainPageWrapper">
         <UserNav />
         <CategoryNav />
-        <div className="mainpageContentWrapper">
-          <div className="sliderWrapper">
-            <div className="sliderText">
-              <p>
-                <span>나는</span>
-                <span> 내일</span>
-              </p>
-              <p>어제의</p>
-              <p>너와 만난다</p>
-            </div>
-          </div>
-          <NovelRankingWrapper rankingData={fakeData.ranking} />
-          <NovelFantasyWrapper fantasyData={fakeData.fantasy} />
-          <NovelMartialartWrapper martialArtsData={fakeData.martialArts} />
-          <NovelRomanceWrapper romanceData={fakeData.romance} />
-        </div>
+        <Home novelData={fakeData} />
       </div>
       <Footer />
     </div>

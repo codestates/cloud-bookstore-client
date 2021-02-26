@@ -1,6 +1,6 @@
 .footer {
   background-color: #000000;
-  /* width: 1920px; */
+  width: 100%;
   height: 398px;
   display: flex;
   justify-content: center;
@@ -9,7 +9,7 @@
 }
 
 .footerInnerBox {
-  flex: 0 1 960px;
+  flex: 0 1 auto;
   width: 960px;
   height: 254px;
   display: flex;
@@ -26,7 +26,7 @@
 }
 
 .footerWrapper {
-  flex: 4 1 768px;
+  flex: 4 1 auto;
   display: flex;
   flex-direction: column;
 }
@@ -93,13 +93,15 @@
   .footer {
     height: 470px;
   }
+  .footerInnerBox {
+    width: 402px;
+    height: 328px;
+  }
   .teamMembersWrapper {
     margin: 20px 0 0 0;
   }
   .footerLogoWrapper {
     position: relative;
-    top: -35px;
-    left: 126px;
     width: 59px;
     height: 80px;
     display: flex;
@@ -108,70 +110,53 @@
   .footerFirstLine {
     position: relative;
     width: 310px;
-    top: -35px;
-    left: 152px;
+    left: 30px;
   }
   .footerSecondLine {
     position: relative;
-    top: -4px;
-    left: 64px;
+    left: -55px;
     height: 210px;
     width: 400px;
   }
 }
 /* 아이패드 크기 */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .footer {
     height: 470px;
   }
   .footerInnerBox {
-    flex: 0 1 469px;
+    width: 500px;
+    height: 328px;
+  }
+  .footerWrapper {
+    width: 340px;
+  }
+  .footerLogoWrapper {
+    left: -97px;
+  }
+  .footerFirstLine {
+    left: -56px;
   }
   .teamMembersWrapper {
     margin: 20px 0 0 0;
   }
-  .footerLogoWrapper {
-    position: relative;
-    top: -35px;
-    left: 28px;
-    width: 59px;
-    height: 80px;
-    display: flex;
-    justify-content: flex-end;
-  }
-  .footerFirstLine {
-    position: relative;
-    width: 310px;
-    top: -35px;
-    left: 54px;
-  }
-  .footerSecondLine {
-    position: relative;
-    top: -4px;
-    left: -34px;
-    height: 210px;
-    width: 400px;
-  }
 }
 /* 핸드폰 크기 */
-@media (max-width: 375px) {
-  .footer {
-    position: absolute;
-    left : 0;
-    width: 430px;
-  }
+@media (max-width: 414px) {
   .footerLogoWrapper {
-    left: -11px;
+    left: -147px;
   }
   .footerInnerBox {
-    flex: 0 1 375px;
+    flex: 0 1 370px;
   }
   .footerWrapper {
+    position: relative;
+    left: -147px;
     width: 100px;
   }
   .footerFirstLine {
     position: relative;
-    left: 10px;
+    left: 23px;
     width: 200px;
   }
   .companyWrapper {
@@ -179,7 +164,7 @@
   }
   .footerSecondLine {
     position: relative;
-    left: -71px;
-    width: 375px;
+    left: -50px;
+    width: 360px;
   }
 }

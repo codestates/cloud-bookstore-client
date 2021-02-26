@@ -1,6 +1,8 @@
 .blackBg {
   margin: 0 auto;
   background-color: #000000;
+  overflow-x:hidden;
+  overflow-y:auto;
   font-family: 'NotoSansKR', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9,6 +11,8 @@
 .whiteBg {
   margin: 0 auto;
   background-color: #ffffff;
+  overflow-x:hidden;
+  overflow-y:auto;
   font-family: 'NotoSansKR', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
