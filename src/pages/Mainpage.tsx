@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import '../css/Mainpage.css';
 import axios from 'axios';
@@ -15,7 +15,7 @@ import Mypage from './Mypage';
 import fakeData from '../asset/fakeData/fakeData';
 
 const Mainpage: React.FC = () => {
-  let novelData: object = {};
+  let novelData = {};
   useEffect(() => {
     axios.get('https://server.cloud-bookstore.com/novels').then((res) => {
       novelData = res;
@@ -23,13 +23,42 @@ const Mainpage: React.FC = () => {
   });
   console.log(novelData);
 
+  const [isCategoryOn, setIsCategoryOn] = useState<string>('home');
+  const handleHomeOn = (): void => {
+    setIsCategoryOn('home');
+  };
+  const handleFantasyOn = (): void => {
+    setIsCategoryOn('fantasy');
+  };
+  const handleMartialartOn = (): void => {
+    setIsCategoryOn('martialart');
+  };
+  const handleRomanceOn = (): void => {
+    setIsCategoryOn('romance');
+  };
+  const handleMyOn = (): void => {
+    setIsCategoryOn('my');
+  };
+
   return (
     <div>
       <div className="wholeMainPageWrapper">
         <UserNav />
-        <CategoryNav />
-        <Home novelData={fakeData} />
-        <Mypage />
+        <CategoryNav
+          isCategoryOn={isCategoryOn}
+          handleHomeOn={handleHomeOn}
+          handleFantasyOn={handleFantasyOn}
+          handleMartialartOn={handleMartialartOn}
+          handleRomanceOn={handleRomanceOn}
+          handleMyOn={handleMyOn}
+        />
+        {isCategoryOn === 'home' ? (
+          <Home novelData={fakeData} />
+        ) : isCategoryOn === 'my' ? (
+          <Mypage />
+        ) : (
+          <Home novelData={fakeData} />
+        )}
       </div>
       <Footer />
     </div>
