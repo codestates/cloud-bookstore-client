@@ -1,25 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { MdSearch } from 'react-icons/md';
 import '../css/CategoryNav.css';
 
-const CategoryNav: React.FC = () => {
-  const [isCategoryOn, setIsCategoryOn] = useState<string>('home');
-  const handleHomeOn = (): void => {
-    setIsCategoryOn('home');
-  };
-  const handleFantasyOn = (): void => {
-    setIsCategoryOn('fantasy');
-  };
-  const handleMartialartOn = (): void => {
-    setIsCategoryOn('martialart');
-  };
-  const handleRomanceOn = (): void => {
-    setIsCategoryOn('romance');
-  };
-  const handleMyOn = (): void => {
-    setIsCategoryOn('my');
-  };
+interface categoryOnProps {
+  isCategoryOn: string;
+  handleHomeOn(): void;
+  handleFantasyOn(): void;
+  handleMartialartOn(): void;
+  handleRomanceOn(): void;
+  handleMyOn(): void;
+}
 
+const CategoryNav: React.FC<categoryOnProps> = (props: categoryOnProps) => {
   return (
     <div className="wholeCategoryNav">
       <div className="categoryNavInnerWrapper">
@@ -27,50 +19,50 @@ const CategoryNav: React.FC = () => {
           <div
             role="button"
             tabIndex={0}
-            id={isCategoryOn === 'home' ? 'categoryOn' : ''}
+            id={props.isCategoryOn === 'home' ? 'categoryOn' : ''}
             className="categoryBtn"
-            onClick={handleHomeOn}
-            onKeyPress={handleHomeOn}
+            onClick={props.handleHomeOn}
+            onKeyPress={props.handleHomeOn}
           >
             홈
           </div>
           <div
             role="button"
             tabIndex={0}
-            id={isCategoryOn === 'fantasy' ? 'categoryOn' : ''}
+            id={props.isCategoryOn === 'fantasy' ? 'categoryOn' : ''}
             className="categoryBtn"
-            onClick={handleFantasyOn}
-            onKeyPress={handleFantasyOn}
+            onClick={props.handleFantasyOn}
+            onKeyPress={props.handleFantasyOn}
           >
             판타지
           </div>
           <div
             role="button"
             tabIndex={0}
-            id={isCategoryOn === 'martialart' ? 'categoryOn' : ''}
+            id={props.isCategoryOn === 'martialart' ? 'categoryOn' : ''}
             className="categoryBtn"
-            onClick={handleMartialartOn}
-            onKeyPress={handleMartialartOn}
+            onClick={props.handleMartialartOn}
+            onKeyPress={props.handleMartialartOn}
           >
             무협
           </div>
           <div
             role="button"
             tabIndex={0}
-            id={isCategoryOn === 'romance' ? 'categoryOn' : ''}
+            id={props.isCategoryOn === 'romance' ? 'categoryOn' : ''}
             className="categoryBtn"
-            onClick={handleRomanceOn}
-            onKeyPress={handleRomanceOn}
+            onClick={props.handleRomanceOn}
+            onKeyPress={props.handleRomanceOn}
           >
             로맨스
           </div>
           <div
             role="button"
             tabIndex={0}
-            id={isCategoryOn === 'my' ? 'categoryOn' : ''}
+            id={props.isCategoryOn === 'my' ? 'categoryOn' : ''}
             className="categoryBtn"
-            onClick={handleMyOn}
-            onKeyPress={handleMyOn}
+            onClick={props.handleMyOn}
+            onKeyPress={props.handleMyOn}
           >
             MY
           </div>

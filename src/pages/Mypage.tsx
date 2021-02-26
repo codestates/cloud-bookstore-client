@@ -1,7 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import '../css/Mypage.css';
+
 import MypageNav from './MypageNav';
+import Footer from './Footer';
 
 const Mypage: React.FC = () => {
   return (
@@ -16,6 +18,7 @@ const Mypage: React.FC = () => {
           <div className="emptyBtn">새 작품 쓰기</div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
