@@ -95,7 +95,7 @@ const Mainpage: React.FC = () => {
   const handleFantasyOn = (): void => {
     setIsCategoryOn('fantasy');
   };
-  const handleMartialartOn = (): void => {
+  const handleMartialArtOn = (): void => {
     setIsCategoryOn('martialArt');
   };
   const handleRomanceOn = (): void => {
@@ -137,7 +137,7 @@ const Mainpage: React.FC = () => {
                     role="button"
                     id={isCategoryOn === 'martialArt' ? 'categoryOn' : ''}
                     className="categoryBtn"
-                    onClick={handleMartialartOn}
+                    onClick={handleMartialArtOn}
                   >
                     무협
                   </Link>
@@ -170,7 +170,7 @@ const Mainpage: React.FC = () => {
                     type="text"
                     className="navSearchBox"
                     placeholder="검색해주세요."
-                  ></input>
+                  />
                   <div className="navSearchBtn">
                     <MdSearch />
                   </div>
@@ -180,7 +180,7 @@ const Mainpage: React.FC = () => {
           </nav>
           <Switch>
             <Route path="/home">
-              <Home novelData={fakeData} />
+              <Home novelData={novelData} />
             </Route>
             <Route path="/mypage/recentNovelList">
               <Mypage />
