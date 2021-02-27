@@ -14,12 +14,12 @@ const App: React.FC = () => {
     <div className="wholeWrapper">
       <Switch>
         <Route path="/landingpage" render={() => <Landingpage />} />
-        <Route path="/mainpage" render={() => <Mainpage />} />
+        <Route path="/home" render={() => <Mainpage />} />
         <Route
           path="/"
           render={() => {
             if (isLogin) {
-              return <Redirect to="/mainpage" />;
+              return <Redirect to="/home" />;
             }
             return <Redirect to="/landingpage" />;
           }}
