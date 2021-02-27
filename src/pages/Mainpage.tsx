@@ -179,7 +179,7 @@ const Mainpage: React.FC = () => {
             </div>
           </nav>
           <Switch>
-            <Route path="/home">
+            <Route path="/home" exact={true}>
               <Home novelData={novelData} />
             </Route>
             <Route path="/mypage/recentNovelList">

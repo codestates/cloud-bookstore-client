@@ -1,12 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-const HistoryNovel: React.FC = () => {
+const WriteNovel: React.FC = () => {
   return (
     <div>
-      <h1>HistoryNovel</h1>
+      <h1> WriteNovel</h1>
     </div>
   );
 };
 
-export default withRouter(HistoryNovel);
+export default withRouter(WriteNovel);
