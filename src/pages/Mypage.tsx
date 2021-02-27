@@ -1,24 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import '../css/Mypage.css';
 
 import MypageNav from './MypageNav';
-import Footer from './Footer';
+// import Footer from './Footer';
+import MyWorks from './myCategotyComponents/MyWorks';
+import HistoryNovel from './myCategotyComponents/HistoryNovel';
+import UserLikes from './myCategotyComponents/UserLikes';
 
 const Mypage: React.FC = () => {
+  const [isMyCategoryOn, setIsMyCategoryOn] = useState<string>('historyNovel');
+  const handleHistoryNovelOn = (): void => {
+    setIsMyCategoryOn('historyNovel');
+  };
+  const handleUserLikesOn = (): void => {
+    setIsMyCategoryOn('userLikes');
+  };
+  const handleMyworksOn = (): void => {
+    setIsMyCategoryOn('myWorks');
+  };
   return (
     <div>
       <div className="MypageWholeMainPageWrapper">
-        <MypageNav />
+        <MypageNav
+          isMyCategoryOn={isMyCategoryOn}
+          handleHistoryNovelOn={handleHistoryNovelOn}
+          handleUserLikesOn={handleUserLikesOn}
+          handleMyworksOn={handleMyworksOn}
+        />
+        {isMyCategoryOn === 'historyNovel' ? (
+          <HistoryNovel />
+        ) : isMyCategoryOn === 'userLikes' ? (
+          <UserLikes />
+        ) : isMyCategoryOn === 'myWorks' ? (
+          <MyWorks />
+        ) : (
+          <HistoryNovel />
+        )}
       </div>
-      <div className="emtyBox">
-        <div className="boxGrid">
-          <div className="emptyTitle">등록된 작품이 없습니다</div>
-          <div className="smallEmtyText">웹소설 작가의 꿈, 지금 펼쳐보세요</div>
-          <div className="emptyBtn">새 작품 쓰기</div>
-        </div>
-      </div>
-      <Footer />
     </div>
   );
 };
