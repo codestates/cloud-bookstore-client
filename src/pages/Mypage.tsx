@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import {
   withRouter,
-  BrowserRouter,
-  Link,
   Route,
   Switch,
+  RouteComponentProps,
 } from 'react-router-dom';
 import '../css/Mypage.css';
 import '../css/MypageNav.css';
+
 import MyWorks from './myCategotyComponents/MyWorks';
 import HistoryNovel from './myCategotyComponents/HistoryNovel';
 import UserLikes from './myCategotyComponents/UserLikes';
+import MakeNovel from './myCategotyComponents/MakeNovel';
 
-const Mypage: React.FC = () => {
+const Mypage: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
   const [isMyCategoryOn, setIsMyCategoryOn] = useState<string>('historyNovel');
   const handleHistoryNovelOn = (): void => {
     setIsMyCategoryOn('historyNovel');
@@ -24,57 +25,70 @@ const Mypage: React.FC = () => {
     setIsMyCategoryOn('myWorks');
   };
   return (
-    <BrowserRouter>
+    <div>
       <nav>
         <div className="mywholeCategoryNav">
           <div className="mycategoryNavInnerWrapper">
             <div className="mycategoryNavWrapper">
-              <Link
-                to="/mypage/recentNovelList"
-                role="button"
+              <div
+                role="presentation"
                 id={isMyCategoryOn === 'historyNovel' ? 'mycategoryOn' : ''}
                 className="mycategoryBtn"
-                onClick={handleHistoryNovelOn}
+                onClick={() => {
+                  handleHistoryNovelOn;
+                  {
+                    props.history.push('/main/mypage/recentNovelList');
+                  }
+                }}
                 onKeyPress={handleHistoryNovelOn}
               >
                 최근 본 작품
-              </Link>
-              <Link
-                to="/mypage/concernNovelList"
-                role="button"
+              </div>
+              <div
+                role="presentation"
                 id={isMyCategoryOn === 'userLikes' ? 'mycategoryOn' : ''}
                 className="mycategoryBtn"
-                onClick={handleUserLikesOn}
+                onClick={() => {
+                  handleUserLikesOn;
+                  {
+                    props.history.push('/main/mypage/concernNovelList');
+                  }
+                }}
                 onKeyPress={handleUserLikesOn}
               >
                 관심 작품
-              </Link>
-              <Link
-                to="/mypage/myNovelList"
-                role="button"
+              </div>
+              <div
+                role="presentation"
                 id={isMyCategoryOn === 'myWorks' ? 'mycategoryOn' : ''}
                 className="mycategoryBtn"
-                onClick={handleMyworksOn}
+                onClick={() => {
+                  handleMyworksOn;
+                  {
+                    props.history.push('/main/mypage/myNovelList');
+                  }
+                }}
                 onKeyPress={handleMyworksOn}
               >
                 내 작품
-              </Link>
+              </div>
             </div>
           </div>
         </div>
       </nav>
       <Switch>
-        <Route path="/mypage/recentNovelList">
-          <HistoryNovel />
-        </Route>
-        <Route path="/mypage/concernNovelList">
-          <UserLikes />
-        </Route>
-        <Route path="/mypage/myNovelList">
-          <MyWorks />
-        </Route>
+        <Route
+          path="/main/mypage/recentNovelList"
+          render={() => <HistoryNovel />}
+        />
+        <Route
+          path="/main/mypage/concernNovelList"
+          render={() => <UserLikes />}
+        />
+        <Route path="/main/mypage/myNovelList" render={() => <MyWorks />} />
+        <Route path="/main/mypage/makeNovel" render={() => <MakeNovel />} />
       </Switch>
-    </BrowserRouter>
+    </div>
   );
 };
 

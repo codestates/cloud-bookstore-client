@@ -143,11 +143,18 @@
 }
 /* 핸드폰 크기 */
 @media (max-width: 414px) {
+  .footer {
+    height: 700px;
+  }
   .footerLogoWrapper {
-    left: -147px;
+    justify-content: flex-start;
+    width: 30px;
+    top: -60px;
+    left: 0;
   }
   .footerInnerBox {
-    flex: 0 1 370px;
+    flex: 0 1 340px;
+    height: 500px;
   }
   .footerWrapper {
     position: relative;
@@ -156,7 +163,8 @@
   }
   .footerFirstLine {
     position: relative;
-    left: 23px;
+    top: 50px;
+    left: -50px;
     width: 200px;
   }
   .companyWrapper {
@@ -164,7 +172,13 @@
   }
   .footerSecondLine {
     position: relative;
+    top: 50px;
     left: -50px;
-    width: 360px;
+    width: 340px;
+    height: 480px;
+    display: flex;
+  }
+  .teamMembersWrapper {
+    width: 200px;
   }
 }

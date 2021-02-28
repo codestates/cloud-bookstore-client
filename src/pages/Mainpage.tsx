@@ -2,9 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import {
+  RouteComponentProps,
   withRouter,
-  BrowserRouter,
-  Link,
   Route,
   Switch,
 } from 'react-router-dom';
@@ -17,25 +16,24 @@ import UserNav from './UserNav';
 import Footer from './Footer';
 import Home from './Home';
 import Mypage from './Mypage';
+import HistoryNovel from './myCategotyComponents/HistoryNovel';
 
-const Mainpage: React.FC = () => {
-  // initialState가 존재하지 않으면 props로 내려주었을 때,
-  // state가 존재하지 않아 type error가 발생하여 interface를
-  // 작성할 수 없으므로 가짜 Data를 initialState로 넣음.
-  // 어차피 rendering 되자마자 덮어씌워 없어질 data임.
+const Mainpage: React.FC<RouteComponentProps> = (
+  props: RouteComponentProps,
+) => {
   const [novelData, setNovelData] = useState({
     ranking: [
       {
         id: 1,
-        title: '완벽한 그녀의 반전',
-        author: '코드스테이츠',
+        title: '완벽한 그녀의 반전이',
+        author: '솔직히 헬프데스크 너무느려요',
         cloud: 2000,
         userLike: 100,
         thumbnail:
           'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
         complete: false,
         createdAt: '2021-02-24T00:00:00.925Z',
-        updatedAt: '2021-02-26T00:00:00.925Z',
+        updatedAt: '2021-02-28T00:00:00.925Z',
       },
     ],
     fantasy: [
@@ -87,7 +85,6 @@ const Mainpage: React.FC = () => {
       setNovelData(res.data);
     });
   }, []);
-
   const [isCategoryOn, setIsCategoryOn] = useState<string>('home');
   const handleHomeOn = (): void => {
     setIsCategoryOn('home');
@@ -107,57 +104,60 @@ const Mainpage: React.FC = () => {
 
   return (
     <div>
-      <BrowserRouter>
-        <div className="wholeMainPageWrapper">
-          <UserNav />
+      <div className="wholeMainPageWrapper">
+        <UserNav />
+        <nav>
           <div className="wholeCategoryNav">
             <div className="categoryNavInnerWrapper">
               <div className="categoryNavWrapper">
-                <Link
-                  to="/home"
-                  role="button"
+                <div
                   id={isCategoryOn === 'home' ? 'categoryOn' : ''}
                   className="categoryBtn"
-                  onClick={handleHomeOn}
+                  onClick={() => {
+                    handleHomeOn;
+                    {
+                      props.history.push('/main/home');
+                    }
+                  }}
                 >
                   홈
-                </Link>
-                <Link
-                  to="/fantasy"
+                </div>
+                <div
                   role="button"
                   id={isCategoryOn === 'fantasy' ? 'categoryOn' : ''}
                   className="categoryBtn"
                   onClick={handleFantasyOn}
                 >
                   판타지
-                </Link>
-                <Link
-                  to="/martialArt"
+                </div>
+                <div
                   role="button"
                   id={isCategoryOn === 'martialArt' ? 'categoryOn' : ''}
                   className="categoryBtn"
                   onClick={handleMartialArtOn}
                 >
                   무협
-                </Link>
-                <Link
-                  to="/romance"
+                </div>
+                <div
                   role="button"
                   id={isCategoryOn === 'romance' ? 'categoryOn' : ''}
                   className="categoryBtn"
                   onClick={handleRomanceOn}
                 >
                   로맨스
-                </Link>
-                <Link
-                  to="/mypage/recentNovelList"
-                  role="button"
-                  id={isCategoryOn === 'mypage' ? 'categoryOn' : ''}
+                </div>
+                <div
+                  id={isCategoryOn === 'my' ? 'categoryOn' : ''}
                   className="categoryBtn"
-                  onClick={handleMyOn}
+                  onClick={() => {
+                    handleMyOn;
+                    {
+                      props.history.push('/main/mypage/recentNovelList');
+                    }
+                  }}
                 >
                   MY
-                </Link>
+                </div>
               </div>
               <form
                 className="navSearchWrapper"
@@ -176,17 +176,20 @@ const Mainpage: React.FC = () => {
               </form>
             </div>
           </div>
-          <Switch>
-            <Route path="/home">
-              <Home novelData={novelData} />
-            </Route>
-            <Route path="/mypage/recentNovelList">
-              <Mypage />
-            </Route>
-          </Switch>
-        </div>
-        <Footer />
-      </BrowserRouter>
+        </nav>
+        <Switch>
+          <Route
+            path="/main/home"
+            render={() => <Home novelData={novelData} />}
+          />
+          <Route path="/main/mypage" render={() => <Mypage />} />
+          <Route
+            path="/main/mypage/recentNovelList"
+            render={() => <HistoryNovel />}
+          />
+        </Switch>
+      </div>
+      <Footer />
     </div>
   );
 };
