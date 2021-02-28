@@ -132,10 +132,14 @@
     height: 140px;
   }
   .novelListContentWrapper {
+    width: 173px;
     margin: 5px 0 0 5px;
   }
   .countCloudText {
     font-size: 12px;
+  }
+  .novelListSubjectWrapper {
+    width: 173px;
   }
   .novelListSubject {
     margin: 1px 0 0 1px;
@@ -144,17 +148,20 @@
   }
   .novelListNewObject {
     position: relative;
-    left: -20px;
+    left: -5px;
     font-size: 11px;
     width: 43px;
     height: 15px;
+  }
+  .novelListAuthorFavWrapper {
+    width: 173px;
   }
   .novelListAuthor {
     font-size: 11px;
   }
   .novelListFavorite {
     position: relative;
-    left: -20px;
+    left: -6px;
     font-size: 10px;
   }
 }

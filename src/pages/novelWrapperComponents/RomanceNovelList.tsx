@@ -26,14 +26,14 @@ const getToday = (): string => {
 const NovelList: React.FC<RomanceDataProps> = (props: RomanceDataProps) => {
   const refinedupdatedAt: string = props.romanceData.updatedAt.slice(0, 10);
 
-  const sliceTitle: string = props.romanceData.title.slice(0, 6);
-  const sliceAuthor: string = props.romanceData.author.slice(0, 8);
+  const sliceTitle: string = props.romanceData.title.slice(0, 9);
+  const sliceAuthor: string = props.romanceData.author.slice(0, 12);
   const getBoolTitleLength = (): boolean => {
-    if (props.romanceData.title.length > 6) return true;
+    if (props.romanceData.title.length > 9) return true;
     else return false;
   };
   const getBoolAuthorLength = (): boolean => {
-    if (props.romanceData.author.length > 8) return true;
+    if (props.romanceData.author.length > 12) return true;
     else return false;
   };
 
