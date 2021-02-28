@@ -2,9 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import {
+  RouteComponentProps,
   withRouter,
-  BrowserRouter,
-  Link,
   Route,
   Switch,
 } from 'react-router-dom';
@@ -17,12 +16,11 @@ import UserNav from './UserNav';
 import Footer from './Footer';
 import Home from './Home';
 import Mypage from './Mypage';
+import HistoryNovel from './myCategotyComponents/HistoryNovel';
 
-const Mainpage: React.FC = () => {
-  // initialState가 존재하지 않으면 props로 내려주었을 때,
-  // state가 존재하지 않아 type error가 발생하여 interface를
-  // 작성할 수 없으므로 가짜 Data를 initialState로 넣음.
-  // 어차피 rendering 되자마자 덮어씌워 없어질 data임.
+const Mainpage: React.FC<RouteComponentProps> = (
+  props: RouteComponentProps,
+) => {
   const [novelData, setNovelData] = useState({
     ranking: [
       {
@@ -87,7 +85,6 @@ const Mainpage: React.FC = () => {
       setNovelData(res.data);
     });
   }, []);
-
   const [isCategoryOn, setIsCategoryOn] = useState<string>('home');
   const handleHomeOn = (): void => {
     setIsCategoryOn('home');
@@ -106,90 +103,94 @@ const Mainpage: React.FC = () => {
   };
 
   return (
-    <BrowserRouter>
-      <div>
-        <div className="wholeMainPageWrapper">
-          <UserNav />
-          <nav>
-            <div className="wholeCategoryNav">
-              <div className="categoryNavInnerWrapper">
-                <div className="categoryNavWrapper">
-                  <Link
-                    to="/home"
-                    role="button"
-                    id={isCategoryOn === 'home' ? 'categoryOn' : ''}
-                    className="categoryBtn"
-                    onClick={handleHomeOn}
-                  >
-                    홈
-                  </Link>
-                  <Link
-                    to="/fantasy"
-                    role="button"
-                    id={isCategoryOn === 'fantasy' ? 'categoryOn' : ''}
-                    className="categoryBtn"
-                    onClick={handleFantasyOn}
-                  >
-                    판타지
-                  </Link>
-                  <Link
-                    to="/martialArt"
-                    role="button"
-                    id={isCategoryOn === 'martialArt' ? 'categoryOn' : ''}
-                    className="categoryBtn"
-                    onClick={handleMartialArtOn}
-                  >
-                    무협
-                  </Link>
-                  <Link
-                    to="/romance"
-                    role="button"
-                    id={isCategoryOn === 'romance' ? 'categoryOn' : ''}
-                    className="categoryBtn"
-                    onClick={handleRomanceOn}
-                  >
-                    로맨스
-                  </Link>
-                  <Link
-                    to="/mypage/recentNovelList"
-                    role="button"
-                    id={isCategoryOn === 'mypage' ? 'categoryOn' : ''}
-                    className="categoryBtn"
-                    onClick={handleMyOn}
-                  >
-                    MY
-                  </Link>
-                </div>
-                <form
-                  className="navSearchWrapper"
-                  name="google_search"
-                  method="get"
-                  action="https://www.google.co.kr/search"
+    <div>
+      <div className="wholeMainPageWrapper">
+        <UserNav />
+        <nav>
+          <div className="wholeCategoryNav">
+            <div className="categoryNavInnerWrapper">
+              <div className="categoryNavWrapper">
+                <div
+                  id={isCategoryOn === 'home' ? 'categoryOn' : ''}
+                  className="categoryBtn"
+                  onClick={() => {
+                    handleHomeOn;
+                    {
+                      props.history.push('/main/home');
+                    }
+                  }}
                 >
-                  <input
-                    type="text"
-                    className="navSearchBox"
-                    placeholder="검색해주세요."
-                  />
-                  <div className="navSearchBtn">
-                    <MdSearch />
-                  </div>
-                </form>
+                  홈
+                </div>
+                <div
+                  role="button"
+                  id={isCategoryOn === 'fantasy' ? 'categoryOn' : ''}
+                  className="categoryBtn"
+                  onClick={handleFantasyOn}
+                >
+                  판타지
+                </div>
+                <div
+                  role="button"
+                  id={isCategoryOn === 'martialArt' ? 'categoryOn' : ''}
+                  className="categoryBtn"
+                  onClick={handleMartialArtOn}
+                >
+                  무협
+                </div>
+                <div
+                  role="button"
+                  id={isCategoryOn === 'romance' ? 'categoryOn' : ''}
+                  className="categoryBtn"
+                  onClick={handleRomanceOn}
+                >
+                  로맨스
+                </div>
+                <div
+                  id={isCategoryOn === 'my' ? 'categoryOn' : ''}
+                  className="categoryBtn"
+                  onClick={() => {
+                    handleMyOn;
+                    {
+                      props.history.push('/main/mypage/recentNovelList');
+                    }
+                  }}
+                >
+                  MY
+                </div>
               </div>
+              <form
+                className="navSearchWrapper"
+                name="google_search"
+                method="get"
+                action="https://www.google.co.kr/search"
+              >
+                <input
+                  type="text"
+                  className="navSearchBox"
+                  placeholder="검색해주세요."
+                />
+                <div className="navSearchBtn">
+                  <MdSearch />
+                </div>
+              </form>
             </div>
-          </nav>
-          <Switch>
-            <Route path="/home">
-              <Home novelData={novelData} />
-            </Route>
-            <Route path="/mypage/recentNovelList">
-              <Mypage />
-            </Route>
-          </Switch>
-        </div>
-        <Footer />
+          </div>
+        </nav>
+        <Switch>
+          <Route
+            path="/main/home"
+            render={() => <Home novelData={novelData} />}
+          />
+          <Route path="/main/mypage" render={() => <Mypage />} />
+          <Route
+            path="/main/mypage/recentNovelList"
+            render={() => <HistoryNovel />}
+          />
+        </Switch>
       </div>
-    </BrowserRouter>
+      <Footer />
+    </div>
   );
 };
 

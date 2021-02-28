@@ -178,4 +178,7 @@
     height: 480px;
     display: flex;
   }
+  .teamMembersWrapper {
+    width: 200px;
+  }
 }
