@@ -106,80 +106,78 @@ const Mainpage: React.FC = () => {
   };
 
   return (
-    <BrowserRouter>
-      <div>
+    <div>
+      <BrowserRouter>
         <div className="wholeMainPageWrapper">
           <UserNav />
-          <nav>
-            <div className="wholeCategoryNav">
-              <div className="categoryNavInnerWrapper">
-                <div className="categoryNavWrapper">
-                  <Link
-                    to="/home"
-                    role="button"
-                    id={isCategoryOn === 'home' ? 'categoryOn' : ''}
-                    className="categoryBtn"
-                    onClick={handleHomeOn}
-                  >
-                    홈
-                  </Link>
-                  <Link
-                    to="/fantasy"
-                    role="button"
-                    id={isCategoryOn === 'fantasy' ? 'categoryOn' : ''}
-                    className="categoryBtn"
-                    onClick={handleFantasyOn}
-                  >
-                    판타지
-                  </Link>
-                  <Link
-                    to="/martialArt"
-                    role="button"
-                    id={isCategoryOn === 'martialArt' ? 'categoryOn' : ''}
-                    className="categoryBtn"
-                    onClick={handleMartialArtOn}
-                  >
-                    무협
-                  </Link>
-                  <Link
-                    to="/romance"
-                    role="button"
-                    id={isCategoryOn === 'romance' ? 'categoryOn' : ''}
-                    className="categoryBtn"
-                    onClick={handleRomanceOn}
-                  >
-                    로맨스
-                  </Link>
-                  <Link
-                    to="/mypage/recentNovelList"
-                    role="button"
-                    id={isCategoryOn === 'mypage' ? 'categoryOn' : ''}
-                    className="categoryBtn"
-                    onClick={handleMyOn}
-                  >
-                    MY
-                  </Link>
-                </div>
-                <form
-                  className="navSearchWrapper"
-                  name="google_search"
-                  method="get"
-                  action="https://www.google.co.kr/search"
+          <div className="wholeCategoryNav">
+            <div className="categoryNavInnerWrapper">
+              <div className="categoryNavWrapper">
+                <Link
+                  to="/home"
+                  role="button"
+                  id={isCategoryOn === 'home' ? 'categoryOn' : ''}
+                  className="categoryBtn"
+                  onClick={handleHomeOn}
                 >
-                  <input
-                    type="text"
-                    className="navSearchBox"
-                    placeholder="검색해주세요."
-                  />
-                  <div className="navSearchBtn">
-                    <MdSearch />
-                  </div>
-                </form>
+                  홈
+                </Link>
+                <Link
+                  to="/fantasy"
+                  role="button"
+                  id={isCategoryOn === 'fantasy' ? 'categoryOn' : ''}
+                  className="categoryBtn"
+                  onClick={handleFantasyOn}
+                >
+                  판타지
+                </Link>
+                <Link
+                  to="/martialArt"
+                  role="button"
+                  id={isCategoryOn === 'martialArt' ? 'categoryOn' : ''}
+                  className="categoryBtn"
+                  onClick={handleMartialArtOn}
+                >
+                  무협
+                </Link>
+                <Link
+                  to="/romance"
+                  role="button"
+                  id={isCategoryOn === 'romance' ? 'categoryOn' : ''}
+                  className="categoryBtn"
+                  onClick={handleRomanceOn}
+                >
+                  로맨스
+                </Link>
+                <Link
+                  to="/mypage/recentNovelList"
+                  role="button"
+                  id={isCategoryOn === 'mypage' ? 'categoryOn' : ''}
+                  className="categoryBtn"
+                  onClick={handleMyOn}
+                >
+                  MY
+                </Link>
               </div>
+              <form
+                className="navSearchWrapper"
+                name="google_search"
+                method="get"
+                action="https://www.google.co.kr/search"
+              >
+                <input
+                  type="text"
+                  className="navSearchBox"
+                  placeholder="검색해주세요."
+                />
+                <div className="navSearchBtn">
+                  <MdSearch />
+                </div>
+              </form>
             </div>
-          </nav>
+          </div>
           <Switch>
-            <Route path="/home" exact={true}>
+            <Route path="/home">
               <Home novelData={novelData} />
             </Route>
             <Route path="/mypage/recentNovelList">
@@ -188,8 +186,8 @@ const Mainpage: React.FC = () => {
           </Switch>
         </div>
         <Footer />
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 };
 
