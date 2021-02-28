@@ -26,14 +26,14 @@ const getToday = (): string => {
 const NovelList: React.FC<FantasyDataProps> = (props: FantasyDataProps) => {
   const refinedupdatedAt: string = props.fantasyData.updatedAt.slice(0, 10);
 
-  const sliceTitle: string = props.fantasyData.title.slice(0, 6);
-  const sliceAuthor: string = props.fantasyData.author.slice(0, 8);
+  const sliceTitle: string = props.fantasyData.title.slice(0, 9);
+  const sliceAuthor: string = props.fantasyData.author.slice(0, 12);
   const getBoolTitleLength = (): boolean => {
-    if (props.fantasyData.title.length > 6) return true;
+    if (props.fantasyData.title.length > 9) return true;
     else return false;
   };
   const getBoolAuthorLength = (): boolean => {
-    if (props.fantasyData.author.length > 8) return true;
+    if (props.fantasyData.author.length > 12) return true;
     else return false;
   };
 
