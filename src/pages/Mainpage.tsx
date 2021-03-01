@@ -19,15 +19,14 @@ import Mypage from './Mypage';
 import HistoryNovel from './myCategotyComponents/HistoryNovel';
 import Setting from './Setting';
 
-interface UserProps {
+interface mainPageProps extends RouteComponentProps {
   isLogin: boolean;
   toggleLogin: () => void;
   nickname: string;
   handleNickname: (nickname: string) => void;
-  RouteComponentProps: RouteComponentProps;
 }
 
-const Mainpage: React.FC<UserProps> = (props: UserProps) => {
+const Mainpage: React.FC<mainPageProps> = (props: mainPageProps) => {
   const [novelData, setNovelData] = useState({
     ranking: [
       {
@@ -128,7 +127,7 @@ const Mainpage: React.FC<UserProps> = (props: UserProps) => {
                   onClick={() => {
                     handleHomeOn;
                     {
-                      props.RouteComponentProps.history.push('/main/home');
+                      props.history.push('/main/home');
                     }
                   }}
                 >
@@ -164,9 +163,7 @@ const Mainpage: React.FC<UserProps> = (props: UserProps) => {
                   onClick={() => {
                     handleMyOn;
                     {
-                      props.RouteComponentProps.history.push(
-                        '/main/mypage/recentNovelList',
-                      );
+                      props.history.push('/main/mypage/recentNovelList');
                     }
                   }}
                 >

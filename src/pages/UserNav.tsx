@@ -1,10 +1,19 @@
+/* eslint-disable */
+
 import React, { useState } from 'react';
 import '../css/UserNav.css';
 //import { Link } from 'react-router-dom';
 
 import LoginModal from './modal/LoginModal';
 
-const UserNav: React.FC = () => {
+interface mainPageProps {
+  isLogin: boolean;
+  toggleLogin: () => void;
+  nickname: string;
+  handleNickname: (nickname: string) => void;
+}
+
+const UserNav: React.FC<mainPageProps> = (props: mainPageProps) => {
   const [loginModal, setLoginModal] = useState<boolean>(true);
   const handleLoginModalOn = (): void => {
     setLoginModal(!loginModal);
