@@ -20,3 +20,41 @@
       font-size: 64px;
       color: #ffffff;
     }
+
+@media (max-width: 878px) {
+  .coverText {
+    left: 7%
+  }
+  .coverText > p {
+    margin: 10px 0;
+    color: #ffffff;
+  }
+}
+@media (max-width: 768px) {
+  .coverText {
+    left: 7%;
+    width: 700px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 414px) {
+  .coverImg {
+    margin: 48px 0 0 0;
+    width: 100%;
+    height: 500px;
+    background-image: url('../../asset/landingpage/header.png');
+  }
+  .coverText {
+    width: 325px;
+    height: 500px;
+  }
+  .coverText > p {
+    margin: 5px 0;
+    font-size: 30px;
+    color: #ffffff;
+  }
+}

@@ -16,7 +16,7 @@
   background: #000000;
   display: flex;
   justify-content: center;
-  z-index: 2;
+  z-index: 3;
 }
 
   .landingNavBtnWrapper {
@@ -64,3 +64,17 @@
   #verticalLine3 {
     left: 75%;
   }
+
+@media (max-width: 1366px) {
+  .verticalLine {
+    height: 5000px;
+  }
+}
+@media (max-width: 768px) {
+  .verticalLine  {
+    display: none;
+  }
+  .landingNavBtnWrapper {
+    width: 85%;
+  }
+}

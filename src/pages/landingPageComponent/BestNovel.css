@@ -82,3 +82,90 @@
       overflow: auto;
       cursor: pointer;
     }
+
+@media (max-width: 768px) {
+  .wholeBestNovelWrapper {
+    height: 1520px;
+  }
+  .bestNovelText {
+    left: 7%;
+  }
+  .bestNovelContainer {
+    position: absolute;
+    top: 1550px;
+    width: 43%;
+    height: 900px;
+  }
+
+    #bestNovelContainer1 {
+      left: 7%;
+    }
+    #bestNovelContainer2 {
+      margin: 40px 0 0 0;
+      left: 50%;
+    }
+    #bestNovelContainer3 {
+      display: none;
+    }
+
+    .bestNovelThumb {
+      opacity: 1;
+      height: 460px;
+    }
+}
+
+@media (max-width: 414px) {
+  .wholeBestNovelWrapper {
+    width: 100%;
+    height: 2370px;
+  }
+  .bestNovelText {
+    width: 325px;
+    height: 200px;
+    margin: 90px 0 0 0;
+  }
+  .bestNovelText > p {
+    margin: 6px 0;
+    font-size: 30px;
+    color: #ffffff;
+  }
+  .bestNovelText > p:nth-child(2) {
+    margin: 9px 0;
+    font-weight: bold;
+  }
+  .bestNovelText > p:nth-child(3) {
+    width: 300px;
+    font-size: 20px;
+    line-height: 28px;
+    color: #9f9f9f;
+  }
+  #bestNovelContainer1 {
+    position: absolute;
+    top: 860px;
+    width: 86%;
+    height: 650px;
+  }
+  #bestNovelContainer2 {
+    position: absolute;
+    top: 1450px;
+    width: 86%;
+    height: 650px;
+    margin: 40px 0 0 0;
+    left: 7%;
+  }
+  #bestNovelContainer3 {
+    display: block;
+    position: absolute;
+    top: 2040px;
+    width: 86%;
+    height: 650px;
+    margin: 40px 0 0 0;
+    left: 7%;
+  }
+  .bestNovelThumb {
+    height: 400px;
+  }
+  .bestNovelDescription {
+    width: 100%;
+  }
+}
