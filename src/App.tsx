@@ -1,25 +1,22 @@
 /* eslint-disable */
-
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import axios from 'axios';
-
 import Landingpage from './pages/Landingpage';
 import Mainpage from './pages/Mainpage';
 import Home from './pages/Home';
+import Setting from './pages/Setting';
 
 const App: React.FC = () => {
-  const [isLogin, setIsLogin] = useState<boolean>(false);
+  const [isLogin, setIsLogin] = useState<boolean>(true);
   const toggleLogin = (): void => {
     setIsLogin(!isLogin);
   };
-
   const [nickname, setNickname] = useState<string>('paige');
   const handleNickname = (nickname: string): void => {
     setNickname(nickname);
   };
-
   const [novelData, setNovelData] = useState({
     ranking: [
       {
@@ -78,13 +75,11 @@ const App: React.FC = () => {
       },
     ],
   });
-
   useEffect(() => {
     axios.get('https://server.cloud-bookstore.com/novels').then((res) => {
       setNovelData(res.data);
     });
   }, []);
-
   return (
     <div className="wholeWrapper">
       <Switch>
@@ -113,9 +108,9 @@ const App: React.FC = () => {
             return <Redirect to="/landingpage" />;
           }}
         />
+        <Route path="/main/setting" render={() => <Setting />} />
       </Switch>
     </div>
   );
 };
-
 export default withRouter(App);
