@@ -22,7 +22,7 @@ const LoginModal: React.FC<Props> = (props: Props) => {
           <GoogleLogin
             className="googleLogin oauthLoginBox"
             clientId={
-              '620537129878-as1es65697f5g5n8olntfls9j5ea0v4g.apps.googleusercontent.com'
+              '122506589044-ef7mnhkbajtragmtqu5opd641t9la4ji.apps.googleusercontent.com'
             }
             onSuccess={console.log}
             onFailure={console.error}

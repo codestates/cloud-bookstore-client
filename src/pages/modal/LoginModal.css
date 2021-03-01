@@ -69,11 +69,20 @@
 
 .kakaoLogin {
   margin: 16px 0;
-  background-color: #3f1d1d;
+  border: none;
+  border-radius: 2px;
+  color: #ffffff00;
+  box-shadow: rgb(0 0 0 / 24%) 0px 2px 2px 0px, rgb(0 0 0 / 24%) 0px 0px 1px 0px;
+  background-image: url('../../asset/img/kakologo.svg');
 }
 
 .facebookLogin {
-  background-color: #4285f4;
+  color: #ffffff00;
+  border: none;
+  border-radius: 2px;
+  box-shadow: rgb(0 0 0 / 24%) 0px 2px 2px 0px, rgb(0 0 0 / 24%) 0px 0px 1px 0px;
+  background-image: url('../../asset/img/facebooklogo.svg');
+  background-size: 100% 100%
 }
 
 /* 애매한 크기 */
@@ -85,7 +94,7 @@
     left: 0;
     right: 0;
     width: 360px;
-    height: 380px;
+    height: 390px;
   }
   .mdClose {
     margin: auto;
@@ -118,7 +127,7 @@
     left: 0;
     right: 0;
     width: 360px;
-    height: 380px;
+    height: 385px;
   }
   .mdClose {
     margin: auto;
@@ -151,7 +160,7 @@
     left: 0;
     right: 0;
     width: 300px;
-    height: 310px;
+    height: 325px;
   }
   .mdClose {
     margin: auto;
@@ -203,12 +212,12 @@
     left: 0;
     right: 0;
     width: 210px;
-    height: 220px;
+    height: 245px;
   }
   .mdClose {
     margin: auto;
     top: 0;
-    bottom: 12rem;
+    bottom: 13.5rem;
     left: 11.5rem;
     right: 0;
   }
