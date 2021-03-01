@@ -9,7 +9,7 @@ import Home from './pages/Home';
 import Setting from './pages/Setting';
 
 const App: React.FC = () => {
-  const [isLogin, setIsLogin] = useState<boolean>(true);
+  const [isLogin, setIsLogin] = useState<boolean>(false);
   const toggleLogin = (): void => {
     setIsLogin(!isLogin);
   };
