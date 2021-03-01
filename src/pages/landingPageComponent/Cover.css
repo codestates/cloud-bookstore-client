@@ -39,6 +39,11 @@
     flex-direction: column;
     justify-content: center;
   }
+  .coverText > p {
+    margin: 5px 0;
+    font-size: 58px;
+    color: #ffffff;
+  }
 }
 
 @media (max-width: 414px) {
