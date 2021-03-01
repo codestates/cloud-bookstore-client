@@ -13,7 +13,7 @@ const App: React.FC = () => {
   const toggleLogin = (): void => {
     setIsLogin(!isLogin);
   };
-  const [nickname, setNickname] = useState<string>('paige');
+  const [nickname, setNickname] = useState<string>('');
   const handleNickname = (nickname: string): void => {
     setNickname(nickname);
   };
@@ -88,7 +88,7 @@ const App: React.FC = () => {
           path="/main"
           render={() => (
             <Mainpage
-              isLogin={isLogin}
+              isLogin={!isLogin}
               toggleLogin={toggleLogin}
               nickname={nickname}
               handleNickname={handleNickname}
