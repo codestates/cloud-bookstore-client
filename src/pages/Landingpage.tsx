@@ -6,6 +6,7 @@ import '../css/Landingpage.css';
 
 import Cover from './landingPageComponent/Cover';
 import BestNovel from './landingPageComponent/BestNovel';
+import WriteLure from './landingPageComponent/WriteLure';
 import Footer from './Footer';
 
 const Landingpage: React.FC = () => {
@@ -21,6 +22,7 @@ const Landingpage: React.FC = () => {
         </div>
         <Cover />
         <BestNovel />
+        <WriteLure />
         <div id="verticalLine1" className="verticalLine"></div>
         <div id="verticalLine2" className="verticalLine"></div>
         <div id="verticalLine3" className="verticalLine"></div>
