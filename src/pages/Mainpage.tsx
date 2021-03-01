@@ -1,5 +1,4 @@
 /* eslint-disable */
-
 import React, { useState, useEffect } from 'react';
 import {
   RouteComponentProps,
@@ -11,23 +10,20 @@ import '../css/Mainpage.css';
 import '../css/CategoryNav.css';
 import { MdSearch } from 'react-icons/md';
 import axios from 'axios';
-
 import UserNav from './UserNav';
 import Footer from './Footer';
 import Home from './Home';
 import Mypage from './Mypage';
 import HistoryNovel from './myCategotyComponents/HistoryNovel';
-import Setting from './Setting';
 
-interface UserProps {
+interface mainPageProps extends RouteComponentProps {
   isLogin: boolean;
   toggleLogin: () => void;
   nickname: string;
   handleNickname: (nickname: string) => void;
-  RouteComponentProps: RouteComponentProps;
 }
 
-const Mainpage: React.FC<UserProps> = (props: UserProps) => {
+const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
   const [novelData, setNovelData] = useState({
     ranking: [
       {
@@ -86,7 +82,6 @@ const Mainpage: React.FC<UserProps> = (props: UserProps) => {
       },
     ],
   });
-
   useEffect(() => {
     axios.get('https://server.cloud-bookstore.com/novels').then((res) => {
       setNovelData(res.data);
@@ -108,7 +103,6 @@ const Mainpage: React.FC<UserProps> = (props: UserProps) => {
   const handleMyOn = (): void => {
     setIsCategoryOn('mypage');
   };
-
   return (
     <div>
       <div className="wholeMainPageWrapper">
@@ -117,6 +111,9 @@ const Mainpage: React.FC<UserProps> = (props: UserProps) => {
           toggleLogin={props.toggleLogin}
           nickname={props.nickname}
           handleNickname={props.handleNickname}
+          history={props.history}
+          location={props.location}
+          match={props.match}
         />
         <nav>
           <div className="wholeCategoryNav">
@@ -128,7 +125,7 @@ const Mainpage: React.FC<UserProps> = (props: UserProps) => {
                   onClick={() => {
                     handleHomeOn;
                     {
-                      props.RouteComponentProps.history.push('/main/home');
+                      props.history.push('/main/home');
                     }
                   }}
                 >
@@ -164,9 +161,7 @@ const Mainpage: React.FC<UserProps> = (props: UserProps) => {
                   onClick={() => {
                     handleMyOn;
                     {
-                      props.RouteComponentProps.history.push(
-                        '/main/mypage/recentNovelList',
-                      );
+                      props.history.push('/main/mypage/recentNovelList');
                     }
                   }}
                 >
@@ -201,12 +196,10 @@ const Mainpage: React.FC<UserProps> = (props: UserProps) => {
             path="/main/mypage/recentNovelList"
             render={() => <HistoryNovel />}
           />
-          <Route path="/main/setting" render={() => <Setting />} />
         </Switch>
       </div>
       <Footer />
     </div>
   );
 };
-
-export default withRouter(Mainpage);
+export default withRouter(MainPage);
