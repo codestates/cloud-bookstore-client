@@ -1,383 +1,66 @@
-.wholeLandingWrapper {
-  width: 1920px;
+.landingBody {
   margin: 0 auto;
 }
-.threeLinesWrapper {
-  position: absolute;
-  width: 1919px;
+
+.wholeLandingPageWrapper {
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
-}
-.greyLine1,
-.greyLine2,
-.greyLine3 {
-  margin: 0;
-  padding: 0;
-  width: 1px;
-  height: 5166px;
-  opacity: 0.15;
-  background-color: #d8d8d8;
-  z-index: 1;
+  flex-flow: column wrap;
+  background-color: #1e2024;
 }
 
-.greyLine2 {
-  left: 50%;
-}
-
-.greyLine3 {
-  left: 75%;
-}
-
-.landingHeader {
-  height: 1010px;
-}
-
-.landingMenuBar{
-  position: Fixed;
-  top: 0;
-  left: 0;
-  width: 1920px;
+.landingNav {
+  position: fixed;
+  width: 100%;
   height: 48px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #000000;
-  z-index: 3;
-}
-
-.landingDummyDiv {
-  flex: 0 1 25%;
-}
-
-#landingDummyDiv3 {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.landingHeaderLogo,
-.landingHeaderStart {
-  flex: 0 1 480px;
-  width: 75px;
-  height: 24px;
-  /* margin: 0 10px; */
-  cursor: pointer;
-}
-
-.landingHeaderLogo {
-  background-image: url('../asset/landingpage/landingLogo.svg');
-}
-
-.landingHeaderStart {
-  font-size: 16px;
-  font-weight: bold;
-  color: #ffffff;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.landingHeaderContent{
-  height: 1020px;
-  background-image: url('../asset/landingpage/header.png');
+  background: #000000;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-.landingHeaderText {
-  width: 961px;
-  position: relative;
-  /* left: 477px;
-  top: 400px; */
-}
-
-.landingHeaderText > p {
-  margin: 16px 0;
-  font-size: 380%;
-  color: #ffffff;
-}
-
-.landingContent {
-  background-color: #1e2024;
-  height: 4145px;
-}
-
-.landingBestNovel {
-  height: 1730px;
-  margin: 0;
-}
-
-.landingBestNovelText,
-.landingWriteNovelText,
-.landingWatchFunctionText {
-  position: relative;
-  width: 460px;
-  height: 266px;
-  top: 153px;
-  left: 25%;
-}
-
-.landingWriteNovelText,
-.landingWatchFunctionText {
-  top: 0;
-}
-
-.LBNTbold > p,
-.LWNTbold > p,
-.LWFTbold > p {
-  margin: 10px 0;
-  color: #ffffff;
-  font-size: 64px;
-  font-weight: 300;
-}
-
-.LBNTbold > p:nth-last-child(1),
-.LWNTbold > p:nth-last-child(1),
-.LWFTbold > p:nth-last-child(1) {
-  font-weight: bold;
-}
-
-.LBNTlight,
-.LWNTlight {
-  margin: 30px 0 0 0;
-}
-
-.LBNTlight > p,
-.LWNTlight > p  {
-  margin: 10px 0;
-  color: #9f9f9f;
-  font-size: 24px;
-  font-weight: 400;
-}
-
-.LBNTbestNovelList {
-  /* border: 1px red solid; */
-  position: relative;
-  top: 235px;
-  left: 25%;
-  width: 1440px;
-  height: 1224px;
-  display: flex;
-}
-
-.LBNT1,
-.LBNT2,
-.LBNT3 { 
-  flex: 1 1 479px;
-  height: 992px;
-  cursor: pointer;
-}
-
-.LBNT2 {
-  margin-top: 80px;
-}
-
-.LBNT3 {
-  margin-top: 160px;
-}
-
-.LBNT1-thumb,
-.LBNT2-thumb,
-.LBNT3-thumb {
-  margin: 0;
-  width: 479px;
-  height: 693px;
-  opacity: 0.6;
-}
-
-.LBNT1-thumb:hover,
-.LBNT2-thumb:hover,
-.LBNT3-thumb:hover {
-  opacity: 1;
-}
-
-.LBNT1-thumb {
-  background-image: url('../asset/landingpage/fakeBest1.png');
-}
-.LBNT2-thumb {
-  background-image: url('../asset/landingpage/fakeBest2.png');
-}
-.LBNT3-thumb {
-  background-image: url('../asset/landingpage/fakeBest3.png');
-}
-
-.LBNT1-stamp,
-.LBNT2-stamp,
-.LBNT3-stamp {
-  position: relative;
-  top: 607px;
-  left: 411px;
-  width: 38px;
-  height: 54px;
-  background-image: url('../asset/landingpage/cloudStamp.svg');
-}
-
-.LBNT1-text,
-.LBNT2-text,
-.LBNT3-text {
-  margin: 24px 0 0 0;
-  width: 312px;
-  height: 275px;
-}
-
-.LBNT1-subject,
-.LBNT2-subject,
-.LBNT3-subject {
-  font-size: 24px;
-  font-weight: 500;
-  color: #ffffff;
-}
-
-.LBNT1-description,
-.LBNT2-description,
-.LBNT3-description {
-  font-size: 16px;
-  font-weight: 500;
-  color: #7e7e7e;
-}
-
-.landingWriteNovel {
-  height: 864px;
-}
-
-.landingWriteImg {
-  position: relative;
-  top: 62px;
-  left: 12.5%;
-  width: 1440px;
-  height: 524px;
-  background-image: url('../asset/landingpage/writeNovel.png');
-  display: flex;
-  justify-content: flex-end;
   z-index: 2;
 }
 
-.landingWriteLure {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+  .landingNavBtnWrapper {
+    width: 50%;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+    .logoBtn {
+      width: 75px;
+      height: 24px;
+      background-image: url('../asset/landingpage/landingLogo.svg');
+      cursor: pointer;
+    }
+
+    .goToMainBtn {
+      width: 59px;
+      height: 24px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+
+.verticalLine {
+  position: absolute;
+  margin: 48px 0 0 0;
+  width: 1px;
+  height: 5458px;
+  z-index: 1;
+  opacity: 0.15;
+  background-color: #d8d8d8;
 }
 
-.landingWriteLure > p {
-  margin: 10px 72px 0 0;
-  font-size: 24px;
-  font-weight: 300;
-  text-align: right;
-  color: #ffffff;
-}
-
-.landingWriteBtn {
-  display: flex;
-  margin: 18px 72px 72px 0;
-  padding: 0 14px;
-  width: 136px;
-  height: 36px;
-  font-size: 24px;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  color: #ffffff;
-  cursor: pointer;
-  opacity: 0.6;
-}
-
-.landingWriteBtn:hover {
-  opacity: 1;
-}
-
-.landingWatchFunction {
-  height: 1220;
-  margin: 152px 0 106px 0;
-}
-
-.LWFlist1 {
-  height: 480px;
-  display: flex;
-}
-.LWFlist2 {
-  height: 480px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.funcList {
-  width : 480px;
-  height: 480px;
-  background-image: url('../asset/landingpage/cloudBg.png');
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-#createNovelFun {
-  background-color: #19535b;
-}
-#readNovelFun {
-  background-color: #47878e;
-}
-#giveCloudFun {
-  background-color: #70a1a7;
-}
-#favoriteFun {
-  background-color: #175158;
-}
-#commentFun {
-  background-color: #397177;
-}
-#earnCloudFun {
-  background-color: #5b858a;
-}
-
-.funcLogoText {
-  width: 112px;
-  height: 200px;
-  margin: 0 40px 40px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.funcLogos {
-  width: 96px;
-  height: 96px;
-}
-
-#createLogo {
-  background-image: url('../asset/landingpage/bottom1.png');
-}
-#readLogo {
-  background-image: url('../asset/landingpage/bottom2.png');
-}
-#giveLogo {
-  height: 62.3px;
-  background-image: url('../asset/landingpage/bottom3.png');
-}
-#favoriteLogo {
-  background-image: url('../asset/landingpage/bottom4.png');
-}
-#commentLogo {
-  background-image: url('../asset/landingpage/bottom5.png');
-}
-#earnLogo {
-  background-image: url('../asset/landingpage/bottom6.png');
-}
-
-.funcTexts {
-  width: 151px;
-  height: 96px;
-}
-
-.funcTexts > p {
-  margin : 6px 0;
-  text-align: right;
-  font-size: 16px;
-  color: #ffffff;
-}
-
-.funcTexts > p:nth-child(1) {
-  margin: 14px 0;
-  font-size: 28px;
-  font-weight: 500;
-}
+  #verticalLine1 {
+    left: 25%;
+  }
+  #verticalLine2 {
+    left: 50%;
+  }
+  #verticalLine3 {
+    left: 75%;
+  }

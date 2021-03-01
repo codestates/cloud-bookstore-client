@@ -10,7 +10,7 @@
 .loginPopup {
   position: fixed;
   top: 282px;
-  left: 707px;
+  left: 500px;
   width: 480px;
   height: 405px;
   background: #ffffff;
@@ -22,7 +22,7 @@
 .mdClose {
   position: fixed;
   top: 298px;
-  left: 1147px;
+  left: 647px;
   width: 24px;
   height: 24px;
   cursor: pointer;
