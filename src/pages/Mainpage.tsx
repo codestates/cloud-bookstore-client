@@ -17,10 +17,17 @@ import Footer from './Footer';
 import Home from './Home';
 import Mypage from './Mypage';
 import HistoryNovel from './myCategotyComponents/HistoryNovel';
+import Setting from './Setting';
 
-const Mainpage: React.FC<RouteComponentProps> = (
-  props: RouteComponentProps,
-) => {
+interface UserProps {
+  isLogin: boolean;
+  toggleLogin: () => void;
+  nickname: string;
+  handleNickname: (nickname: string) => void;
+  RouteComponentProps: RouteComponentProps;
+}
+
+const Mainpage: React.FC<UserProps> = (props: UserProps) => {
   const [novelData, setNovelData] = useState({
     ranking: [
       {
@@ -105,7 +112,12 @@ const Mainpage: React.FC<RouteComponentProps> = (
   return (
     <div>
       <div className="wholeMainPageWrapper">
-        <UserNav />
+        <UserNav
+          isLogin={props.isLogin}
+          toggleLogin={props.toggleLogin}
+          nickname={props.nickname}
+          handleNickname={props.handleNickname}
+        />
         <nav>
           <div className="wholeCategoryNav">
             <div className="categoryNavInnerWrapper">
@@ -116,7 +128,7 @@ const Mainpage: React.FC<RouteComponentProps> = (
                   onClick={() => {
                     handleHomeOn;
                     {
-                      props.history.push('/main/home');
+                      props.RouteComponentProps.history.push('/main/home');
                     }
                   }}
                 >
@@ -152,7 +164,9 @@ const Mainpage: React.FC<RouteComponentProps> = (
                   onClick={() => {
                     handleMyOn;
                     {
-                      props.history.push('/main/mypage/recentNovelList');
+                      props.RouteComponentProps.history.push(
+                        '/main/mypage/recentNovelList',
+                      );
                     }
                   }}
                 >
@@ -187,6 +201,7 @@ const Mainpage: React.FC<RouteComponentProps> = (
             path="/main/mypage/recentNovelList"
             render={() => <HistoryNovel />}
           />
+          <Route path="/main/setting" render={() => <Setting />} />
         </Switch>
       </div>
       <Footer />

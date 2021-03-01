@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import '../css/UserNav.css';
+//import { Link } from 'react-router-dom';
 
 import LoginModal from './modal/LoginModal';
 
 const UserNav: React.FC = () => {
-  const [loginModal, setLoginModal] = useState<boolean>(false);
+  const [loginModal, setLoginModal] = useState<boolean>(true);
   const handleLoginModalOn = (): void => {
     setLoginModal(!loginModal);
   };
