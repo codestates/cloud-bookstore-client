@@ -54,10 +54,14 @@
       font-weight: 300;
     }
     .WriteLureBtn {
-      margin: 16px 0 80px 170px;
+      margin: 16px 0 80px 185px;
       width: 130px;
       text-align: center;
       font-size: 24px;
       font-weight: bold;
+      opacity: 0.6;
       cursor: pointer;
+    }
+    .WriteLureBtn:hover {
+      opacity: 1;
     }
