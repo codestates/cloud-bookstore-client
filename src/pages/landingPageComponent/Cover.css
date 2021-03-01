@@ -1,0 +1,22 @@
+.coverImg {
+  margin: 48px 0 0 0;
+  width: 100%;
+  height: 1000px;
+  background-image: url('../../asset/landingpage/header.png');
+}
+
+  .coverText {
+    position: absolute;
+    left: 25%;
+    width: 960px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+    .coverText > p {
+      margin: 13px 0;
+      font-size: 64px;
+      color: #ffffff;
+    }
