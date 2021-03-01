@@ -106,3 +106,67 @@
           #functionIcon6 {
             background-image: url('../../asset/landingpage/bottom6.png');
           }
+
+@media (max-width: 1366px) {
+  .wholeIntroFunctionWrapper {
+    height: 1166px;
+  }
+  .introFunctionBoxWrapper {
+    height: 720px;
+  }
+  .introFunctionBox {
+    height: 360px;
+  }
+}
+@media (max-width: 768px) {
+  .wholeIntroFunctionWrapper {
+    height: 1350px;
+  }
+  .introFunctionText {
+    left: 7%;
+  }
+  .introFunctionBoxWrapper {
+    height: 960px;
+  }
+  .introFunctionBox {
+    width: 42.5%;
+    height: 320px;
+  }
+  #introFunction1,
+  #introFunction3,
+  #introFunction5 {
+    margin: 0 0 0 7.5%;
+  }
+  #introFunction4 {
+    margin: 0;
+  }
+}
+@media (max-width: 414px) {
+  .wholeIntroFunctionWrapper {
+    height: 2200px;
+  }
+  .introFunctionText {
+    margin: 0;
+  }
+  .introFunctionText > p {
+    margin: 6px 0;
+    font-size: 30px;
+    color: #ffffff;
+  }
+  .introFunctionText > p:nth-child(2) {
+    margin: 9px 0;
+    font-weight: bold;
+  }
+  .introFunctionBoxWrapper {
+    top: 160px;
+  }
+  .introFunctionBox {
+    width: 85%;
+    height: 320px;
+  }
+  #introFunction2,
+  #introFunction4,
+  #introFunction6 {
+    margin: 0 0 0 7.5%;
+  }
+}
