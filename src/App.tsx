@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
@@ -12,7 +11,7 @@ const App: React.FC = () => {
   const toggleLogin = (): void => {
     setIsLogin(!isLogin);
   };
-  const [nickname, setNickname] = useState<string>('');
+  const [nickname, setNickname] = useState<string>('guest');
   const handleNickname = (nickname: string): void => {
     setNickname(nickname);
   };
@@ -87,7 +86,7 @@ const App: React.FC = () => {
           path="/main"
           render={() => (
             <MainPage
-              isLogin={!isLogin}
+              isLogin={isLogin}
               toggleLogin={toggleLogin}
               nickname={nickname}
               handleNickname={handleNickname}

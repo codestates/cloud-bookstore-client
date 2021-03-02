@@ -1,14 +1,81 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { RouteComponentProps, Switch, Route } from 'react-router-dom';
 import '../../css/SummaryBox.css';
 import DeductionHistory from './DeductionHistory';
 import CloudHistory from './CloudHistory';
+import axios from 'axios';
+
+interface accumulatedProps {
+  date: string;
+  cloud: number;
+}
+interface deductedProps {
+  title: { title: string };
+  episode: { id: number; title: string };
+  date: string;
+  cloud: number;
+}
 
 const SummaryBox: React.FC<RouteComponentProps> = (
   props: RouteComponentProps,
 ) => {
+  const [accumulatedClouds, setAccumulatedClouds] = useState<number>(0);
+  const [deductedClouds, setDeductedClouds] = useState<number>(0);
+
+  const [accumulatedHistories, setAccumulatedHistories] = useState([
+    {
+      date: '2021-02-27T13:15:10.779Z',
+      cloud: 3,
+    },
+  ]);
+  const [deductedHistories, setDeductedHistories] = useState([
+    {
+      title: {
+        title: '잊지마 4시1분',
+      },
+      episode: {
+        id: 1,
+        title: '어느 좋은 날',
+      },
+      date: '2021-02-26T10:22:50.676Z',
+      cloud: -1,
+    },
+  ]);
+
+  const handleAccumulatedCloud = axios
+    .get(
+      'http://server.cloud-bookstore.com:4000/setting/cloudhistory/accumulation',
+    )
+    .then((data) => data.data.data)
+    .then((data: accumulatedProps[]) => {
+      setAccumulatedHistories(data);
+      setAccumulatedClouds(data.reduce((acc, cur) => acc + cur.cloud, 0));
+    });
+  const handleDeductedCloud = axios
+    .get(
+      'http://server.cloud-bookstore.com:4000/setting/cloudhistory/deduction',
+    )
+    .then((data) => data.data.data)
+    .then((data: deductedProps[]) => {
+      setDeductedHistories(data);
+      setDeductedClouds(data.reduce((acc, cur) => acc + cur.cloud, 0));
+    });
+
+  // 날짜로 filter
+  const listAccumulated = (data: accumulatedProps[]) => {
+    setAccumulatedHistories(data);
+  };
+  const listDeducted = (data: deductedProps[]) => {
+    setDeductedHistories(data);
+  };
+
+  useEffect(() => {
+    handleAccumulatedCloud;
+    handleDeductedCloud;
+  }, []);
+
   return (
-    <>
+    <React.Fragment>
       <div className="summaryBox">
         <div className="userInfo">
           <div className="userLeftBox">
@@ -28,7 +95,7 @@ const SummaryBox: React.FC<RouteComponentProps> = (
                 구름 사용내역
               </div>
               <div className="cloudBox">
-                <div className="cloudNum">-123</div>
+                <div className="cloudNum">-{deductedClouds}</div>
                 <div className="cloudSVG" />
               </div>
             </div>
@@ -41,7 +108,7 @@ const SummaryBox: React.FC<RouteComponentProps> = (
                 구름 적립내역
               </div>
               <div className="cloudBox">
-                <div className="cloudNum">+123</div>
+                <div className="cloudNum">+{accumulatedClouds}</div>
                 <div className="cloudSVG" />
               </div>
             </div>
@@ -51,16 +118,26 @@ const SummaryBox: React.FC<RouteComponentProps> = (
       <Switch>
         <Route
           path="/main/setting"
-          render={() => <CloudHistory />}
+          render={() => (
+            <CloudHistory
+              accumulatedHistories={accumulatedHistories}
+              listAccumulated={listAccumulated}
+            />
+          )}
           exact={true}
         />
         <Route
           path="/main/setting/deduction"
-          render={() => <DeductionHistory />}
+          render={() => (
+            <DeductionHistory
+              deductedHistories={deductedHistories}
+              listDeducted={listDeducted}
+            />
+          )}
           exact={true}
         />
       </Switch>
-    </>
+    </React.Fragment>
   );
 };
 
