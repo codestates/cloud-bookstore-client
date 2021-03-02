@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import '../css/Landingpage.css';
+import '../css/LandingPage.css';
 
 import Cover from './landingPageComponent/Cover';
 import BestNovel from './landingPageComponent/BestNovel';
@@ -10,7 +10,7 @@ import WriteLure from './landingPageComponent/WriteLure';
 import IntroFunction from './landingPageComponent/IntroFunction';
 import Footer from './Footer';
 
-const Landingpage: React.FC = () => {
+const LandingPage: React.FC = () => {
   AOS.init();
   return (
     <div className="landingBody">
@@ -38,4 +38,4 @@ const Landingpage: React.FC = () => {
   );
 };
 
-export default withRouter(Landingpage);
+export default withRouter(LandingPage);

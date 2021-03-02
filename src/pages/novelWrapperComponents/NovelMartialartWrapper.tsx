@@ -17,11 +17,11 @@ interface MartialArtsDataProps {
   }[];
 }
 
-const NovelMartialartWrapper: React.FC<MartialArtsDataProps> = (
+const NovelMartialArtWrapper: React.FC<MartialArtsDataProps> = (
   props: MartialArtsDataProps,
 ) => {
   return (
-    <div id="novelMartialartWrapper" className="mainPageNovelWrapper">
+    <div id="novelMartialArtWrapper" className="mainPageNovelWrapper">
       <div className="mainNovelTextWrapper">
         <div className="mainNovelWrapperSubject">무협</div>
         <div className="mainNovelMoreView">더보기</div>
@@ -35,4 +35,4 @@ const NovelMartialartWrapper: React.FC<MartialArtsDataProps> = (
   );
 };
 
-export default NovelMartialartWrapper;
+export default NovelMartialArtWrapper;

@@ -49,10 +49,15 @@ const SummaryBox: React.FC<RouteComponentProps> = (
         </div>
       </div>
       <Switch>
-        <Route path="/main/setting" render={() => <CloudHistory />} />
+        <Route
+          path="/main/setting"
+          render={() => <CloudHistory />}
+          exact={true}
+        />
         <Route
           path="/main/setting/deduction"
           render={() => <DeductionHistory />}
+          exact={true}
         />
       </Switch>
     </>

@@ -8,10 +8,10 @@ import {
 import '../css/Mypage.css';
 import '../css/MypageNav.css';
 
-import MyWorks from './myCategotyComponents/MyWorks';
-import HistoryNovel from './myCategotyComponents/HistoryNovel';
-import UserLikes from './myCategotyComponents/UserLikes';
-import MakeNovel from './myCategotyComponents/MakeNovel';
+import MyWorks from './myCategoryComponents/MyWorks';
+import HistoryNovel from './myCategoryComponents/HistoryNovel';
+import UserLikes from './myCategoryComponents/UserLikes';
+import MakeNovel from './myCategoryComponents/MakeNovel';
 
 const Mypage: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
   const [isMyCategoryOn, setIsMyCategoryOn] = useState<string>(
