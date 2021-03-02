@@ -17,8 +17,12 @@ const Landingpage: React.FC = () => {
       <div className="wholeLandingPageWrapper">
         <div className="landingNav">
           <div className="landingNavBtnWrapper">
-            <div className="logoBtn"></div>
-            <div className="goToMainBtn">소설읽기</div>
+            <a href="http://cloud-bookstore.com/landingpage">
+              <div className="logoBtn"></div>
+            </a>
+            <a href="http://cloud-bookstore.com/main/home">
+              <div className="goToMainBtn">소설읽기</div>
+            </a>
           </div>
         </div>
         <Cover />
