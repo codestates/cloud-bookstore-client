@@ -1,17 +1,22 @@
-/* eslint-disable */ // 현재 setIsLogin이 사용되지 않아 lint에 걸림
-
+/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import axios from 'axios';
-
 import Landingpage from './pages/Landingpage';
 import Mainpage from './pages/Mainpage';
 import Home from './pages/Home';
+import Setting from './pages/Setting';
 
 const App: React.FC = () => {
-  const [isLogin, setIsLogin] = useState<boolean>(true);
-
+  const [isLogin, setIsLogin] = useState<boolean>(false);
+  const toggleLogin = (): void => {
+    setIsLogin(!isLogin);
+  };
+  const [nickname, setNickname] = useState<string>('');
+  const handleNickname = (nickname: string): void => {
+    setNickname(nickname);
+  };
   const [novelData, setNovelData] = useState({
     ranking: [
       {
@@ -70,18 +75,26 @@ const App: React.FC = () => {
       },
     ],
   });
-
   useEffect(() => {
     axios.get('https://server.cloud-bookstore.com/novels').then((res) => {
       setNovelData(res.data);
     });
   }, []);
-
   return (
     <div className="wholeWrapper">
       <Switch>
         <Route path="/landingpage" render={() => <Landingpage />} />
-        <Route path="/main" render={() => <Mainpage />} />
+        <Route
+          path="/main"
+          render={() => (
+            <Mainpage
+              isLogin={!isLogin}
+              toggleLogin={toggleLogin}
+              nickname={nickname}
+              handleNickname={handleNickname}
+            />
+          )}
+        />
         <Route
           path="/main/home"
           render={() => <Home novelData={novelData} />}
@@ -95,9 +108,9 @@ const App: React.FC = () => {
             return <Redirect to="/landingpage" />;
           }}
         />
+        <Route path="/main/setting" render={() => <Setting />} />
       </Switch>
     </div>
   );
 };
-
 export default withRouter(App);

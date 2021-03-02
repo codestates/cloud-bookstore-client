@@ -1,0 +1,172 @@
+.wholeIntroFunctionWrapper {
+  width: 100%;
+  height: 1466px;
+}
+
+  .introFunctionText {
+    position: absolute;
+    left: 25%;
+    margin: 0;
+  }
+
+    .introFunctionText > p {
+      margin: 0;
+      font-size: 64px;
+      font-weight: 300;
+      color: #ffffff;
+    }
+    .introFunctionText > p:nth-child(2) {
+      margin: 13px 0;
+      font-weight: bold;
+    }
+    .introFunctionText > p:nth-child(3) {
+      width: 364px;
+      font-size: 24px;
+      line-height: 35px;
+      color: #9f9f9f;
+    }
+
+  .introFunctionBoxWrapper {
+    position: relative;
+    top: 256px;
+    height: 960px;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+    .introFunctionBox {
+      width: 25%;
+      height: 480px;
+      background-image: url('../../asset/landingpage/cloudBg.png');
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+      #introFunction1 {
+        background-color: #19535b;
+      }
+      #introFunction2 {
+        background-color: #47878e;
+      }
+      #introFunction3 {
+        background-color: #70a1a7;
+      }
+      #introFunction4 {
+        background-color: #175158;
+        margin: 0 0 0 25%;
+      }
+      #introFunction5 {
+        background-color: #397177;
+      }
+      #introFunction6 {
+        background-color: #5b858a;
+      }
+
+        .introFunctionInnerIcon {
+          margin: 0 40px 0 0;
+          width: 96px;
+          height: 96px;
+        }
+        .introFunctionInnerText {
+          margin: 0 40px 40px 0;
+        }
+
+          .introFunctionInnerText > p {
+            margin: 5px 0;
+            font-size: 16px;
+            font-weight: normal;
+            color: #ffffff;
+            text-align: right;
+          }
+          .introFunctionInnerText > p:nth-child(1) {
+            margin: 10px 0;
+            font-size: 28px;
+            font-weight: 500;
+          }
+
+          #functionIcon1 {
+            background-image: url('../../asset/landingpage/bottom1.png');
+          }
+          #functionIcon2 {
+            background-image: url('../../asset/landingpage/bottom2.png');
+          }
+          #functionIcon3 {
+            margin-bottom: 16px;
+            height: 63px;
+            background-image: url('../../asset/landingpage/bottom3.png');
+          }
+          #functionIcon4 {
+            background-image: url('../../asset/landingpage/bottom4.png');
+          }
+          #functionIcon5 {
+            background-image: url('../../asset/landingpage/bottom5.png');
+          }
+          #functionIcon6 {
+            background-image: url('../../asset/landingpage/bottom6.png');
+          }
+
+@media (max-width: 1366px) {
+  .wholeIntroFunctionWrapper {
+    height: 1166px;
+  }
+  .introFunctionBoxWrapper {
+    height: 720px;
+  }
+  .introFunctionBox {
+    height: 360px;
+  }
+}
+@media (max-width: 768px) {
+  .wholeIntroFunctionWrapper {
+    height: 1350px;
+  }
+  .introFunctionText {
+    left: 7%;
+  }
+  .introFunctionBoxWrapper {
+    height: 960px;
+  }
+  .introFunctionBox {
+    width: 42.5%;
+    height: 320px;
+  }
+  #introFunction1,
+  #introFunction3,
+  #introFunction5 {
+    margin: 0 0 0 7.5%;
+  }
+  #introFunction4 {
+    margin: 0;
+  }
+}
+@media (max-width: 414px) {
+  .wholeIntroFunctionWrapper {
+    height: 2200px;
+  }
+  .introFunctionText {
+    margin: 0;
+  }
+  .introFunctionText > p {
+    margin: 6px 0;
+    font-size: 30px;
+    color: #ffffff;
+  }
+  .introFunctionText > p:nth-child(2) {
+    margin: 9px 0;
+    font-weight: bold;
+  }
+  .introFunctionBoxWrapper {
+    top: 160px;
+  }
+  .introFunctionBox {
+    width: 85%;
+    height: 320px;
+  }
+  #introFunction2,
+  #introFunction4,
+  #introFunction6 {
+    margin: 0 0 0 7.5%;
+  }
+}

@@ -1,5 +1,4 @@
 /* eslint-disable */
-
 import React, { useState, useEffect } from 'react';
 import {
   RouteComponentProps,
@@ -11,16 +10,20 @@ import '../css/Mainpage.css';
 import '../css/CategoryNav.css';
 import { MdSearch } from 'react-icons/md';
 import axios from 'axios';
-
 import UserNav from './UserNav';
 import Footer from './Footer';
 import Home from './Home';
 import Mypage from './Mypage';
 import HistoryNovel from './myCategotyComponents/HistoryNovel';
 
-const Mainpage: React.FC<RouteComponentProps> = (
-  props: RouteComponentProps,
-) => {
+interface mainPageProps extends RouteComponentProps {
+  isLogin: boolean;
+  toggleLogin: () => void;
+  nickname: string;
+  handleNickname: (nickname: string) => void;
+}
+
+const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
   const [novelData, setNovelData] = useState({
     ranking: [
       {
@@ -79,7 +82,6 @@ const Mainpage: React.FC<RouteComponentProps> = (
       },
     ],
   });
-
   useEffect(() => {
     axios.get('https://server.cloud-bookstore.com/novels').then((res) => {
       setNovelData(res.data);
@@ -101,11 +103,18 @@ const Mainpage: React.FC<RouteComponentProps> = (
   const handleMyOn = (): void => {
     setIsCategoryOn('mypage');
   };
-
   return (
     <div>
       <div className="wholeMainPageWrapper">
-        <UserNav />
+        <UserNav
+          isLogin={props.isLogin}
+          toggleLogin={props.toggleLogin}
+          nickname={props.nickname}
+          handleNickname={props.handleNickname}
+          history={props.history}
+          location={props.location}
+          match={props.match}
+        />
         <nav>
           <div className="wholeCategoryNav">
             <div className="categoryNavInnerWrapper">
@@ -193,5 +202,4 @@ const Mainpage: React.FC<RouteComponentProps> = (
     </div>
   );
 };
-
-export default withRouter(Mainpage);
+export default withRouter(MainPage);
