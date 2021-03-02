@@ -87,9 +87,9 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
       setNovelData(res.data);
     });
   }, []);
-  const [isCategoryOn, setIsCategoryOn] = useState<string>('home');
+  const [isCategoryOn, setIsCategoryOn] = useState<string>('/main/home');
   const handleHomeOn = (): void => {
-    setIsCategoryOn('home');
+    setIsCategoryOn('/main/home');
   };
   const handleFantasyOn = (): void => {
     setIsCategoryOn('fantasy');
@@ -101,7 +101,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     setIsCategoryOn('romance');
   };
   const handleMyOn = (): void => {
-    setIsCategoryOn('mypage');
+    setIsCategoryOn('/main/mypage/recentNovelList');
   };
   return (
     <div>
@@ -120,13 +120,11 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
             <div className="categoryNavInnerWrapper">
               <div className="categoryNavWrapper">
                 <div
-                  id={isCategoryOn === 'home' ? 'categoryOn' : ''}
+                  id={isCategoryOn === '/main/home' ? 'categoryOn' : ''}
                   className="categoryBtn"
                   onClick={() => {
-                    handleHomeOn;
-                    {
-                      props.history.push('/main/home');
-                    }
+                    handleHomeOn();
+                    props.history.push('/main/home');
                   }}
                 >
                   홈
@@ -156,13 +154,15 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                   로맨스
                 </div>
                 <div
-                  id={isCategoryOn === 'my' ? 'categoryOn' : ''}
+                  id={
+                    isCategoryOn === '/main/mypage/recentNovelList'
+                      ? 'categoryOn'
+                      : ''
+                  }
                   className="categoryBtn"
                   onClick={() => {
-                    handleMyOn;
-                    {
-                      props.history.push('/main/mypage/recentNovelList');
-                    }
+                    handleMyOn();
+                    props.history.push('/main/mypage/recentNovelList');
                   }}
                 >
                   MY
