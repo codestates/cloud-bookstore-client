@@ -19,6 +19,7 @@ const UserNav: React.FC<userNavProps> = (props: userNavProps) => {
   const handleSetting = (): void => {
     props.history.push('/main/setting');
   };
+
   return (
     <div className="WholeUserNav">
       <div className="userNavGreyUnderLine">

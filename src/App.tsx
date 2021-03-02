@@ -6,7 +6,6 @@ import axios from 'axios';
 import Landingpage from './pages/Landingpage';
 import Mainpage from './pages/Mainpage';
 import Home from './pages/Home';
-import Setting from './pages/Setting';
 
 const App: React.FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(false);
@@ -108,7 +107,6 @@ const App: React.FC = () => {
             return <Redirect to="/landingpage" />;
           }}
         />
-        <Route path="/main/setting" render={() => <Setting />} />
       </Switch>
     </div>
   );

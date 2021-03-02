@@ -15,6 +15,7 @@ import Footer from './Footer';
 import Home from './Home';
 import Mypage from './Mypage';
 import HistoryNovel from './myCategotyComponents/HistoryNovel';
+import Setting from './Setting';
 
 interface mainPageProps extends RouteComponentProps {
   isLogin: boolean;
@@ -187,6 +188,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
           </div>
         </nav>
         <Switch>
+          <Route path="/main/setting" render={() => <Setting />} />
           <Route
             path="/main/home"
             render={() => <Home novelData={novelData} />}
