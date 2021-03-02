@@ -11,7 +11,7 @@
   margin: 36px 0 0 0;
   width: 943px;
   height: 303px;
-  background-image: url('../asset/mainpage/slider.png');
+  /* background-image: url('../asset/mainpage/slider.png'); */
 }
 
 .sliderText {
@@ -34,6 +34,36 @@
 
 .sliderText >p:nth-last-child(1) {
   font-weight: bold;
+}
+
+.slideImg1 {
+  background-image: url(../pages/sliderComponent/slider1.jpg);
+}
+.slideImg2 {
+  background-image: url(../pages/sliderComponent/slider2.jpg);
+}
+.slideImg3 {
+  background-image: url(../pages/sliderComponent/slider3.jpg);
+}
+.slideImg4 {
+  background-image: url(../pages/sliderComponent/slider4.jpg);
+}
+.slideImg5 {
+  background-image: url(../pages/sliderComponent/slider5.jpg);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: white !important;
+}
+
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 0.6;
+}
+.swiper-pagination-bullet-active {
+  background: white !important;
+  opacity: 1;
 }
 
 /* 컴퓨터에서 줄였을 때 */
@@ -61,5 +91,20 @@
   }
   .mainPageNovelWrapper {
     width: 370px;
+  }
+  .slideImg1 {
+    background-image: url(../pages/sliderComponent/slider1_m.jpg);
+  }
+  .slideImg2 {
+    background-image: url(../pages/sliderComponent/slider2_m.jpg);
+  }
+  .slideImg3 {
+    background-image: url(../pages/sliderComponent/slider3_m.jpg);
+  }
+  .slideImg4 {
+    background-image: url(../pages/sliderComponent/slider4_m.jpg);
+  }
+  .slideImg5 {
+    background-image: url(../pages/sliderComponent/slider5_m.jpg);
   }
 }
