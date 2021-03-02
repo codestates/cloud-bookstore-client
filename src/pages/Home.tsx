@@ -3,7 +3,7 @@ import '../css/Home.css';
 
 import NovelRankingWrapper from './novelWrapperComponents/NovelRankingWrapper';
 import NovelFantasyWrapper from './novelWrapperComponents/NovelFantasyWrapper';
-import NovelMartialartWrapper from './novelWrapperComponents/NovelMartialartWrapper';
+import NovelMartialArtWrapper from './novelWrapperComponents/NovelMartialArtWrapper';
 import NovelRomanceWrapper from './novelWrapperComponents/NovelRomanceWrapper';
 
 interface NovelDataProps {
@@ -70,7 +70,7 @@ const Home: React.FC<NovelDataProps> = (props: NovelDataProps) => {
       </div>
       <NovelRankingWrapper rankingData={props.novelData.ranking} />
       <NovelFantasyWrapper fantasyData={props.novelData.fantasy} />
-      <NovelMartialartWrapper martialArtsData={props.novelData.martialArts} />
+      <NovelMartialArtWrapper martialArtsData={props.novelData.martialArts} />
       <NovelRomanceWrapper romanceData={props.novelData.romance} />
     </div>
   );

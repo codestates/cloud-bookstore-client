@@ -2,7 +2,7 @@
   margin: 48px 0 0 0;
   width: 100%;
   height: 1000px;
-  background-image: url('../../asset/landingpage/header.png');
+  background-image: url('../../asset/landingPage/header.png');
 }
 
   .coverText {
@@ -51,7 +51,7 @@
     margin: 48px 0 0 0;
     width: 100%;
     height: 500px;
-    background-image: url('../../asset/landingpage/header.png');
+    background-image: url('../../asset/landingPage/header.png');
   }
   .coverText {
     width: 325px;

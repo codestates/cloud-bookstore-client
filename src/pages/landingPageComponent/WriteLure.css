@@ -33,7 +33,7 @@
     margin: 340px 0 0 0;
     width: 1440px;
     height: 524px;
-    background-image: url('../../asset/landingpage/writeNovel.png');
+    background-image: url('../../asset/landingPage/writeNovel.png');
     z-index: 2;
     display: flex;
     justify-content: flex-end;
@@ -127,7 +127,7 @@
     margin: 290px 0 0 0;
     width: 86%;
     height: 400px;
-    background-image: url('../../asset/landingpage/writeNovel_phone.png');
+    background-image: url('../../asset/landingPage/writeNovel_phone.png');
   }
   .WriteLureImgText {
     margin: 0;

@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import axios from 'axios';
-import Landingpage from './pages/Landingpage';
-import Mainpage from './pages/Mainpage';
+import LandingPage from './pages/LandingPage';
+import MainPage from './pages/MainPage';
 import Home from './pages/Home';
 
 const App: React.FC = () => {
@@ -82,11 +82,11 @@ const App: React.FC = () => {
   return (
     <div className="wholeWrapper">
       <Switch>
-        <Route path="/landingpage" render={() => <Landingpage />} />
+        <Route path="/LandingPage" render={() => <LandingPage />} />
         <Route
           path="/main"
           render={() => (
-            <Mainpage
+            <MainPage
               isLogin={isLogin}
               toggleLogin={toggleLogin}
               nickname={nickname}
@@ -104,7 +104,7 @@ const App: React.FC = () => {
             if (isLogin) {
               return <Redirect to="/main/home" />;
             }
-            return <Redirect to="/landingpage" />;
+            return <Redirect to="/LandingPage" />;
           }}
         />
       </Switch>

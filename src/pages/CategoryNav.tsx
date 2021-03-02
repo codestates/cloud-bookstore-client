@@ -6,7 +6,7 @@ interface categoryOnProps {
   isCategoryOn: string;
   handleHomeOn(): void;
   handleFantasyOn(): void;
-  handleMartialartOn(): void;
+  handleMartialArtOn(): void;
   handleRomanceOn(): void;
   handleMyOn(): void;
 }
@@ -41,8 +41,8 @@ const CategoryNav: React.FC<categoryOnProps> = (props: categoryOnProps) => {
             tabIndex={0}
             id={props.isCategoryOn === 'martialart' ? 'categoryOn' : ''}
             className="categoryBtn"
-            onClick={props.handleMartialartOn}
-            onKeyPress={props.handleMartialartOn}
+            onClick={props.handleMartialArtOn}
+            onKeyPress={props.handleMartialArtOn}
           >
             무협
           </div>

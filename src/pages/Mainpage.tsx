@@ -6,7 +6,7 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import '../css/Mainpage.css';
+import '../css/MainPage.css';
 import '../css/CategoryNav.css';
 import { MdSearch } from 'react-icons/md';
 import axios from 'axios';
@@ -14,7 +14,7 @@ import UserNav from './UserNav';
 import Footer from './Footer';
 import Home from './Home';
 import Mypage from './Mypage';
-import HistoryNovel from './myCategotyComponents/HistoryNovel';
+import HistoryNovel from './myCategoryComponents/HistoryNovel';
 import Setting from './Setting';
 
 interface mainPageProps extends RouteComponentProps {
