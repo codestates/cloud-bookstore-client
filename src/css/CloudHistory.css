@@ -1,0 +1,117 @@
+.calendarBtn {
+  background: #f3f3f4;
+  background-image: url('../asset/settingpage/Calendar.svg');
+  background-repeat: no-repeat;
+  background-position: 16px center;
+  width: 170px;
+  height: 40px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  padding-left: 45px;
+  color: #9292a7;
+  font-weight: 400;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.cloudHistory{
+  height: 1588px;
+  width: 943px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cloudHistoryTitle{
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.cloudHistoryLists{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d8d8d8;
+  padding: 24px;
+}
+
+.cloudLists{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d8d8d8;
+  padding: 7px;
+}
+
+.leftSideDetails{
+  display: flex;
+  align-items: center;
+}
+
+.accumulation{
+  border: 1px solid #2b79fe;
+  border-radius: 100%;
+  color: #2b79fe;
+  font-weight: 900;
+  margin-right: 16px;
+  width: 82px;
+  height: 82px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cloudDate{
+  font-size: 14px;
+  color: #7e7e7e;
+  margin-bottom: 4px;
+}
+
+.cloudInfo{
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.cloudCounts{
+  display: flex;
+  align-items: center;
+  color: #2b79fe;
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.blueCloud{
+  background-image: url('../asset/settingpage/cloud-blue.svg');
+  height: 15px;
+  width: 23px;
+  margin-left: 8px;
+  background-repeat: no-repeat;
+}
+
+/* 컴퓨터에서 줄였을 때 */
+@media (max-width: 943px) {
+  .userInfo,
+  .cloudLists,
+  .cloudHistoryLists {
+    width: 704px;
+  }
+}
+
+/* 아이패드 크기 */
+@media (max-width: 767px) {
+  .userInfo,
+  .cloudLists,
+  .cloudHistoryLists{
+    width: 469px;
+  }
+}
+
+/* 스마트폰(max) 크기 */
+@media (max-width: 414px) {
+  .userInfo,
+  .cloudLists,
+  .cloudHistoryLists {
+    width: 370px;
+  }
+}

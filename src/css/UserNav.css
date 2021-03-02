@@ -54,7 +54,7 @@
   }
 }
 /* 아이패드 크기 */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .WholeUserNav,
   .userNavGreyUnderLine {
     width: 469px;

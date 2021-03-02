@@ -188,7 +188,16 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
           </div>
         </nav>
         <Switch>
-          <Route path="/main/setting" render={() => <Setting />} />
+          <Route
+            path="/main/setting"
+            render={() => (
+              <Setting
+                history={props.history}
+                location={props.location}
+                match={props.match}
+              />
+            )}
+          />
           <Route
             path="/main/home"
             render={() => <Home novelData={novelData} />}
