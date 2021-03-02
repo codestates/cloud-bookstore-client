@@ -1,12 +1,12 @@
 .react-calendar {
   position: absolute;
   left: 56.3%;
-  top: 45%;
+  top: 50%;
   width: 350px;
   max-width: 100%;
   background: white;
   border-radius: 5px;
-  box-shadow: 0 0 18px 0 rgba(87, 45, 127, 0.47);
+  box-shadow: 0 0 18px rgb(0, 109, 118, .47);
   font-family: 'Roboto', sans-serif;
   line-height: 1.125em;
 }
@@ -119,4 +119,40 @@
 }
 .react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #e6e6e6;
+}
+
+/* 컴퓨터에서 줄였을 때 */
+@media (max-width: 943px) {
+  .react-calendar {
+    position: absolute;
+    left: 56.3%;
+    top: 50%;
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .react-calendar {
+    position: absolute;
+    left: 56.3%;
+    top: 42%;
+    width: 300px;
+  }
+}
+
+@media (max-width: 763px) {
+  .react-calendar {
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    width: 300px;
+  }
+}
+
+@media (max-width: 414px) {
+  .react-calendar{
+    width: 250px;
+    left: 20%;
+    top: 65%;
+  }
 }
