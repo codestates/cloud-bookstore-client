@@ -4,6 +4,7 @@ import ModalCalendar from 'react-calendar';
 import '../../css/Calendar.css';
 // import moment from 'moment';
 import '../../css/CloudHistory.css';
+import '../../css/DeductionHistory.css';
 
 const DeductionHistory: React.FC = () => {
   const [calendarModal, setCalendarModal] = useState<boolean>(false);
@@ -35,15 +36,15 @@ const DeductionHistory: React.FC = () => {
       </div>
       <div className="cloudHistoryLists">
         <div className="leftSideDetails">
-          <div className="accumulation">적립</div>
+          <div className="deduction">사용</div>
           <div>
             <div className="cloudDate">2021.02.09</div>
-            <div className="cloudInfo">로그인 적립</div>
+            <div className="cloudInfo">작품 이름</div>
           </div>
         </div>
         <div className="cloudCounts">
-          <div className="plusCount">+ 3</div>
-          <div className="blueCloud" />
+          <div className="minusCount">- 1</div>
+          <div className="orangeCloud" />
         </div>
       </div>
     </div>

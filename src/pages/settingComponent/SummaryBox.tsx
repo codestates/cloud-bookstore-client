@@ -28,7 +28,7 @@ const SummaryBox: React.FC<RouteComponentProps> = (
                 구름 사용내역
               </div>
               <div className="cloudBox">
-                <div className="cloudNum">-0</div>
+                <div className="cloudNum">-123</div>
                 <div className="cloudSVG" />
               </div>
             </div>
@@ -41,7 +41,7 @@ const SummaryBox: React.FC<RouteComponentProps> = (
                 구름 적립내역
               </div>
               <div className="cloudBox">
-                <div className="cloudNum">+0</div>
+                <div className="cloudNum">+123</div>
                 <div className="cloudSVG" />
               </div>
             </div>

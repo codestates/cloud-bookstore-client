@@ -88,30 +88,3 @@
   margin-left: 8px;
   background-repeat: no-repeat;
 }
-
-/* 컴퓨터에서 줄였을 때 */
-@media (max-width: 943px) {
-  .userInfo,
-  .cloudLists,
-  .cloudHistoryLists {
-    width: 704px;
-  }
-}
-
-/* 아이패드 크기 */
-@media (max-width: 767px) {
-  .userInfo,
-  .cloudLists,
-  .cloudHistoryLists{
-    width: 469px;
-  }
-}
-
-/* 스마트폰(max) 크기 */
-@media (max-width: 414px) {
-  .userInfo,
-  .cloudLists,
-  .cloudHistoryLists {
-    width: 370px;
-  }
-}

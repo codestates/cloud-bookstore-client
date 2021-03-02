@@ -13,7 +13,7 @@ import axios from 'axios';
 import UserNav from './UserNav';
 import Footer from './Footer';
 import Home from './Home';
-import Mypage from './Mypage';
+import Mypage from './MyPage';
 import HistoryNovel from './myCategoryComponents/HistoryNovel';
 import Setting from './Setting';
 

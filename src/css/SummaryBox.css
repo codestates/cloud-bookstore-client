@@ -76,3 +76,76 @@
   height: 31px;
   width: 48px;
 }
+
+/* 컴퓨터에서 줄였을 때 */
+@media (max-width: 943px) {
+  .userInfo{
+    width: 704px;
+  }
+}
+
+/* 아이패드 크기 */
+@media (max-width: 767px) {
+  .userInfo{
+    width: 600px;
+    margin: 0px 20px;
+  }
+  .userIcon{
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .userIcon{
+    display: none;
+  }
+  .userInfo{
+    width: 350px;
+  }
+  .changeNickname{
+    width: 100px;
+    font-size: 12px;
+  }
+  .totalCloudTitle{
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .cloudNum{
+    font-size:35px;
+  }
+  .totalAccumulated{
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+  .userRightBox{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* 스마트폰(max) 크기 */
+@media (max-width: 414px) {
+  .userIcon{
+    display: none;
+  }
+  .userInfo{
+    width: 350px;
+  }
+  .changeNickname{
+    width: 100px;
+    font-size: 12px;
+  }
+  .totalCloudTitle{
+    font-size: 15px;
+  }
+  .cloudNum{
+    font-size:35px;
+  }
+  .totalAccumulated{
+    margin-right: 0px;
+  }
+  .userRightBox{
+    display: flex;
+    flex-direction: column;
+  }
+}
