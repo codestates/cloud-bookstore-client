@@ -95,6 +95,7 @@
   }
 }
 
+/* 아이패드에서 핸드폰으로 가는 도중*/
 @media (max-width: 650px) {
   .userIcon{
     display: none;
