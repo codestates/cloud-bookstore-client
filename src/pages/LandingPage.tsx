@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import '../css/Landingpage.css';
+import '../css/LandingPage.css';
 
 import Cover from './landingPageComponent/Cover';
 import BestNovel from './landingPageComponent/BestNovel';
