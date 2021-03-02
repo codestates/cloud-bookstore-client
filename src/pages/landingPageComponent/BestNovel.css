@@ -54,15 +54,15 @@
     }
 
       #bestNovelThumb1 {
-        background-image: url('../../asset/landingPage/fakeBest1.png');
+        background-image: url('../../asset/landingpage/fakeBest1.png');
       }
       #bestNovelThumb2 {
         margin: 80px 0 0 0;
-        background-image: url('../../asset/landingPage/fakeBest2.png');
+        background-image: url('../../asset/landingpage/fakeBest2.png');
       }
       #bestNovelThumb3 {
         margin: 160px 0 0 0;
-        background-image: url('../../asset/landingPage/fakeBest3.png');
+        background-image: url('../../asset/landingpage/fakeBest3.png');
       }
 
     .bestNovelTitle {

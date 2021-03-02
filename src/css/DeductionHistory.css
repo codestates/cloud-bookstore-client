@@ -1,0 +1,24 @@
+.deduction{
+  border: 1px solid #d0800d;
+  border-radius: 100%;
+  color: #d0800d;
+  font-weight: 900;
+  margin-right: 16px;
+  width: 82px;
+  height: 82px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.minusCount{
+  color: #d0800d;
+}
+
+.orangeCloud{
+  background-image: url('../asset/settingpage/cloud-orange.svg');
+  height: 15px;
+  width: 23px;
+  margin-left: 8px;
+  background-repeat: no-repeat;
+}

@@ -60,6 +60,14 @@
     width: 469px;
   }
 }
+@media (max-width: 470px) {
+  .WholeUserNav,
+  .userNavGreyUnderLine {
+    width: 370px;
+  }
+}
+
+
 /* 스마트폰(max) 크기 */
 @media (max-width: 414px) {
   .WholeUserNav,
