@@ -87,7 +87,7 @@ const App: React.FC = () => {
           path="/main"
           render={() => (
             <Mainpage
-              isLogin={!isLogin}
+              isLogin={isLogin}
               toggleLogin={toggleLogin}
               nickname={nickname}
               handleNickname={handleNickname}
