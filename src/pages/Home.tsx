@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/Home.css';
 
+import HomeSlider from './sliderComponent/HomeSlider';
 import NovelRankingWrapper from './novelWrapperComponents/NovelRankingWrapper';
 import NovelFantasyWrapper from './novelWrapperComponents/NovelFantasyWrapper';
 import NovelMartialArtWrapper from './novelWrapperComponents/NovelMartialArtWrapper';
@@ -59,14 +60,15 @@ const Home: React.FC<NovelDataProps> = (props: NovelDataProps) => {
   return (
     <div className="mainpageContentWrapper">
       <div className="sliderWrapper">
-        <div className="sliderText">
+        <HomeSlider />
+        {/* <div className="sliderText">
           <p>
             <span>나는</span>
             <span> 내일</span>
           </p>
           <p>어제의</p>
           <p>너와 만난다</p>
-        </div>
+        </div> */}
       </div>
       <NovelRankingWrapper rankingData={props.novelData.ranking} />
       <NovelFantasyWrapper fantasyData={props.novelData.fantasy} />
