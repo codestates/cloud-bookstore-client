@@ -5,11 +5,23 @@ import './LoginModal.css';
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
 import KaKaoLogin from 'react-kakao-login';
+import axios from 'axios';
 
 // 부모로부터 받아오는 함수 등은 무조건 interface로 정의해야 오류가 나지 않는다.
 interface Props {
   handleLoginModalOn: () => void;
 }
+
+const handleLogin = (oauth: string, data: any) => {
+  console.log(oauth, data);
+  // axios.post(
+  //   'https://server.cloud-bookstore.com/login',
+  //   { oauth, data },
+  //   { headers: { 'Content-Type': 'application/json' } },
+  // );
+};
+
+const handleError = () => {};
 
 const LoginModal: React.FC<Props> = (props: Props) => {
   return (
@@ -31,24 +43,23 @@ const LoginModal: React.FC<Props> = (props: Props) => {
                 disabled={renderProps.disabled}
               ></button>
             )}
-            onSuccess={console.log}
-            onFailure={console.error}
+            onSuccess={(data) => handleLogin('google', data)}
+            onFailure={handleError}
             cookiePolicy={'single_host_origin'}
           />
           <KaKaoLogin
             className="kakaoLogin oauthLoginBox"
             token={'d70c5c740eddb6109ed33a6fecbb1fd3'}
-            onSuccess={console.log}
-            onFail={console.error}
+            onSuccess={(data) => handleLogin('kakao', data)}
+            onFail={handleError}
             style={{}}
           />
           <FacebookLogin
             appId="348088729732348"
             autoLoad={false}
             fields="name,email,picture"
-            onClick={console.log}
             cssClass="facebookLogin oauthLoginBox"
-            callback={(response) => console.log(response)}
+            callback={(data) => handleLogin('facebook', data)}
           />
         </div>
       </div>
