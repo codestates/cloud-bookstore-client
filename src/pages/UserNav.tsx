@@ -16,6 +16,7 @@ const UserNav: React.FC<userNavProps> = (props: userNavProps) => {
   const handleLoginModalOn = (): void => {
     setLoginModal(!loginModal);
   };
+
   const handleSetting = (): void => {
     props.history.push('/main/setting');
   };

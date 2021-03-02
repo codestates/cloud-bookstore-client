@@ -1,0 +1,78 @@
+.summaryBox{
+  width: 100%;
+  background-color: #006d76;
+  height: 192px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 84px;
+}
+
+.userInfo{
+  width: 943px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+}
+
+.userLeftBox{
+  display: flex;
+  align-items: center;
+}
+
+.userIcon{
+  background-image: url('../asset/settingpage/account-circle.svg');
+  width: 78px;
+  height: 78px;
+  margin-right: 16px;
+}
+
+.nicknameTitle{
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.changeNickname{
+  font-size: 16px;
+  background-color: #2b79fe;
+  width: 133px;
+  height: 35px;
+  text-align:center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.userRightBox{
+  display: flex;
+}
+
+.totalAccumulated{
+  margin-right: 64px;
+}
+
+.totalCloudTitle{
+  font-size: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.cloudBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cloudNum{
+  font-weight: 900;
+  font-size: 50px;
+  margin-right: 8px;
+}
+
+.cloudSVG{
+  background-image: url('../asset/settingpage/cloud-white.svg');
+  height: 31px;
+  width: 48px;
+}
