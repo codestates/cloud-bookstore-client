@@ -14,15 +14,17 @@ import UserLikes from './myCategotyComponents/UserLikes';
 import MakeNovel from './myCategotyComponents/MakeNovel';
 
 const Mypage: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
-  const [isMyCategoryOn, setIsMyCategoryOn] = useState<string>('historyNovel');
+  const [isMyCategoryOn, setIsMyCategoryOn] = useState<string>(
+    '/main/mypage/recentNovelList',
+  );
   const handleHistoryNovelOn = (): void => {
-    setIsMyCategoryOn('historyNovel');
+    setIsMyCategoryOn('/main/mypage/recentNovelList');
   };
   const handleUserLikesOn = (): void => {
-    setIsMyCategoryOn('userLikes');
+    setIsMyCategoryOn('/main/mypage/concernNovelList');
   };
   const handleMyworksOn = (): void => {
-    setIsMyCategoryOn('myWorks');
+    setIsMyCategoryOn('/main/mypage/myNovelList');
   };
   return (
     <div>
@@ -32,13 +34,15 @@ const Mypage: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
             <div className="mycategoryNavWrapper">
               <div
                 role="presentation"
-                id={isMyCategoryOn === 'historyNovel' ? 'mycategoryOn' : ''}
+                id={
+                  isMyCategoryOn === '/main/mypage/recentNovelList'
+                    ? 'mycategoryOn'
+                    : ''
+                }
                 className="mycategoryBtn"
                 onClick={() => {
-                  handleHistoryNovelOn;
-                  {
-                    props.history.push('/main/mypage/recentNovelList');
-                  }
+                  handleHistoryNovelOn();
+                  props.history.push('/main/mypage/recentNovelList');
                 }}
                 onKeyPress={handleHistoryNovelOn}
               >
@@ -46,13 +50,15 @@ const Mypage: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
               </div>
               <div
                 role="presentation"
-                id={isMyCategoryOn === 'userLikes' ? 'mycategoryOn' : ''}
+                id={
+                  isMyCategoryOn === '/main/mypage/concernNovelList'
+                    ? 'mycategoryOn'
+                    : ''
+                }
                 className="mycategoryBtn"
                 onClick={() => {
-                  handleUserLikesOn;
-                  {
-                    props.history.push('/main/mypage/concernNovelList');
-                  }
+                  handleUserLikesOn();
+                  props.history.push('/main/mypage/concernNovelList');
                 }}
                 onKeyPress={handleUserLikesOn}
               >
@@ -60,13 +66,15 @@ const Mypage: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
               </div>
               <div
                 role="presentation"
-                id={isMyCategoryOn === 'myWorks' ? 'mycategoryOn' : ''}
+                id={
+                  isMyCategoryOn === '/main/mypage/myNovelList'
+                    ? 'mycategoryOn'
+                    : ''
+                }
                 className="mycategoryBtn"
                 onClick={() => {
-                  handleMyworksOn;
-                  {
-                    props.history.push('/main/mypage/myNovelList');
-                  }
+                  handleMyworksOn();
+                  props.history.push('/main/mypage/myNovelList');
                 }}
                 onKeyPress={handleMyworksOn}
               >
