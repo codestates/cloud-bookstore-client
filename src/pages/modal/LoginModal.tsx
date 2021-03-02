@@ -24,10 +24,16 @@ const LoginModal: React.FC<Props> = (props: Props) => {
             clientId={
               '122506589044-ef7mnhkbajtragmtqu5opd641t9la4ji.apps.googleusercontent.com'
             }
+            render={(renderProps) => (
+              <button
+                className="googleLogin oauthLoginBox"
+                onClick={renderProps.onClick}
+                disabled={renderProps.disabled}
+              ></button>
+            )}
             onSuccess={console.log}
             onFailure={console.error}
             cookiePolicy={'single_host_origin'}
-            style={{}}
           />
           <KaKaoLogin
             className="kakaoLogin oauthLoginBox"

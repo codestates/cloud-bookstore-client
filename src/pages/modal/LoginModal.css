@@ -26,8 +26,8 @@
   position: fixed;
   margin: auto;
   top: 0;
-  bottom: 21rem;
-  left: 26rem;
+  bottom: 360px;
+  left: 440px;
   right: 0;
   width: 24px;
   height: 24px;
@@ -63,6 +63,17 @@
   cursor: pointer;
 }
 
+.googleLogin{
+  border: none;
+  border-radius: 2px;
+  color: #ffffff00;
+  box-shadow: rgb(0 0 0 / 24%) 0px 2px 2px 0px, rgb(0 0 0 / 24%) 0px 0px 1px 0px;
+  background-image: url('../../asset/img/googlelogo.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .kakaoLogin {
   margin: 16px 0;
   border: none;
@@ -70,6 +81,9 @@
   color: #ffffff00;
   box-shadow: rgb(0 0 0 / 24%) 0px 2px 2px 0px, rgb(0 0 0 / 24%) 0px 0px 1px 0px;
   background-image: url('../../asset/img/kakologo.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .facebookLogin {
@@ -78,7 +92,9 @@
   border-radius: 2px;
   box-shadow: rgb(0 0 0 / 24%) 0px 2px 2px 0px, rgb(0 0 0 / 24%) 0px 0px 1px 0px;
   background-image: url('../../asset/img/facebooklogo.svg');
-  background-size: cover
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 /* 애매한 크기 */
@@ -95,8 +111,8 @@
   .mdClose {
     margin: auto;
     top: 0;
-    bottom: 21rem;
-    left: 20rem;
+    bottom: 350px;
+    left: 325px;
     right: 0;
   }
   .loginPopupLogo {
@@ -128,8 +144,8 @@
   .mdClose {
     margin: auto;
     top: 0;
-    bottom: 21rem;
-    left: 20rem;
+    bottom: 340px;
+    left: 320px;
     right: 0;
   }
   .loginPopupLogo {
@@ -161,8 +177,8 @@
   .mdClose {
     margin: auto;
     top: 0;
-    bottom: 17rem;
-    left: 16.5rem;
+    bottom: 280px;
+    left: 260px;
     right: 0;
   }
   .loginPopupLogo {
@@ -194,8 +210,8 @@
   .mdClose {
     margin: auto;
     top: 0;
-    bottom: 17rem;
-    left: 16.5rem;
+    bottom: 280px;
+    left: 260px;
     right: 0;
   }
 }
@@ -213,8 +229,8 @@
   .mdClose {
     margin: auto;
     top: 0;
-    bottom: 13.5rem;
-    left: 11.5rem;
+    bottom: 210px;
+    left: 180px;
     right: 0;
   }
   .loginPopupLogo {
