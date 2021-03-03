@@ -50,6 +50,11 @@ const NovelList: React.FC<FantasyDataProps> = (props: FantasyDataProps) => {
         ) : (
           <></>
         )}
+        {refinedupdatedAt === getToday() ? (
+          <div className="novelListNewObject">NEW</div>
+        ) : (
+          <></>
+        )}
       </div>
       <div className="novelListContentWrapper">
         <div className="countCloud">
@@ -64,11 +69,6 @@ const NovelList: React.FC<FantasyDataProps> = (props: FantasyDataProps) => {
               ? `${sliceTitle} ...`
               : props.fantasyData.title}
           </div>
-          {refinedupdatedAt === getToday() ? (
-            <div className="novelListNewObject">NEW</div>
-          ) : (
-            <></>
-          )}
         </div>
         <div className="novelListAuthorFavWrapper">
           <div className="novelListAuthor">

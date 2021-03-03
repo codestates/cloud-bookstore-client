@@ -68,7 +68,7 @@
 
 .novelListSubject {
   margin: 3px 0 0 0;
-  width: 126px;
+  width: 160px;
   height: 24px;
   font-size: 16px;
   font-weight: bold;
@@ -78,6 +78,8 @@
 }
 
 .novelListNewObject {
+  position: absolute;
+  margin: 12px 0 0 162px;
   border: 1px #2b79fe solid;
   border-radius: 11.5px;
   background-color: #2b79fe;
@@ -147,8 +149,7 @@
     font-size: 15px;
   }
   .novelListNewObject {
-    position: relative;
-    left: -5px;
+    left: -29px;
     font-size: 11px;
     width: 43px;
     height: 15px;

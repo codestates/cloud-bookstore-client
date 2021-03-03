@@ -29,7 +29,7 @@ const fakeCategorizedData = {
         '새침하게 흐린 품이 눈이 올 듯하더니 눈은 아니 오고 얼다가 만 비가 추적추적 내리는 날이었다.\r\n\n이날이야말로 동소문 안에서 인력거꾼 노릇을 하는 김첨지에게는 오래간만에도 닥친 운수 좋은 날...',
       cloud: 1,
       userLike: 0,
-      complete: false,
+      complete: true,
       thumbnail:
         'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
       createdAt: '2021-02-24T23:41:28.712Z',

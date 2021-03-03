@@ -1,6 +1,4 @@
-/* eslint-disable */
-
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import './NovelList.css';
 
 interface CategoryNovelProps {
@@ -56,6 +54,11 @@ const CategoryNovelList: React.FC<CategoryNovelProps> = (
         ) : (
           <></>
         )}
+        {refinedupdatedAt === getToday() ? (
+          <div className="novelListNewObject">NEW</div>
+        ) : (
+          <></>
+        )}
       </div>
       <div className="novelListContentWrapper">
         <div className="countCloud">
@@ -66,11 +69,6 @@ const CategoryNovelList: React.FC<CategoryNovelProps> = (
           <div className="novelListSubject">
             {getBoolTitleLength() ? `${sliceTitle} ...` : props.data.title}
           </div>
-          {refinedupdatedAt === getToday() ? (
-            <div className="novelListNewObject">NEW</div>
-          ) : (
-            <></>
-          )}
         </div>
         <div className="novelListAuthorFavWrapper">
           <div className="novelListAuthor">
