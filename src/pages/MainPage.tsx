@@ -15,6 +15,7 @@ import Footer from './Footer';
 import Home from './Home';
 import FantasyCategory from './mainCategoryComponents/fantasyCategoryComponents/FantasyCategory';
 import MartialArtsCategory from './mainCategoryComponents/martialArtsCategoryComponents/MartialArtsCategory';
+import RomanceCategory from './mainCategoryComponents/romanceCategoryComponents/RomanceCategory';
 import Mypage from './Mypage';
 import HistoryNovel from './myCategoryComponents/HistoryNovel';
 import Setting from './Setting';
@@ -141,7 +142,10 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                   role="button"
                   id={isCategoryOn === 'romance' ? 'categoryOn' : ''}
                   className="categoryBtn"
-                  onClick={handleRomanceOn}
+                  onClick={() => {
+                    handleRomanceOn();
+                    props.history.push('/main/romance');
+                  }}
                 >
                   로맨스
                 </div>
@@ -201,6 +205,10 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
           <Route
             path="/main/martialArts"
             render={() => <MartialArtsCategory />}
+          />
+          <Route
+            path="/main/romance"
+            render={() => <RomanceCategory />}
           />
           <Route path="/main/mypage" render={() => <Mypage />} />
           <Route
