@@ -25,7 +25,8 @@ const UserNav: React.FC<userNavProps> = (props: userNavProps) => {
   const handleLogout = (): void => {
     axios
       .get('https://server.cloud-bookstore.com/logout')
-      .then(() => props.toggleLogin());
+      .then(() => props.toggleLogin())
+      .then(() => props.history.push('/main/home'));
   };
 
   return (
