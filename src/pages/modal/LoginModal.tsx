@@ -8,22 +8,33 @@ import KaKaoLogin from 'react-kakao-login';
 import axios from 'axios';
 
 // 부모로부터 받아오는 함수 등은 무조건 interface로 정의해야 오류가 나지 않는다.
-interface Props {
+interface loginProps {
   handleLoginModalOn: () => void;
+  isLogin: boolean;
+  toggleLogin: () => void;
+  nickname: string;
+  handleNickname: (nickname: string) => void;
 }
-
-const handleLogin = (oauth: string, data: any) => {
-  console.log(oauth, data);
-  // axios.post(
-  //   'https://server.cloud-bookstore.com/login',
-  //   { oauth, data },
-  //   { headers: { 'Content-Type': 'application/json' } },
-  // );
-};
 
 const handleError = () => {};
 
-const LoginModal: React.FC<Props> = (props: Props) => {
+const LoginModal: React.FC<loginProps> = (props: loginProps) => {
+  const handleLogin = (oauth: string, data: any) => {
+    console.log(oauth, data);
+    axios
+      .post(
+        'https://server.cloud-bookstore.com/login',
+        { oauth, data },
+        { headers: { 'Content-Type': 'application/json' } },
+      )
+      .then((data) => data.data.data)
+      .then((data) => {
+        props.toggleLogin();
+        props.handleNickname(data.nickname);
+        props.handleLoginModalOn();
+      });
+  };
+
   return (
     <div className="wholeLoginModalWrapper">
       <div className="loginModalGreyBg"></div>

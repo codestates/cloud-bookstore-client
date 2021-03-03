@@ -18,14 +18,14 @@ const DeductedLists: React.FC<deductedProps> = (props: deductedProps) => {
           <div className="cloudDate">
             {props.deductedData.date.slice(0, 10)}
           </div>
-          <div className="cloudInfo">{props.deductedData.title}</div>
+          <div className="cloudInfo">{props.deductedData.title.title}</div>
           <div className="cloudEpisodeTitle">
             {props.deductedData.episode.title}
           </div>
         </div>
       </div>
       <div className="cloudCounts">
-        <div className="minusCount">- {props.deductedData.cloud}</div>
+        <div className="minusCount">{props.deductedData.cloud}</div>
         <div className="orangeCloud" />
       </div>
     </div>

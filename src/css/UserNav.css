@@ -30,6 +30,11 @@
   cursor: pointer;
 }
 
+.guestDetails{
+  display: flex;
+  font-size: 16px;
+}
+
 .loginBtn {
   width: 45px;
   height: 24px;
@@ -43,7 +48,12 @@
 }
 
 .nickname{
-  font-size: 16px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.logOut{
+  cursor: pointer;
 }
 
 /* 컴퓨터에서 줄였을 때 */
