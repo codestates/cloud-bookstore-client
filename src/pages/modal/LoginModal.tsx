@@ -60,7 +60,7 @@ const LoginModal: React.FC<loginProps> = (props: loginProps) => {
           />
           <KaKaoLogin
             className="kakaoLogin oauthLoginBox"
-            token={'d70c5c740eddb6109ed33a6fecbb1fd3'}
+            token={'f02b630af9cae0b281b13e8f6d1770cd'}
             onSuccess={(data) => handleLogin('kakao', data)}
             onFail={handleError}
             style={{}}
