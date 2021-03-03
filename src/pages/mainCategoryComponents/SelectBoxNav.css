@@ -1,0 +1,26 @@
+.selectBoxWrapper {
+  margin: 46px 0 0 0;
+  height: 34px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+  /* select box btn에 대한 부분들*/
+  .css-2b097c-container,
+  .css-yk16xz-control {
+    width: 114px;
+    height: 34px !important;
+  }
+  .css-tlfecz-indicatorContainer,
+  .css-1gtu0rj-indicatorContainer {
+    padding: 8px 0 !important;
+  }
+
+.categoryNovelListWrapper {
+  margin: 16px 0 0 0;
+  width: 943px;
+  display: inline-flex;
+  flex-flow: row wrap;
+  gap: 12px;
+  border: 1px blue solid;
+}

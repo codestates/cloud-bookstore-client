@@ -61,14 +61,6 @@ const Home: React.FC<NovelDataProps> = (props: NovelDataProps) => {
     <div className="mainpageContentWrapper">
       <div className="sliderWrapper">
         <HomeSlider />
-        {/* <div className="sliderText">
-          <p>
-            <span>나는</span>
-            <span> 내일</span>
-          </p>
-          <p>어제의</p>
-          <p>너와 만난다</p>
-        </div> */}
       </div>
       <NovelRankingWrapper rankingData={props.novelData.ranking} />
       <NovelFantasyWrapper fantasyData={props.novelData.fantasy} />

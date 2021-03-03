@@ -1,0 +1,12 @@
+.wholeFantasyCategoryWrapper {
+  width: 100%;
+  height: 1176px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.fantasyCategoryInnerWrapper {
+  width: 943px;
+  border: 1px red solid;
+}

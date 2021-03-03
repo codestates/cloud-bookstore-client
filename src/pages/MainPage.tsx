@@ -13,6 +13,7 @@ import axios from 'axios';
 import UserNav from './UserNav';
 import Footer from './Footer';
 import Home from './Home';
+import FantasyCategory from './mainCategoryComponents/fantasyCategoryComponents/FantasyCategory';
 import Mypage from './Mypage';
 import HistoryNovel from './myCategoryComponents/HistoryNovel';
 import Setting from './Setting';
@@ -180,7 +181,10 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                   role="button"
                   id={isCategoryOn === 'fantasy' ? 'categoryOn' : ''}
                   className="categoryBtn"
-                  onClick={handleFantasyOn}
+                  onClick={() => {
+                    handleFantasyOn();
+                    props.history.push('/main/fantasy');
+                  }}
                 >
                   판타지
                 </div>
@@ -248,6 +252,10 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
           <Route
             path="/main/home"
             render={() => <Home novelData={props.novelData} />}
+          />
+          <Route
+            path="/main/fantasy"
+            render={() => <FantasyCategory />}
           />
           <Route path="/main/mypage" render={() => <Mypage />} />
           <Route
