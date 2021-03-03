@@ -20,13 +20,10 @@ interface deductedProps {
 }
 
 const SummaryBox: React.FC<summaryProps> = (props: summaryProps) => {
-  const [accumulatedClouds, setAccumulatedClouds] = useState<number>(0);
-  const [deductedClouds, setDeductedClouds] = useState<number>(0);
-
   const [accumulatedHistories, setAccumulatedHistories] = useState([
     {
       date: '2021-02-27T13:15:10.779Z',
-      cloud: 3,
+      cloud: 10,
     },
   ]);
   const [deductedHistories, setDeductedHistories] = useState([
@@ -43,24 +40,28 @@ const SummaryBox: React.FC<summaryProps> = (props: summaryProps) => {
     },
   ]);
 
-  const handleAccumulatedCloud = axios
-    .get('https://server.cloud-bookstore.com/setting/cloudhistory/accumulation')
-    .then((data) => data.data.data)
-    .then((data: accumulatedProps[]) => {
-      // eslint-disable-next-line no-console
-      console.log(data);
-      setAccumulatedHistories(data);
-      setAccumulatedClouds(data.reduce((acc, cur) => acc + cur.cloud, 0));
-    });
-  const handleDeductedCloud = axios
-    .get('https://server.cloud-bookstore.com/setting/cloudhistory/deduction')
-    .then((data) => data.data.data)
-    .then((data: deductedProps[]) => {
-      // eslint-disable-next-line no-console
-      console.log(data);
-      setDeductedHistories(data);
-      setDeductedClouds(data.reduce((acc, cur) => acc + cur.cloud, 0));
-    });
+  const handleAccumulatedCloud = (): void => {
+    axios
+      .get(
+        'https://server.cloud-bookstore.com/setting/cloudhistory/accumulation',
+      )
+      .then((data) => data.data.data)
+      .then((data: accumulatedProps[]) => {
+        // eslint-disable-next-line no-console
+        console.log(data);
+        setAccumulatedHistories(data);
+      });
+  };
+  const handleDeductedCloud = (): void => {
+    axios
+      .get('https://server.cloud-bookstore.com/setting/cloudhistory/deduction')
+      .then((data) => data.data.data)
+      .then((data: deductedProps[]) => {
+        // eslint-disable-next-line no-console
+        console.log(data);
+        setDeductedHistories(data);
+      });
+  };
 
   // 날짜로 filter
   const listAccumulated = (data: accumulatedProps[]) => {
@@ -71,9 +72,9 @@ const SummaryBox: React.FC<summaryProps> = (props: summaryProps) => {
   };
 
   useEffect(() => {
-    handleAccumulatedCloud;
-    handleDeductedCloud;
-  }, [accumulatedHistories, deductedHistories]);
+    handleAccumulatedCloud();
+    handleDeductedCloud();
+  }, []);
 
   return (
     <>
@@ -96,7 +97,9 @@ const SummaryBox: React.FC<summaryProps> = (props: summaryProps) => {
                 구름 사용내역
               </div>
               <div className="cloudBox">
-                <div className="cloudNum">{deductedClouds}</div>
+                <div className="cloudNum">
+                  {deductedHistories.reduce((acc, cur) => acc + cur.cloud, 0)}
+                </div>
                 <div className="cloudSVG" />
               </div>
             </div>
@@ -109,7 +112,13 @@ const SummaryBox: React.FC<summaryProps> = (props: summaryProps) => {
                 구름 적립내역
               </div>
               <div className="cloudBox">
-                <div className="cloudNum">+{accumulatedClouds}</div>
+                <div className="cloudNum">
+                  +
+                  {accumulatedHistories.reduce(
+                    (acc, cur) => acc + cur.cloud,
+                    0,
+                  )}
+                </div>
                 <div className="cloudSVG" />
               </div>
             </div>

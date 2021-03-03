@@ -27,3 +27,11 @@
   margin-left: 8px;
   background-repeat: no-repeat;
 }
+
+.emptyCloudList{
+  font-size: 24px;
+  color: #c7c7c7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
