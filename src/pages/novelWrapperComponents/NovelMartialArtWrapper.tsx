@@ -24,7 +24,9 @@ const NovelMartialArtWrapper: React.FC<MartialArtsDataProps> = (
     <div id="novelMartialArtWrapper" className="mainPageNovelWrapper">
       <div className="mainNovelTextWrapper">
         <div className="mainNovelWrapperSubject">무협</div>
-        <div className="mainNovelMoreView">더보기</div>
+        <a href="http://cloud-bookstore.com/main/martialArts">
+          <div className="mainNovelMoreView">더보기</div>
+        </a>
       </div>
       <div className="mainNovelInnerWrapper">
         {props.martialArtsData.map((data) => (

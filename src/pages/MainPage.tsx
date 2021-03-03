@@ -14,6 +14,7 @@ import UserNav from './UserNav';
 import Footer from './Footer';
 import Home from './Home';
 import FantasyCategory from './mainCategoryComponents/fantasyCategoryComponents/FantasyCategory';
+import MartialArtsCategory from './mainCategoryComponents/martialArtsCategoryComponents/MartialArtsCategory';
 import Mypage from './Mypage';
 import HistoryNovel from './myCategoryComponents/HistoryNovel';
 import Setting from './Setting';
@@ -129,7 +130,10 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                   role="button"
                   id={isCategoryOn === 'martialArt' ? 'categoryOn' : ''}
                   className="categoryBtn"
-                  onClick={handleMartialArtOn}
+                  onClick={() => {
+                    handleMartialArtOn();
+                    props.history.push('/main/martialArts');
+                  }}
                 >
                   무협
                 </div>
@@ -193,6 +197,10 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
           <Route
             path="/main/fantasy"
             render={() => <FantasyCategory />}
+          />
+          <Route
+            path="/main/martialArts"
+            render={() => <MartialArtsCategory />}
           />
           <Route path="/main/mypage" render={() => <Mypage />} />
           <Route

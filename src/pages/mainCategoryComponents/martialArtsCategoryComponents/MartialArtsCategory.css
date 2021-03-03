@@ -1,0 +1,31 @@
+.wholeFantasyCategoryWrapper {
+  width: 943px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.fantasyCategoryInnerWrapper {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+/* 컴퓨터에서 줄였을 때 */
+@media (max-width: 943px) {
+  .wholeFantasyCategoryWrapper {
+    width: 704px;
+  }
+}
+/* 아이패드 크기 */
+@media (max-width: 767px) {
+  .wholeFantasyCategoryWrapper {
+    width: 469px;
+  }
+}
+/* 스마트폰(max) 크기 */
+@media (max-width: 414px) {
+  .wholeFantasyCategoryWrapper {
+    width: 370px;
+  }
+}
