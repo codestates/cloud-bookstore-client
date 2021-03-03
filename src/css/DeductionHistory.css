@@ -11,6 +11,11 @@
   align-items: center;
 }
 
+.cloudEpisodeTitle{
+  font-size: 14px;
+  margin-top: 4px;
+}
+
 .minusCount{
   color: #d0800d;
 }

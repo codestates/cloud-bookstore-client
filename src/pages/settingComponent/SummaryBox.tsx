@@ -43,18 +43,14 @@ const SummaryBox: React.FC<RouteComponentProps> = (
   ]);
 
   const handleAccumulatedCloud = axios
-    .get(
-      'http://server.cloud-bookstore.com:4000/setting/cloudhistory/accumulation',
-    )
+    .get('https://server.cloud-bookstore.com/setting/cloudhistory/accumulation')
     .then((data) => data.data.data)
     .then((data: accumulatedProps[]) => {
       setAccumulatedHistories(data);
       setAccumulatedClouds(data.reduce((acc, cur) => acc + cur.cloud, 0));
     });
   const handleDeductedCloud = axios
-    .get(
-      'http://server.cloud-bookstore.com:4000/setting/cloudhistory/deduction',
-    )
+    .get('https://server.cloud-bookstore.com/setting/cloudhistory/deduction')
     .then((data) => data.data.data)
     .then((data: deductedProps[]) => {
       setDeductedHistories(data);

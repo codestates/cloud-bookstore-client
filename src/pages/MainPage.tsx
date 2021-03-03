@@ -22,72 +22,118 @@ interface mainPageProps extends RouteComponentProps {
   toggleLogin: () => void;
   nickname: string;
   handleNickname: (nickname: string) => void;
+  novelData: {
+    ranking: {
+      id: number;
+      title: string;
+      author: string;
+      cloud: number;
+      userLike: number;
+      thumbnail: string;
+      complete: boolean;
+      createdAt: string;
+      updatedAt: string;
+    }[];
+    fantasy: {
+      id: number;
+      title: string;
+      author: string;
+      cloud: number;
+      userLike: number;
+      thumbnail: string;
+      complete: boolean;
+      createdAt: string;
+      updatedAt: string;
+    }[];
+    martialArts: {
+      id: number;
+      title: string;
+      author: string;
+      cloud: number;
+      userLike: number;
+      thumbnail: string;
+      complete: boolean;
+      createdAt: string;
+      updatedAt: string;
+    }[];
+    romance: {
+      id: number;
+      title: string;
+      author: string;
+      cloud: number;
+      userLike: number;
+      thumbnail: string;
+      complete: boolean;
+      createdAt: string;
+      updatedAt: string;
+    }[];
+  };
 }
 
 const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
-  const [novelData, setNovelData] = useState({
-    ranking: [
-      {
-        id: 1,
-        title: '완벽한 그녀의 반전이',
-        author: '솔직히 헬프데스크 너무느려요',
-        cloud: 2000,
-        userLike: 100,
-        thumbnail:
-          'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
-        complete: false,
-        createdAt: '2021-02-24T00:00:00.925Z',
-        updatedAt: '2021-02-28T00:00:00.925Z',
-      },
-    ],
-    fantasy: [
-      {
-        id: 1,
-        title: '플레이어스',
-        author: '코드스테이츠',
-        cloud: 2000,
-        userLike: 100,
-        thumbnail:
-          'https://user-images.githubusercontent.com/72306693/108984040-d6917a00-76d2-11eb-8d17-afbf800fba3d.png',
-        complete: true,
-        createdAt: '2021-02-24T00:00:00.925Z',
-        updatedAt: '2021-02-24T00:00:00.925Z',
-      },
-    ],
-    martialArts: [
-      {
-        id: 1,
-        title: '천상:강희 다시 태어나다',
-        author: '코드스테이츠',
-        cloud: 2000,
-        userLike: 100,
-        thumbnail:
-          'https://user-images.githubusercontent.com/72306693/108984040-d6917a00-76d2-11eb-8d17-afbf800fba3d.png',
-        complete: false,
-        createdAt: '2021-02-24T00:00:00.925Z',
-        updatedAt: '2021-02-24T00:00:00.925Z',
-      },
-    ],
-    romance: [
-      {
-        id: 1,
-        title: '선배 이것 좀 도와주세요',
-        author: '코드스테이츠',
-        cloud: 2000,
-        userLike: 100,
-        thumbnail:
-          'https://user-images.githubusercontent.com/72306693/108984040-d6917a00-76d2-11eb-8d17-afbf800fba3d.png',
-        complete: false,
-        createdAt: '2021-02-24T00:00:00.925Z',
-        updatedAt: '2021-02-24T00:00:00.925Z',
-      },
-    ],
-  });
-  useEffect(() => {
-    axios.get('https://server.cloud-bookstore.com/novels').then((res) => {
-      setNovelData(res.data);
-    });
-  }, []);
+  // const [novelData, setNovelData] = useState({
+  //   ranking: [
+  //     {
+  //       id: 1,
+  //       title: '완벽한 그녀의 반전이',
+  //       author: '솔직히 헬프데스크 너무느려요',
+  //       cloud: 2000,
+  //       userLike: 100,
+  //       thumbnail:
+  //         'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+  //       complete: false,
+  //       createdAt: '2021-02-24T00:00:00.925Z',
+  //       updatedAt: '2021-02-28T00:00:00.925Z',
+  //     },
+  //   ],
+  //   fantasy: [
+  //     {
+  //       id: 1,
+  //       title: '플레이어스',
+  //       author: '코드스테이츠',
+  //       cloud: 2000,
+  //       userLike: 100,
+  //       thumbnail:
+  //         'https://user-images.githubusercontent.com/72306693/108984040-d6917a00-76d2-11eb-8d17-afbf800fba3d.png',
+  //       complete: true,
+  //       createdAt: '2021-02-24T00:00:00.925Z',
+  //       updatedAt: '2021-02-24T00:00:00.925Z',
+  //     },
+  //   ],
+  //   martialArts: [
+  //     {
+  //       id: 1,
+  //       title: '천상:강희 다시 태어나다',
+  //       author: '코드스테이츠',
+  //       cloud: 2000,
+  //       userLike: 100,
+  //       thumbnail:
+  //         'https://user-images.githubusercontent.com/72306693/108984040-d6917a00-76d2-11eb-8d17-afbf800fba3d.png',
+  //       complete: false,
+  //       createdAt: '2021-02-24T00:00:00.925Z',
+  //       updatedAt: '2021-02-24T00:00:00.925Z',
+  //     },
+  //   ],
+  //   romance: [
+  //     {
+  //       id: 1,
+  //       title: '선배 이것 좀 도와주세요',
+  //       author: '코드스테이츠',
+  //       cloud: 2000,
+  //       userLike: 100,
+  //       thumbnail:
+  //         'https://user-images.githubusercontent.com/72306693/108984040-d6917a00-76d2-11eb-8d17-afbf800fba3d.png',
+  //       complete: false,
+  //       createdAt: '2021-02-24T00:00:00.925Z',
+  //       updatedAt: '2021-02-24T00:00:00.925Z',
+  //     },
+  //   ],
+  // });
+  // useEffect(() => {
+  //   axios.get('https://server.cloud-bookstore.com/novels').then((res) => {
+  //     setNovelData(res.data);
+  //   });
+  // }, []);
   const [isCategoryOn, setIsCategoryOn] = useState<string>('/main/home');
   const handleHomeOn = (): void => {
     setIsCategoryOn('/main/home');
@@ -200,7 +246,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
           />
           <Route
             path="/main/home"
-            render={() => <Home novelData={novelData} />}
+            render={() => <Home novelData={props.novelData} />}
           />
           <Route path="/main/mypage" render={() => <Mypage />} />
           <Route
