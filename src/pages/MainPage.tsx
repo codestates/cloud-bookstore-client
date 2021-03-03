@@ -188,7 +188,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
             render={() => (
               <Setting
                 nickname={props.nickname}
-                // handleNickname={props.handleNickname}
+                handleNickname={props.handleNickname}
                 history={props.history}
                 location={props.location}
                 match={props.match}
@@ -199,18 +199,12 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
             path="/main/home"
             render={() => <Home novelData={props.novelData} />}
           />
-          <Route
-            path="/main/fantasy"
-            render={() => <FantasyCategory />}
-          />
+          <Route path="/main/fantasy" render={() => <FantasyCategory />} />
           <Route
             path="/main/martialArts"
             render={() => <MartialArtsCategory />}
           />
-          <Route
-            path="/main/romance"
-            render={() => <RomanceCategory />}
-          />
+          <Route path="/main/romance" render={() => <RomanceCategory />} />
           <Route path="/main/mypage" render={() => <Mypage />} />
           <Route
             path="/main/mypage/recentNovelList"

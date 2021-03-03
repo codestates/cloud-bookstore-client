@@ -8,7 +8,8 @@ import ModalEditNickname from '../modal/ModalEditNickname';
 
 interface summaryProps extends RouteComponentProps {
   nickname: string;
-  // handleNickname: (nickname: string) => void;
+  // eslint-disable-next-line no-unused-vars
+  handleNickname: (nickname: string) => void;
 }
 interface accumulatedProps {
   date: string;
@@ -85,7 +86,11 @@ const SummaryBox: React.FC<summaryProps> = (props: summaryProps) => {
 
   return (
     <>
-      {nicknameModal === true ? <ModalEditNickname /> : <></>}
+      {nicknameModal === true ? (
+        <ModalEditNickname handleNickname={props.handleNickname} />
+      ) : (
+        <></>
+      )}
       <div className="summaryBox">
         <div className="userInfo">
           <div className="userLeftBox">
