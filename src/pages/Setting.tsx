@@ -5,6 +5,7 @@ import SummaryBox from './settingComponent/SummaryBox';
 
 interface settingProps extends RouteComponentProps {
   nickname: string;
+  // handleNickname: (nickname: string) => void;
 }
 const UserNav: React.FC<settingProps> = (props: settingProps) => {
   return (
@@ -14,6 +15,7 @@ const UserNav: React.FC<settingProps> = (props: settingProps) => {
         history={props.history}
         location={props.location}
         match={props.match}
+        // handleNickname={props.handleNickname}
       />
     </div>
   );
