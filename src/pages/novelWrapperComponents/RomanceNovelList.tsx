@@ -56,7 +56,7 @@ const NovelList: React.FC<RomanceDataProps> = (props: RomanceDataProps) => {
           <></>
         )}
       </div>
-      <div className="novelListContentWrapper">
+      <div className="homeNovelListContentWrapper">
         <div className="countCloud">
           <div className="countCloudText">
             누적구름 {props.romanceData.cloud}
@@ -64,13 +64,13 @@ const NovelList: React.FC<RomanceDataProps> = (props: RomanceDataProps) => {
           <div className="countCloudImg" />
         </div>
         <div className="novelListSubjectWrapper">
-          <div className="novelListSubject">
+          <div className="HomeNovelListSubject">
             {getBoolTitleLength()
               ? `${sliceTitle} ...`
               : props.romanceData.title}
           </div>
         </div>
-        <div className="novelListAuthorFavWrapper">
+        <div className="homeNovelListAuthorFavWrapper">
           <div className="novelListAuthor">
             {getBoolAuthorLength()
               ? `${sliceAuthor} ...`

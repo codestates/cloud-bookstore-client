@@ -56,7 +56,7 @@ const NovelList: React.FC<FantasyDataProps> = (props: FantasyDataProps) => {
           <></>
         )}
       </div>
-      <div className="novelListContentWrapper">
+      <div className="homeNovelListContentWrapper">
         <div className="countCloud">
           <div className="countCloudText">
             누적구름 {props.fantasyData.cloud}
@@ -64,13 +64,13 @@ const NovelList: React.FC<FantasyDataProps> = (props: FantasyDataProps) => {
           <div className="countCloudImg" />
         </div>
         <div className="novelListSubjectWrapper">
-          <div className="novelListSubject">
+          <div className="HomeNovelListSubject">
             {getBoolTitleLength()
               ? `${sliceTitle} ...`
               : props.fantasyData.title}
           </div>
         </div>
-        <div className="novelListAuthorFavWrapper">
+        <div className="homeNovelListAuthorFavWrapper">
           <div className="novelListAuthor">
             {getBoolAuthorLength()
               ? `${sliceAuthor} ...`

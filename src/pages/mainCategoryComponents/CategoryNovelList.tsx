@@ -30,10 +30,10 @@ const CategoryNovelList: React.FC<CategoryNovelProps> = (
 ) => {
   const refinedupdatedAt: string = props.data.updatedAt.slice(0, 10);
 
-  const sliceTitle: string = props.data.title.slice(0, 9);
+  const sliceTitle: string = props.data.title.slice(0, 13);
   const sliceAuthor: string = props.data.author.slice(0, 12);
   const getBoolTitleLength = (): boolean => {
-    if (props.data.title.length > 9) return true;
+    if (props.data.title.length > 13) return true;
     else return false;
   };
   const getBoolAuthorLength = (): boolean => {
@@ -54,16 +54,16 @@ const CategoryNovelList: React.FC<CategoryNovelProps> = (
         ) : (
           <></>
         )}
-        {refinedupdatedAt === getToday() ? (
-          <div className="novelListNewObject">NEW</div>
-        ) : (
-          <></>
-        )}
       </div>
       <div className="novelListContentWrapper">
         <div className="countCloud">
           <div className="countCloudText">누적구름 {props.data.cloud}</div>
           <div className="countCloudImg" />
+          {refinedupdatedAt === getToday() ? (
+            <div className="novelListNewObject">NEW</div>
+          ) : (
+            <></>
+          )}
         </div>
         <div className="novelListSubjectWrapper">
           <div className="novelListSubject">
