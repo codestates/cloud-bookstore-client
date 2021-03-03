@@ -24,7 +24,9 @@ const NovelFantasyWrapper: React.FC<FantasyDataProps> = (
     <div id="novelFantasyWrapper" className="mainPageNovelWrapper">
       <div className="mainNovelTextWrapper">
         <div className="mainNovelWrapperSubject">판타지</div>
-        <div className="mainNovelMoreView">더보기</div>
+        <a href="http://cloud-bookstore.com/main/fantasy">
+          <div className="mainNovelMoreView">더보기</div>
+        </a>
       </div>
       <div className="mainNovelInnerWrapper">
         {props.fantasyData.map((data) => (
