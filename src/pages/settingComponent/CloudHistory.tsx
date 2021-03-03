@@ -60,11 +60,9 @@ const CloudHistory: React.FC<cloudHistoryProps> = (
           <></>
         )}
       </div>
-      {props.accumulatedHistories.map((data, i) => {
-        // eslint-disable-next-line no-console
-        console.log(data);
-        <AccumulatedLists key={i} accumulatedData={data} />;
-      })}
+      {props.accumulatedHistories.map((data, i) => (
+        <AccumulatedLists key={i} accumulatedData={data} />
+      ))}
     </div>
   );
 };

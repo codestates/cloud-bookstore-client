@@ -61,9 +61,9 @@ const DeductionHistory: React.FC<deductedProps> = (props: deductedProps) => {
           <></>
         )}
       </div>
-      {props.deductedHistories.map((data) => {
-        <DeductedLists key={data.episode.id} deductedData={data} />;
-      })}
+      {props.deductedHistories.map((data, i) => (
+        <DeductedLists key={i} deductedData={data} />
+      ))}
     </div>
   );
 };

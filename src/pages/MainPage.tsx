@@ -238,6 +238,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
             path="/main/setting"
             render={() => (
               <Setting
+                nickname={props.nickname}
                 history={props.history}
                 location={props.location}
                 match={props.match}

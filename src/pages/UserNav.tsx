@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import '../css/UserNav.css';
 import { RouteComponentProps } from 'react-router-dom';
 import LoginModal from './modal/LoginModal';
+import axios from 'axios';
 
 interface userNavProps extends RouteComponentProps {
   isLogin: boolean;
@@ -21,6 +22,12 @@ const UserNav: React.FC<userNavProps> = (props: userNavProps) => {
     props.history.push('/main/setting');
   };
 
+  const handleLogout = (): void => {
+    axios
+      .get('https://server.cloud-bookstore.com/logout')
+      .then(() => props.toggleLogin());
+  };
+
   return (
     <div className="WholeUserNav">
       <div className="userNavGreyUnderLine">
@@ -29,13 +36,23 @@ const UserNav: React.FC<userNavProps> = (props: userNavProps) => {
             <div className="userNavLogo" />
           </a>
           {props.isLogin ? (
-            <div
-              className="nickname"
-              role="button"
-              onClick={handleSetting}
-              onKeyPress={handleSetting}
-            >
-              {props.nickname} 님
+            <div className="guestDetails">
+              <div
+                className="nickname"
+                role="button"
+                onClick={handleSetting}
+                onKeyPress={handleSetting}
+              >
+                {props.nickname} 님
+              </div>
+              <div
+                className="logOut"
+                role="presentation"
+                onClick={handleLogout}
+                onKeyPress={handleLogout}
+              >
+                로그아웃
+              </div>
             </div>
           ) : (
             <div
@@ -49,7 +66,13 @@ const UserNav: React.FC<userNavProps> = (props: userNavProps) => {
         </div>
       </div>
       {loginModal ? (
-        <LoginModal handleLoginModalOn={handleLoginModalOn} />
+        <LoginModal
+          isLogin={props.isLogin}
+          toggleLogin={props.toggleLogin}
+          nickname={props.nickname}
+          handleNickname={props.handleNickname}
+          handleLoginModalOn={handleLoginModalOn}
+        />
       ) : (
         <></>
       )}

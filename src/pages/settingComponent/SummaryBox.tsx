@@ -5,6 +5,9 @@ import DeductionHistory from './DeductionHistory';
 import CloudHistory from './CloudHistory';
 import axios from 'axios';
 
+interface summaryProps extends RouteComponentProps {
+  nickname: string;
+}
 interface accumulatedProps {
   date: string;
   cloud: number;
@@ -16,9 +19,7 @@ interface deductedProps {
   cloud: number;
 }
 
-const SummaryBox: React.FC<RouteComponentProps> = (
-  props: RouteComponentProps,
-) => {
+const SummaryBox: React.FC<summaryProps> = (props: summaryProps) => {
   const [accumulatedClouds, setAccumulatedClouds] = useState<number>(0);
   const [deductedClouds, setDeductedClouds] = useState<number>(0);
 
@@ -46,6 +47,8 @@ const SummaryBox: React.FC<RouteComponentProps> = (
     .get('https://server.cloud-bookstore.com/setting/cloudhistory/accumulation')
     .then((data) => data.data.data)
     .then((data: accumulatedProps[]) => {
+      // eslint-disable-next-line no-console
+      console.log(data);
       setAccumulatedHistories(data);
       setAccumulatedClouds(data.reduce((acc, cur) => acc + cur.cloud, 0));
     });
@@ -53,6 +56,8 @@ const SummaryBox: React.FC<RouteComponentProps> = (
     .get('https://server.cloud-bookstore.com/setting/cloudhistory/deduction')
     .then((data) => data.data.data)
     .then((data: deductedProps[]) => {
+      // eslint-disable-next-line no-console
+      console.log(data);
       setDeductedHistories(data);
       setDeductedClouds(data.reduce((acc, cur) => acc + cur.cloud, 0));
     });
@@ -68,16 +73,16 @@ const SummaryBox: React.FC<RouteComponentProps> = (
   useEffect(() => {
     handleAccumulatedCloud;
     handleDeductedCloud;
-  }, []);
+  }, [accumulatedHistories, deductedHistories]);
 
   return (
-    <React.Fragment>
+    <>
       <div className="summaryBox">
         <div className="userInfo">
           <div className="userLeftBox">
             <div className="userIcon" />
             <div>
-              <div className="nicknameTitle">props로 받은 닉네임</div>
+              <div className="nicknameTitle">{props.nickname}</div>
               <div className="changeNickname">닉네임 변경</div>
             </div>
           </div>
@@ -91,7 +96,7 @@ const SummaryBox: React.FC<RouteComponentProps> = (
                 구름 사용내역
               </div>
               <div className="cloudBox">
-                <div className="cloudNum">-{deductedClouds}</div>
+                <div className="cloudNum">{deductedClouds}</div>
                 <div className="cloudSVG" />
               </div>
             </div>
@@ -133,7 +138,7 @@ const SummaryBox: React.FC<RouteComponentProps> = (
           exact={true}
         />
       </Switch>
-    </React.Fragment>
+    </>
   );
 };
 
