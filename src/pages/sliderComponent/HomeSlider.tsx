@@ -16,7 +16,7 @@ const HomeSlider: React.FC = () => {
       navigation
       pagination={{ clickable: true }}
       loop={true}
-      autoplay={true}
+      autoplay={{ delay: 5000 }}
     >
       <SwiperSlide className="slideImg1" />
       <SwiperSlide className="slideImg2" />
