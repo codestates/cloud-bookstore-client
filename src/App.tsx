@@ -86,10 +86,11 @@ const App: React.FC = () => {
           path="/main"
           render={() => (
             <MainPage
-              isLogin={isLogin}
+              isLogin={!isLogin}
               toggleLogin={toggleLogin}
               nickname={nickname}
               handleNickname={handleNickname}
+              novelData={novelData}
             />
           )}
         />

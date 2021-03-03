@@ -4,8 +4,9 @@ import '../../css/Calendar.css';
 import moment from 'moment';
 import '../../css/CloudHistory.css';
 import axios from 'axios';
+import AccumulatedLists from './AccumulatedLists';
 
-interface cloudHistoryPros {
+interface cloudHistoryProps {
   accumulatedHistories: {
     date: string;
     cloud: number;
@@ -21,7 +22,9 @@ interface cloudHistoryPros {
   ) => void;
 }
 
-const CloudHistory: React.FC<cloudHistoryPros> = (props: cloudHistoryPros) => {
+const CloudHistory: React.FC<cloudHistoryProps> = (
+  props: cloudHistoryProps,
+) => {
   const [calendarModal, setCalendarModal] = useState<boolean>(false);
   const toggleCalendarModal = () => {
     setCalendarModal(!calendarModal);
@@ -57,20 +60,10 @@ const CloudHistory: React.FC<cloudHistoryPros> = (props: cloudHistoryPros) => {
           <></>
         )}
       </div>
-      {props.accumulatedHistories.map((data) => {
-        <div className="cloudHistoryLists">
-          <div className="leftSideDetails">
-            <div className="accumulation">적립</div>
-            <div>
-              <div className="cloudDate">{data.date.slice(0, 10)}</div>
-              <div className="cloudInfo">로그인 적립</div>
-            </div>
-          </div>
-          <div className="cloudCounts">
-            <div className="plusCount">+ {data.cloud}</div>
-            <div className="blueCloud" />
-          </div>
-        </div>;
+      {props.accumulatedHistories.map((data, i) => {
+        // eslint-disable-next-line no-console
+        console.log(data);
+        <AccumulatedLists key={i} accumulatedData={data} />;
       })}
     </div>
   );

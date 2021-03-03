@@ -5,6 +5,7 @@ import moment from 'moment';
 import '../../css/CloudHistory.css';
 import '../../css/DeductionHistory.css';
 import axios from 'axios';
+import DeductedLists from './DeductedLists';
 
 interface deductedProps {
   deductedHistories: {
@@ -33,8 +34,6 @@ const DeductionHistory: React.FC<deductedProps> = (props: deductedProps) => {
   };
 
   const onDateChange = (date: any) => {
-    // eslint-disable-next-line no-console
-    console.log(typeof date); // 확인해서 any 부분 수정!
     const dates: string = moment(date).format('YYYY-MM-DD');
     axios
       .get(
@@ -63,19 +62,7 @@ const DeductionHistory: React.FC<deductedProps> = (props: deductedProps) => {
         )}
       </div>
       {props.deductedHistories.map((data) => {
-        <div className="cloudHistoryLists">
-          <div className="leftSideDetails">
-            <div className="deduction">사용</div>
-            <div>
-              <div className="cloudDate">{data.date.slice(0, 10)}</div>
-              <div className="cloudInfo">{data.title}</div>
-            </div>
-          </div>
-          <div className="cloudCounts">
-            <div className="minusCount">- {data.cloud}</div>
-            <div className="orangeCloud" />
-          </div>
-        </div>;
+        <DeductedLists key={data.episode.id} deductedData={data} />;
       })}
     </div>
   );
