@@ -52,8 +52,13 @@ const NovelList: React.FC<MartialArtsDataProps> = (
         ) : (
           <></>
         )}
+        {refinedupdatedAt === getToday() ? (
+          <div className="novelListNewObject">NEW</div>
+        ) : (
+          <></>
+        )}
       </div>
-      <div className="novelListContentWrapper">
+      <div className="homeNovelListContentWrapper">
         <div className="countCloud">
           <div className="countCloudText">
             누적구름 {props.martialArtsData.cloud}
@@ -61,18 +66,13 @@ const NovelList: React.FC<MartialArtsDataProps> = (
           <div className="countCloudImg" />
         </div>
         <div className="novelListSubjectWrapper">
-          <div className="novelListSubject">
+          <div className="HomeNovelListSubject">
             {getBoolTitleLength()
               ? `${sliceTitle} ...`
               : props.martialArtsData.title}
           </div>
-          {refinedupdatedAt === getToday() ? (
-            <div className="novelListNewObject">NEW</div>
-          ) : (
-            <></>
-          )}
         </div>
-        <div className="novelListAuthorFavWrapper">
+        <div className="homeNovelListAuthorFavWrapper">
           <div className="novelListAuthor">
             {getBoolAuthorLength()
               ? `${sliceAuthor} ...`
