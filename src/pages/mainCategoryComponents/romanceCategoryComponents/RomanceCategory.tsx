@@ -1,5 +1,5 @@
 import React from 'react';
-import './FantasyCategory.css';
+import './RomanceCategory.css';
 
 import SelectBoxNav from '../SelectBoxNav';
 
@@ -7,8 +7,8 @@ const fakeCategorizedData = {
   data: [
     {
       id: 1,
-      title: '화성에서 여행온 남자',
-      author: '마션',
+      title: '시켜줘 금잔디 명예소방관',
+      author: '구준표가 되고싶어',
       category: 1,
       description:
         '새침하게 흐린 품이 눈이 올 듯하더니 눈은 아니 오고 얼다가 만 비가 추적추적 내리는 날이었다.\r\n\n이날이야말로 동소문 안에서 인력거꾼 노릇을 하는 김첨지에게는 오래간만에도 닥친 운수 좋은 날...',
@@ -22,8 +22,8 @@ const fakeCategorizedData = {
     },
     {
       id: 3,
-      title: '우주정거장',
-      author: '마포구청역',
+      title: '선배 이리와서 이것 좀 도와주세요.',
+      author: '나는 존슨',
       category: 1,
       description:
         '새침하게 흐린 품이 눈이 올 듯하더니 눈은 아니 오고 얼다가 만 비가 추적추적 내리는 날이었다.\r\n\n이날이야말로 동소문 안에서 인력거꾼 노릇을 하는 김첨지에게는 오래간만에도 닥친 운수 좋은 날...',
@@ -38,7 +38,7 @@ const fakeCategorizedData = {
   ],
 };
 
-const FantasyCategory: React.FC = () => {
+const MartialArtsCategory: React.FC = () => {
   return (
     <div className="wholeFantasyCategoryWrapper">
       <div className="fantasyCategoryInnerWrapper">
@@ -48,4 +48,4 @@ const FantasyCategory: React.FC = () => {
   );
 };
 
-export default FantasyCategory;
+export default MartialArtsCategory;
