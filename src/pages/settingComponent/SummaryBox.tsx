@@ -4,9 +4,11 @@ import '../../css/SummaryBox.css';
 import DeductionHistory from './DeductionHistory';
 import CloudHistory from './CloudHistory';
 import axios from 'axios';
+import ModalEditNickname from '../modal/ModalEditNickname';
 
 interface summaryProps extends RouteComponentProps {
   nickname: string;
+  // handleNickname: (nickname: string) => void;
 }
 interface accumulatedProps {
   date: string;
@@ -39,6 +41,11 @@ const SummaryBox: React.FC<summaryProps> = (props: summaryProps) => {
       cloud: -1,
     },
   ]);
+
+  const [nicknameModal, setNicknameModal] = useState<boolean>(false);
+  const toggleNicknameModal = () => {
+    setNicknameModal(!nicknameModal);
+  };
 
   const handleAccumulatedCloud = (): void => {
     axios
@@ -78,13 +85,20 @@ const SummaryBox: React.FC<summaryProps> = (props: summaryProps) => {
 
   return (
     <>
+      {nicknameModal === true ? <ModalEditNickname /> : <></>}
       <div className="summaryBox">
         <div className="userInfo">
           <div className="userLeftBox">
             <div className="userIcon" />
             <div>
               <div className="nicknameTitle">{props.nickname}</div>
-              <div className="changeNickname">닉네임 변경</div>
+              <div
+                role="presentation"
+                onClick={toggleNicknameModal}
+                className="changeNickname"
+              >
+                닉네임 변경
+              </div>
             </div>
           </div>
           <div className="userRightBox">

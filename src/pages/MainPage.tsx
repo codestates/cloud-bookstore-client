@@ -188,6 +188,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
             render={() => (
               <Setting
                 nickname={props.nickname}
+                // handleNickname={props.handleNickname}
                 history={props.history}
                 location={props.location}
                 match={props.match}

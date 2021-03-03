@@ -1,0 +1,114 @@
+.editGreyBackground {
+  position: fixed;
+  left:0;
+  top: 0;
+  opacity: 0.51;
+  background-color: #000000;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.editBox{
+  z-index: 3;
+  position: fixed;
+  margin: auto; 
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 670px;
+  height: 140px;
+  padding: 32px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.14);
+}
+
+.editUpperBox{
+  display: flex;
+  justify-content: space-between;
+}
+
+.editBoxTitle{
+  font-size: 24px;
+  font-weight: bold;
+  padding-bottom: 32px;
+}
+
+.editGreyUnderline{  
+  border-bottom: 1px solid #d8d8d8;
+  margin-bottom: 32px;
+}
+
+.editBoxDetails{
+  display: flex;
+  align-items: center;
+}
+
+.editNicknameInput{
+  width: 506px;
+  height: 44px;
+  margin-right: 24px;
+  padding: 10px 12px;
+  box-sizing: border-box;
+}
+
+.editBoxSaveButton{
+  width: 144px;
+  height: 44px;
+  background-color: #2b79fe; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.nicknameCloseButton{
+  cursor: pointer;
+}
+
+/* 컴퓨터에서 줄였을 때 */
+@media (max-width: 943px) {
+  .editBox{
+    width: 500px;
+  }
+}
+
+/* 아이패드 크기 */
+ @media (max-width: 768px) {
+  .editBox{
+    width: 350px;
+  }
+} 
+
+/* 핸드폰 크기 */
+ @media (max-width: 414px) {
+  .editBox{
+    width: 280px;
+    height: 177px;
+    padding: 20px;
+  }
+  .editBoxTitle{
+    padding-bottom: 20px;
+  }
+  .editGreyUnderline{
+    margin-bottom: 20px;
+  }
+  .editBoxDetails{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .editNicknameInput{
+    width: 280px;
+    margin-bottom: 20px;
+    margin-right: 0px;
+  }
+  .editBoxSaveButton{
+    width: 280px;
+    margin-bottom: 20px;
+  }
+}
