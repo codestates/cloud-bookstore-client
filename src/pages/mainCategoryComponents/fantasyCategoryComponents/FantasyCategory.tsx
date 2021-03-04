@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import React, { useState, useEffect } from 'react';
 import './FantasyCategory.css';
 import axios from 'axios';
@@ -50,8 +48,6 @@ const FantasyCategory: React.FC = () => {
       setFantasyNovelData(res.data);
     });
   }, []);
-
-  console.log(fantasyNovelData);
 
   return (
     <div className="wholeFantasyCategoryWrapper">
