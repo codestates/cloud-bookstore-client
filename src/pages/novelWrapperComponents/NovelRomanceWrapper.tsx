@@ -5,6 +5,7 @@ import './NovelWrapperStyle.css';
 import RomanceNovelList from './RomanceNovelList';
 
 interface RomanceDataProps extends RouteComponentProps {
+  handleRomanceOn: () => void;
   romanceData: {
     id: number;
     title: string;
@@ -28,7 +29,10 @@ const NovelRomanceWrapper: React.FC<RomanceDataProps> = (
         <div
           role="presentation"
           className="mainNovelMoreView"
-          onClick={() => props.history.push('/main/romance')}
+          onClick={() => {
+            props.handleRomanceOn();
+            props.history.push('/main/romance');
+          }}
         >
           더보기
         </div>

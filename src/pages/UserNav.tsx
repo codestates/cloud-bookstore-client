@@ -6,6 +6,7 @@ import LoginModal from './modal/LoginModal';
 import axios from 'axios';
 
 interface userNavProps extends RouteComponentProps {
+  handleHomeOn: () => void;
   isLogin: boolean;
   toggleLogin: () => void;
   nickname: string;
@@ -36,7 +37,10 @@ const UserNav: React.FC<userNavProps> = (props: userNavProps) => {
           <div
             role="presentation"
             className="userNavLogo"
-            onClick={() => props.history.push('/main/home')}
+            onClick={() => {
+              props.handleHomeOn();
+              props.history.push('/main/home');
+            }}
           />
           {props.isLogin ? (
             <div className="guestDetails">
