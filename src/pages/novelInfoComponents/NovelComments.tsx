@@ -17,7 +17,13 @@ const NovelComments: React.FC = () => {
           </div>
         </div>
         <MakeNewComment />
-        <CommentsList />
+        <div className="commentsListWrapper">
+          <CommentsList />
+          <CommentsList />
+          <CommentsList />
+          <CommentsList />
+          <CommentsList />
+        </div>
       </div>
     </IconContext.Provider>
   );
