@@ -2,7 +2,6 @@
 import React from 'react';
 import { MdClose } from 'react-icons/md';
 import './LoginModal.css';
-import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
 import KaKaoLogin from 'react-kakao-login';
 import axios from 'axios';
@@ -64,13 +63,6 @@ const LoginModal: React.FC<loginProps> = (props: loginProps) => {
             onSuccess={(data) => handleLogin('kakao', data)}
             onFail={handleError}
             style={{}}
-          />
-          <FacebookLogin
-            appId="348088729732348"
-            autoLoad={false}
-            fields="name,email,picture"
-            cssClass="facebookLogin oauthLoginBox"
-            callback={(data) => handleLogin('facebook', data)}
           />
         </div>
       </div>
