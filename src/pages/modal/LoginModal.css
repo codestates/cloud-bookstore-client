@@ -16,7 +16,7 @@
   left: 0;
   right: 0;
   width: 480px;
-  height: 405px;
+  height: 341px;
   background: #ffffff;
   border-radius: 3px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.14);
@@ -27,7 +27,7 @@
   position: fixed;
   margin: auto;
   top: 0;
-  bottom: 360px;
+  bottom: 300px;
   left: 440px;
   right: 0;
   width: 24px;
@@ -87,17 +87,6 @@
   background-position: center;
 }
 
-.facebookLogin {
-  color: #ffffff00;
-  border: none;
-  border-radius: 2px;
-  box-shadow: rgb(0 0 0 / 24%) 0px 2px 2px 0px, rgb(0 0 0 / 24%) 0px 0px 1px 0px;
-  background-image: url('../../asset/img/facebooklogo.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
 /* 애매한 크기 */
 @media (max-width: 1188px) {
   .loginPopup {
@@ -107,12 +96,12 @@
     left: 0;
     right: 0;
     width: 360px;
-    height: 390px;
+    height: 340px;
   }
   .mdClose {
     margin: auto;
     top: 0;
-    bottom: 350px;
+    bottom: 300px;
     left: 325px;
     right: 0;
   }
@@ -140,12 +129,12 @@
     left: 0;
     right: 0;
     width: 360px;
-    height: 385px;
+    height: 340px;
   }
   .mdClose {
     margin: auto;
     top: 0;
-    bottom: 340px;
+    bottom: 295px;
     left: 320px;
     right: 0;
   }
@@ -173,12 +162,12 @@
     left: 0;
     right: 0;
     width: 300px;
-    height: 325px;
+    height: 275px;
   }
   .mdClose {
     margin: auto;
     top: 0;
-    bottom: 280px;
+    bottom: 230px;
     left: 260px;
     right: 0;
   }
@@ -211,7 +200,7 @@
   .mdClose {
     margin: auto;
     top: 0;
-    bottom: 280px;
+    bottom: 235px;
     left: 260px;
     right: 0;
   }
@@ -225,12 +214,12 @@
     left: 0;
     right: 0;
     width: 210px;
-    height: 245px;
+    height: 205px;
   }
   .mdClose {
     margin: auto;
     top: 0;
-    bottom: 210px;
+    bottom: 170px;
     left: 180px;
     right: 0;
   }
