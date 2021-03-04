@@ -1,9 +1,10 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import './NovelWrapperStyle.css';
 
 import MartialArtsNovelList from './MartialArtsNovelList';
 
-interface MartialArtsDataProps {
+interface MartialArtsDataProps extends RouteComponentProps {
   martialArtsData: {
     id: number;
     title: string;
@@ -24,9 +25,13 @@ const NovelMartialArtWrapper: React.FC<MartialArtsDataProps> = (
     <div id="novelMartialArtWrapper" className="mainPageNovelWrapper">
       <div className="mainNovelTextWrapper">
         <div className="mainNovelWrapperSubject">무협</div>
-        <a href="http://cloud-bookstore.com/main/martialArts">
-          <div className="mainNovelMoreView">더보기</div>
-        </a>
+        <div
+          role="presentation"
+          className="mainNovelMoreView"
+          onClick={() => props.history.push('/main/martialArts')}
+        >
+          더보기
+        </div>
       </div>
       <div className="mainNovelInnerWrapper">
         {props.martialArtsData.map((data) => (
