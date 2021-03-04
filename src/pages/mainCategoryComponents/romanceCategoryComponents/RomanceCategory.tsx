@@ -13,6 +13,7 @@ interface RomanceNovelDataProps {
       description: string;
       cloud: number;
       userLike: number;
+      episodeCount: number;
       complete: boolean;
       thumbnail: string;
       createdAt: string;
