@@ -1,12 +1,12 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import '../css/Home.css';
-
 import HomeSlider from './sliderComponent/HomeSlider';
 import NovelRankingWrapper from './novelWrapperComponents/NovelRankingWrapper';
 import NovelFantasyWrapper from './novelWrapperComponents/NovelFantasyWrapper';
 import NovelMartialArtWrapper from './novelWrapperComponents/NovelMartialArtWrapper';
 import NovelRomanceWrapper from './novelWrapperComponents/NovelRomanceWrapper';
-import { RouteComponentProps } from 'react-router-dom';
+
 interface NovelDataProps extends RouteComponentProps {
   novelData: {
     ranking: {
@@ -68,8 +68,18 @@ const Home: React.FC<NovelDataProps> = (props: NovelDataProps) => {
         location={props.location}
         match={props.match}
       />
-      <NovelFantasyWrapper fantasyData={props.novelData.fantasy} />
-      <NovelMartialArtWrapper martialArtsData={props.novelData.martialArts} />
+      <NovelFantasyWrapper
+        fantasyData={props.novelData.fantasy}
+        history={props.history}
+        location={props.location}
+        match={props.match}
+      />
+      <NovelMartialArtWrapper
+        martialArtsData={props.novelData.martialArts}
+        history={props.history}
+        location={props.location}
+        match={props.match}
+      />
       <NovelRomanceWrapper romanceData={props.novelData.romance} />
     </div>
   );
