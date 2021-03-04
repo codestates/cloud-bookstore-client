@@ -10,10 +10,13 @@ interface MartialArtsDataProps extends RouteComponentProps {
     id: number;
     title: string;
     author: string;
+    category: number;
+    description: string;
     cloud: number;
     userLike: number;
-    thumbnail: string;
+    episodeCount: number;
     complete: boolean;
+    thumbnail: string;
     createdAt: string;
     updatedAt: string;
   }[];

@@ -18,6 +18,7 @@ interface State {
     description: string;
     cloud: number;
     userLike: number;
+    episodeCount: number;
     complete: boolean;
     thumbnail: string;
     createdAt: string;
@@ -33,6 +34,7 @@ interface data {
   description: string;
   cloud: number;
   userLike: number;
+  episodeCount: number;
   complete: boolean;
   thumbnail: string;
   createdAt: string;
@@ -57,6 +59,7 @@ interface CategorizedDataProps {
       description: string;
       cloud: number;
       userLike: number;
+      episodeCount: number;
       complete: boolean;
       thumbnail: string;
       createdAt: string;
