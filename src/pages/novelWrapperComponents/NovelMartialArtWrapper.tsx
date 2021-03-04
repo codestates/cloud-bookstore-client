@@ -5,6 +5,7 @@ import './NovelWrapperStyle.css';
 import MartialArtsNovelList from './MartialArtsNovelList';
 
 interface MartialArtsDataProps extends RouteComponentProps {
+  handleMartialArtOn: () => void;
   martialArtsData: {
     id: number;
     title: string;
@@ -28,7 +29,10 @@ const NovelMartialArtWrapper: React.FC<MartialArtsDataProps> = (
         <div
           role="presentation"
           className="mainNovelMoreView"
-          onClick={() => props.history.push('/main/martialArts')}
+          onClick={() => {
+            props.handleMartialArtOn();
+            props.history.push('/main/martialArts');
+          }}
         >
           더보기
         </div>
