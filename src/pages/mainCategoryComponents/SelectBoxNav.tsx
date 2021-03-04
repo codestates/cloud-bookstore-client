@@ -48,8 +48,8 @@ const options: OptionType[] = [
   { value: 'favorite', label: '관심순' },
 ];
 
-interface FakeCategorizedDataProps {
-  CategorizedData: {
+interface CategorizedDataProps {
+  categorizedData: {
     data: {
       id: number;
       title: string;
@@ -66,12 +66,12 @@ interface FakeCategorizedDataProps {
   };
 }
 
-class SelectBoxNav extends Component<FakeCategorizedDataProps, State> {
-  constructor(props: FakeCategorizedDataProps) {
+class SelectBoxNav extends Component<CategorizedDataProps, State> {
+  constructor(props: CategorizedDataProps) {
     super(props);
     this.state = {
       selectedOption: options[0],
-      sortedData: this.props.CategorizedData.data,
+      sortedData: this.props.categorizedData.data,
     };
     this.handleChange = this.handleChange.bind(this);
     this.dataSortHandler = this.dataSortHandler.bind(this);
@@ -117,7 +117,7 @@ class SelectBoxNav extends Component<FakeCategorizedDataProps, State> {
 
   // ? update 기준 sort
   handleSortWithUpdated = (): void => {
-    const temp = this.props.CategorizedData.data;
+    const temp = this.props.categorizedData.data;
     temp.sort((a: data, b: data) => {
       if (a.updatedAt < b.updatedAt) return 1;
       if (a.updatedAt > b.updatedAt) return -1;
@@ -131,7 +131,7 @@ class SelectBoxNav extends Component<FakeCategorizedDataProps, State> {
   };
   // ? title 기준 sort
   handleSortWithTitle = (): void => {
-    const temp = this.props.CategorizedData.data;
+    const temp = this.props.categorizedData.data;
     temp.sort((a: data, b: data) => {
       if (a.title < b.title) return -1;
       if (a.title > b.title) return 1;
@@ -145,7 +145,7 @@ class SelectBoxNav extends Component<FakeCategorizedDataProps, State> {
   };
   // ? 누적 cloud 기준 sort
   handleSortWithCloud = (): void => {
-    const temp = this.props.CategorizedData.data;
+    const temp = this.props.categorizedData.data;
     temp.sort((a: data, b: data) => {
       if (a.cloud < b.cloud) return 1;
       if (a.cloud > b.cloud) return -1;
@@ -159,7 +159,7 @@ class SelectBoxNav extends Component<FakeCategorizedDataProps, State> {
   };
   // ? 관심 기준 sort
   handleSortWithFavoriteData = (): void => {
-    const temp = this.props.CategorizedData.data;
+    const temp = this.props.categorizedData.data;
     temp.sort((a: data, b: data) => {
       if (a.userLike < b.userLike) return 1;
       if (a.userLike > b.userLike) return -1;
