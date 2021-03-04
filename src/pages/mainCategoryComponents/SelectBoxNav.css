@@ -8,13 +8,13 @@
   /* select box btn에 대한 부분들*/
   .css-2b097c-container,
   .css-yk16xz-control {
-    width: 114px;
+    width: 127px;
     height: 34px !important;
     min-height: 34px !important;
   }
   .css-tlfecz-indicatorContainer,
   .css-1gtu0rj-indicatorContainer {
-    padding: 8px 0 !important;
+    padding: 6.5px 7px 8.5px 7px !important;
   }
 
 .categoryNovelListWrapper {

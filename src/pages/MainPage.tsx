@@ -1,5 +1,6 @@
 /* eslint-disable */
-import React, { useState, useEffect } from 'react';
+
+import React, { useState } from 'react';
 import {
   RouteComponentProps,
   withRouter,
@@ -9,7 +10,6 @@ import {
 import '../css/MainPage.css';
 import '../css/CategoryNav.css';
 import { MdSearch } from 'react-icons/md';
-import axios from 'axios';
 import UserNav from './UserNav';
 import Footer from './Footer';
 import Home from './Home';
@@ -198,18 +198,12 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
             path="/main/home"
             render={() => <Home novelData={props.novelData} />}
           />
-          <Route
-            path="/main/fantasy"
-            render={() => <FantasyCategory />}
-          />
+          <Route path="/main/fantasy" render={() => <FantasyCategory />} />
           <Route
             path="/main/martialArts"
             render={() => <MartialArtsCategory />}
           />
-          <Route
-            path="/main/romance"
-            render={() => <RomanceCategory />}
-          />
+          <Route path="/main/romance" render={() => <RomanceCategory />} />
           <Route path="/main/mypage" render={() => <Mypage />} />
           <Route
             path="/main/mypage/recentNovelList"
