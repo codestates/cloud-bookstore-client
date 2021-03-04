@@ -114,7 +114,10 @@ const SummaryBox: React.FC<summaryProps> = (props: summaryProps) => {
               <div
                 role="presentation"
                 className="totalCloudTitle"
-                onClick={() => props.history.push('/main/setting/deduction')}
+                onClick={() => {
+                  handleAccumulatedCloud();
+                  props.history.push('/main/setting/deduction');
+                }}
               >
                 구름 사용내역
               </div>
@@ -129,7 +132,10 @@ const SummaryBox: React.FC<summaryProps> = (props: summaryProps) => {
               <div
                 role="presentation"
                 className="totalCloudTitle"
-                onClick={() => props.history.push('/main/setting')}
+                onClick={() => {
+                  handleDeductedCloud();
+                  props.history.push('/main/setting');
+                }}
               >
                 구름 적립내역
               </div>
