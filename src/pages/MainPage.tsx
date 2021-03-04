@@ -197,7 +197,14 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
           />
           <Route
             path="/main/home"
-            render={() => <Home novelData={props.novelData} />}
+            render={() => (
+              <Home
+                novelData={props.novelData}
+                history={props.history}
+                location={props.location}
+                match={props.match}
+              />
+            )}
           />
           <Route path="/main/fantasy" render={() => <FantasyCategory />} />
           <Route

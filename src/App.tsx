@@ -4,7 +4,7 @@ import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import LandingPage from './pages/LandingPage';
 import MainPage from './pages/MainPage';
-import Home from './pages/Home';
+// import Home from './pages/Home';
 
 const App: React.FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(false);
@@ -94,10 +94,10 @@ const App: React.FC = () => {
             />
           )}
         />
-        <Route
+        {/* <Route
           path="/main/home"
           render={() => <Home novelData={novelData} />}
-        />
+        /> */}
         <Route
           path="/"
           render={() => {

@@ -1,9 +1,10 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import './NovelWrapperStyle.css';
 
 import FantasyNovelList from './FantasyNovelList';
 
-interface FantasyDataProps {
+interface FantasyDataProps extends RouteComponentProps {
   fantasyData: {
     id: number;
     title: string;
@@ -16,7 +17,6 @@ interface FantasyDataProps {
     updatedAt: string;
   }[];
 }
-
 const NovelFantasyWrapper: React.FC<FantasyDataProps> = (
   props: FantasyDataProps,
 ) => {
@@ -24,9 +24,13 @@ const NovelFantasyWrapper: React.FC<FantasyDataProps> = (
     <div id="novelFantasyWrapper" className="mainPageNovelWrapper">
       <div className="mainNovelTextWrapper">
         <div className="mainNovelWrapperSubject">판타지</div>
-        <a href="http://cloud-bookstore.com/main/fantasy">
-          <div className="mainNovelMoreView">더보기</div>
-        </a>
+        <div
+          role="presentation"
+          className="mainNovelMoreView"
+          onClick={() => props.history.push('/main/fantasy')}
+        >
+          더보기
+        </div>
       </div>
       <div className="mainNovelInnerWrapper">
         {props.fantasyData.map((data) => (
