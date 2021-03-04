@@ -117,7 +117,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     axios.get('https://server.cloud-bookstore.com/category/1').then((res) => {
       setFantasyNovelData(res.data);
     });
-  }
+  };
   // ! MartialArts novel Data - axios get
   const [martialArtsNovelData, setmartialArtsNovelData] = useState({
     data: [
@@ -142,77 +142,9 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     axios.get('https://server.cloud-bookstore.com/category/2').then((res) => {
       setmartialArtsNovelData(res.data);
     });
-  }
+  };
   // ! Romance novel Data - axios get
   const [romanceNovelData, setRomanceNovelData] = useState({
-    userHistories: [
-      {
-        novels: {
-          title: "잊지마 4시1분",
-          complete: false,
-          thumbnail: "",
-          updatedAt: "2021-02-26T02:55:20.000Z"
-        },
-        episodes: {
-          id: 3,
-          title: "이런 날이..."
-        }
-      },
-      {
-        novels: {
-          title: "플레이어스",
-          complete: false,
-          thumbnail: "",
-          updatedAt: "2021-02-26T16:05:09.000Z"
-        },
-        episodes: {
-          id: 1,
-          title: "어느 좋은 날"
-        }
-      },
-    ],
-    userLikes: [
-      {
-        id: 1,
-        title: "잊지마 4시1분",
-        author: "Daniel",
-        userId: 0,
-        category: 3,
-        description: "새침하게 흐린 품이 눈이 올 듯하더니 눈은 아니 오고 얼다가 만 비가 추적추적 내리는 날이었다.\r\n\n이날이야말로 동소문 안에서 인력거꾼 노릇을 하는 김첨지에게는 오래간만에도 닥친 운수 좋은 날...",
-        cloud: 1,
-        userLike: 9,
-        episodeCount: 0,
-        complete: false,
-        thumbnail: "",
-        createdAt: "2021-02-24T21:20:11.925Z",
-        updatedAt: "2021-02-26T02:55:20.000Z"
-      },
-    ],
-    userWorks: [
-      {
-          id: 34,
-          title: "나의 님",
-          author: "chris",
-          userId: 0,
-          category: 3,
-          description: "그를 본 순간, 나는 느꼈다...",
-          cloud: 0,
-          userLike: 0,
-          episodeCount: 0,
-          complete: false,
-          thumbnail: "",
-          createdAt: "2021-02-26T13:54:55.252Z",
-          updatedAt: "2021-02-26T13:54:55.252Z"
-      },
-    ],  
-});
-  const handleAxiosRomance = () => {
-    axios.get('https://server.cloud-bookstore.com/category/3').then((res) => {
-      setRomanceNovelData(res.data);
-    });
-  }
-  // ! My page Data - axios get
-  const [myPageData, setMyPageData] = useState({
     data: [
       {
         id: 1,
@@ -231,11 +163,80 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
       },
     ],
   });
+  const handleAxiosRomance = () => {
+    axios.get('https://server.cloud-bookstore.com/category/3').then((res) => {
+      setRomanceNovelData(res.data);
+    });
+  };
+  // ! My page Data - axios get
+  const [myPageData, setMyPageData] = useState({
+    userHistories: [
+      {
+        novels: {
+          title: '잊지마 4시1분',
+          complete: false,
+          thumbnail: '',
+          updatedAt: '2021-02-26T02:55:20.000Z',
+        },
+        episodes: {
+          id: 3,
+          title: '이런 날이...',
+        },
+      },
+      {
+        novels: {
+          title: '플레이어스',
+          complete: false,
+          thumbnail: '',
+          updatedAt: '2021-02-26T16:05:09.000Z',
+        },
+        episodes: {
+          id: 1,
+          title: '어느 좋은 날',
+        },
+      },
+    ],
+    userLikes: [
+      {
+        id: 1,
+        title: '잊지마 4시1분',
+        author: 'Daniel',
+        userId: 0,
+        category: 3,
+        description:
+          '새침하게 흐린 품이 눈이 올 듯하더니 눈은 아니 오고 얼다가 만 비가 추적추적 내리는 날이었다.\r\n\n이날이야말로 동소문 안에서 인력거꾼 노릇을 하는 김첨지에게는 오래간만에도 닥친 운수 좋은 날...',
+        cloud: 1,
+        userLike: 9,
+        episodeCount: 0,
+        complete: false,
+        thumbnail: '',
+        createdAt: '2021-02-24T21:20:11.925Z',
+        updatedAt: '2021-02-26T02:55:20.000Z',
+      },
+    ],
+    userWorks: [
+      {
+        id: 34,
+        title: '나의 님',
+        author: 'chris',
+        userId: 0,
+        category: 3,
+        description: '그를 본 순간, 나는 느꼈다...',
+        cloud: 0,
+        userLike: 0,
+        episodeCount: 0,
+        complete: false,
+        thumbnail: '',
+        createdAt: '2021-02-26T13:54:55.252Z',
+        updatedAt: '2021-02-26T13:54:55.252Z',
+      },
+    ],
+  });
   const handleAxiosMyPage = () => {
     axios.get('https://server.cloud-bookstore.com/mypage').then((res) => {
       setMyPageData(res.data);
     });
-  }
+  };
   // ! handleAxios 함수들 미리 실행시켜두기
   useEffect(() => {
     handleAxiosFantasy();
@@ -360,12 +361,26 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
               />
             )}
           />
-          <Route path="/main/fantasy" render={() => <FantasyCategory fantasyNovelData={fantasyNovelData} />} />
+          <Route
+            path="/main/fantasy"
+            render={() => (
+              <FantasyCategory fantasyNovelData={fantasyNovelData} />
+            )}
+          />
           <Route
             path="/main/martialArts"
-            render={() => <MartialArtsCategory martialArtsNovelData={martialArtsNovelData} />}
+            render={() => (
+              <MartialArtsCategory
+                martialArtsNovelData={martialArtsNovelData}
+              />
+            )}
           />
-          <Route path="/main/romance" render={() => <RomanceCategory romanceNovelData={romanceNovelData} />} />
+          <Route
+            path="/main/romance"
+            render={() => (
+              <RomanceCategory romanceNovelData={romanceNovelData} />
+            )}
+          />
           <Route path="/main/mypage" render={() => <Mypage />} />
           <Route
             path="/main/mypage/recentNovelList"
