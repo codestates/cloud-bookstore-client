@@ -5,6 +5,7 @@ import './NovelWrapperStyle.css';
 import FantasyNovelList from './FantasyNovelList';
 
 interface FantasyDataProps extends RouteComponentProps {
+  handleFantasyOn: () => void;
   fantasyData: {
     id: number;
     title: string;
@@ -27,7 +28,10 @@ const NovelFantasyWrapper: React.FC<FantasyDataProps> = (
         <div
           role="presentation"
           className="mainNovelMoreView"
-          onClick={() => props.history.push('/main/fantasy')}
+          onClick={() => {
+            props.handleFantasyOn();
+            props.history.push('/main/fantasy');
+          }}
         >
           더보기
         </div>

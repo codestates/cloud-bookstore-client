@@ -8,6 +8,9 @@ import NovelMartialArtWrapper from './novelWrapperComponents/NovelMartialArtWrap
 import NovelRomanceWrapper from './novelWrapperComponents/NovelRomanceWrapper';
 
 interface NovelDataProps extends RouteComponentProps {
+  handleFantasyOn: () => void;
+  handleMartialArtOn: () => void;
+  handleRomanceOn: () => void;
   novelData: {
     ranking: {
       id: number;
@@ -73,18 +76,21 @@ const Home: React.FC<NovelDataProps> = (props: NovelDataProps) => {
         history={props.history}
         location={props.location}
         match={props.match}
+        handleFantasyOn={props.handleFantasyOn}
       />
       <NovelMartialArtWrapper
         martialArtsData={props.novelData.martialArts}
         history={props.history}
         location={props.location}
         match={props.match}
+        handleMartialArtOn={props.handleMartialArtOn}
       />
       <NovelRomanceWrapper
         romanceData={props.novelData.romance}
         history={props.history}
         location={props.location}
         match={props.match}
+        handleRomanceOn={props.handleRomanceOn}
       />
     </div>
   );

@@ -253,6 +253,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
           toggleLogin={props.toggleLogin}
           nickname={props.nickname}
           handleNickname={props.handleNickname}
+          handleHomeOn={handleHomeOn}
           history={props.history}
           location={props.location}
           match={props.match}
@@ -358,6 +359,9 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                 history={props.history}
                 location={props.location}
                 match={props.match}
+                handleFantasyOn={handleFantasyOn}
+                handleMartialArtOn={handleMartialArtOn}
+                handleRomanceOn={handleRomanceOn}
               />
             )}
           />
