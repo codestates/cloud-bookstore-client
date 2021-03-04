@@ -1,7 +1,6 @@
 import './SelectBoxNav.css';
 import React, { Component } from 'react';
 import Select from 'react-select';
-
 import CategoryNovelList from './CategoryNovelList';
 
 interface OptionType {
@@ -87,6 +86,7 @@ class SelectBoxNav extends Component<CategorizedDataProps, State> {
   componentDidMount() {
     this.dataSortHandler();
   }
+
   // ? user 선택시 해당에 맞춘 정렬
   componentDidUpdate() {
     this.dataSortHandler();
@@ -103,15 +103,14 @@ class SelectBoxNav extends Component<CategorizedDataProps, State> {
   dataSortHandler = (): void => {
     if (this.state.selectedOption.value === 'favorite') {
       this.handleSortWithFavoriteData();
-    }
-    if (this.state.selectedOption.value === 'updated') {
+    } else if (this.state.selectedOption.value === 'updated') {
       this.handleSortWithUpdated();
-    }
-    if (this.state.selectedOption.value === 'title') {
+    } else if (this.state.selectedOption.value === 'title') {
       this.handleSortWithTitle();
-    }
-    if (this.state.selectedOption.value === 'countCloud') {
+    } else if (this.state.selectedOption.value === 'countCloud') {
       this.handleSortWithCloud();
+    } else {
+      return;
     }
   };
 
