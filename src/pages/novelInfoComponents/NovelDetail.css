@@ -1,0 +1,106 @@
+.novelDetailWrapper{
+  width: 944px;
+  height: 339px;
+  margin: 88px 0px;
+}
+
+.novelHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 10px;
+}
+
+.novelDetailTitle{
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.novelDetailAuthor{
+  color: #464646;
+  font-size: 16px;
+}
+
+.novelHeaderButtons{
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+}
+
+.novelHeaderButtons > div{
+  margin-right: 49px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.novelHeaderButtons > div:last-child{
+  margin-right: 10px;
+}
+
+.novelCommentsButton, .novelLikesButton, .novelShareButton{
+  margin-top: 8px;
+  font-size: 16px;
+  color: #464646;
+}
+
+.novelDetailGreyLine{
+  width: 100%;
+  border-bottom: 1px solid #d8d8d8;
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+.novelDetailInfo{
+  display: flex;
+}
+
+.novelDetailThumbnail{
+  background-image: url('https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png');
+  width: 304px;
+  height: 209px;
+  margin-right: 16px;
+}
+
+.novelDetailLikes{
+  display: flex;
+  font-size: 14px;
+  color: #464646;
+}
+
+.novelDetailLikes >div:last-child{
+  color: #2679fe;
+  margin-left: 16px;
+}
+
+.novelDetailCloud{
+  display: flex;
+  align-items: center;
+}
+
+.novelDetailCloudSVG{
+  background-image: url('../../asset/mainpage/cloudImg.svg');
+  width: 12px;
+  height: 8px;
+  margin: 0 0 2px 3px;
+}
+
+.novelDetailDescription{
+  width: 624px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  color: #464646;
+}
+
+.firstEpisodeButton{
+  width: 166px;
+  height: 40px;
+  border: 1px solid #2b79fe;
+  color: #2b79fe;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
