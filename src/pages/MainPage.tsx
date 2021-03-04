@@ -105,6 +105,14 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     setIsCategoryOn('/main/mypage/recentNovelList');
   };
 
+  // ? id 가져오기이이이이이이ㅣㅇ 제발가져와라
+  const [clickedNovelId, setClickedNovelId] = useState<number>(0);
+  const handleClickedNovelId = (parameter: number) => {
+    setClickedNovelId(parameter);
+  };
+
+  console.log(clickedNovelId);
+
   // ! Fantasy novel Data - axios get
   const [fantasyNovelData, setFantasyNovelData] = useState({
     data: [
@@ -239,6 +247,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
       setMyPageData(res.data);
     });
   };
+
   // ! handleAxios 함수들 미리 실행시켜두기
   useEffect(() => {
     handleAxiosFantasy();
@@ -271,6 +280,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                     handleHomeOn();
                     props.history.push('/main/home');
                   }}
+                  aria-hidden="true"
                 >
                   홈
                 </div>
@@ -282,6 +292,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                     handleFantasyOn();
                     props.history.push('/main/fantasy');
                   }}
+                  aria-hidden="true"
                 >
                   판타지
                 </div>
@@ -293,6 +304,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                     handleMartialArtOn();
                     props.history.push('/main/martialArts');
                   }}
+                  aria-hidden="true"
                 >
                   무협
                 </div>
@@ -304,6 +316,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                     handleRomanceOn();
                     props.history.push('/main/romance');
                   }}
+                  aria-hidden="true"
                 >
                   로맨스
                 </div>
@@ -318,6 +331,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                     handleMyOn();
                     props.history.push('/main/mypage/recentNovelList');
                   }}
+                  aria-hidden="true"
                 >
                   MY
                 </div>
@@ -364,6 +378,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                 handleFantasyOn={handleFantasyOn}
                 handleMartialArtOn={handleMartialArtOn}
                 handleRomanceOn={handleRomanceOn}
+                handleClickedNovelId={handleClickedNovelId}
               />
             )}
           />

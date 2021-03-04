@@ -4,6 +4,7 @@ import { RouteComponentProps } from 'react-router-dom';
 import RankingNovelList from './RankingNovelList';
 
 interface RankingDataProps extends RouteComponentProps {
+  handleClickedNovelId: (parameter: number) => void;
   rankingData: {
     id: number;
     title: string;
@@ -31,6 +32,7 @@ const NovelRankingWrapper: React.FC<RankingDataProps> = (
           <RankingNovelList
             key={data.id}
             rankingData={data}
+            handleClickedNovelId={props.handleClickedNovelId}
             history={props.history}
             location={props.location}
             match={props.match}

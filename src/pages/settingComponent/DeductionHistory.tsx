@@ -15,7 +15,6 @@ interface deductedProps {
     cloud: number;
   }[];
   listDeducted: (
-    // eslint-disable-next-line no-unused-vars
     data: [
       {
         title: { title: string };
