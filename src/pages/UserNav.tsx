@@ -33,9 +33,11 @@ const UserNav: React.FC<userNavProps> = (props: userNavProps) => {
     <div className="WholeUserNav">
       <div className="userNavGreyUnderLine">
         <div className="UserNavInnerWrapper">
-          <a href="https://cloud-bookstore.com/main/home">
-            <div className="userNavLogo" />
-          </a>
+          <div
+            role="presentation"
+            className="userNavLogo"
+            onClick={() => props.history.push('/main/home')}
+          />
           {props.isLogin ? (
             <div className="guestDetails">
               <div

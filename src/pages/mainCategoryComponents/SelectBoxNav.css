@@ -8,7 +8,7 @@
   /* select box btn에 대한 부분들*/
   .css-2b097c-container,
   .css-yk16xz-control {
-    width: 127px;
+    width: 140px !important;
     height: 34px !important;
     min-height: 34px !important;
   }
