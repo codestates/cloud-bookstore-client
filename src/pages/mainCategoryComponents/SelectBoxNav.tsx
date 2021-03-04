@@ -1,7 +1,6 @@
 import './SelectBoxNav.css';
 import React, { Component } from 'react';
 import Select from 'react-select';
-
 import CategoryNovelList from './CategoryNovelList';
 
 interface OptionType {
@@ -87,6 +86,7 @@ class SelectBoxNav extends Component<CategorizedDataProps, State> {
   componentDidMount() {
     this.dataSortHandler();
   }
+
   // ? user 선택시 해당에 맞춘 정렬
   componentDidUpdate() {
     this.dataSortHandler();
