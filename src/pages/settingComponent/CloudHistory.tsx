@@ -60,9 +60,13 @@ const CloudHistory: React.FC<cloudHistoryProps> = (
           <></>
         )}
       </div>
-      {props.accumulatedHistories.map((data, i) => (
-        <AccumulatedLists key={i} accumulatedData={data} />
-      ))}
+      {props.accumulatedHistories.length === 0 ? (
+        <div className="emptyCloudList">해당 내역이 없습니다.</div>
+      ) : (
+        props.accumulatedHistories.map((data, i) => (
+          <AccumulatedLists key={i} accumulatedData={data} />
+        ))
+      )}
     </div>
   );
 };
