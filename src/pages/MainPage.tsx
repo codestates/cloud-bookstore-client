@@ -230,6 +230,21 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         createdAt: '2021-02-26T13:54:55.252Z',
         updatedAt: '2021-02-26T13:54:55.252Z',
       },
+      {
+        id: 35,
+        title: '나의 님',
+        author: 'chris',
+        userId: 0,
+        category: 3,
+        description: '그를 본 순간, 나는 느꼈다...',
+        cloud: 0,
+        userLike: 0,
+        episodeCount: 0,
+        complete: false,
+        thumbnail: '',
+        createdAt: '2021-02-26T13:54:55.252Z',
+        updatedAt: '2021-02-26T13:54:55.252Z',
+      },
     ],
   });
   const handleAxiosMyPage = () => {
@@ -385,7 +400,10 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
               <RomanceCategory romanceNovelData={romanceNovelData} />
             )}
           />
-          <Route path="/main/mypage" render={() => <Mypage />} />
+          <Route
+            path="/main/mypage"
+            render={() => <Mypage myPageData={myPageData} />}
+          />
           <Route
             path="/main/mypage/recentNovelList"
             render={() => <HistoryNovel />}
