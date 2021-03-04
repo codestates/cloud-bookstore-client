@@ -103,15 +103,14 @@ class SelectBoxNav extends Component<CategorizedDataProps, State> {
   dataSortHandler = (): void => {
     if (this.state.selectedOption.value === 'favorite') {
       this.handleSortWithFavoriteData();
-    }
-    if (this.state.selectedOption.value === 'updated') {
+    } else if (this.state.selectedOption.value === 'updated') {
       this.handleSortWithUpdated();
-    }
-    if (this.state.selectedOption.value === 'title') {
+    } else if (this.state.selectedOption.value === 'title') {
       this.handleSortWithTitle();
-    }
-    if (this.state.selectedOption.value === 'countCloud') {
+    } else if (this.state.selectedOption.value === 'countCloud') {
       this.handleSortWithCloud();
+    } else {
+      return;
     }
   };
 
