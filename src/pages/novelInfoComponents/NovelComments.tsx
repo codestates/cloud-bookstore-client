@@ -1,10 +1,11 @@
 import React from 'react';
-import CommentsList from './CommentsList';
+import './NovelComments.css';
+import CommentsList from './commentComponents/CommentsList';
 
 const NovelComments: React.FC = () => {
   return (
     <div>
-      <div>NovelComments</div>
+      <div className="wholeNovelCommentsWrapper">NovelComments</div>
       <CommentsList />
     </div>
   );

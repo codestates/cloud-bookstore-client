@@ -1,6 +1,8 @@
 .novelInfoWrapper{
-  width: 100%;
+  border: 1px red solid;
+  width: 943px; /* 어차피 이 길이보다 작으면 media-query줌*/
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto; /* 이 것을 넣어야 창크기에 상관없이 중앙정렬 */
 }
