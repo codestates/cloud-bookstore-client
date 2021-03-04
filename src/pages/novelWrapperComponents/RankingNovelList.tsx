@@ -1,7 +1,8 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import './NovelList.css';
 
-interface RankingDataProps {
+interface RankingDataProps extends RouteComponentProps {
   rankingData: {
     id: number;
     title: string;
@@ -38,7 +39,11 @@ const NovelList: React.FC<RankingDataProps> = (props: RankingDataProps) => {
   };
 
   return (
-    <div className="novelList">
+    <div
+      className="novelList"
+      role="presentation"
+      onClick={() => props.history.push(`/main/novel/${props.rankingData.id}`)}
+    >
       <div
         className="thumbnail"
         style={{
