@@ -23,6 +23,7 @@ interface MyNovelDataProps extends RouteComponentProps {
       };
       episodes: {
         id: number;
+        episodeNum: number;
         title: string;
       };
     }[];
@@ -30,7 +31,6 @@ interface MyNovelDataProps extends RouteComponentProps {
       id: number;
       title: string;
       author: string;
-      userId: number;
       category: number;
       description: string;
       cloud: number;
@@ -45,7 +45,6 @@ interface MyNovelDataProps extends RouteComponentProps {
       id: number;
       title: string;
       author: string;
-      userId: number;
       category: number;
       description: string;
       cloud: number;
