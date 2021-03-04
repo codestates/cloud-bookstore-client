@@ -52,7 +52,7 @@ const FantasyCategory: React.FC = () => {
   return (
     <div className="wholeFantasyCategoryWrapper">
       <div className="fantasyCategoryInnerWrapper">
-        <SelectBoxNav CategorizedData={fantasyNovelData} />
+        <SelectBoxNav categorizedData={fantasyNovelData} />
       </div>
     </div>
   );
