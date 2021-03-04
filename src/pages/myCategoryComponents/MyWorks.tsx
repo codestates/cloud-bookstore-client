@@ -7,7 +7,6 @@ interface UserWorksDataProps extends RouteComponentProps {
     id: number;
     title: string;
     author: string;
-    userId: number;
     category: number;
     description: string;
     cloud: number;
