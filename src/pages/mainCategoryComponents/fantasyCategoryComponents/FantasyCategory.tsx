@@ -81,7 +81,7 @@ const FantasyCategory: React.FC = () => {
   );
 
   useEffect(() => {
-    axios.get('https://server.cloud-bookstore.com/category/:1').then((res) => {
+    axios.get('https://server.cloud-bookstore.com/category/1').then((res) => {
       setFantasyNovelData(res.data);
     });
   }, []);
