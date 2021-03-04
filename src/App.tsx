@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import LandingPage from './pages/LandingPage';
 import MainPage from './pages/MainPage';
-import Home from './pages/Home';
 
 const App: React.FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(false);
@@ -93,10 +92,6 @@ const App: React.FC = () => {
               novelData={novelData}
             />
           )}
-        />
-        <Route
-          path="/main/home"
-          render={() => <Home novelData={novelData} />}
         />
         <Route
           path="/"
