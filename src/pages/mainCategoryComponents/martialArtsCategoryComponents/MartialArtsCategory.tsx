@@ -4,27 +4,8 @@ import axios from 'axios';
 
 import SelectBoxNav from '../SelectBoxNav';
 
-interface FantasyCategoryData {
-  data: {
-    id: number;
-    title: string;
-    author: string;
-    category: number;
-    description: string;
-    cloud: number;
-    userLike: number;
-    complete: boolean;
-    thumbnail: string;
-    createdAt: string;
-    updatedAt: string;
-  }[];
-}
-
 const MartialArtsCategory: React.FC = () => {
-  const [
-    martialArtsNovelData,
-    setMartialArtsNovelData,
-  ] = useState<FantasyCategoryData>({
+  const [martialArtsNovelData, setMartialArtsNovelData] = useState({
     data: [
       {
         id: 1,
