@@ -19,6 +19,7 @@ import RomanceCategory from './mainCategoryComponents/romanceCategoryComponents/
 import Mypage from './Mypage';
 import HistoryNovel from './myCategoryComponents/HistoryNovel';
 import Setting from './Setting';
+import NovelInfo from './NovelInfo';
 
 interface mainPageProps extends RouteComponentProps {
   isLogin: boolean;
@@ -217,6 +218,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
             path="/main/mypage/recentNovelList"
             render={() => <HistoryNovel />}
           />
+          <Route path="/main/novel/:id" render={() => <NovelInfo />} />
         </Switch>
       </div>
       <Footer />

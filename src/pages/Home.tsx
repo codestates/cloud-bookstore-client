@@ -1,7 +1,6 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import '../css/Home.css';
-
 import HomeSlider from './sliderComponent/HomeSlider';
 import NovelRankingWrapper from './novelWrapperComponents/NovelRankingWrapper';
 import NovelFantasyWrapper from './novelWrapperComponents/NovelFantasyWrapper';
@@ -63,7 +62,12 @@ const Home: React.FC<NovelDataProps> = (props: NovelDataProps) => {
       <div className="sliderWrapper">
         <HomeSlider />
       </div>
-      <NovelRankingWrapper rankingData={props.novelData.ranking} />
+      <NovelRankingWrapper
+        rankingData={props.novelData.ranking}
+        history={props.history}
+        location={props.location}
+        match={props.match}
+      />
       <NovelFantasyWrapper
         fantasyData={props.novelData.fantasy}
         history={props.history}
@@ -76,12 +80,7 @@ const Home: React.FC<NovelDataProps> = (props: NovelDataProps) => {
         location={props.location}
         match={props.match}
       />
-      <NovelRomanceWrapper
-        romanceData={props.novelData.romance}
-        history={props.history}
-        location={props.location}
-        match={props.match}
-      />
+      <NovelRomanceWrapper romanceData={props.novelData.romance} />
     </div>
   );
 };

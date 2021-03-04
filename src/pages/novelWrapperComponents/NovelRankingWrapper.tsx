@@ -1,9 +1,9 @@
 import React from 'react';
 import './NovelWrapperStyle.css';
-
+import { RouteComponentProps } from 'react-router-dom';
 import RankingNovelList from './RankingNovelList';
 
-interface RankingDataProps {
+interface RankingDataProps extends RouteComponentProps {
   rankingData: {
     id: number;
     title: string;
@@ -25,7 +25,13 @@ const NovelRankingWrapper: React.FC<RankingDataProps> = (
       <div className="mainNovelWrapperSubject">랭킹</div>
       <div className="mainNovelInnerWrapper">
         {props.rankingData.map((data) => (
-          <RankingNovelList key={data.id} rankingData={data} />
+          <RankingNovelList
+            key={data.id}
+            rankingData={data}
+            history={props.history}
+            location={props.location}
+            match={props.match}
+          />
         ))}
       </div>
     </div>
