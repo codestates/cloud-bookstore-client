@@ -381,7 +381,10 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
               <RomanceCategory romanceNovelData={romanceNovelData} />
             )}
           />
-          <Route path="/main/mypage" render={() => <Mypage />} />
+          <Route
+            path="/main/mypage"
+            render={() => <Mypage myPageData={myPageData} />}
+          />
           <Route
             path="/main/mypage/recentNovelList"
             render={() => <HistoryNovel />}
