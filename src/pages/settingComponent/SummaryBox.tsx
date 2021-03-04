@@ -87,7 +87,10 @@ const SummaryBox: React.FC<summaryProps> = (props: summaryProps) => {
   return (
     <>
       {nicknameModal === true ? (
-        <ModalEditNickname handleNickname={props.handleNickname} />
+        <ModalEditNickname
+          handleNickname={props.handleNickname}
+          toggleNicknameModal={toggleNicknameModal}
+        />
       ) : (
         <></>
       )}

@@ -6,6 +6,7 @@ import { MdClose } from 'react-icons/md';
 interface editNicknameProps {
   // eslint-disable-next-line no-unused-vars
   handleNickname: (nickname: string) => void;
+  toggleNicknameModal: () => void;
 }
 
 const ModalEditNickname: React.FC<editNicknameProps> = (
@@ -24,7 +25,8 @@ const ModalEditNickname: React.FC<editNicknameProps> = (
         { nickname: updatedNickname },
         { headers: { 'Content-Type': 'application/json' } },
       )
-      .then(() => props.handleNickname(updatedNickname));
+      .then(() => props.handleNickname(updatedNickname))
+      .then(() => props.toggleNicknameModal());
   };
 
   return (
@@ -33,7 +35,10 @@ const ModalEditNickname: React.FC<editNicknameProps> = (
       <div className="editBox">
         <div className="editUpperBox">
           <div className="editBoxTitle">닉네임 변경</div>
-          <MdClose className="nicknameCloseButton" />
+          <MdClose
+            className="nicknameCloseButton"
+            onClick={props.toggleNicknameModal}
+          />
         </div>
         <div className="editGreyUnderline" />
         <div className="editBoxDetails">
