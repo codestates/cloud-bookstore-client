@@ -80,7 +80,12 @@ const Home: React.FC<NovelDataProps> = (props: NovelDataProps) => {
         location={props.location}
         match={props.match}
       />
-      <NovelRomanceWrapper romanceData={props.novelData.romance} />
+      <NovelRomanceWrapper
+        romanceData={props.novelData.romance}
+        history={props.history}
+        location={props.location}
+        match={props.match}
+      />
     </div>
   );
 };

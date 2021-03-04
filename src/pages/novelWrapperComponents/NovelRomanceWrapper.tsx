@@ -1,9 +1,10 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import './NovelWrapperStyle.css';
 
 import RomanceNovelList from './RomanceNovelList';
 
-interface RomanceDataProps {
+interface RomanceDataProps extends RouteComponentProps {
   romanceData: {
     id: number;
     title: string;
@@ -24,9 +25,13 @@ const NovelRomanceWrapper: React.FC<RomanceDataProps> = (
     <div id="novelRomanceWrapper" className="mainPageNovelWrapper">
       <div className="mainNovelTextWrapper">
         <div className="mainNovelWrapperSubject">로맨스</div>
-        <a href="http://cloud-bookstore.com/main/romance">
-          <div className="mainNovelMoreView">더보기</div>
-        </a>
+        <div
+          role="presentation"
+          className="mainNovelMoreView"
+          onClick={() => props.history.push('/main/romance')}
+        >
+          더보기
+        </div>
       </div>
       <div className="mainNovelInnerWrapper">
         {props.romanceData.map((data) => (
