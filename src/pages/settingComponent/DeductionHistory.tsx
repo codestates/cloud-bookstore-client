@@ -61,9 +61,13 @@ const DeductionHistory: React.FC<deductedProps> = (props: deductedProps) => {
           <></>
         )}
       </div>
-      {props.deductedHistories.map((data, i) => (
-        <DeductedLists key={i} deductedData={data} />
-      ))}
+      {props.deductedHistories.length === 0 ? (
+        <div className="emptyCloudList">해당 내역이 없습니다.</div>
+      ) : (
+        props.deductedHistories.map((data, i) => (
+          <DeductedLists key={i} deductedData={data} />
+        ))
+      )}
     </div>
   );
 };

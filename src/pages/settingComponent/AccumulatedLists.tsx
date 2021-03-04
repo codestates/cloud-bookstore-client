@@ -12,9 +12,7 @@ const AccumulatedLists: React.FC<accumulatedProps> = (
 ) => {
   return (
     <>
-      {!props.accumulatedData ? (
-        <div className="emptyCloudList">해당 내역이 없습니다.</div>
-      ) : props.accumulatedData.cloud === 10 ? (
+      {props.accumulatedData.cloud === 10 ? (
         <div className="cloudHistoryLists">
           <div className="leftSideDetails">
             <div className="accumulation">적립</div>
