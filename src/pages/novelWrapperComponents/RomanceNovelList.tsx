@@ -53,11 +53,6 @@ const NovelList: React.FC<RomanceDataProps> = (props: RomanceDataProps) => {
         ) : (
           <></>
         )}
-        {refinedupdatedAt === getToday() ? (
-          <div className="novelListNewObject">NEW</div>
-        ) : (
-          <></>
-        )}
       </div>
       <div className="homeNovelListContentWrapper">
         <div className="countCloud">
@@ -65,6 +60,11 @@ const NovelList: React.FC<RomanceDataProps> = (props: RomanceDataProps) => {
             누적구름 {props.romanceData.cloud}
           </div>
           <div className="countCloudImg" />
+          {refinedupdatedAt === getToday() ? (
+            <div className="novelListNewObject">NEW</div>
+          ) : (
+            <></>
+          )}
         </div>
         <div className="novelListSubjectWrapper">
           <div className="HomeNovelListSubject">
