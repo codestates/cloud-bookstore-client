@@ -1,6 +1,6 @@
 .novelHisList {
   width: 224px;
-  height: 258px;
+  height: 287px;
   border-radius: 2px;
   border: solid 1px #e9e9e9;
 }
@@ -28,9 +28,9 @@
 }
 
 .homeNovelListContentWrapper {
-  margin: 4px 0 0 10px;
+  margin: 17px 16px;
   width: 192px;
-  height: 71px;
+  height: 67px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -39,7 +39,7 @@
 .goNovelEpisode{
   box-sizing: border-box;
   width: 224px;
-  height: 44px;
+  height: 46px;
   padding: 13px 51px 12px;
   border: solid 1px #2b79fe;
   border-radius: 2px;
@@ -47,33 +47,23 @@
   display:table-cell;
   text-align: center;
   vertical-align:middle;
-  font-family: NotoSansKR;
   font-size: 16px;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #2b79fe;
 }
 
 .goNovelEpisode:hover{
   box-sizing: border-box;
   width: 224px;
-  height: 44px;
+  height: 46px;
   padding: 13px 51px 12px;
   border-radius: 2px;
   background-color: #2b79fe;
   display:table-cell;
   text-align: center;
   vertical-align:middle;
-  font-family: NotoSansKR;
   font-size: 16px;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #ffffff;
   cursor: pointer;
 }
@@ -174,6 +164,13 @@
     font-size: 12px;
     padding: 9px 40px 8px;
   }
+  .homeNovelListContentWrapper {
+    width: 173px;
+    margin: 5px 0 0 5px;
+  }
+  .homeNovelListAuthorFavWrapper {
+    width: 177px;
+  }
 }
 /* 스마트폰(max) 크기 */
 @media (max-width: 414px) {
@@ -216,7 +213,7 @@
     height: 15px;
   }
   .homeNovelListAuthorFavWrapper {
-    width: 169px;
+    width: 164px;
   }
   .novelListAuthor {
     font-size: 11px;
