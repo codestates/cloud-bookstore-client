@@ -71,7 +71,7 @@ const NovelInfo: React.FC<ClickedNovelInfoProps> = (
         <LastUserHistory />
       )}
       <EpisodeList />
-      <NovelComments />
+      <NovelComments commentsData={props.clickedNovelData.comments}/>
     </div>
   );
 };
