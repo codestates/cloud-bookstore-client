@@ -69,7 +69,13 @@ const NovelComments: React.FC<CommentsDataProps> = (
           <div className="novelCommentsText">
             작품 리뷰({props.clickedNovelData.comments.length})
           </div>
-          <div className="novelRefreshBtn">
+          <div
+            className="novelRefreshBtn"
+            onClick={() => {
+              props.handleAxiosClickedNovelData(props.clickedNovelData.data.id);
+            }}
+            aria-hidden="true"
+          >
             <IoMdRefresh />
           </div>
         </div>
