@@ -1,7 +1,9 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import './NovelList.css';
 
-interface RomanceDataProps {
+interface RomanceDataProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (parameter: number) => void;
   romanceData: {
     id: number;
     title: string;
@@ -27,7 +29,7 @@ const getToday = (): string => {
 };
 
 const NovelList: React.FC<RomanceDataProps> = (props: RomanceDataProps) => {
-  const refinedupdatedAt: string = props.romanceData.updatedAt.slice(0, 10);
+  const refinedUpdatedAt: string = props.romanceData.updatedAt.slice(0, 10);
 
   const sliceTitle: string = props.romanceData.title.slice(0, 9);
   const sliceAuthor: string = props.romanceData.author.slice(0, 12);
@@ -41,7 +43,14 @@ const NovelList: React.FC<RomanceDataProps> = (props: RomanceDataProps) => {
   };
 
   return (
-    <div className="novelList">
+    <div
+      className="novelList"
+      role="presentation"
+      onClick={() => {
+        props.handleAxiosClickedNovelData(props.romanceData.id);
+        props.history.push(`/main/novel/${props.romanceData.id}`);
+      }}
+    >
       <div
         className="thumbnail"
         style={{
@@ -54,13 +63,13 @@ const NovelList: React.FC<RomanceDataProps> = (props: RomanceDataProps) => {
           <></>
         )}
       </div>
-      <div className="homeNovelListContentWrapper">
+      <div className="novelListContentWrapper">
         <div className="countCloud">
           <div className="countCloudText">
             누적구름 {props.romanceData.cloud}
           </div>
           <div className="countCloudImg" />
-          {refinedupdatedAt === getToday() ? (
+          {refinedUpdatedAt === getToday() ? (
             <div className="novelListNewObject">NEW</div>
           ) : (
             <></>

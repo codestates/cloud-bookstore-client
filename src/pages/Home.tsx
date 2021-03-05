@@ -8,7 +8,6 @@ import NovelMartialArtWrapper from './novelWrapperComponents/NovelMartialArtWrap
 import NovelRomanceWrapper from './novelWrapperComponents/NovelRomanceWrapper';
 
 interface NovelDataProps extends RouteComponentProps {
-  // handleClickedNovelId: (parameter: number) => void;
   handleAxiosClickedNovelData: (parameter: number) => void;
   handleFantasyOn: () => void;
   handleMartialArtOn: () => void;
@@ -80,7 +79,6 @@ const Home: React.FC<NovelDataProps> = (props: NovelDataProps) => {
         <HomeSlider />
       </div>
       <NovelRankingWrapper
-        // handleClickedNovelId={props.handleClickedNovelId}
         handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
         rankingData={props.novelData.ranking}
         history={props.history}
@@ -89,6 +87,7 @@ const Home: React.FC<NovelDataProps> = (props: NovelDataProps) => {
       />
       <NovelFantasyWrapper
         fantasyData={props.novelData.fantasy}
+        handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
         history={props.history}
         location={props.location}
         match={props.match}
@@ -96,6 +95,7 @@ const Home: React.FC<NovelDataProps> = (props: NovelDataProps) => {
       />
       <NovelMartialArtWrapper
         martialArtsData={props.novelData.martialArts}
+        handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
         history={props.history}
         location={props.location}
         match={props.match}
@@ -103,6 +103,7 @@ const Home: React.FC<NovelDataProps> = (props: NovelDataProps) => {
       />
       <NovelRomanceWrapper
         romanceData={props.novelData.romance}
+        handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
         history={props.history}
         location={props.location}
         match={props.match}
