@@ -1,9 +1,11 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import './RomanceCategory.css';
 
 import SelectBoxNav from '../SelectBoxNav';
 
-interface RomanceNovelDataProps {
+interface RomanceNovelDataProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (parameter: number) => void;
   romanceNovelData: {
     data: {
       id: number;
@@ -28,7 +30,13 @@ const RomanceCategory: React.FC<RomanceNovelDataProps> = (
   return (
     <div className="wholeFantasyCategoryWrapper">
       <div className="fantasyCategoryInnerWrapper">
-        <SelectBoxNav categorizedData={props.romanceNovelData} />
+        <SelectBoxNav
+          categorizedData={props.romanceNovelData}
+          history={props.history}
+          location={props.location}
+          match={props.match}
+          handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
+        />
       </div>
     </div>
   );

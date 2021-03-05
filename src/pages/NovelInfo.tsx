@@ -65,9 +65,13 @@ const NovelInfo: React.FC<ClickedNovelInfoProps> = (
   return (
     <div className="novelInfoWrapper">
       <NovelDetail />
-      <LastUserHistory />
+      {!props.clickedNovelData.userHistory ? (
+        <div className="emptySpaceNovelInfo"></div>
+      ) : (
+        <LastUserHistory />
+      )}
       <EpisodeList />
-      <NovelComments />
+      <NovelComments commentsData={props.clickedNovelData.comments}/>
     </div>
   );
 };

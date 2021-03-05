@@ -54,6 +54,7 @@
 
 .novelDetailInfo{
   display: flex;
+  align-items: space-between;
 }
 
 .novelDetailThumbnail{
@@ -116,34 +117,23 @@
 }
 /* 아이패드 크기 */
 @media (max-width: 768px) {
-  .novelDetailWrapper{
-    width: 469px;
-  }
   .novelHeaderButtons > div{
     font-size: 25px;
     margin-right: 20px;
   }
-  .novelDetailInfo{
-    width: 455px;
-    flex-direction: column;
-    height: 500px;
-  }
   .novelDetailDescription{
-    width: 100%;
+    width: 400px;
     margin-bottom: 32px;
+    font-size: 16px;
   }
   .novelDetailThumbnail{
     margin-bottom: 32px;
-  }
-  .lastUserHistoryWrapper{
-    margin-top:200px;
-  }
-  .ipadLastHistory{
-    margin: 0;
+    width: 304px;
   }
 }
-/* 스마트폰(max) 크기 */
-@media (max-width: 470px) {
+
+/* 아이패드부터 스마트폰(max) 크기 */
+@media (max-width: 740px) {
   .novelDetailWrapper{    
     width: 370px;
   }
@@ -152,12 +142,14 @@
   }
   .novelDetailInfo{
     display: flex;
-    align-items: center;
+    flex-direction: column;
     width: 370px;
     margin: 0;
   }
   .novelDetailThumbnail{
     margin-bottom: 32px;
+    width: 304px;
+    margin-left: 35px;
   }
   .novelDetailAuthor{
     text-align: center;
@@ -170,10 +162,10 @@
   .novelDetailDescription{
     width: 100%;
   }
-  .lastUserHistoryWrapper{
-    margin-top:250px;
+  .emptySpaceNovelInfo{
+    height: 200px;
   }
-  .ipadLastHistory{
-    margin: 0;
+  .lastUserWrapper{
+    margin-top: 280px;
   }
 }

@@ -1,9 +1,11 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import './MartialArtsCategory.css';
 
 import SelectBoxNav from '../SelectBoxNav';
 
-interface MartialArtsNovelDataProps {
+interface MartialArtsNovelDataProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (parameter: number) => void;
   martialArtsNovelData: {
     data: {
       id: number;
@@ -28,7 +30,13 @@ const MartialArtsCategory: React.FC<MartialArtsNovelDataProps> = (
   return (
     <div className="wholeFantasyCategoryWrapper">
       <div className="fantasyCategoryInnerWrapper">
-        <SelectBoxNav categorizedData={props.martialArtsNovelData} />
+        <SelectBoxNav
+          categorizedData={props.martialArtsNovelData}
+          history={props.history}
+          location={props.location}
+          match={props.match}
+          handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
+        />
       </div>
     </div>
   );

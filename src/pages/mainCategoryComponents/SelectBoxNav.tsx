@@ -1,5 +1,6 @@
 import './SelectBoxNav.css';
 import React, { Component } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import Select from 'react-select';
 import CategoryNovelList from './CategoryNovelList';
 
@@ -49,7 +50,8 @@ const options: OptionType[] = [
   { value: 'favorite', label: '관심순' },
 ];
 
-interface CategorizedDataProps {
+interface CategorizedDataProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (parameter: number) => void;
   categorizedData: {
     data: {
       id: number;
@@ -186,7 +188,16 @@ class SelectBoxNav extends Component<CategorizedDataProps, State> {
         </div>
         <div className="categoryNovelListWrapper">
           {this.state.sortedData.map((data: data) => (
-            <CategoryNovelList key={data.id} data={data} />
+            <CategoryNovelList
+              key={data.id}
+              data={data}
+              history={this.props.history}
+              location={this.props.location}
+              match={this.props.match}
+              handleAxiosClickedNovelData={
+                this.props.handleAxiosClickedNovelData
+              }
+            />
           ))}
         </div>
       </>
