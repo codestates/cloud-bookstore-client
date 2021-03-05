@@ -10,7 +10,13 @@ import DeductedLists from './DeductedLists';
 interface deductedProps {
   deductedHistories: {
     title: { title: string };
-    episode: { id: number; title: string };
+    episode: {
+      id: number;
+      episodeNum: number;
+      title: string;
+      thumbnail: string;
+      cloud: number;
+    };
     date: string;
     cloud: number;
   }[];
@@ -18,7 +24,13 @@ interface deductedProps {
     data: [
       {
         title: { title: string };
-        episode: { id: number; title: string };
+        episode: {
+          id: number;
+          episodeNum: number;
+          title: string;
+          thumbnail: string;
+          cloud: number;
+        };
         date: string;
         cloud: number;
       },
