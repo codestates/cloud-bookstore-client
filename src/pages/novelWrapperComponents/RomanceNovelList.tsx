@@ -63,7 +63,7 @@ const NovelList: React.FC<RomanceDataProps> = (props: RomanceDataProps) => {
           <></>
         )}
       </div>
-      <div className="homeNovelListContentWrapper">
+      <div className="novelListContentWrapper">
         <div className="countCloud">
           <div className="countCloudText">
             누적구름 {props.romanceData.cloud}

@@ -182,11 +182,11 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         cloud: 0,
         userLike: 0,
         episodeCount: 5,
-        complete: false,
+        complete: true,
         thumbnail:
           'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
         createdAt: '2021-02-24T21:20:11.925Z',
-        updatedAt: '2021-02-25T00:17:06.955Z',
+        updatedAt: '2021-03-05T00:17:06.955Z',
       },
     ],
   });

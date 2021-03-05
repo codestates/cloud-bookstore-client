@@ -26,11 +26,11 @@ const App: React.FC = () => {
         cloud: 222,
         userLike: 143,
         episodeCount: 0,
-        complete: false,
+        complete: true,
         thumbnail:
           'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
         createdAt: '2021-02-25T15:55:19.608Z',
-        updatedAt: '2021-02-28T11:20:08.168Z',
+        updatedAt: '2021-03-05:20:08.168Z',
       },
     ],
     fantasy: [
