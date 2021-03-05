@@ -24,6 +24,8 @@ interface MyNovelDataProps extends RouteComponentProps {
       episodes: {
         id: number;
         episodeNum: number;
+        cloud: number;
+        thumbnail: string;
         title: string;
       };
     }[];
@@ -132,7 +134,9 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
       <Switch>
         <Route
           path="/main/mypage/recentNovelList"
-          render={() => <HistoryNovel />}
+          render={() => (
+            <HistoryNovel userHistoriesData={props.myPageData.userHistories} />
+          )}
         />
         <Route
           path="/main/mypage/concernNovelList"

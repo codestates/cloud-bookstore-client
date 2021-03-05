@@ -4,7 +4,7 @@ import './MakeNewComment.css';
 const MakeNewComment: React.FC = () => {
   const [textChange, setTextChange] = useState<string>('');
 
-  const handleChange = (e: any): void => {
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
     setTextChange(e.target.value);
   };
 

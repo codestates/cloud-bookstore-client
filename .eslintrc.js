@@ -7,7 +7,6 @@ module.exports = {
   extends: [
     'prettier',
     'prettier/react',
-    'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
     'eslint:recommended',
@@ -15,6 +14,7 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'plugin:@typescript-eslint/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {

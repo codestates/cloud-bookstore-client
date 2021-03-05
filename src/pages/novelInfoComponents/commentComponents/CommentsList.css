@@ -1,9 +1,9 @@
 .wholeCommentsListWrapper {
   border-top: 1px #d8d8d8 solid;
-  border-bottom: 1px #d8d8d8 solid;
-  margin: 24px 0 0 0;
+  margin: 15px 0 0 0;
   width: 100%;
-  height: 100px;
+  height: fit-content;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,6 +12,7 @@
 
 
 .commentsListUserInfo {
+  margin: 16px 0 0 0;
   width: 100%;
   height: 20px;
   display: flex;
@@ -20,7 +21,6 @@
 }
 
   .commentsListNameDateWrapper {
-    border : 1px red solid;
     width: 300px;
     height: 20px;
     display: flex;
@@ -35,14 +35,31 @@
     }
 
   .commentsListEditDelWrapper {
-    border: 1px red solid;
     width: 55px;
     height: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #b8b8b8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
+    .commentsListEditBtn,
+    .commentsListDeleteBtn {
+      cursor: pointer;
+    }
+    .commentsListEditBtn:hover,
+    .commentsListDeleteBtn:hover {
+      color: #2b79fe;
+    }
+
 .commentsListMainText {
-  border: 1px blue solid;
   margin: 8px 0 0 0;
   width: 100%;
-  height: 40px;
+  height: fit-content;
+  min-height: 40px;
+  font-size: 14px;
+  color: #464646;
 }
+

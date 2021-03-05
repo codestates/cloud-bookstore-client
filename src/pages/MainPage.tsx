@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import React, { useState, useEffect } from 'react';
 import {
   RouteComponentProps,
@@ -105,6 +103,78 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     setIsCategoryOn('/main/mypage/recentNovelList');
   };
 
+  // ? id 가져오기이이이이이이ㅣㅇ 제발가져와라
+  // const [clickedNovelId, setClickedNovelId] = useState<number>(0);
+  // const handleClickedNovelId = (parameter: number) => {
+  //   setClickedNovelId(parameter);
+  // };
+
+  const [clickedNovelData, setClickedNovelData] = useState({
+    data: {
+      id: 1,
+      title: '잊지마 4시1분',
+      author: 'Daniel',
+      category: 3,
+      description:
+        '새침하게 흐린 품이 눈이 올 듯하더니 눈은 아니 오고 얼다가 만 비가 추적추적 내리는 날이었다.\r\n\n이날이야말로 동소문 안에서 인력거꾼 노릇을 하는 김첨지에게는 오래간만에도 닥친 운수 좋은 날...',
+      cloud: 4,
+      userLike: 14,
+      episodeCount: 0,
+      complete: false,
+      thumbnail:
+        'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+      createdAt: '2021-02-24T21:20:11.925Z',
+      updatedAt: '2021-03-04T15:23:30.000Z',
+    },
+    episodes: [
+      {
+        id: 1,
+        episodeNum: 1,
+        novelId: 1,
+        title: '어느 좋은 날',
+        text:
+          ' 새침하게 흐린 품이 눈이 올 듯하더니 눈은 아니 오고 얼다가 만 비가 추\r\n적추적 내리는 날이었다.\r\n 이날이야말로 동소문 안에서 인력거꾼 노릇을 하는 김첨지에게는 오래간만\r\n에도 닥친 운수 좋은 날이었다. 문안에(거기도 문밖은 아니지만) 들어간답\r\n시는 앞집 마마님을 전찻길까지 모셔다 드린 것을 비롯으로 행여나 손님이\r\n있을까 하고 정류장에서 어정어정하며 내리는 사람 하나하나에게 거의 비는\r\n듯한 눈결을 보내고 있다가 마침내 교원인 듯한 양복쟁이를 동광학교(東光\r\n學校)까지 태워다 주기로 되었다.\r\n 첫 번에 삼십전 , 둘째 번에 오십전 - 아침 댓바람에 그리 흉치 않은 일이\r\n었다. 그야말로 재수가 옴붙어서 근 열흘 동안 돈 구경도 못한 김첨지는 십\r\n전짜리 백동화 서 푼, 또는 다섯 푼이 찰깍 하고 손바닥에 떨어질 제 거의\r\n눈물을 흘릴 만큼 기뻤었다. 더구나 이날 이때에 이 팔십 전이라는 돈이 그\r\n에게 얼마나 유용한지 몰랐다. 컬컬한 목에 모주 한 잔도 적실 수 있거니와\r\n그보다도 앓는 아내에게 설렁탕 한 그릇도 사다 줄 수 있음이다.\r\n 그의 아내가 기침으로 쿨룩거리기는 벌써 달포가 넘었다. 조밥도 굶기를\r\n먹다시피 하는 형편이니 물론 약 한 첩 써본 일이 없다. 구태여 쓰려면 못\r\n쓸 바도 아니로되 그는 병이란 놈에게 약을 주어 보내면 재미를 붙여서 자\r\n꾸 온다는 자기의 신조(信條)에 어디까지 충실하였다. 따라서 의사에게 보\r\n인 적이 없으니 무슨 병인지는 알 수 없으되 반듯이 누워 가지고 일어나기\r\n는 새로 모로도 못 눕는 걸 보면 중증은 중증인 듯. 병이 이대도록 심해지\r\n기는 열흘전에 조밥을 먹고 체한 때문이다. 그때도 김첨지가 오래간만에 돈\r\n을 얻어서 좁쌀 한 되와 십 전짜리 나무 한 단을 사다 주었더니 김첨지의\r\n말에 의지하면 그 오라질 년이 천방지축으로 냄비에 대고 끓였다. 마음은\r\n급하고 불길은 달지 않아 채 익지도 않은 것을 그 오라질년이 숟가락은 고\r\n만두고 손으로 움켜서 두 뺨에 주먹덩이 같은 혹이 불거지도록 누가 빼앗을\r\n듯이 처박질하더니만 그날 저녁부터 가슴이 땡긴다, 배가 켕긴다고 눈을 흡\r\n뜨고 지랄병을 하였다. 그때 김첨지는 열화와 같이 성을 내며,\r\n  “에이, 오라질년, 조랑복은 할 수가 없어, 못 먹어 병, 먹어서 병! 어쩌\r\n란 말이야! 왜 눈을 바루 뜨지 못해!”\r\n하고 앓는 이의 뺨을 한 번 후려갈겼다. 흡뜬 눈은 조금 바루어졌건만 이슬\r\n이 맺히었다. 김첨지의 눈시울도 뜨끈뜨끈하였다.',
+        thumbnail: '',
+        cloud: 19,
+        createdAt: '2021-02-24T21:20:58.760Z',
+        updatedAt: '2021-03-04T15:23:30.000Z',
+      },
+    ],
+    comments: [
+      {
+        id: 2,
+        nickname: 'sanghyuk',
+        comment: 'wowww amazing :)',
+        novelId: 1,
+        createdAt: '2021-02-25T18:01:28.217Z',
+        updatedAt: '2021-02-28T06:25:21.000Z',
+      },
+    ],
+    userHistory: {
+      id: 1,
+      episodeNum: 1,
+      title: '어느 좋은 날',
+      thumbnail:
+        'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+      cloud: 19,
+      userHistory_novelEpisodeId: 1,
+      userHistory_updated_at: '2021-03-04T15:38:17.908Z',
+    },
+    userLike: true, // 소설에 좋아요를 한 상태, 좋아요를 안했으면 false
+    userPurchases: [
+      {
+        episodeId: 1,
+      },
+    ],
+  });
+  const handleAxiosClickedNovelData = (parameter: number) => {
+    axios
+      .get(`https://server.cloud-bookstore.com/novel/${parameter}`)
+      .then((res) => {
+        setClickedNovelData(res.data);
+      });
+  };
+
   // ! Fantasy novel Data - axios get
   const [fantasyNovelData, setFantasyNovelData] = useState({
     data: [
@@ -190,15 +260,93 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         novels: {
           title: '잊지마 4시1분',
           complete: false,
-          thumbnail: '',
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
           updatedAt: '2021-02-26T02:55:20.000Z',
         },
         episodes: {
           id: 3,
           episodeNum: 2,
+          cloud:3,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
           title: '이런 날이...',
         },
       },
+      {
+        novels: {
+          title: '잊지마 4시1분',
+          complete: false,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          updatedAt: '2021-02-26T02:55:20.000Z',
+        },
+        episodes: {
+          id: 3,
+          episodeNum: 2,
+          cloud:3,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          title: '이런 날이...',
+        },
+      },
+      {
+        novels: {
+          title: '잊지마 4시1분',
+          complete: false,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          updatedAt: '2021-02-26T02:55:20.000Z',
+        },
+        episodes: {
+          id: 3,
+          episodeNum: 2,
+          cloud:3,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          title: '이런 날이...',
+        },
+      },
+      {
+        novels: {
+          title: '잊지마 4시1분',
+          complete: false,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          updatedAt: '2021-02-26T02:55:20.000Z',
+        },
+        episodes: {
+          id: 3,
+          episodeNum: 2,
+          cloud:3,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          title: '이런 날이...',
+        },
+      },
+      {
+        novels: {
+          title: '잊지마 4시1분',
+          complete: false,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          updatedAt: '2021-02-26T02:55:20.000Z',
+        },
+        episodes: {
+          id: 3,
+          episodeNum: 2,
+          cloud:3,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          title: '이런 날이...',
+        },
+      },
+      {
+        novels: {
+          title: '잊지마 4시1분',
+          complete: false,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          updatedAt: '2021-02-26T02:55:20.000Z',
+        },
+        episodes: {
+          id: 3,
+          episodeNum: 2,
+          cloud:3,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          title: '이런 날이...',
+        },
+      },
+      
     ],
     userLikes: [
       {
@@ -295,6 +443,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
       setMyPageData(res.data);
     });
   };
+
   // ! handleAxios 함수들 미리 실행시켜두기
   useEffect(() => {
     handleAxiosFantasy();
@@ -327,6 +476,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                     handleHomeOn();
                     props.history.push('/main/home');
                   }}
+                  aria-hidden="true"
                 >
                   홈
                 </div>
@@ -338,6 +488,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                     handleFantasyOn();
                     props.history.push('/main/fantasy');
                   }}
+                  aria-hidden="true"
                 >
                   판타지
                 </div>
@@ -349,6 +500,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                     handleMartialArtOn();
                     props.history.push('/main/martialArts');
                   }}
+                  aria-hidden="true"
                 >
                   무협
                 </div>
@@ -360,6 +512,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                     handleRomanceOn();
                     props.history.push('/main/romance');
                   }}
+                  aria-hidden="true"
                 >
                   로맨스
                 </div>
@@ -374,6 +527,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                     handleMyOn();
                     props.history.push('/main/mypage/recentNovelList');
                   }}
+                  aria-hidden="true"
                 >
                   MY
                 </div>
@@ -420,6 +574,8 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                 handleFantasyOn={handleFantasyOn}
                 handleMartialArtOn={handleMartialArtOn}
                 handleRomanceOn={handleRomanceOn}
+                // handleClickedNovelId={handleClickedNovelId}
+                handleAxiosClickedNovelData={handleAxiosClickedNovelData}
               />
             )}
           />
@@ -449,9 +605,12 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
           />
           <Route
             path="/main/mypage/recentNovelList"
-            render={() => <HistoryNovel />}
+            render={() => <HistoryNovel userHistoriesData={myPageData.userHistories}/>}
           />
-          <Route path="/main/novel/:id" render={() => <NovelInfo />} />
+          <Route
+            path="/main/novel/:id"
+            render={() => <NovelInfo clickedNovelData={clickedNovelData} />}
+          />
         </Switch>
       </div>
       <Footer />

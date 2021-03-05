@@ -10,16 +10,27 @@ import DeductedLists from './DeductedLists';
 interface deductedProps {
   deductedHistories: {
     title: { title: string };
-    episode: { id: number; title: string };
+    episode: {
+      id: number;
+      episodeNum: number;
+      title: string;
+      thumbnail: string;
+      cloud: number;
+    };
     date: string;
     cloud: number;
   }[];
   listDeducted: (
-    // eslint-disable-next-line no-unused-vars
     data: [
       {
         title: { title: string };
-        episode: { id: number; title: string };
+        episode: {
+          id: number;
+          episodeNum: number;
+          title: string;
+          thumbnail: string;
+          cloud: number;
+        };
         date: string;
         cloud: number;
       },

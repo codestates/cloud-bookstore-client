@@ -55,11 +55,6 @@ const NovelList: React.FC<MartialArtsDataProps> = (
         ) : (
           <></>
         )}
-        {refinedupdatedAt === getToday() ? (
-          <div className="novelListNewObject">NEW</div>
-        ) : (
-          <></>
-        )}
       </div>
       <div className="homeNovelListContentWrapper">
         <div className="countCloud">
@@ -67,6 +62,11 @@ const NovelList: React.FC<MartialArtsDataProps> = (
             누적구름 {props.martialArtsData.cloud}
           </div>
           <div className="countCloudImg" />
+          {refinedupdatedAt === getToday() ? (
+            <div className="novelListNewObject">NEW</div>
+          ) : (
+            <></>
+          )}
         </div>
         <div className="novelListSubjectWrapper">
           <div className="HomeNovelListSubject">

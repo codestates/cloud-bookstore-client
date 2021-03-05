@@ -4,7 +4,13 @@ import '../../css/DeductionHistory.css';
 interface deductedProps {
   deductedData: {
     title: { title: string };
-    episode: { id: number; title: string };
+    episode: {
+      id: number;
+      episodeNum: number;
+      title: string;
+      thumbnail: string;
+      cloud: number;
+    };
     date: string;
     cloud: number;
   };
@@ -20,7 +26,7 @@ const DeductedLists: React.FC<deductedProps> = (props: deductedProps) => {
           </div>
           <div className="cloudInfo">{props.deductedData.title.title}</div>
           <div className="cloudEpisodeTitle">
-            {props.deductedData.episode.title}
+            {`${props.deductedData.episode.episodeNum}화 ${props.deductedData.episode.title}`}
           </div>
         </div>
       </div>

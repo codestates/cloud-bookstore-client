@@ -1,5 +1,6 @@
 .makeNewCommentWrapper {
   border: 1px #979797 solid;
+  margin: 0 0 30px 0;
   width: 100%;
 }
 

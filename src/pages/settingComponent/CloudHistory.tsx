@@ -12,7 +12,6 @@ interface cloudHistoryProps {
     cloud: number;
   }[];
   listAccumulated: (
-    // eslint-disable-next-line no-unused-vars
     data: [
       {
         date: string;
