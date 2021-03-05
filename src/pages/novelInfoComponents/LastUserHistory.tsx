@@ -21,15 +21,15 @@ import LastUserHistoryDetail from './LastUserHIstoryComponents/LastUserHistoryDe
 
 const LastUserHistory: React.FC = () => {
   return (
-    <>
-      <div className="lastUserHistoryWrapper">
-        <div className="novelInfoTitle">마지막으로 읽은 회차</div>
+    <div className="lastUserWrapper">
+      <div className="novelInfoTitle">마지막으로 읽은 회차</div>
+      <div className="mainNovelInnerWrapper">
         <LastUserHistoryDetail
         // userHistory={props.userHistory}
         // novelData={props.novelData}
         />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -3,20 +3,19 @@ import { withRouter, RouteComponentProps } from 'react-router-dom';
 import './HistoryNovelList.css';
 
 interface HistoryDataProps extends RouteComponentProps {
-  userHistories: {
-    novels: {
-      title: string;
-      complete: boolean;
-      thumbnail: string;
-      updatedAt: string;
-    };
-    episodes: {
-      id: number;
-      episodeNum: number;
-      cloud: number;
-      thumbnail: string;
-      title: string;
-    };
+  userLikes: {
+    id: number;
+    title: string;
+    author: string;
+    category: number;
+    description: string;
+    cloud: number;
+    userLike: number;
+    episodeCount: number;
+    complete: boolean;
+    thumbnail: string;
+    createdAt: string;
+    updatedAt: string;
   };
 }
 
@@ -28,22 +27,16 @@ const getToday = (): string => {
   return `${year}-${month}-${day}`;
 };
 
-const NovelList: React.FC<HistoryDataProps> = (props: HistoryDataProps) => {
-  const refinedupdatedAt: string = props.userHistories.novels.updatedAt.slice(
-    0,
-    10,
-  );
-  const sliceTitle: string = props.userHistories.novels.title.slice(0, 9);
-  const sliceEpisodeTitle: string = props.userHistories.episodes.title.slice(
-    0,
-    12,
-  );
+const UserLikes: React.FC<HistoryDataProps> = (props: HistoryDataProps) => {
+  const refinedupdatedAt: string = props.userLikes.updatedAt.slice(0, 10);
+  const sliceTitle: string = props.userLikes.title.slice(0, 9);
+  const sliceauthor: string = props.userLikes.author.slice(0, 12);
   const getBoolTitleLength = (): boolean => {
-    if (props.userHistories.novels.title.length > 9) return true;
+    if (props.userLikes.title.length > 9) return true;
     else return false;
   };
   const getBoolEpisodeTitleLength = (): boolean => {
-    if (props.userHistories.episodes.title.length > 12) return true;
+    if (props.userLikes.title.length > 12) return true;
     else return false;
   };
   return (
@@ -51,10 +44,10 @@ const NovelList: React.FC<HistoryDataProps> = (props: HistoryDataProps) => {
       <div
         className="hisThumbnail"
         style={{
-          backgroundImage: `url(${props.userHistories.episodes.thumbnail})`,
+          backgroundImage: `url(${props.userLikes.thumbnail})`,
         }}
       >
-        {props.userHistories.novels.complete ? (
+        {props.userLikes.complete ? (
           <div className="novelListCompleteObject">완결</div>
         ) : (
           <></>
@@ -67,23 +60,22 @@ const NovelList: React.FC<HistoryDataProps> = (props: HistoryDataProps) => {
       </div>
       <div className="homeNovelListContentWrapper">
         <div className="countCloud">
-          <div className="countCloudText">
-            누적구름 {props.userHistories.episodes.cloud}
-          </div>
+          <div className="countCloudText">누적구름 {props.userLikes.cloud}</div>
           <div className="countCloudImg"></div>
         </div>
         <div className="novelListSubjectWrapper">
           <div className="HomeNovelListSubject">
-            {getBoolTitleLength()
-              ? `${sliceTitle} ...`
-              : props.userHistories.novels.title}
+            {getBoolTitleLength() ? `${sliceTitle} ...` : props.userLikes.title}
           </div>
         </div>
         <div className="homeNovelListAuthorFavWrapper">
           <div className="novelListAuthor">
             {getBoolEpisodeTitleLength()
-              ? `${sliceEpisodeTitle} ...`
-              : `${props.userHistories.episodes.episodeNum}화. ${props.userHistories.episodes.title}`}
+              ? `${sliceauthor} ...`
+              : props.userLikes.author}
+          </div>
+          <div className="novelListFavorite">
+            관심 {props.userLikes.userLike}
           </div>
         </div>
       </div>
@@ -91,4 +83,4 @@ const NovelList: React.FC<HistoryDataProps> = (props: HistoryDataProps) => {
     </div>
   );
 };
-export default withRouter(NovelList);
+export default withRouter(UserLikes);

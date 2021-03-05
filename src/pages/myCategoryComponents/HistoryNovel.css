@@ -1,5 +1,5 @@
 .wholeHistoryNovelWrapper {
-  width: 968px;
+  width: 952px;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -11,23 +11,32 @@
   flex-flow: row wrap;
   margin-top: 32px;
   margin-bottom: 56px;
+  gap: 16px
 }
 
 /* 컴퓨터에서 줄였을 때 */
-@media (max-width: 968px) {
+@media (max-width: 951px) {
   .wholeHistoryNovelWrapper {
-    width: 728px;
+    width: 710px;
   }
 }
 /* 아이패드 크기 */
 @media (max-width: 767px) {
   .wholeHistoryNovelWrapper {
-    width: 488px;
+    width: 468px;
   }
+}
+
+/* 애매한 크기 */
+@media (max-width:467px) {
+  .wholeHistoryNovelWrapper {
+    width: 376px;
+  }
+
 }
 /* 스마트폰(max) 크기 */
 @media (max-width: 414px) {
   .wholeHistoryNovelWrapper {
-    width: 370px;
+    width: 356px;
   }
 }

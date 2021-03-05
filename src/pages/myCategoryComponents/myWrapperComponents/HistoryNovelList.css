@@ -3,7 +3,6 @@
   height: 258px;
   border-radius: 2px;
   border: solid 1px #e9e9e9;
-  margin: 8px;
 }
 
 .hisThumbnail {
@@ -42,6 +41,27 @@
   width: 224px;
   height: 44px;
   padding: 13px 51px 12px;
+  border: solid 1px #2b79fe;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  display:table-cell;
+  text-align: center;
+  vertical-align:middle;
+  font-family: NotoSansKR;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #2b79fe;
+}
+
+.goNovelEpisode:hover{
+  box-sizing: border-box;
+  width: 224px;
+  height: 44px;
+  padding: 13px 51px 12px;
   border-radius: 2px;
   background-color: #2b79fe;
   display:table-cell;
@@ -55,6 +75,7 @@
   line-height: normal;
   letter-spacing: normal;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .countCloud {
@@ -139,20 +160,39 @@
   justify-content: center;
   align-items: center;
 }
+/* 애매한 크기 */
+@media (max-width:467px) {
+  .novelHisList {
+    width: 178px;
+    height: 258px;
+  }
+  .hisThumbnail{
+    width: 178px;
+    height: 140px;
+  }
+  .goNovelEpisode{
+    font-size: 12px;
+    padding: 9px 40px 8px;
+  }
+}
 /* 스마트폰(max) 크기 */
 @media (max-width: 414px) {
-  .novelList {
-    width: 178px;
-    height: 214px;
+  .novelHisList {
+    width: 168px;
+    height: 258px;
   }
   .novelListCompleteObject {
     font-size: 11px;
     width: 43px;
     height: 15px;
   }
-  .thumbnail{
-    width: 178px;
+  .hisThumbnail{
+    width: 168px;
     height: 140px;
+  }
+  .goNovelEpisode{
+    font-size: 12px;
+    padding: 9px 40px 8px;
   }
   .homeNovelListContentWrapper {
     width: 173px;

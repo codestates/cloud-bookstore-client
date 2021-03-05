@@ -50,7 +50,7 @@
   /* 컴퓨터에서 줄였을 때 */
   @media (max-width: 943px) {
     .mywholeCategoryNav {
-      width: 704px;
+      width: 700px;
     }
   }
   /* 아이패드 크기 */
@@ -60,9 +60,9 @@
     }
   }
   /* 핸드폰 크기 */
-  @media (max-width: 375px) {
+  @media (max-width: 414px) {
     .mywholeCategoryNav {
-      width: 430px;
+      width: 370px;
     }
     .mycategoryNavWrapper {
       padding: 0 0 0 5px;

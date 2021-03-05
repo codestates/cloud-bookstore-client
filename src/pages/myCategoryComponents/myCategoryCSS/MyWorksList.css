@@ -1,0 +1,244 @@
+.MypageContentWrapper {
+  /* border-top: solid 1px #f2f2f2; */
+  width: 943px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.MyWorksList {
+    width: 224px;
+    /* height: 238px; */
+    border-radius: 2px 2px 0px 0px;
+    /* margin-bottom: 42px; */
+    border: solid 1px #e9e9e9;
+  }
+
+  .Pointer{
+    cursor: pointer
+  }
+
+  .MyWorksThumbnail {
+    padding: 0;
+    width: 224px;
+    height: 140px;
+  }
+  
+  .MyWorksNovelListCompleteObject {
+    position: absolute;
+    margin: 12px 0 0 12px;
+    border: 1px #d0800d solid;
+    border-radius: 11.5px;
+    background-color: #d0800d;
+    width: 47px;
+    height: 19px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .MyWorkshomeNovelListContentWrapper {
+    /* margin: 16px;
+    width: 192px;
+    height: 67px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; */
+    margin-left: 16px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+    margin-right: 16px;
+    width: 192px;
+    height: 67px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .MyWorksCountCloud {
+    width: 91px;
+    height: 17px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .MyWorkscountCloudText {
+    font-size: 12px;
+    font-weight: 500;
+    color: #2b79fe;
+  }
+  
+  .MyWorkscountCloudImg {
+    margin: 0 0 2px 3px;
+    width: 12px;
+    height: 8px;
+    background-image: url('../../../asset/mainpage/cloudImg.svg');
+  }
+  
+  .MyWorksNovelListSubjectWrapper {
+    position: relative;
+    left: -1px;
+    width: 190px;
+    height: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .MyWorksHomeNovelListSubject {
+    margin: 3px 0 0 0;
+    width: 190px;
+    height: 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #202020;
+    display: flex;
+    align-items: center;
+  }
+  
+  .MyWorksNovelListNewObject {
+    position: absolute;
+    margin: 0px 0 0 142px;
+    border: 1px #2b79fe solid;
+    border-radius: 11.5px;
+    background-color: #2b79fe;
+    width: 47px;
+    height: 19px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .MyWorksHomeNovelListAuthorFavWrapper {
+    width: 197px;
+    height: 17px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .MyWorksNovelListAuthor {
+    width: 129px;
+    height: 17px;
+    font-size: 12px;
+    color: #7e7e7e;
+    display: flex;
+    align-items: center;
+  }
+  
+  .MyWorksNovelListFavorite {
+    width: 47px;
+    height: 17px;
+    font-size: 12px;
+    color: #7e7e7e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .MygoNovelEpisode{
+    width: 223px;
+    height: 44px;
+    border-radius: 0px 0px 2px 2px;
+    border: 1px solid  #2b79fe;
+    display:table-cell;
+    justify-content: center;
+    text-align: center;
+    vertical-align:middle;
+    font-family: NotoSansKR;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2b79fe;
+    cursor: pointer
+  }
+
+ 
+
+  .MygoNovelEpisode:hover{
+    background-color:#2b79fe;
+    color: #fff
+  }
+
+
+  /* 스마트폰(max) 크기 */
+  @media (max-width: 414px) {
+    .MyWorksList {
+      width: 178px;
+      height: 214px;
+    }
+    .MyWorksNovelListCompleteObject {
+      font-size: 11px;
+      width: 43px;
+      height: 15px;
+    }
+    .MyWorksThumbnail{
+      width: 178px;
+      height: 140px;
+    }
+    .MyWorkshomeNovelListContentWrapper {
+      width: 173px;
+      margin: 5px 0 0 5px;
+    }
+    .MyWorkscountCloudText {
+      font-size: 12px;
+    }
+    .MyWorksNovelListSubjectWrapper {
+      width: 173px;
+    }
+    .MyWorksHomeNovelListSubject {
+      margin: 7px 0 0 1px;
+      line-height: 4px;
+      font-size: 15px;
+    }
+    .MyWorksNovelListNewObject {
+      left: -5px;
+      font-size: 11px;
+      width: 43px;
+      height: 15px;
+    }
+    .MyWorksHomeNovelListAuthorFavWrapper {
+      width: 169px;
+    }
+    .MyWorksNovelListAuthor {
+      font-size: 11px;
+    }
+    .MyWorksNovelListFavorite {
+      position: relative;
+      width: 42px;
+      left: 3px;
+      font-size: 10px;
+    }
+  }
+
+  /* 컴퓨터에서 줄였을 때 */
+@media (max-width: 943px) {
+  .MypageContentWrapper{
+    width: 700px;
+  }
+}
+
+/* 아이패드 크기 */
+@media (max-width: 767px) {
+  .MypageContentWrapper{
+    width: 469px;
+  }
+}
+
+/* 핸드폰 크기 */
+@media (max-width: 414px) {
+  .MypageContentWrapper{
+    width: 370px;
+  }
+  .MyWorksList{
+    margin-bottom: 48px;
+  }
+  .Pointer{
+    margin-bottom: 2px
+  }
+}
