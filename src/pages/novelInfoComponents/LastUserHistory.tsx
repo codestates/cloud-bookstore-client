@@ -23,7 +23,7 @@ const LastUserHistory: React.FC = () => {
   return (
     <>
       <div className="lastUserHistoryWrapper">
-        <div className="lastUserHistoryTitle">마지막으로 읽은 회차</div>
+        <div className="novelInfoTitle">마지막으로 읽은 회차</div>
         <LastUserHistoryDetail
         // userHistory={props.userHistory}
         // novelData={props.novelData}
