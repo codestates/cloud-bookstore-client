@@ -103,6 +103,12 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     setIsCategoryOn('/main/mypage/recentNovelList');
   };
 
+  // ? id 가져오기이이이이이이ㅣㅇ 제발가져와라
+  // const [clickedNovelId, setClickedNovelId] = useState<number>(0);
+  // const handleClickedNovelId = (parameter: number) => {
+  //   setClickedNovelId(parameter);
+  // };
+
   const [clickedNovelData, setClickedNovelData] = useState({
     data: {
       id: 1,
@@ -182,11 +188,11 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         cloud: 0,
         userLike: 0,
         episodeCount: 5,
-        complete: true,
+        complete: false,
         thumbnail:
           'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
         createdAt: '2021-02-24T21:20:11.925Z',
-        updatedAt: '2021-03-05T00:17:06.955Z',
+        updatedAt: '2021-02-25T00:17:06.955Z',
       },
     ],
   });
@@ -196,7 +202,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     });
   };
   // ! MartialArts novel Data - axios get
-  const [martialArtsNovelData, setMartialArtsNovelData] = useState({
+  const [martialArtsNovelData, setmartialArtsNovelData] = useState({
     data: [
       {
         id: 1,
@@ -218,7 +224,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
   });
   const handleAxiosMartialArts = () => {
     axios.get('https://server.cloud-bookstore.com/category/2').then((res) => {
-      setMartialArtsNovelData(res.data);
+      setmartialArtsNovelData(res.data);
     });
   };
   // ! Romance novel Data - axios get
@@ -373,12 +379,12 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     userWorks: [
       {
         id: 34,
-        title: '나의 님',
+        title: '새침하게 흐린 품이 눈이 올 듯하더니 눈은 아니 오고 얼다가 ',
         author: 'chris',
         category: 3,
         description: '그를 본 순간, 나는 느꼈다...',
-        cloud: 0,
-        userLike: 0,
+        cloud: 2000,
+        userLike: 300,
         episodeCount: 0,
         complete: false,
         thumbnail:
@@ -629,6 +635,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                 handleFantasyOn={handleFantasyOn}
                 handleMartialArtOn={handleMartialArtOn}
                 handleRomanceOn={handleRomanceOn}
+                // handleClickedNovelId={handleClickedNovelId}
                 handleAxiosClickedNovelData={handleAxiosClickedNovelData}
               />
             )}

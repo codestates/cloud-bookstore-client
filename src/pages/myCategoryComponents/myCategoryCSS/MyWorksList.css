@@ -42,7 +42,16 @@
   }
   
   .MyWorkshomeNovelListContentWrapper {
-    margin: 16px;
+    /* margin: 16px;
+    width: 192px;
+    height: 67px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; */
+    margin-left: 16px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+    margin-right: 16px;
     width: 192px;
     height: 67px;
     display: flex;

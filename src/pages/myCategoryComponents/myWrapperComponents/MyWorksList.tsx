@@ -18,23 +18,23 @@ interface UserWorksDataProps {
   };
 }
 
-const getToday = (): string => {
-  const date: Date = new Date();
-  const year: number = date.getFullYear();
-  const month: string = ('0' + (1 + date.getMonth())).slice(-2);
-  const day: string = ('0' + date.getDate()).slice(-2);
-  return `${year}-${month}-${day}`;
-};
+// const getToday = (): string => {
+//   const date: Date = new Date();
+//   const year: number = date.getFullYear();
+//   const month: string = ('0' + (1 + date.getMonth())).slice(-2);
+//   const day: string = ('0' + date.getDate()).slice(-2);
+//   return `${year}-${month}-${day}`;
+// };
 
 const MyWorksList: React.FC<UserWorksDataProps> = (
   props: UserWorksDataProps,
 ) => {
-  const refinedupdatedAt: string = props.userWorksData.updatedAt.slice(0, 10);
+  // const refinedupdatedAt: string = props.userWorksData.updatedAt.slice(0, 10);
 
-  const sliceTitle: string = props.userWorksData.title.slice(0, 9);
+  const sliceTitle: string = props.userWorksData.title.slice(0, 16);
   const sliceAuthor: string = props.userWorksData.author.slice(0, 12);
   const getBoolTitleLength = (): boolean => {
-    if (props.userWorksData.title.length > 9) return true;
+    if (props.userWorksData.title.length > 16) return true;
     else return false;
   };
   const getBoolAuthorLength = (): boolean => {
@@ -49,18 +49,7 @@ const MyWorksList: React.FC<UserWorksDataProps> = (
           style={{
             backgroundImage: `url(${props.userWorksData.thumbnail})`,
           }}
-        >
-          {props.userWorksData.complete ? (
-            <div className="MyWorksNovelListCompleteObject">완결</div>
-          ) : (
-            <></>
-          )}
-          {refinedupdatedAt === getToday() ? (
-            <div className="MyWorksNovelListNewObject">NEW</div>
-          ) : (
-            <></>
-          )}
-        </div>
+        />
         <div className="MyWorkshomeNovelListContentWrapper">
           <div className="MyWorksCountCloud">
             <div className="MyWorkscountCloudText">
