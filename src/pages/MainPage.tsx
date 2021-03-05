@@ -104,10 +104,10 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
   };
 
   // ? id 가져오기이이이이이이ㅣㅇ 제발가져와라
-  const [clickedNovelId, setClickedNovelId] = useState<number>(0);
-  const handleClickedNovelId = (parameter: number) => {
-    setClickedNovelId(parameter);
-  };
+  // const [clickedNovelId, setClickedNovelId] = useState<number>(0);
+  // const handleClickedNovelId = (parameter: number) => {
+  //   setClickedNovelId(parameter);
+  // };
 
   const [clickedNovelData, setClickedNovelData] = useState({
     data: {
@@ -167,9 +167,9 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
       },
     ],
   });
-  const handleAxiosClickedNovelData = () => {
+  const handleAxiosClickedNovelData = (parameter: number) => {
     axios
-      .get(`https://server.cloud-bookstore.com/novel/${clickedNovelId}`)
+      .get(`https://server.cloud-bookstore.com/novel/${parameter}`)
       .then((res) => {
         setClickedNovelData(res.data);
       });
@@ -316,8 +316,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     handleAxiosMartialArts();
     handleAxiosRomance();
     handleAxiosMyPage();
-    handleAxiosClickedNovelData();
-  });
+  }, []);
 
   return (
     <div>
@@ -441,7 +440,8 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                 handleFantasyOn={handleFantasyOn}
                 handleMartialArtOn={handleMartialArtOn}
                 handleRomanceOn={handleRomanceOn}
-                handleClickedNovelId={handleClickedNovelId}
+                // handleClickedNovelId={handleClickedNovelId}
+                handleAxiosClickedNovelData={handleAxiosClickedNovelData}
               />
             )}
           />
