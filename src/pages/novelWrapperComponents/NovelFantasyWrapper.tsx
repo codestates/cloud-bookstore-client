@@ -5,6 +5,7 @@ import './NovelWrapperStyle.css';
 import FantasyNovelList from './FantasyNovelList';
 
 interface FantasyDataProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (parameter: number) => void;
   handleFantasyOn: () => void;
   fantasyData: {
     id: number;
@@ -41,7 +42,14 @@ const NovelFantasyWrapper: React.FC<FantasyDataProps> = (
       </div>
       <div className="mainNovelInnerWrapper">
         {props.fantasyData.map((data) => (
-          <FantasyNovelList key={data.id} fantasyData={data} />
+          <FantasyNovelList
+            key={data.id}
+            fantasyData={data}
+            handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
+            history={props.history}
+            location={props.location}
+            match={props.match}
+          />
         ))}
       </div>
     </div>

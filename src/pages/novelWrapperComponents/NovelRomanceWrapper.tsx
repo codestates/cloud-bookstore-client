@@ -5,6 +5,7 @@ import './NovelWrapperStyle.css';
 import RomanceNovelList from './RomanceNovelList';
 
 interface RomanceDataProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (parameter: number) => void;
   handleRomanceOn: () => void;
   romanceData: {
     id: number;
@@ -42,7 +43,14 @@ const NovelRomanceWrapper: React.FC<RomanceDataProps> = (
       </div>
       <div className="mainNovelInnerWrapper">
         {props.romanceData.map((data) => (
-          <RomanceNovelList key={data.id} romanceData={data} />
+          <RomanceNovelList
+            key={data.id}
+            romanceData={data}
+            handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
+            history={props.history}
+            location={props.location}
+            match={props.match}
+          />
         ))}
       </div>
     </div>
