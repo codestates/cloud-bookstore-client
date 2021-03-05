@@ -530,7 +530,13 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
           <Route
             path="/main/fantasy"
             render={() => (
-              <FantasyCategory fantasyNovelData={fantasyNovelData} />
+              <FantasyCategory
+                fantasyNovelData={fantasyNovelData}
+                history={props.history}
+                location={props.location}
+                match={props.match}
+                handleAxiosClickedNovelData={handleAxiosClickedNovelData}
+              />
             )}
           />
           <Route
@@ -538,13 +544,23 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
             render={() => (
               <MartialArtsCategory
                 martialArtsNovelData={martialArtsNovelData}
+                history={props.history}
+                location={props.location}
+                match={props.match}
+                handleAxiosClickedNovelData={handleAxiosClickedNovelData}
               />
             )}
           />
           <Route
             path="/main/romance"
             render={() => (
-              <RomanceCategory romanceNovelData={romanceNovelData} />
+              <RomanceCategory
+                romanceNovelData={romanceNovelData}
+                history={props.history}
+                location={props.location}
+                match={props.match}
+                handleAxiosClickedNovelData={handleAxiosClickedNovelData}
+              />
             )}
           />
           <Route
