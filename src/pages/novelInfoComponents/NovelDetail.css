@@ -149,6 +149,7 @@
   .novelDetailThumbnail{
     margin-bottom: 32px;
     width: 304px;
+    margin-left: 35px;
   }
   .novelDetailAuthor{
     text-align: center;
