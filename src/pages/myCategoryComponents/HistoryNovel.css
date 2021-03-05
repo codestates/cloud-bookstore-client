@@ -9,6 +9,8 @@
 .historyNovelInnerWrapper {
   display: flex;
   flex-flow: row wrap;
+  margin-top: 32px;
+  margin-bottom: 56px;
 }
 
 /* 컴퓨터에서 줄였을 때 */
