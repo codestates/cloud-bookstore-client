@@ -17,7 +17,13 @@ interface accumulatedProps {
 }
 interface deductedProps {
   title: { title: string };
-  episode: { id: number; title: string };
+  episode: {
+    id: number;
+    episodeNum: number;
+    title: string;
+    thumbnail: string;
+    cloud: number;
+  };
   date: string;
   cloud: number;
 }
@@ -35,8 +41,11 @@ const SummaryBox: React.FC<summaryProps> = (props: summaryProps) => {
         title: '잊지마 4시1분',
       },
       episode: {
-        id: 1,
-        title: '어느 좋은 날',
+        id: 2,
+        episodeNum: 2,
+        title: '그 다음날',
+        thumbnail: '',
+        cloud: 19,
       },
       date: '2021-02-26T10:22:50.676Z',
       cloud: -1,
@@ -55,8 +64,6 @@ const SummaryBox: React.FC<summaryProps> = (props: summaryProps) => {
       )
       .then((data) => data.data.data)
       .then((data: accumulatedProps[]) => {
-        // eslint-disable-next-line no-console
-        console.log(data);
         setAccumulatedHistories(data);
       });
   };
@@ -65,8 +72,6 @@ const SummaryBox: React.FC<summaryProps> = (props: summaryProps) => {
       .get('https://server.cloud-bookstore.com/setting/cloudhistory/deduction')
       .then((data) => data.data.data)
       .then((data: deductedProps[]) => {
-        // eslint-disable-next-line no-console
-        console.log(data);
         setDeductedHistories(data);
       });
   };
