@@ -37,10 +37,10 @@ const NovelDetail: React.FC = () => {
             </div>
           </div>
           <div className="novelDetailDescription">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-            rerum accusantium molestias expedita aut. Molestias, laborum
-            consequuntur odio sapiente aperiam iusto sunt hic. Libero sapiente
-            quasi, blanditiis aliquam et repellat?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
+            perspiciatis provident, illum natus quo aut repellat iure mollitia
+            accusamus hic sed nulla suscipit delectus voluptates non explicabo,
+            necessitatibus, dignissimos expedita.
           </div>
           <div className="firstEpisodeButton">첫 화 보기</div>
         </div>

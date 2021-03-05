@@ -5,7 +5,7 @@ const EpisodeList: React.FC = () => {
   return (
     <div className="mainPageNovelWrapper">
       <div className="novelInfoTitle">작품 회차(#)</div>
-      <div className="lastUserHistoryWrapper mainNovelInnerWrapper ipadLastHistory">
+      <div className="mainNovelInnerWrapper">
         <EpisodeListDetail />
       </div>
     </div>
