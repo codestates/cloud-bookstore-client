@@ -141,7 +141,7 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
         <Route
           path="/main/mypage/concernNovelList"
           render={() => (
-            <UserLikes /* userLikesData={props.myPageData.userLikes} */ />
+            <UserLikes userLikesData={props.myPageData.userLikes} />
           )}
         />
         <Route

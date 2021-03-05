@@ -41,6 +41,27 @@
   width: 224px;
   height: 44px;
   padding: 13px 51px 12px;
+  border: solid 1px #2b79fe;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  display:table-cell;
+  text-align: center;
+  vertical-align:middle;
+  font-family: NotoSansKR;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #2b79fe;
+}
+
+.goNovelEpisode:hover{
+  box-sizing: border-box;
+  width: 224px;
+  height: 44px;
+  padding: 13px 51px 12px;
   border-radius: 2px;
   background-color: #2b79fe;
   display:table-cell;
@@ -54,6 +75,7 @@
   line-height: normal;
   letter-spacing: normal;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .countCloud {
