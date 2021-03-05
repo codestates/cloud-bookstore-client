@@ -1,0 +1,47 @@
+.lastUserHistoryWrapper{
+  width: 100%;
+}
+
+.lastUserHistoryTitle{
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.lastNovelNewButton {
+  border: 1px #2b79fe solid;
+  border-radius: 11.5px;
+  background-color: #2b79fe;
+  width: 47px;
+  height: 19px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#countCloudWrapper{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.countCloudImg {
+  width: 12px;
+  height: 8px;
+  background-image: url('../../../asset/mainpage/cloudImg.svg');
+}
+
+.countCloudText{
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 414px) {
+  #countCloudWrapper{
+    width: 95%;
+  }
+}
