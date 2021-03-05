@@ -13,11 +13,10 @@ const LastUserHistoryDetail: React.FC = () => {
         <div className="novelListCompleteObject">완결</div>
       </div>
       <div className="homeNovelListContentWrapper">
-        <div id="countCloudWrapper">
-          <div className="countCloudText">
-            누적구름 <div className="countCloudImg" />
-          </div>
-          <div className="lastNovelNewButton">NEW</div>
+        <div className="countCloud">
+          <div className="countCloudText">누적구름</div>
+          <div className="countCloudImg" />
+          <div className="novelListNewObject">NEW</div>
         </div>
         <div className="novelListSubjectWrapper">
           <div className="HomeNovelListSubject">어느 날</div>
