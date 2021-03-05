@@ -87,6 +87,7 @@ const Home: React.FC<NovelDataProps> = (props: NovelDataProps) => {
       />
       <NovelFantasyWrapper
         fantasyData={props.novelData.fantasy}
+        handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
         history={props.history}
         location={props.location}
         match={props.match}
@@ -94,6 +95,7 @@ const Home: React.FC<NovelDataProps> = (props: NovelDataProps) => {
       />
       <NovelMartialArtWrapper
         martialArtsData={props.novelData.martialArts}
+        handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
         history={props.history}
         location={props.location}
         match={props.match}
@@ -101,6 +103,7 @@ const Home: React.FC<NovelDataProps> = (props: NovelDataProps) => {
       />
       <NovelRomanceWrapper
         romanceData={props.novelData.romance}
+        handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
         history={props.history}
         location={props.location}
         match={props.match}

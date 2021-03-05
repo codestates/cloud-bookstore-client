@@ -5,6 +5,7 @@ import './NovelWrapperStyle.css';
 import MartialArtsNovelList from './MartialArtsNovelList';
 
 interface MartialArtsDataProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (parameter: number) => void;
   handleMartialArtOn: () => void;
   martialArtsData: {
     id: number;
@@ -42,7 +43,14 @@ const NovelMartialArtWrapper: React.FC<MartialArtsDataProps> = (
       </div>
       <div className="mainNovelInnerWrapper">
         {props.martialArtsData.map((data) => (
-          <MartialArtsNovelList key={data.id} martialArtsData={data} />
+          <MartialArtsNovelList
+            key={data.id}
+            martialArtsData={data}
+            handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
+            history={props.history}
+            location={props.location}
+            match={props.match}
+          />
         ))}
       </div>
     </div>

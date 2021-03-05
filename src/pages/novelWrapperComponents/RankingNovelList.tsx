@@ -29,7 +29,7 @@ const getToday = (): string => {
 };
 
 const NovelList: React.FC<RankingDataProps> = (props: RankingDataProps) => {
-  const refinedupdatedAt: string = props.rankingData.updatedAt.slice(0, 10);
+  const refinedUpdatedAt: string = props.rankingData.updatedAt.slice(0, 10);
 
   const sliceTitle: string = props.rankingData.title.slice(0, 9);
   const sliceAuthor: string = props.rankingData.author.slice(0, 12);
@@ -69,7 +69,7 @@ const NovelList: React.FC<RankingDataProps> = (props: RankingDataProps) => {
             누적구름 {props.rankingData.cloud}
           </div>
           <div className="countCloudImg" />
-          {refinedupdatedAt === getToday() ? (
+          {refinedUpdatedAt === getToday() ? (
             <div className="novelListNewObject">NEW</div>
           ) : (
             <></>

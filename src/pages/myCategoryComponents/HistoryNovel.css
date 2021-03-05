@@ -1,0 +1,33 @@
+.wholeHistoryNovelWrapper {
+  width: 968px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin: auto;
+}
+
+.historyNovelInnerWrapper {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 32px;
+  margin-bottom: 56px;
+}
+
+/* 컴퓨터에서 줄였을 때 */
+@media (max-width: 968px) {
+  .wholeHistoryNovelWrapper {
+    width: 728px;
+  }
+}
+/* 아이패드 크기 */
+@media (max-width: 767px) {
+  .wholeHistoryNovelWrapper {
+    width: 488px;
+  }
+}
+/* 스마트폰(max) 크기 */
+@media (max-width: 414px) {
+  .wholeHistoryNovelWrapper {
+    width: 370px;
+  }
+}
