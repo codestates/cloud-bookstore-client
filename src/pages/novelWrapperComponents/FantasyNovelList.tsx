@@ -1,7 +1,9 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import './NovelList.css';
 
-interface FantasyDataProps {
+interface FantasyDataProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (parameter: number) => void;
   fantasyData: {
     id: number;
     title: string;
@@ -27,7 +29,7 @@ const getToday = (): string => {
 };
 
 const NovelList: React.FC<FantasyDataProps> = (props: FantasyDataProps) => {
-  const refinedupdatedAt: string = props.fantasyData.updatedAt.slice(0, 10);
+  const refinedUpdatedAt: string = props.fantasyData.updatedAt.slice(0, 10);
 
   const sliceTitle: string = props.fantasyData.title.slice(0, 9);
   const sliceAuthor: string = props.fantasyData.author.slice(0, 12);
@@ -41,7 +43,14 @@ const NovelList: React.FC<FantasyDataProps> = (props: FantasyDataProps) => {
   };
 
   return (
-    <div className="novelList">
+    <div
+      className="novelList"
+      role="presentation"
+      onClick={() => {
+        props.handleAxiosClickedNovelData(props.fantasyData.id);
+        props.history.push(`/main/novel/${props.fantasyData.id}`);
+      }}
+    >
       <div
         className="thumbnail"
         style={{
@@ -60,7 +69,7 @@ const NovelList: React.FC<FantasyDataProps> = (props: FantasyDataProps) => {
             누적구름 {props.fantasyData.cloud}
           </div>
           <div className="countCloudImg" />
-          {refinedupdatedAt === getToday() ? (
+          {refinedUpdatedAt === getToday() ? (
             <div className="novelListNewObject">NEW</div>
           ) : (
             <></>

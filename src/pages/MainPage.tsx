@@ -202,7 +202,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     });
   };
   // ! MartialArts novel Data - axios get
-  const [martialArtsNovelData, setmartialArtsNovelData] = useState({
+  const [martialArtsNovelData, setMartialArtsNovelData] = useState({
     data: [
       {
         id: 1,
@@ -224,7 +224,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
   });
   const handleAxiosMartialArts = () => {
     axios.get('https://server.cloud-bookstore.com/category/2').then((res) => {
-      setmartialArtsNovelData(res.data);
+      setMartialArtsNovelData(res.data);
     });
   };
   // ! Romance novel Data - axios get

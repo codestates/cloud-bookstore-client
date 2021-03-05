@@ -1,7 +1,9 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import './NovelList.css';
 
-interface MartialArtsDataProps {
+interface MartialArtsDataProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (parameter: number) => void;
   martialArtsData: {
     id: number;
     title: string;
@@ -29,7 +31,7 @@ const getToday = (): string => {
 const NovelList: React.FC<MartialArtsDataProps> = (
   props: MartialArtsDataProps,
 ) => {
-  const refinedupdatedAt: string = props.martialArtsData.updatedAt.slice(0, 10);
+  const refinedUpdatedAt: string = props.martialArtsData.updatedAt.slice(0, 10);
 
   const sliceTitle: string = props.martialArtsData.title.slice(0, 9);
   const sliceAuthor: string = props.martialArtsData.author.slice(0, 12);
@@ -43,7 +45,14 @@ const NovelList: React.FC<MartialArtsDataProps> = (
   };
 
   return (
-    <div className="novelList">
+    <div
+      className="novelList"
+      role="presentation"
+      onClick={() => {
+        props.handleAxiosClickedNovelData(props.martialArtsData.id);
+        props.history.push(`/main/novel/${props.martialArtsData.id}`);
+      }}
+    >
       <div
         className="thumbnail"
         style={{
@@ -62,7 +71,7 @@ const NovelList: React.FC<MartialArtsDataProps> = (
             누적구름 {props.martialArtsData.cloud}
           </div>
           <div className="countCloudImg" />
-          {refinedupdatedAt === getToday() ? (
+          {refinedUpdatedAt === getToday() ? (
             <div className="novelListNewObject">NEW</div>
           ) : (
             <></>
