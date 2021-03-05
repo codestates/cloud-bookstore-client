@@ -28,10 +28,30 @@
   
   .MyWorksMainNovelInnerWrapper {
     margin: 16px 0 0 0;
-    width: 943px;
+    width: 960px;
     display: inline-flex;
     flex-flow: row wrap;
-    gap: 12px;
+    gap: 16px;
+  }
+
+  .MyEmptyBtn {
+    box-sizing: border-box;
+    margin-top: 48px;
+    margin-bottom:48px;
+    width: 224px;
+    height: 44px;
+    background-color: #b8b8b8;
+    border-radius: 2px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 15px;
+    cursor: pointer;
+  }
+
+  .MyEmptyBtn:hover {
+    background-color: #2b79fe
   }
   
   /* 컴퓨터에서 줄였을 때 */

@@ -9,11 +9,16 @@
 
 .MyWorksList {
     width: 224px;
-    height: 238px;
-    border-radius: 2px;
+    /* height: 238px; */
+    border-radius: 2px 2px 0px 0px;
+    /* margin-bottom: 42px; */
     border: solid 1px #e9e9e9;
   }
-  
+
+  .Pointer{
+    cursor: pointer
+  }
+
   .MyWorksThumbnail {
     padding: 0;
     width: 224px;
@@ -37,7 +42,7 @@
   }
   
   .MyWorkshomeNovelListContentWrapper {
-    margin: 16px 0 0 16px;
+    margin: 16px;
     width: 192px;
     height: 67px;
     display: flex;
@@ -127,6 +132,31 @@
     justify-content: center;
     align-items: center;
   }
+
+  .MygoNovelEpisode{
+    width: 223px;
+    height: 44px;
+    border-radius: 0px 0px 2px 2px;
+    border: 1px solid  #2b79fe;
+    display:table-cell;
+    justify-content: center;
+    text-align: center;
+    vertical-align:middle;
+    font-family: NotoSansKR;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2b79fe;
+    cursor: pointer
+  }
+
+ 
+
+  .MygoNovelEpisode:hover{
+    background-color:#2b79fe;
+    color: #fff
+  }
+
+
   /* 스마트폰(max) 크기 */
   @media (max-width: 414px) {
     .MyWorksList {
@@ -195,5 +225,11 @@
 @media (max-width: 414px) {
   .MypageContentWrapper{
     width: 370px;
+  }
+  .MyWorksList{
+    margin-bottom: 48px;
+  }
+  .Pointer{
+    margin-bottom: 2px
   }
 }

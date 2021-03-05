@@ -43,48 +43,51 @@ const MyWorksList: React.FC<UserWorksDataProps> = (
   };
   return (
     <div className="MyWorksList">
-      <div
-        className="MyWorksThumbnail"
-        style={{
-          backgroundImage: `url(${props.userWorksData.thumbnail})`,
-        }}
-      >
-        {props.userWorksData.complete ? (
-          <div className="MyWorksNovelListCompleteObject">완결</div>
-        ) : (
-          <></>
-        )}
-        {refinedupdatedAt === getToday() ? (
-          <div className="MyWorksNovelListNewObject">NEW</div>
-        ) : (
-          <></>
-        )}
+      <div className="Pointer">
+        <div
+          className="MyWorksThumbnail"
+          style={{
+            backgroundImage: `url(${props.userWorksData.thumbnail})`,
+          }}
+        >
+          {props.userWorksData.complete ? (
+            <div className="MyWorksNovelListCompleteObject">완결</div>
+          ) : (
+            <></>
+          )}
+          {refinedupdatedAt === getToday() ? (
+            <div className="MyWorksNovelListNewObject">NEW</div>
+          ) : (
+            <></>
+          )}
+        </div>
+        <div className="MyWorkshomeNovelListContentWrapper">
+          <div className="MyWorksCountCloud">
+            <div className="MyWorkscountCloudText">
+              누적구름 {props.userWorksData.cloud}
+            </div>
+            <div className="MyWorkscountCloudImg" />
+          </div>
+          <div className="MyWorksNovelListSubjectWrapper">
+            <div className="MyWorksHomeNovelListSubject">
+              {getBoolTitleLength()
+                ? `${sliceTitle} ...`
+                : props.userWorksData.title}
+            </div>
+          </div>
+          <div className="MyWorksHomeNovelListAuthorFavWrapper">
+            <div className="MyWorksNovelListAuthor">
+              {getBoolAuthorLength()
+                ? `${sliceAuthor} ...`
+                : props.userWorksData.author}
+            </div>
+            <div className="MyWorksNovelListFavorite">
+              관심 {props.userWorksData.userLike}
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="MyWorkshomeNovelListContentWrapper">
-        <div className="MyWorksCountCloud">
-          <div className="MyWorkscountCloudText">
-            누적구름 {props.userWorksData.cloud}
-          </div>
-          <div className="MyWorkscountCloudImg" />
-        </div>
-        <div className="MyWorksNovelListSubjectWrapper">
-          <div className="MyWorksHomeNovelListSubject">
-            {getBoolTitleLength()
-              ? `${sliceTitle} ...`
-              : props.userWorksData.title}
-          </div>
-        </div>
-        <div className="MyWorksHomeNovelListAuthorFavWrapper">
-          <div className="MyWorksNovelListAuthor">
-            {getBoolAuthorLength()
-              ? `${sliceAuthor} ...`
-              : props.userWorksData.author}
-          </div>
-          <div className="MyWorksNovelListFavorite">
-            관심 {props.userWorksData.userLike}
-          </div>
-        </div>
-      </div>
+      <div className="MygoNovelEpisode">회차쓰기</div>
     </div>
   );
 };
