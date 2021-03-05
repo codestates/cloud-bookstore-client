@@ -1,10 +1,35 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
+import './HistoryNovel.css';
+import UserLikesList from '../myCategoryComponents/myWrapperComponents/UserLikesList';
 
-const UserLikes: React.FC = () => {
+interface userHistoriesDataProps extends RouteComponentProps {
+  userLikesData: {
+    id: number;
+    title: string;
+    author: string;
+    category: number;
+    description: string;
+    cloud: number;
+    userLike: number;
+    episodeCount: number;
+    complete: boolean;
+    thumbnail: string;
+    createdAt: string;
+    updatedAt: string;
+  }[];
+}
+
+const UserLikes: React.FC<userHistoriesDataProps> = (
+  props: userHistoriesDataProps,
+) => {
   return (
-    <div>
-      <h1> UserLikes</h1>
+    <div className="wholeHistoryNovelWrapper">
+      <div className="historyNovelInnerWrapper">
+        {props.userLikesData.map((ele) => (
+          <UserLikesList key={ele.id} userLikes={ele} />
+        ))}
+      </div>
     </div>
   );
 };
