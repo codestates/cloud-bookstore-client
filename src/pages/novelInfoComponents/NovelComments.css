@@ -1,5 +1,5 @@
 .wholeNovelCommentsWrapper {
-  border: 1px red solid;
+  border-bottom: 1px #d8d8d8 solid;
   margin: 137px 0 128px 0;
   width: 100%;
 }
@@ -32,4 +32,8 @@
     display: grid;
     place-items: center;
     cursor: pointer;
+  }
+
+  .commentsListWrapper {
+    margin: 0 0 13px 0;
   }
