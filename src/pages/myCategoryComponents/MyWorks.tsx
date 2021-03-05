@@ -1,8 +1,9 @@
 /* eslint-disable */
 import React from 'react';
-import { withRouter, RouteComponentProps, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../../css/MyWorks.css';
-interface UserWorksDataProps extends RouteComponentProps {
+import MyWorksWrapper from './myWrapperComponents/MyWorksWrapper';
+interface UserWorksDataProps {
   userWorksData: {
     id: number;
     title: string;
@@ -23,7 +24,9 @@ const MyWorks: React.FC<UserWorksDataProps> = (props: UserWorksDataProps) => {
   return (
     <div>
       {props.userWorksData.length !== 0 ? (
-        <div>안녕</div>
+        <>
+          <MyWorksWrapper userWorksData={props.userWorksData} />
+        </>
       ) : (
         <div className="emtyBox">
           <div className="boxGrid">
@@ -41,4 +44,4 @@ const MyWorks: React.FC<UserWorksDataProps> = (props: UserWorksDataProps) => {
   );
 };
 
-export default withRouter(MyWorks);
+export default MyWorks;
