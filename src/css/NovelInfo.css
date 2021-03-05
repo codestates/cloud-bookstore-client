@@ -11,15 +11,10 @@
 /* 컴퓨터에서 줄였을 때 */
 @media (max-width: 943px) {
   .novelInfoWrapper{
-    width: 704px;
+    width: 90%;
   }
 }
-/* 아이패드 크기 */
-@media (max-width: 768px) {
-  .novelInfoWrapper{
-    width: 469px;
-  }
-}
+
 @media (max-width: 470px) {
   .novelInfoWrapper{
     width: 370px;
