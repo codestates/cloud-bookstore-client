@@ -4,6 +4,7 @@ import { IconContext } from 'react-icons';
 import { IoMdRefresh } from 'react-icons/io';
 
 import MakeNewComment from './commentComponents/MakeNewComment';
+import CantMakeNewComment from './commentComponents/CantMakeNewComment';
 import CommentsList from './commentComponents/CommentsList';
 
 interface CommentsDataProps {
@@ -79,7 +80,30 @@ const NovelComments: React.FC<CommentsDataProps> = (
             <IoMdRefresh />
           </div>
         </div>
-        <MakeNewComment
+        {props.nickname ? (
+          <>
+            <MakeNewComment
+              handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
+              novelData={props.clickedNovelData.data}
+              nickname={props.nickname}
+            />
+            <div className="commentsListWrapper">
+              {props.clickedNovelData.comments.map((data) => (
+                <CommentsList key={data.id} data={data} />
+              ))}
+            </div>
+          </>
+        ) : (
+          <>
+            <CantMakeNewComment />
+            <div className="commentsListWrapper">
+              {props.clickedNovelData.comments.map((data) => (
+                <CommentsList key={data.id} data={data} />
+              ))}
+            </div>
+          </>
+        )}
+        {/* <MakeNewComment
           handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
           novelData={props.clickedNovelData.data}
           nickname={props.nickname}
@@ -88,7 +112,7 @@ const NovelComments: React.FC<CommentsDataProps> = (
           {props.clickedNovelData.comments.map((data) => (
             <CommentsList key={data.id} data={data} />
           ))}
-        </div>
+        </div> */}
       </div>
     </IconContext.Provider>
   );
