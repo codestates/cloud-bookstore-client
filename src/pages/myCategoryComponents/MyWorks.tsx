@@ -24,7 +24,9 @@ const MyWorks: React.FC<UserWorksDataProps> = (props: UserWorksDataProps) => {
   return (
     <div>
       {props.userWorksData.length !== 0 ? (
-        <MyWorksWrapper userWorksData={props.userWorksData} />
+        <>
+          <MyWorksWrapper userWorksData={props.userWorksData} />
+        </>
       ) : (
         <div className="emtyBox">
           <div className="boxGrid">
