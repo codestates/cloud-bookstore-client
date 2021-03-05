@@ -175,15 +175,93 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         novels: {
           title: '잊지마 4시1분',
           complete: false,
-          thumbnail: '',
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
           updatedAt: '2021-02-26T02:55:20.000Z',
         },
         episodes: {
           id: 3,
           episodeNum: 2,
+          cloud:3,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
           title: '이런 날이...',
         },
       },
+      {
+        novels: {
+          title: '잊지마 4시1분',
+          complete: false,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          updatedAt: '2021-02-26T02:55:20.000Z',
+        },
+        episodes: {
+          id: 3,
+          episodeNum: 2,
+          cloud:3,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          title: '이런 날이...',
+        },
+      },
+      {
+        novels: {
+          title: '잊지마 4시1분',
+          complete: false,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          updatedAt: '2021-02-26T02:55:20.000Z',
+        },
+        episodes: {
+          id: 3,
+          episodeNum: 2,
+          cloud:3,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          title: '이런 날이...',
+        },
+      },
+      {
+        novels: {
+          title: '잊지마 4시1분',
+          complete: false,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          updatedAt: '2021-02-26T02:55:20.000Z',
+        },
+        episodes: {
+          id: 3,
+          episodeNum: 2,
+          cloud:3,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          title: '이런 날이...',
+        },
+      },
+      {
+        novels: {
+          title: '잊지마 4시1분',
+          complete: false,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          updatedAt: '2021-02-26T02:55:20.000Z',
+        },
+        episodes: {
+          id: 3,
+          episodeNum: 2,
+          cloud:3,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          title: '이런 날이...',
+        },
+      },
+      {
+        novels: {
+          title: '잊지마 4시1분',
+          complete: false,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          updatedAt: '2021-02-26T02:55:20.000Z',
+        },
+        episodes: {
+          id: 3,
+          episodeNum: 2,
+          cloud:3,
+          thumbnail: 'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          title: '이런 날이...',
+        },
+      },
+      
     ],
     userLikes: [
       {
@@ -378,7 +456,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
           />
           <Route
             path="/main/mypage/recentNovelList"
-            render={() => <HistoryNovel />}
+            render={() => <HistoryNovel userHistoriesData={myPageData.userHistories}/>}
           />
           <Route path="/main/novel/:id" render={() => <NovelInfo />} />
         </Switch>
