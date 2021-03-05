@@ -103,12 +103,6 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     setIsCategoryOn('/main/mypage/recentNovelList');
   };
 
-  // ? id 가져오기이이이이이이ㅣㅇ 제발가져와라
-  // const [clickedNovelId, setClickedNovelId] = useState<number>(0);
-  // const handleClickedNovelId = (parameter: number) => {
-  //   setClickedNovelId(parameter);
-  // };
-
   const [clickedNovelData, setClickedNovelData] = useState({
     data: {
       id: 1,
@@ -440,7 +434,6 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                 handleFantasyOn={handleFantasyOn}
                 handleMartialArtOn={handleMartialArtOn}
                 handleRomanceOn={handleRomanceOn}
-                // handleClickedNovelId={handleClickedNovelId}
                 handleAxiosClickedNovelData={handleAxiosClickedNovelData}
               />
             )}
