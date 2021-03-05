@@ -28,8 +28,8 @@
   align-items: center;
 }
 
-.homeNovelListContentWrapper {
-  margin: 16px 0 0 16px;
+.novelListContentWrapper {
+  margin: 17px 0 0 16px;
   width: 192px;
   height: 67px;
   display: flex;
@@ -67,8 +67,8 @@
   align-items: center;
 }
 
-.HomeNovelListSubject {
-  margin: 3px 0 0 0;
+.novelListSubject {
+  margin: 7px 0 0 0;
   width: 190px;
   height: 24px;
   font-size: 16px;
@@ -94,7 +94,7 @@
   align-items: center;
 }
 
-.homeNovelListAuthorFavWrapper {
+.novelListAuthorFavWrapper {
   width: 197px;
   height: 17px;
   display: flex;
@@ -134,7 +134,7 @@
     width: 178px;
     height: 140px;
   }
-  .homeNovelListContentWrapper {
+  .novelListContentWrapper {
     width: 173px;
     margin: 5px 0 0 5px;
   }
@@ -144,8 +144,8 @@
   .novelListSubjectWrapper {
     width: 173px;
   }
-  .HomeNovelListSubject {
-    margin: 7px 0 0 1px;
+  .novelListSubject {
+    margin: 6px 0 0 1px;
     line-height: 4px;
     font-size: 15px;
   }
@@ -155,8 +155,8 @@
     width: 43px;
     height: 15px;
   }
-  .homeNovelListAuthorFavWrapper {
-    width: 169px;
+  .novelListAuthorFavWrapper {
+    width: 173px;
   }
   .novelListAuthor {
     font-size: 11px;

@@ -3,7 +3,6 @@ import { RouteComponentProps } from 'react-router-dom';
 import './NovelList.css';
 
 interface RankingDataProps extends RouteComponentProps {
-  // handleClickedNovelId: (parameter: number) => void;
   handleAxiosClickedNovelData: (parameter: number) => void;
   rankingData: {
     id: number;
@@ -48,7 +47,6 @@ const NovelList: React.FC<RankingDataProps> = (props: RankingDataProps) => {
       className="novelList"
       role="presentation"
       onClick={() => {
-        // props.handleClickedNovelId(props.rankingData.id);
         props.handleAxiosClickedNovelData(props.rankingData.id);
         props.history.push(`/main/novel/${props.rankingData.id}`);
       }}
@@ -65,7 +63,7 @@ const NovelList: React.FC<RankingDataProps> = (props: RankingDataProps) => {
           <></>
         )}
       </div>
-      <div className="homeNovelListContentWrapper">
+      <div className="novelListContentWrapper">
         <div className="countCloud">
           <div className="countCloudText">
             누적구름 {props.rankingData.cloud}
