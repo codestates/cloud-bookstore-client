@@ -110,6 +110,9 @@
   .novelDetailWrapper{
     width: 704px;
   }
+  .novelDetailDescription{
+    width: 480px;
+  }
 }
 /* 아이패드 크기 */
 @media (max-width: 768px) {
@@ -140,7 +143,7 @@
   }
 }
 /* 스마트폰(max) 크기 */
-@media (max-width: 414px) {
+@media (max-width: 470px) {
   .novelDetailWrapper{    
     width: 370px;
   }
