@@ -57,9 +57,10 @@
   /* 컴퓨터에서 줄였을 때 */
   @media (max-width: 943px) {
     .MyWorksMainNovelInnerWrapper {
-      width: 704px;
+      width: 800px;
     }
   }
+
   /* 아이패드 크기 */
   @media (max-width: 767px) {
     .MyWorksMainNovelInnerWrapper {
