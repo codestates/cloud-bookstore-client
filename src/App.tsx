@@ -112,7 +112,7 @@ const App: React.FC = () => {
         <Route
           path="/"
           render={() => {
-            if (isLogin) {
+            if (!isLogin) {
               return <Redirect to="/main/home" />;
             }
             return <Redirect to="/LandingPage" />;
