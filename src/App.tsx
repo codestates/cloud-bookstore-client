@@ -6,7 +6,7 @@ import LandingPage from './pages/LandingPage';
 import MainPage from './pages/MainPage';
 
 const App: React.FC = () => {
-  const [isLogin, setIsLogin] = useState<boolean>(false);
+  const [isLogin, setIsLogin] = useState<boolean>(true);
   const toggleLogin = (): void => {
     setIsLogin(!isLogin);
   };
