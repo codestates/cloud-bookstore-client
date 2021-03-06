@@ -1,0 +1,248 @@
+.MakeNovelWrapper{
+    /* border: 1px blue solid; 반응형 고려시 총 width크기 참고하세유 */
+    width: 943px; /* 어차피 이 길이보다 작으면 media-query줌*/
+    /* display: flex; */
+    /* flex-direction: column; */
+    margin: 0 auto; /* 이 것을 넣어야 창크기에 상관없이 중앙정렬 */
+}
+
+.MakeNovelHeader{
+    margin-top: 44px;
+    display: flex;
+    /* margin: 0px 10px; */
+  }
+
+.MakeNovelTitle{
+    font-size: 32px;
+    color: #202020;
+    font-weight: bold;
+    display: flex;
+    /* margin: 0px 10px; */
+  }
+  
+.BoxLine{
+    width: 944px;
+    height: 1px;
+    background-color: #d8d8d8;
+    margin-top: 16px;
+    margin-bottom: 24px
+}
+
+.BoxLineSecond{
+    width: 944px;
+    height: 1px;
+    background-color: #d8d8d8;
+    margin-top: 24px;
+    margin-bottom: 24px
+}
+
+.SmallText{
+    font-size: 16px;
+    color: #464646;
+    line-height:22px
+}
+
+button{
+    float: right;
+}
+
+.aline{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center
+}
+
+.TitleTextBox{
+    width:600px;
+    height: 34px;
+    /* margin-right: 200px; */
+    font-size: 16px;
+    font-weight: bold;
+    outline:none;
+    border:none;
+}
+
+input::placeholder {
+    font-size: 16px;
+    font-weight: bold;
+    color: #202020;
+    font-family: 'NotoSansKR', sans-serif;
+  }
+
+.textLine{
+    display: flex;
+    font-size: 16px;
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+    color: #202020;
+    margin-top: 1px;
+    /* margin-right: 435px; */
+}
+
+.textLineImg{
+    /* display: flex; */
+     /* align-items: center;
+    text-align: center; */
+    font-size: 16px;
+    font-weight: bold;
+    color: #202020;
+}
+
+.position{
+    width: 224px;
+    height: 34px;
+    margin-left: 16px;
+    outline:none;
+}
+
+textarea::placeholder{
+    font-size: 16px;
+    font-weight: bold;
+    color: #202020;
+    font-family: 'NotoSansKR', sans-serif;
+}
+
+textarea{
+    font-size: 16px;
+    font-weight: bold;
+    width: 944px;
+    height: 344px;
+    resize: none;
+    border:none;
+}
+textarea:focus {
+    outline: none;
+}
+
+.ImageWrapper{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.CoverImage{
+    margin-top: 16px;
+    width: 943px
+}
+
+.CoverImageBox{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-image: url('https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png');
+}
+
+.CoverImageBoxTest{
+    width:144px;
+    height:90px;
+    font-size:0;
+    color:rgba(0, 0, 0, 0);
+    margin-right: 13px;
+}
+
+
+
+@media (max-width: 943px) {
+    .MakeNovelWrapper{
+      width: 704px;
+    }
+    .BoxLine{
+        width: 704px;
+    }
+    .BoxLineSecond{
+        width: 704px;
+    }
+    .TitleTextBox{
+        width:455px;
+    }
+    textarea{
+        width: 704px; 
+    }
+    .CoverImage{
+        width: 704px;
+        margin-top: 0px;
+    }
+    .CoverImageBox{
+        margin-top: 16px
+    }
+}
+
+
+
+@media (max-width: 760px) {
+    .MakeNovelWrapper{    
+      width: 469px;
+    }
+    .BoxLine{
+        width: 469px;
+    }
+    .BoxLineSecond{
+        width: 469px;
+    }
+    .TitleTextBox{
+        width:300px;
+    }
+    textarea{
+        width: 469px; 
+    }
+    .CoverImage{
+        width: 469px;
+        margin-top: 0px;
+    }
+    .CoverImageBox{
+        margin-top: 16px
+    }
+}
+
+
+@media (max-width: 740px) {
+    .MakeNovelWrapper{    
+      width: 469px;
+    }
+    .BoxLine{
+        width: 469px;
+    }
+    .BoxLineSecond{
+        width: 469px;
+    }
+    .TitleTextBox{
+        width:255px;
+    }
+    textarea{
+        width: 469px; 
+    }
+    .CoverImage{
+        width: 469px;
+        margin-top: 0px;
+    }
+    .CoverImageBox{
+        margin-top: 16px
+    }
+}
+
+@media (max-width: 414px) {
+    .MakeNovelWrapper{    
+        width: 370px;
+      }
+      .BoxLine{
+          width: 370px;
+      }
+      .BoxLineSecond{
+        width: 370px;
+    }
+    .TitleTextBox{
+        width:155px;
+    } 
+    textarea{
+        width: 365px; 
+    }
+    .CoverImage{
+        width: 370px;
+        margin-top: 0px;
+    }
+    .CoverImageBox{
+        margin-top: 16px
+    }
+}
