@@ -18,7 +18,7 @@ const ModalEditNickname: React.FC<editNicknameProps> = (
   ): void => {
     setUpdatedNickname(e.target.value);
   };
-  let bool = false;
+  const [checkValidation, setCheckValidation] = useState<boolean>(false);
   const editNickname = (): void => {
     axios
       .patch(
@@ -28,11 +28,11 @@ const ModalEditNickname: React.FC<editNicknameProps> = (
       )
       .then((res) => {
         if (res.status === 200) {
-          bool = false;
+          setCheckValidation(false);
           props.handleNickname(updatedNickname);
           props.toggleNicknameModal();
         } else {
-          bool = true;
+          setCheckValidation(true);
         }
       });
   };
@@ -43,7 +43,7 @@ const ModalEditNickname: React.FC<editNicknameProps> = (
       <div className="editBox">
         <div className="editUpperBox">
           <div className="editBoxTitle">닉네임 변경</div>
-          {bool ? <div>이미 있는 닉네임입니다</div> : <></>}
+          {checkValidation ? <div>이미 있는 닉네임입니다</div> : <></>}
           <MdClose
             className="nicknameCloseButton"
             onClick={props.toggleNicknameModal}
