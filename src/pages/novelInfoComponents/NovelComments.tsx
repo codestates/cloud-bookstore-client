@@ -65,7 +65,7 @@ const NovelComments: React.FC<CommentsDataProps> = (
 ) => {
   return (
     <IconContext.Provider value={{ size: '1.4em', color: '#464646' }}>
-      <div className="wholeNovelCommentsWrapper">
+      <div className="wholeNovelCommentsWrapper" id="novelCommentsList">
         <div className="novelCommentsTextRefreshWrapper">
           <div className="novelCommentsText">
             작품 리뷰({props.clickedNovelData.comments.length})

@@ -613,6 +613,25 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     });
   };
 
+  // !userLike toggle 함수
+  const toggleUserLike = () => {
+    setClickedNovelData((prevState) => ({
+      ...prevState,
+      userLike: !prevState.userLike,
+    }));
+  };
+
+  // !작품의 관심 함수
+  const handleNovelLikesCount = (userLike: number) => {
+    setClickedNovelData((prevState) => ({
+      ...prevState,
+      data: {
+        ...prevState.data,
+        userLike,
+      },
+    }));
+  };
+
   // ! handleAxios 함수들 미리 실행시켜두기
   useEffect(() => {
     handleAxiosFantasy();
@@ -800,6 +819,8 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                 clickedNovelData={clickedNovelData}
                 handleAxiosClickedNovelData={handleAxiosClickedNovelData}
                 nickname={props.nickname}
+                toggleUserLike={toggleUserLike}
+                handleNovelLikesCount={handleNovelLikesCount}
               />
             )}
           />
