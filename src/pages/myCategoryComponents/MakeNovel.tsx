@@ -47,16 +47,12 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
   handleWriteNovel = () => {
     if (this.state) {
       axios
-        .post(
-          `https://server.cloud-bookstore.com
-        /mypage/write/novel`,
-          {
-            thumbnail: this.state.selectedImage,
-            description: this.state.novelDescription,
-            category: this.state.selectedOption.value,
-            title: this.state.novelTitle,
-          },
-        )
+        .post(`https://server.cloud-bookstore.com/mypage/write/novel`, {
+          thumbnail: this.state.selectedImage,
+          description: this.state.novelDescription,
+          category: this.state.selectedOption.value,
+          title: this.state.novelTitle,
+        })
         .then(() => this.props.handleAxiosMyPage());
     }
   };
