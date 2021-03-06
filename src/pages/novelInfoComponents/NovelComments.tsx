@@ -50,8 +50,8 @@ interface CommentsDataProps {
       title: string;
       thumbnail: string;
       cloud: number;
-      userHistory_novelEpisodeId: number;
-      userHistory_updated_at: string;
+      novelEpisodeId: number;
+      updatedAt: string;
     };
     userLike?: boolean;
     userPurchases?: {
