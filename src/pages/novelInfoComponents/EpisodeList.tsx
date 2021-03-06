@@ -54,7 +54,7 @@ interface episodeListProps {
 const EpisodeList: React.FC<episodeListProps> = (props: episodeListProps) => {
   const reverseEpisodeList = props.clickedNovelData.episodes.reverse();
   return (
-    <div className="mainPageNovelWrapper">
+    <div className="mainPageNovelWrapper iPadEpisodeWrapper">
       <div className="novelInfoTitle">
         작품 회차 ({props.clickedNovelData.episodes.length})
       </div>
