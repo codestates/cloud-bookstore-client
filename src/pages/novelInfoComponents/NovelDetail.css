@@ -1,5 +1,5 @@
 .novelDetailWrapper{
-  width: 944px;
+  width: 943px;
   height: 339px;
   margin: 88px 0px;
 }
@@ -33,13 +33,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
+}
+
+.aTagComment{
+  height: 58px;
 }
 
 .novelHeaderButtons > div:last-child{
   margin-right: 10px;
 }
 
-.novelCommentsButton, .novelLikesButton, .novelShareButton{
+.novelCommentsButton{
+  font-size: 16px;
+  color: #464646;
+  text-align: center;
+}
+
+.novelLikesButton, .novelShareButton{
   margin-top: 8px;
   font-size: 16px;
   color: #464646;
@@ -50,6 +61,8 @@
   border-bottom: 1px solid #d8d8d8;
   margin-top: 16px;
   margin-bottom: 32px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .novelDetailInfo{
@@ -109,7 +122,7 @@
 /* 컴퓨터에서 줄였을 때 */
 @media (max-width: 943px) {
   .novelDetailWrapper{
-    width: 704px;
+    width: 692px;
   }
   .novelDetailDescription{
     width: 400px;
@@ -130,6 +143,9 @@
     margin-bottom: 32px;
     width: 304px;
   }
+  .aTagComment{
+    height: 51px;
+  }
 }
 
 /* 아이패드부터 스마트폰(max) 크기 */
@@ -145,11 +161,13 @@
     flex-direction: column;
     width: 370px;
     margin: 0;
+    justify-content: center;
+    align-items: center;
   }
   .novelDetailThumbnail{
+    margin: 0;
     margin-bottom: 32px;
     width: 304px;
-    margin-left: 35px;
   }
   .novelDetailAuthor{
     text-align: center;
@@ -167,5 +185,11 @@
   }
   .lastUserWrapper{
     margin-top: 280px;
+  }
+  .novelDetailGreyLine{
+    justify-content: center;
+  }
+  .aTagComment{
+    height: 51px;
   }
 }
