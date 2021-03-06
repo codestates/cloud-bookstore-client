@@ -1,7 +1,10 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
+
 import './NovelList.css';
 
-interface CategoryNovelProps {
+interface CategoryNovelProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (parameter: number) => void;
   data: {
     id: number;
     title: string;
@@ -48,6 +51,11 @@ const CategoryNovelList: React.FC<CategoryNovelProps> = (
         className="thumbnail"
         style={{
           backgroundImage: `url(${props.data.thumbnail})`,
+        }}
+        role="presentation"
+        onClick={() => {
+          props.handleAxiosClickedNovelData(props.data.id);
+          props.history.push(`/main/novel/${props.data.id}`);
         }}
       >
         {props.data.complete ? (

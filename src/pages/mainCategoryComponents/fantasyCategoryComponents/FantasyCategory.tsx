@@ -1,8 +1,10 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import './FantasyCategory.css';
 import SelectBoxNav from '../SelectBoxNav';
 
-interface FantasyNovelDataProps {
+interface FantasyNovelDataProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (parameter: number) => void;
   fantasyNovelData: {
     data: {
       id: number;
@@ -27,7 +29,13 @@ const FantasyCategory: React.FC<FantasyNovelDataProps> = (
   return (
     <div className="wholeFantasyCategoryWrapper">
       <div className="fantasyCategoryInnerWrapper">
-        <SelectBoxNav categorizedData={props.fantasyNovelData} />
+        <SelectBoxNav
+          categorizedData={props.fantasyNovelData}
+          history={props.history}
+          location={props.location}
+          match={props.match}
+          handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
+        />
       </div>
     </div>
   );

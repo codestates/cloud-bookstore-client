@@ -8,6 +8,8 @@ import NovelComments from './novelInfoComponents/NovelComments';
 import '../css/NovelInfo.css';
 
 interface ClickedNovelInfoProps {
+  handleAxiosClickedNovelData: (parameter: number) => void;
+  nickname: string;
   clickedNovelData: {
     data: {
       id: number;
@@ -65,9 +67,17 @@ const NovelInfo: React.FC<ClickedNovelInfoProps> = (
   return (
     <div className="novelInfoWrapper">
       <NovelDetail />
-      <LastUserHistory />
+      {!props.clickedNovelData.userHistory ? (
+        <div className="emptySpaceNovelInfo"></div>
+      ) : (
+        <LastUserHistory />
+      )}
       <EpisodeList />
-      <NovelComments />
+      <NovelComments
+      clickedNovelData={props.clickedNovelData}
+      handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
+      nickname={props.nickname}
+      />
     </div>
   );
 };

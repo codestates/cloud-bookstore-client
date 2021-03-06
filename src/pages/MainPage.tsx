@@ -103,12 +103,6 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     setIsCategoryOn('/main/mypage/recentNovelList');
   };
 
-  // ? id 가져오기이이이이이이ㅣㅇ 제발가져와라
-  // const [clickedNovelId, setClickedNovelId] = useState<number>(0);
-  // const handleClickedNovelId = (parameter: number) => {
-  //   setClickedNovelId(parameter);
-  // };
-
   const [clickedNovelData, setClickedNovelData] = useState({
     data: {
       id: 1,
@@ -748,7 +742,6 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                 handleFantasyOn={handleFantasyOn}
                 handleMartialArtOn={handleMartialArtOn}
                 handleRomanceOn={handleRomanceOn}
-                // handleClickedNovelId={handleClickedNovelId}
                 handleAxiosClickedNovelData={handleAxiosClickedNovelData}
               />
             )}
@@ -756,7 +749,13 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
           <Route
             path="/main/fantasy"
             render={() => (
-              <FantasyCategory fantasyNovelData={fantasyNovelData} />
+              <FantasyCategory
+                fantasyNovelData={fantasyNovelData}
+                history={props.history}
+                location={props.location}
+                match={props.match}
+                handleAxiosClickedNovelData={handleAxiosClickedNovelData}
+              />
             )}
           />
           <Route
@@ -764,13 +763,23 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
             render={() => (
               <MartialArtsCategory
                 martialArtsNovelData={martialArtsNovelData}
+                history={props.history}
+                location={props.location}
+                match={props.match}
+                handleAxiosClickedNovelData={handleAxiosClickedNovelData}
               />
             )}
           />
           <Route
             path="/main/romance"
             render={() => (
-              <RomanceCategory romanceNovelData={romanceNovelData} />
+              <RomanceCategory
+                romanceNovelData={romanceNovelData}
+                history={props.history}
+                location={props.location}
+                match={props.match}
+                handleAxiosClickedNovelData={handleAxiosClickedNovelData}
+              />
             )}
           />
           <Route
@@ -785,7 +794,13 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
           />
           <Route
             path="/main/novel/:id"
-            render={() => <NovelInfo clickedNovelData={clickedNovelData} />}
+            render={() => (
+              <NovelInfo
+                clickedNovelData={clickedNovelData}
+                handleAxiosClickedNovelData={handleAxiosClickedNovelData}
+                nickname={props.nickname}
+              />
+            )}
           />
         </Switch>
       </div>
