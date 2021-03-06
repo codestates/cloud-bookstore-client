@@ -784,7 +784,12 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
           />
           <Route
             path="/main/mypage"
-            render={() => <Mypage myPageData={myPageData} />}
+            render={() => (
+              <Mypage
+                handleAxiosMyPage={handleAxiosMyPage}
+                myPageData={myPageData}
+              />
+            )}
           />
           <Route
             path="/main/mypage/recentNovelList"

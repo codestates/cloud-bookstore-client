@@ -13,6 +13,7 @@ import UserLikes from './myCategoryComponents/UserLikes';
 import MakeNovel from './myCategoryComponents/MakeNovel';
 
 interface MyNovelDataProps extends RouteComponentProps {
+  handleAxiosMyPage: () => void;
   myPageData: {
     userHistories: {
       novels: {
@@ -148,7 +149,12 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
           path="/main/mypage/myNovelList"
           render={() => <MyWorks userWorksData={props.myPageData.userWorks} />}
         />
-        <Route path="/main/mypage/makeNovel" render={() => <MakeNovel />} />
+        <Route
+          path="/main/mypage/makeNovel"
+          render={() => (
+            <MakeNovel handleAxiosMyPage={props.handleAxiosMyPage} />
+          )}
+        />
       </Switch>
     </div>
   );
