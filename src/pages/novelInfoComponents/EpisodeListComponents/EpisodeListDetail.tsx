@@ -1,149 +1,66 @@
 import React from 'react';
 
-const EpisodeListDetail: React.FC = () => {
+interface episodeListProps {
+  data: {
+    id: number;
+    episodeNum: number;
+    novelId: number;
+    title: string;
+    text: string;
+    thumbnail: string;
+    cloud: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+}
+
+const getToday = (): string => {
+  const date: Date = new Date();
+  const year: number = date.getFullYear();
+  const month: string = ('0' + (1 + date.getMonth())).slice(-2);
+  const day: string = ('0' + date.getDate()).slice(-2);
+  return `${year}-${month}-${day}`;
+};
+
+const EpisodeListDetail: React.FC<episodeListProps> = (
+  props: episodeListProps,
+) => {
+  const refinedUpdatedAt: string = props.data.updatedAt.slice(0, 10);
+
+  const slicedTitle: string = props.data.title.slice(0, 13);
+
+  const getBoolTitleLength = (): boolean => {
+    if (props.data.title.length > 13) return true;
+    else return false;
+  };
+
   return (
     <>
       <div className="novelList">
         <div
           className="thumbnail"
           style={{
-            backgroundImage:
-              'url(https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png)',
+            backgroundImage: `url(${props.data.thumbnail})`,
           }}
-        >
-          <div className="novelListCompleteObject">완결</div>
-        </div>
+        ></div>
         <div className="homeNovelListContentWrapper">
           <div className="countCloud">
-            <div className="countCloudText">누적구름</div>
+            <div className="countCloudText">누적구름 {props.data.cloud}</div>
             <div className="countCloudImg" />
-            <div className="novelListNewObject">NEW</div>
+            {refinedUpdatedAt === getToday() ? (
+              <div className="novelListNewObject">NEW</div>
+            ) : (
+              <></>
+            )}
           </div>
           <div className="novelListSubjectWrapper">
-            <div className="HomeNovelListSubject">title</div>
+            <div className="HomeNovelListSubject">
+              {props.data.episodeNum}화{' '}
+              {getBoolTitleLength() ? `${slicedTitle} ...` : props.data.title}
+            </div>
           </div>
           <div className="homeNovelListAuthorFavWrapper">
-            <div className="novelListAuthor">updatedAt</div>
-          </div>
-        </div>
-      </div>
-      <div className="novelList">
-        <div
-          className="thumbnail"
-          style={{
-            backgroundImage:
-              'url(https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png)',
-          }}
-        >
-          <div className="novelListCompleteObject">완결</div>
-        </div>
-        <div className="homeNovelListContentWrapper">
-          <div className="countCloud">
-            <div className="countCloudText">누적구름</div>
-            <div className="countCloudImg" />
-            <div className="novelListNewObject">NEW</div>
-          </div>
-          <div className="novelListSubjectWrapper">
-            <div className="HomeNovelListSubject">title</div>
-          </div>
-          <div className="homeNovelListAuthorFavWrapper">
-            <div className="novelListAuthor">updatedAt</div>
-          </div>
-        </div>
-      </div>
-      <div className="novelList">
-        <div
-          className="thumbnail"
-          style={{
-            backgroundImage:
-              'url(https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png)',
-          }}
-        >
-          <div className="novelListCompleteObject">완결</div>
-        </div>
-        <div className="homeNovelListContentWrapper">
-          <div className="countCloud">
-            <div className="countCloudText">누적구름</div>
-            <div className="countCloudImg" />
-            <div className="novelListNewObject">NEW</div>
-          </div>
-          <div className="novelListSubjectWrapper">
-            <div className="HomeNovelListSubject">title</div>
-          </div>
-          <div className="homeNovelListAuthorFavWrapper">
-            <div className="novelListAuthor">updatedAt</div>
-          </div>
-        </div>
-      </div>
-      <div className="novelList">
-        <div
-          className="thumbnail"
-          style={{
-            backgroundImage:
-              'url(https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png)',
-          }}
-        >
-          <div className="novelListCompleteObject">완결</div>
-        </div>
-        <div className="homeNovelListContentWrapper">
-          <div className="countCloud">
-            <div className="countCloudText">누적구름</div>
-            <div className="countCloudImg" />
-            <div className="novelListNewObject">NEW</div>
-          </div>
-          <div className="novelListSubjectWrapper">
-            <div className="HomeNovelListSubject">title</div>
-          </div>
-          <div className="homeNovelListAuthorFavWrapper">
-            <div className="novelListAuthor">updatedAt</div>
-          </div>
-        </div>
-      </div>
-      <div className="novelList">
-        <div
-          className="thumbnail"
-          style={{
-            backgroundImage:
-              'url(https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png)',
-          }}
-        >
-          <div className="novelListCompleteObject">완결</div>
-        </div>
-        <div className="homeNovelListContentWrapper">
-          <div className="countCloud">
-            <div className="countCloudText">누적구름</div>
-            <div className="countCloudImg" />
-            <div className="novelListNewObject">NEW</div>
-          </div>
-          <div className="novelListSubjectWrapper">
-            <div className="HomeNovelListSubject">title</div>
-          </div>
-          <div className="homeNovelListAuthorFavWrapper">
-            <div className="novelListAuthor">updatedAt</div>
-          </div>
-        </div>
-      </div>
-      <div className="novelList">
-        <div
-          className="thumbnail"
-          style={{
-            backgroundImage:
-              'url(https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png)',
-          }}
-        >
-          <div className="novelListCompleteObject">완결</div>
-        </div>
-        <div className="homeNovelListContentWrapper">
-          <div className="countCloud">
-            <div className="countCloudText">누적구름</div>
-            <div className="countCloudImg" />
-            <div className="novelListNewObject">NEW</div>
-          </div>
-          <div className="novelListSubjectWrapper">
-            <div className="HomeNovelListSubject">title</div>
-          </div>
-          <div className="homeNovelListAuthorFavWrapper">
-            <div className="novelListAuthor">updatedAt</div>
+            <div className="novelListAuthor">{refinedUpdatedAt}</div>
           </div>
         </div>
       </div>
