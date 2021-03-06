@@ -44,17 +44,17 @@ interface ClickedNovelInfoProps {
       createdAt: string;
       updatedAt: string;
     }[];
-    userHistory?: {
+    userHistory: {
       id: number;
       episodeNum: number;
       title: string;
       thumbnail: string;
       cloud: number;
-      userHistory_novelEpisodeId: number;
-      userHistory_updated_at: string;
+      novelEpisodeId: number;
+      updatedAt: string;
     };
-    userLike?: boolean;
-    userPurchases?: {
+    userLike: boolean;
+    userPurchases: {
       episodeId: number;
     }[];
   };
@@ -66,17 +66,17 @@ const NovelInfo: React.FC<ClickedNovelInfoProps> = (
   console.log(props);
   return (
     <div className="novelInfoWrapper">
-      <NovelDetail />
-      {!props.clickedNovelData.userHistory ? (
+      <NovelDetail clickedNovelData={props.clickedNovelData} />
+      {!props.clickedNovelData.userHistory.id ? (
         <div className="emptySpaceNovelInfo"></div>
       ) : (
-        <LastUserHistory />
+        <LastUserHistory clickedNovelData={props.clickedNovelData} />
       )}
-      <EpisodeList />
+      <EpisodeList clickedNovelData={props.clickedNovelData} />
       <NovelComments
-      clickedNovelData={props.clickedNovelData}
-      handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
-      nickname={props.nickname}
+        clickedNovelData={props.clickedNovelData}
+        handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
+        nickname={props.nickname}
       />
     </div>
   );
