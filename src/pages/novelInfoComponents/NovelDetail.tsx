@@ -120,7 +120,10 @@ const NovelDetail: React.FC<novelDetailProps> = (props: novelDetailProps) => {
           <div>
             {props.clickedNovelData.userLike ? (
               <>
-                <MdStars style={{ color: '#2b79fe' }} />
+                <MdStars
+                  style={{ color: '#2b79fe' }}
+                  onClick={() => handleUserDislike()}
+                />
                 <div
                   role="presentation"
                   className="novelLikesButton"
@@ -131,7 +134,7 @@ const NovelDetail: React.FC<novelDetailProps> = (props: novelDetailProps) => {
               </>
             ) : (
               <>
-                <MdStars />
+                <MdStars onClick={() => handleUserLike()} />
                 <div
                   role="presentation"
                   className="novelLikesButton"
