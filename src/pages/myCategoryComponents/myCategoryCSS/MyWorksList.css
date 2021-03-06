@@ -10,7 +10,7 @@
 .MyWorksList {
     width: 224px;
     /* height: 238px; */
-    border-radius: 2px 2px 0px 0px;
+    border-radius: 2px;
     /* margin-bottom: 42px; */
     border: solid 1px #e9e9e9;
   }
