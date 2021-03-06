@@ -44,7 +44,7 @@ const MakeNewComment: React.FC<MakeNewCommentProps> = (
   };
 
   return (
-    <div className="makeNewCommentWrapper">
+    <div className="makeNewCommentWrapper comments">
       <div className="makeNewCommentUserName">{props.nickname}</div>
       <textarea
         className="makeNewCommentInputBox"

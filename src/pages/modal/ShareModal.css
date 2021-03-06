@@ -1,0 +1,10 @@
+.shareModalBox{
+  width: 250px;
+  border-radius: 2px;
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  box-shadow: 0 2px 7px rgba(0,0,0, .3);
+  padding-top: 7px;
+}

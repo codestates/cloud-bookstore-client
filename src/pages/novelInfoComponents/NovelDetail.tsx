@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-scroll';
 import './NovelDetail.css';
 import { MdModeComment, MdStars, MdShare } from 'react-icons/md';
+import axios from 'axios';
+import ShareModal from '../../pages/modal/ShareModal';
 
 interface novelDetailProps {
+  toggleUserLike: () => void;
+  handleNovelLikesCount: (userLike: number) => void;
   clickedNovelData: {
     data: {
       id: number;
@@ -53,7 +58,40 @@ interface novelDetailProps {
   };
 }
 
+interface novelLikeCountProps {
+  data: {
+    userLike: number;
+  };
+}
+
 const NovelDetail: React.FC<novelDetailProps> = (props: novelDetailProps) => {
+  const [shareModal, setShareModal] = useState<boolean>(false);
+  const toggleShareModal = () => {
+    setShareModal(!shareModal);
+  };
+
+  const handleUserLike = () => {
+    axios
+      .get(
+        `https://server.cloud-bookstore.com/novel/like/${props.clickedNovelData.data.id}`,
+      )
+      .then((data: novelLikeCountProps) =>
+        props.handleNovelLikesCount(data.data.userLike),
+      )
+      .then(() => props.toggleUserLike());
+  };
+
+  const handleUserDislike = () => {
+    axios
+      .get(
+        `https://server.cloud-bookstore.com/novel/like/${props.clickedNovelData.data.id}`,
+      )
+      .then((data: novelLikeCountProps) =>
+        props.handleNovelLikesCount(data.data.userLike),
+      )
+      .then(() => props.toggleUserLike());
+  };
+
   return (
     <div className="novelDetailWrapper">
       <div className="novelHeader">
@@ -67,31 +105,55 @@ const NovelDetail: React.FC<novelDetailProps> = (props: novelDetailProps) => {
         </div>
         <div className="novelHeaderButtons">
           <div>
-            <MdModeComment />
-            <div className="novelCommentsButton">
-              {props.clickedNovelData.comments.length}
-            </div>
+            <Link
+              to="novelCommentsList"
+              spy={true}
+              smooth={true}
+              className="aTagComment"
+            >
+              <MdModeComment />
+              <div className="novelCommentsButton">
+                {props.clickedNovelData.comments.length}
+              </div>
+            </Link>
           </div>
           <div>
             {props.clickedNovelData.userLike ? (
               <>
-                <MdStars style={{ color: '#2b79fe' }} />
-                <div className="novelLikesButton">관심</div>
+                <MdStars
+                  style={{ color: '#2b79fe' }}
+                  onClick={() => handleUserDislike()}
+                />
+                <div
+                  role="presentation"
+                  className="novelLikesButton"
+                  onClick={() => handleUserDislike()}
+                >
+                  관심
+                </div>
               </>
             ) : (
               <>
-                <MdStars />
-                <div className="novelLikesButton">관심</div>
+                <MdStars onClick={() => handleUserLike()} />
+                <div
+                  role="presentation"
+                  className="novelLikesButton"
+                  onClick={() => handleUserLike()}
+                >
+                  관심
+                </div>
               </>
             )}
           </div>
           <div>
-            <MdShare />
+            <MdShare onClick={toggleShareModal} />
             <div className="novelShareButton">공유</div>
           </div>
         </div>
       </div>
-      <div className="novelDetailGreyLine"></div>
+      <div className="novelDetailGreyLine">
+        {shareModal === true ? <ShareModal /> : <></>}
+      </div>
       <div className="novelDetailInfo">
         <div
           className="novelDetailThumbnail"

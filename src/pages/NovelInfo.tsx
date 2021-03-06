@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import React from 'react';
 import NovelDetail from './novelInfoComponents/NovelDetail';
 import LastUserHistory from './novelInfoComponents/LastUserHistory';
@@ -8,6 +6,8 @@ import NovelComments from './novelInfoComponents/NovelComments';
 import '../css/NovelInfo.css';
 
 interface ClickedNovelInfoProps {
+  toggleUserLike: () => void;
+  handleNovelLikesCount: (userLike: number) => void;
   handleAxiosClickedNovelData: (parameter: number) => void;
   nickname: string;
   clickedNovelData: {
@@ -63,11 +63,16 @@ interface ClickedNovelInfoProps {
 const NovelInfo: React.FC<ClickedNovelInfoProps> = (
   props: ClickedNovelInfoProps,
 ) => {
+  // eslint-disable-next-line no-console
   console.log(props);
   return (
     <div className="novelInfoWrapper">
-      <NovelDetail clickedNovelData={props.clickedNovelData} />
-      {!props.clickedNovelData.userHistory.id ? (
+      <NovelDetail
+        clickedNovelData={props.clickedNovelData}
+        toggleUserLike={props.toggleUserLike}
+        handleNovelLikesCount={props.handleNovelLikesCount}
+      />
+      {props.clickedNovelData.userHistory.id === undefined ? (
         <div className="emptySpaceNovelInfo"></div>
       ) : (
         <LastUserHistory clickedNovelData={props.clickedNovelData} />
