@@ -52,14 +52,19 @@ interface episodeListProps {
   };
 }
 const EpisodeList: React.FC<episodeListProps> = (props: episodeListProps) => {
+  const reverseEpisodeList = props.clickedNovelData.episodes.reverse();
   return (
     <div className="mainPageNovelWrapper">
       <div className="novelInfoTitle">
         작품 회차 ({props.clickedNovelData.episodes.length})
       </div>
       <div className="mainNovelInnerWrapper">
-        {props.clickedNovelData.episodes.map((data) => (
-          <EpisodeListDetail key={data.id} data={data} />
+        {reverseEpisodeList.map((data) => (
+          <EpisodeListDetail
+            key={data.id}
+            data={data}
+            purchase={props.clickedNovelData.userPurchases}
+          />
         ))}
       </div>
     </div>

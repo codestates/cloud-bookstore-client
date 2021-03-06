@@ -12,6 +12,9 @@ interface episodeListProps {
     createdAt: string;
     updatedAt: string;
   };
+  purchase: {
+    episodeId: number;
+  }[];
 }
 
 const getToday = (): string => {
@@ -34,36 +37,78 @@ const EpisodeListDetail: React.FC<episodeListProps> = (
     else return false;
   };
 
+  const purchaseList = props.purchase.map((data) => data.episodeId);
   return (
     <>
-      <div className="novelList">
-        <div
-          className="thumbnail"
-          style={{
-            backgroundImage: `url(${props.data.thumbnail})`,
-          }}
-        ></div>
-        <div className="homeNovelListContentWrapper">
-          <div className="countCloud">
-            <div className="countCloudText">누적구름 {props.data.cloud}</div>
-            <div className="countCloudImg" />
-            {refinedUpdatedAt === getToday() ? (
-              <div className="novelListNewObject">NEW</div>
-            ) : (
-              <></>
-            )}
-          </div>
-          <div className="novelListSubjectWrapper">
-            <div className="HomeNovelListSubject">
-              {props.data.episodeNum}화{' '}
-              {getBoolTitleLength() ? `${slicedTitle} ...` : props.data.title}
+      {purchaseList.map((data) =>
+        data === props.data.episodeNum ? (
+          <div className="novelList">
+            <div
+              className="thumbnail"
+              style={{
+                backgroundImage: `url(${props.data.thumbnail})`,
+              }}
+            ></div>
+            <div className="homeNovelListContentWrapper">
+              <div className="countCloud">
+                <div className="countCloudText">
+                  누적구름 {props.data.cloud}
+                </div>
+                <div className="countCloudImg" />
+                {refinedUpdatedAt === getToday() ? (
+                  <div className="novelListNewObject">NEW</div>
+                ) : (
+                  <></>
+                )}
+              </div>
+              <div className="novelListSubjectWrapper">
+                <div className="HomeNovelListSubject">
+                  {props.data.episodeNum}화{' '}
+                  {getBoolTitleLength()
+                    ? `${slicedTitle} ...`
+                    : props.data.title}
+                </div>
+              </div>
+              <div className="homeNovelListAuthorFavWrapper">
+                <div className="novelListAuthor">{refinedUpdatedAt}</div>
+              </div>
             </div>
           </div>
-          <div className="homeNovelListAuthorFavWrapper">
-            <div className="novelListAuthor">{refinedUpdatedAt}</div>
+        ) : (
+          <div className="novelList" style={{ opacity: '.65' }}>
+            <div
+              className="thumbnail"
+              style={{
+                backgroundImage: `url(${props.data.thumbnail})`,
+              }}
+            ></div>
+            <div className="homeNovelListContentWrapper">
+              <div className="countCloud">
+                <div className="countCloudText">
+                  누적구름 {props.data.cloud}
+                </div>
+                <div className="countCloudImg" />
+                {refinedUpdatedAt === getToday() ? (
+                  <div className="novelListNewObject">NEW</div>
+                ) : (
+                  <></>
+                )}
+              </div>
+              <div className="novelListSubjectWrapper">
+                <div className="HomeNovelListSubject">
+                  {props.data.episodeNum}화{' '}
+                  {getBoolTitleLength()
+                    ? `${slicedTitle} ...`
+                    : props.data.title}
+                </div>
+              </div>
+              <div className="homeNovelListAuthorFavWrapper">
+                <div className="novelListAuthor">{refinedUpdatedAt}</div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        ),
+      )}
     </>
   );
 };
