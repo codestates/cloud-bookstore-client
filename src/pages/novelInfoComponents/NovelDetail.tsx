@@ -42,7 +42,7 @@ interface novelDetailProps {
       createdAt: string;
       updatedAt: string;
     }[];
-    userHistory?: {
+    userHistory: {
       id: number;
       episodeNum: number;
       title: string;
@@ -51,8 +51,8 @@ interface novelDetailProps {
       novelEpisodeId: number;
       updatedAt: string;
     };
-    userLike?: boolean;
-    userPurchases?: {
+    userLike: boolean;
+    userPurchases: {
       episodeId: number;
     }[];
   };
