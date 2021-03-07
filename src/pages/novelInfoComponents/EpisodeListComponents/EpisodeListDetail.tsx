@@ -2,7 +2,7 @@ import React from 'react';
 import PurchaseCheckList from './PurchaseCheckList';
 
 interface episodeListProps {
-  data: {
+  episode: {
     id: number;
     episodeNum: number;
     novelId: number;
@@ -23,11 +23,11 @@ const EpisodeListDetail: React.FC<episodeListProps> = (
 ) => {
   return (
     <>
-      {props.purchase.map((data) => (
+      {props.purchase.map((purchase) => (
         <PurchaseCheckList
-          purchase={data}
-          key={data.episodeId}
-          data={props.data}
+          purchase={purchase}
+          key={purchase.episodeId}
+          episode={props.episode}
         />
       ))}
     </>

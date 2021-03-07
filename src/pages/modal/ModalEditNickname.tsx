@@ -31,7 +31,10 @@ const ModalEditNickname: React.FC<editNicknameProps> = (
           setCheckValidation(false);
           props.handleNickname(updatedNickname);
           props.toggleNicknameModal();
-        } else {
+        }
+      })
+      .catch((err) => {
+        if (err.response.status === 409) {
           setCheckValidation(true);
         }
       });
