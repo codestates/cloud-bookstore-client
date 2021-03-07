@@ -38,15 +38,7 @@ interface episodeListProps {
       createdAt: string;
       updatedAt: string;
     }[];
-    userHistory: {
-      id: number;
-      episodeNum: number;
-      title: string;
-      thumbnail: string;
-      cloud: number;
-      novelEpisodeId: number;
-      updatedAt: string;
-    };
+    userHistory: any;
     userLike: boolean;
     userPurchases: {
       episodeId: number;
