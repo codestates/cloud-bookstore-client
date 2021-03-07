@@ -55,17 +55,17 @@ const LastUserHistoryDetail: React.FC<lastUserHistoryProps> = (
   props: lastUserHistoryProps,
 ) => {
   const refinedUpdatedAt: string = props.clickedNovelData.episodes[
-    props.clickedNovelData.userHistory.episodeNum - 1
+    props.clickedNovelData.userHistory.episodeDetail.episodeNum - 1
   ].updatedAt.slice(0, 10);
 
   const slicedTitle: string = props.clickedNovelData.episodes[
-    props.clickedNovelData.userHistory.episodeNum - 1
+    props.clickedNovelData.userHistory.episodeDetail.episodeNum - 1
   ].title.slice(0, 13);
 
   const getBoolTitleLength = (): boolean => {
     if (
       props.clickedNovelData.episodes[
-        props.clickedNovelData.userHistory.episodeNum - 1
+        props.clickedNovelData.userHistory.episodeDetail.episodeNum - 1
       ].title.length > 13
     )
       return true;
@@ -77,7 +77,7 @@ const LastUserHistoryDetail: React.FC<lastUserHistoryProps> = (
       <div
         className="thumbnail"
         style={{
-          backgroundImage: `url(${props.clickedNovelData.userHistory.thumbnail})`,
+          backgroundImage: `url(${props.clickedNovelData.userHistory.episodeDetail.thumbnail})`,
         }}
       >
         {props.clickedNovelData.data.complete ? (
@@ -92,7 +92,7 @@ const LastUserHistoryDetail: React.FC<lastUserHistoryProps> = (
             누적구름{' '}
             {
               props.clickedNovelData.episodes[
-                props.clickedNovelData.userHistory.episodeNum - 1
+                props.clickedNovelData.userHistory.episodeDetail.episodeNum - 1
               ].cloud
             }
             <div className="countCloudImg" />
@@ -106,10 +106,10 @@ const LastUserHistoryDetail: React.FC<lastUserHistoryProps> = (
         </div>
         <div className="novelListSubjectWrapper">
           <div className="HomeNovelListSubject">
-            {props.clickedNovelData.userHistory.episodeNum}화{' '}
+            {props.clickedNovelData.userHistory.episodeDetail.episodeNum}화{' '}
             {getBoolTitleLength()
               ? `${slicedTitle} ...`
-              : props.clickedNovelData.userHistory.title}
+              : props.clickedNovelData.userHistory.userHistory[0].title}
           </div>
         </div>
         <div className="homeNovelListAuthorFavWrapper">

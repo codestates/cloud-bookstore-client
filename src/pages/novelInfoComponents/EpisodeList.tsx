@@ -65,6 +65,9 @@ const EpisodeList: React.FC<episodeListProps> = (props: episodeListProps) => {
     if (a.episodeNum > b.episodeNum) return -1;
     return 0;
   });
+  const updatedEpisodeList: number[] = props.clickedNovelData.userPurchases.map(
+    (ele) => ele.episodeId,
+  );
 
   return (
     <div className="mainPageNovelWrapper">
@@ -72,23 +75,17 @@ const EpisodeList: React.FC<episodeListProps> = (props: episodeListProps) => {
         작품 회차 ({props.clickedNovelData.episodes.length})
       </div>
       <div className="mainNovelInnerWrapper">
-        {reversedList.map((data) => {
-          console.log('돌고있니?');
-          console.log(props.clickedNovelData.userPurchases);
-          for (
-            let i = 0;
-            i < props.clickedNovelData.userPurchases.length;
-            i++
-          ) {
-            if (data.id === props.clickedNovelData.userPurchases[i].episodeId) {
-              console.log('여기가 산거');
-              return <PurchaseCheckList episode={data} />;
-            } else {
-              console.log('여기가 안산거');
-              return <EpisodeListDetail episode={data} />;
-            }
+        {reversedList.slice(0, -1).map((ele) => {
+          if (updatedEpisodeList.indexOf(ele.id) === -1) {
+            return <EpisodeListDetail episode={ele} key={ele.id} />;
+          } else {
+            return <PurchaseCheckList episode={ele} key={ele.id} />;
           }
         })}
+        <PurchaseCheckList
+          episode={reversedList[reversedList.length - 1]}
+          key={reversedList[reversedList.length - 1].id}
+        />
       </div>
     </div>
   );
