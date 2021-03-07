@@ -30,8 +30,6 @@ const CloudHistory: React.FC<cloudHistoryProps> = (
   };
 
   const onDateChange = (date: any) => {
-    // eslint-disable-next-line no-console
-    console.log(typeof date); // 확인해서 any 부분 수정!
     const dates: string = moment(date).format('YYYY-MM-DD');
     axios
       .get(

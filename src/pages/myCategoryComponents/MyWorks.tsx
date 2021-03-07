@@ -20,7 +20,6 @@ interface UserWorksDataProps {
   }[];
 }
 const MyWorks: React.FC<UserWorksDataProps> = (props: UserWorksDataProps) => {
-  console.log(props.userWorksData);
   return (
     <div>
       {props.userWorksData.length !== 0 ? (
