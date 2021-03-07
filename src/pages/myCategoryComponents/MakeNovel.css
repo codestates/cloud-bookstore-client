@@ -42,9 +42,7 @@
     line-height:22px
 }
 
-button{
-    float: right;
-}
+
 
 .aline{
     display: flex;
@@ -97,6 +95,8 @@ input::placeholder {
     outline:none;
 }
 
+
+
 textarea::placeholder{
     font-size: 16px;
     font-weight: bold;
@@ -131,15 +131,69 @@ textarea:focus {
     width:144px;
     height:90px;
     margin-right: 13px;
-    background-image: url('https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png');
+    background-image: 
+    url('https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png');
+}
+
+.SelcetCoverImageBox{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url('https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png');
+}
+
+
+.selectImage{
+    width:144px;
+    height:90px;
+    background-color: black;
+    margin-right: 13px;
 }
 
 .CoverImageBoxTest{
     width:144px;
     height:90px;
     font-size:0;
-    color:rgba(0, 0, 0, 0);
     margin-right: 13px;
+}
+
+.saveBtn{
+    width: 144px;
+    height: 44px;
+    background-color: #2b79fe;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    float: right;
+    margin-bottom: 88px;
+    border-radius: 2px;
+}
+
+.cancelBtn{
+    width: 144px;
+    height: 44px;
+    color: #b8b8b8;
+    font-size: 16px;
+    font-weight: bold;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    float: right;
+    margin-right: 16px;
+    margin-bottom: 88px;
+    border: solid 1px #b8b8b8;
+    border-radius: 2px;
+}
+
+.cancelBtn:hover {
+    background-color: #2b79fe;
+    color: #ffffff;
+    border: solid 0px #2b79fe;
 }
 
 
@@ -165,6 +219,9 @@ textarea:focus {
         margin-top: 0px;
     }
     .CoverImageBox{
+        margin-top: 16px
+    }
+    .SelcetCoverImageBox{
         margin-top: 16px
     }
 }
@@ -194,6 +251,9 @@ textarea:focus {
     .CoverImageBox{
         margin-top: 16px
     }
+    .SelcetCoverImageBox{
+        margin-top: 16px
+    }
 }
 
 
@@ -220,6 +280,9 @@ textarea:focus {
     .CoverImageBox{
         margin-top: 16px
     }
+    .SelcetCoverImageBox{
+        margin-top: 16px
+    }
 }
 
 @media (max-width: 414px) {
@@ -243,6 +306,9 @@ textarea:focus {
         margin-top: 0px;
     }
     .CoverImageBox{
+        margin-top: 16px
+    }
+    .SelcetCoverImageBox{
         margin-top: 16px
     }
 }
