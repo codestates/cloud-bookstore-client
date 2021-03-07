@@ -159,14 +159,20 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
       },
     ],
     userHistory: {
-      id: 1,
-      episodeNum: 1,
-      title: '어느 좋은 날어느 좋은 날어느 좋은 날',
-      thumbnail:
-        'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
-      cloud: 22,
-      novelEpisodeId: 1,
-      updatedAt: '2021-03-06T05:07:47.538Z',
+      userHistory: [
+        {
+          novelEpisodeId: 1,
+          updatedAt: '2021-03-07T07:48:35.839Z',
+        },
+      ],
+      episodeDetail: {
+        id: 1,
+        episodeNum: 1,
+        title: '어느 좋은 날',
+        thumbnail:
+          'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+        cloud: 22,
+      },
     },
     userLike: true, // 소설에 좋아요를 한 상태, 좋아요를 안했으면 false
     userPurchases: [
