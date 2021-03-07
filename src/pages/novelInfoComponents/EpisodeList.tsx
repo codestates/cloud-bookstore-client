@@ -75,17 +75,22 @@ const EpisodeList: React.FC<episodeListProps> = (props: episodeListProps) => {
         작품 회차 ({props.clickedNovelData.episodes.length})
       </div>
       <div className="mainNovelInnerWrapper">
-        {reversedList.slice(0, -1).map((ele) => {
-          if (updatedEpisodeList.indexOf(ele.id) === -1) {
-            return <EpisodeListDetail episode={ele} key={ele.id} />;
-          } else {
-            return <PurchaseCheckList episode={ele} key={ele.id} />;
-          }
-        })}
-        <PurchaseCheckList
-          episode={reversedList[reversedList.length - 1]}
-          key={reversedList[reversedList.length - 1].id}
-        />
+        {props.clickedNovelData.episodes.length === 0 ? (
+          <></>
+        ) : (
+          <>
+            {reversedList.slice(0, -1).map((ele) => {
+              if (updatedEpisodeList.indexOf(ele.id) === -1) {
+                return <EpisodeListDetail episode={ele} key={ele.id} />;
+              } else {
+                return <PurchaseCheckList episode={ele} key={ele.id} />;
+              }
+            })}
+            <PurchaseCheckList
+              episode={reversedList[reversedList.length - 1]}
+            />
+          </>
+        )}
       </div>
     </div>
   );

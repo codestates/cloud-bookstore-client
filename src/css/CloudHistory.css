@@ -21,6 +21,7 @@
   width: 943px;
   display: flex;
   flex-direction: column;
+  overflow: auto;
 }
 
 .cloudHistoryTitle{
