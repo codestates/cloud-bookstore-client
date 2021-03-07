@@ -111,8 +111,8 @@
     left: -53px;
   }
   .hisOauthLoginWrapper {
-    top: 20px;
-    left: -118px;
+    top: 5%;
+    left: -0.6%;
   }
   .oauthLoginBox {
     width: 300px;
@@ -144,8 +144,8 @@
     left: -53px;
   }
   .hisOauthLoginWrapper {
-    top: 16px;
-    left: -118px;
+    top: 4.5%;
+    left: -0.5%;
   }
   .oauthLoginBox {
     width: 300px;
@@ -179,8 +179,8 @@
     left: -48px;
   }
   .hisOauthLoginWrapper {
-    top: -4px;
-    left: -168px;
+    top: -2%;
+    left: -4%;
   }
   .oauthLoginBox {
     width: 260px;
@@ -232,8 +232,8 @@
   }
   .hisOauthLoginWrapper {
     width: 200px;
-    top: -24px;
-    left: -38px;
+    top: -13%;
+    left: -8%;
   }
   .oauthLoginBox {
     width: 180px;
