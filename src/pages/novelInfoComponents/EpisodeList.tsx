@@ -58,15 +58,13 @@ const EpisodeList: React.FC<episodeListProps> = (props: episodeListProps) => {
         작품 회차 ({props.clickedNovelData.episodes.length})
       </div>
       <div className="mainNovelInnerWrapper">
-        {props.clickedNovelData.episodes
-          .map((data) => (
-            <EpisodeListDetail
-              key={data.id}
-              data={data}
-              purchase={props.clickedNovelData.userPurchases}
-            />
-          ))
-          .reverse()}
+        {props.clickedNovelData.episodes.reverse().map((data) => (
+          <EpisodeListDetail
+            key={data.id}
+            episode={data}
+            purchase={props.clickedNovelData.userPurchases}
+          />
+        ))}
       </div>
     </div>
   );

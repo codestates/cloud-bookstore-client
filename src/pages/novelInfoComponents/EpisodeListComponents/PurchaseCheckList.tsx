@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface purchaseCheckListProps {
-  data: {
+  episode: {
     id: number;
     episodeNum: number;
     novelId: number;
@@ -28,28 +28,30 @@ const getToday = (): string => {
 const PurchaseCheckList: React.FC<purchaseCheckListProps> = (
   props: purchaseCheckListProps,
 ) => {
-  const refinedUpdatedAt: string = props.data.updatedAt.slice(0, 10);
+  const refinedUpdatedAt: string = props.episode.updatedAt.slice(0, 10);
 
-  const slicedTitle: string = props.data.title.slice(0, 13);
+  const slicedTitle: string = props.episode.title.slice(0, 13);
 
   const getBoolTitleLength = (): boolean => {
-    if (props.data.title.length > 13) return true;
+    if (props.episode.title.length > 13) return true;
     else return false;
   };
 
   return (
     <>
-      {props.purchase.episodeId === props.data.episodeNum ? (
+      {props.purchase.episodeId === props.episode.id ? (
         <div className="novelList">
           <div
             className="thumbnail"
             style={{
-              backgroundImage: `url(${props.data.thumbnail})`,
+              backgroundImage: `url(${props.episode.thumbnail})`,
             }}
           ></div>
           <div className="homeNovelListContentWrapper">
             <div className="countCloud">
-              <div className="countCloudText">누적구름 {props.data.cloud}</div>
+              <div className="countCloudText">
+                누적구름 {props.episode.cloud}
+              </div>
               <div className="countCloudImg" />
               {refinedUpdatedAt === getToday() ? (
                 <div className="novelListNewObject">NEW</div>
@@ -59,8 +61,10 @@ const PurchaseCheckList: React.FC<purchaseCheckListProps> = (
             </div>
             <div className="novelListSubjectWrapper">
               <div className="HomeNovelListSubject">
-                {props.data.episodeNum}화{' '}
-                {getBoolTitleLength() ? `${slicedTitle} ...` : props.data.title}
+                {props.episode.episodeNum}화{' '}
+                {getBoolTitleLength()
+                  ? `${slicedTitle} ...`
+                  : props.episode.title}
               </div>
             </div>
             <div className="homeNovelListAuthorFavWrapper">
@@ -73,12 +77,14 @@ const PurchaseCheckList: React.FC<purchaseCheckListProps> = (
           <div
             className="thumbnail"
             style={{
-              backgroundImage: `url(${props.data.thumbnail})`,
+              backgroundImage: `url(${props.episode.thumbnail})`,
             }}
           ></div>
           <div className="homeNovelListContentWrapper">
             <div className="countCloud">
-              <div className="countCloudText">누적구름 {props.data.cloud}</div>
+              <div className="countCloudText">
+                누적구름 {props.episode.cloud}
+              </div>
               <div className="countCloudImg" />
               {refinedUpdatedAt === getToday() ? (
                 <div className="novelListNewObject">NEW</div>
@@ -88,8 +94,10 @@ const PurchaseCheckList: React.FC<purchaseCheckListProps> = (
             </div>
             <div className="novelListSubjectWrapper">
               <div className="HomeNovelListSubject">
-                {props.data.episodeNum}화{' '}
-                {getBoolTitleLength() ? `${slicedTitle} ...` : props.data.title}
+                {props.episode.episodeNum}화{' '}
+                {getBoolTitleLength()
+                  ? `${slicedTitle} ...`
+                  : props.episode.title}
               </div>
             </div>
             <div className="homeNovelListAuthorFavWrapper">
