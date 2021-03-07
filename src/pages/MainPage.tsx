@@ -123,7 +123,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     episodes: [
       {
         id: 1,
-        episodeNum: 2,
+        episodeNum: 1,
         novelId: 2,
         title: '어느 좋은 날어느 좋은 날어느 좋은 날',
         text:
@@ -136,7 +136,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
       },
       {
         id: 2,
-        episodeNum: 1,
+        episodeNum: 2,
         novelId: 1,
         title: '어느 좋은 날어느 좋은 날어느 좋은 날',
         text:
