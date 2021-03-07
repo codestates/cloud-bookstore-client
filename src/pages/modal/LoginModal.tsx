@@ -39,7 +39,7 @@ const LoginModal: React.FC<loginProps> = (props: loginProps) => {
       <div className="loginPopup">
         <MdClose className="mdClose" onClick={props.handleLoginModalOn} />
         <div className="loginPopupLogo"></div>
-        <div className="oauthLoginWrapper">
+        <div className="hisOauthLoginWrapper">
           <GoogleLogin
             className="googleLogin oauthLoginBox"
             clientId={
