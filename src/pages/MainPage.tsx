@@ -651,6 +651,29 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     }));
   };
 
+  const [novelTitleSearch, setNovelTitleSearch] = useState<string>('');
+
+  // ! Search input state 저장 함수
+  const handleNovelTitleSearch = (
+    e: React.ChangeEvent<HTMLInputElement>,
+  ): void => {
+    setNovelTitleSearch(e.target.value);
+  };
+
+  // ! Search로 넣은 novel title의 id 찾는 함수
+  const handleSearchClick = (): void => {
+    const entireNovelData = [
+      ...fantasyNovelData.data,
+      ...martialArtsNovelData.data,
+      ...romanceNovelData.data,
+    ];
+    for (const el of entireNovelData) {
+      if (el.title.replace(/\s/g, '') === novelTitleSearch.replace(/\s/g, '')) {
+        props.history.push(`/main/novel/$(el.id)`);
+      }
+    }
+  };
+
   // ! handleAxios 함수들 미리 실행시켜두기
   useEffect(() => {
     handleAxiosFantasy();
@@ -739,19 +762,16 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                   MY
                 </div>
               </div>
-              <form
-                className="navSearchWrapper"
-                name="google_search"
-                method="get"
-                action="https://www.google.co.kr/search"
-              >
+              <form className="navSearchWrapper">
                 <input
                   type="text"
                   className="navSearchBox"
                   placeholder="검색해주세요."
+                  onChange={handleNovelTitleSearch}
+                  maxLength={50}
                 />
                 <div className="navSearchBtn">
-                  <MdSearch />
+                  <MdSearch onClick={handleSearchClick} />
                 </div>
               </form>
             </div>
