@@ -43,7 +43,7 @@ const options: OptionType[] = [
   { value: 3, label: '로맨스' },
 ];
 
-class MakeNovel extends Component<handleAxiosMyPageProps, State> {
+class EditNovel extends Component<handleAxiosMyPageProps, State> {
   constructor(props: handleAxiosMyPageProps) {
     super(props);
     this.state = {
@@ -109,7 +109,7 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
       <>
         <div className="MakeNovelWrapper">
           <div className="MakeNovelHeader">
-            <div className="MakeNovelTitle">새 작품 쓰기</div>
+            <div className="MakeNovelTitle">작품 수정 하기</div>
           </div>
           <div className="BoxLine" />
           <div className="SmallText">
@@ -572,4 +572,4 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
   }
 }
 
-export default withRouter(MakeNovel);
+export default withRouter(EditNovel);

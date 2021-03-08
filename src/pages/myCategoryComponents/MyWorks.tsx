@@ -1,9 +1,10 @@
 /* eslint-disable */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, RouteComponentProps } from 'react-router-dom';
 import '../../css/MyWorks.css';
 import MyWorksWrapper from './myWrapperComponents/MyWorksWrapper';
-interface UserWorksDataProps {
+interface UserWorksDataProps extends RouteComponentProps {
+  handleAxiosMyNovelEpisodeList: (novelId: number) => void;
   userWorksData: {
     id: number;
     title: string;
@@ -25,7 +26,13 @@ const MyWorks: React.FC<UserWorksDataProps> = (props: UserWorksDataProps) => {
     <div>
       {props.userWorksData.length !== 0 ? (
         <>
-          <MyWorksWrapper userWorksData={props.userWorksData} />
+          <MyWorksWrapper
+            history={props.history}
+            location={props.location}
+            match={props.match}
+            userWorksData={props.userWorksData}
+            handleAxiosMyNovelEpisodeList={props.handleAxiosMyNovelEpisodeList}
+          />
         </>
       ) : (
         <div className="emtyBox">

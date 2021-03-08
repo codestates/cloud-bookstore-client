@@ -1,9 +1,10 @@
 import React from 'react';
 import MyWorksList from './MyWorksList';
-import { Link } from 'react-router-dom';
+import { Link, RouteComponentProps } from 'react-router-dom';
 import '../myCategoryCSS/MyWorksWrapper.css';
 
-interface UserWorksDataProps {
+interface UserWorksDataProps extends RouteComponentProps {
+  handleAxiosMyNovelEpisodeList: (novelId: number) => void;
   userWorksData: {
     id: number;
     title: string;
@@ -28,7 +29,16 @@ const MyWorksWrapper: React.FC<UserWorksDataProps> = (
         {/* <div className="MyWorksMainNovelTextWrapper">더보기</div> */}
         <div className="MyWorksMainNovelInnerWrapper">
           {props.userWorksData.map((data) => (
-            <MyWorksList key={data.id} userWorksData={data} />
+            <MyWorksList
+              history={props.history}
+              location={props.location}
+              match={props.match}
+              key={data.id}
+              userWorksData={data}
+              handleAxiosMyNovelEpisodeList={
+                props.handleAxiosMyNovelEpisodeList
+              }
+            />
           ))}
         </div>
       </div>

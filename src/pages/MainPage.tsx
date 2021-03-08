@@ -520,7 +520,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         updatedAt: '2021-02-26T13:54:55.252Z',
       },
       {
-        id: 34,
+        id: 35,
         title: '나의 님',
         author: 'chris',
         category: 3,
@@ -535,7 +535,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         updatedAt: '2021-02-26T13:54:55.252Z',
       },
       {
-        id: 34,
+        id: 36,
         title: '나의 님',
         author: 'chris',
         category: 3,
@@ -550,7 +550,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         updatedAt: '2021-02-26T13:54:55.252Z',
       },
       {
-        id: 34,
+        id: 37,
         title: '나의 님',
         author: 'chris',
         category: 3,
@@ -565,7 +565,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         updatedAt: '2021-02-26T13:54:55.252Z',
       },
       {
-        id: 34,
+        id: 38,
         title: '나의 님',
         author: 'chris',
         category: 3,
@@ -580,7 +580,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         updatedAt: '2021-02-26T13:54:55.252Z',
       },
       {
-        id: 34,
+        id: 39,
         title: '나의 님',
         author: 'chris',
         category: 3,
@@ -595,7 +595,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         updatedAt: '2021-02-26T13:54:55.252Z',
       },
       {
-        id: 34,
+        id: 40,
         title: '나의 님',
         author: 'chris',
         category: 3,
@@ -610,7 +610,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         updatedAt: '2021-02-26T13:54:55.252Z',
       },
       {
-        id: 34,
+        id: 41,
         title: '나의 님',
         author: 'chris',
         category: 3,
@@ -848,6 +848,9 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
               <Mypage
                 handleAxiosMyPage={handleAxiosMyPage}
                 myPageData={myPageData}
+                // history={props.history}
+                // location={props.location}
+                // match={props.match}
               />
             )}
           />
