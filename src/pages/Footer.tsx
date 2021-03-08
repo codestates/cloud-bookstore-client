@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
             <div className="teamMembersText">TEAM MEMBERS</div>
             <div className="teamMemberBox">
               <span className="teamMembersWrapper">
-                <div className="memberPart">BACK-END</div>
+                <div className="memberPart">FULL-STACK(BACK-END)</div>
                 <div className="memberName">김주희</div>
                 <a
                   href="https://www.github.com/paigekim29"
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
                 </a>
               </span>
               <span className="teamMembersWrapper">
-                <div className="memberPart">BACK-END</div>
+                <div className="memberPart">FULL-STACK(BACK-END)</div>
                 <div className="memberName">최상혁</div>
                 <a
                   href="https://www.github.com/Sanghyuk-CH"
