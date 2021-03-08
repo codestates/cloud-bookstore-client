@@ -651,6 +651,14 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     }));
   };
 
+  // ! handleAxios 함수들 미리 실행시켜두기
+  useEffect(() => {
+    handleAxiosFantasy();
+    handleAxiosMartialArts();
+    handleAxiosRomance();
+    handleAxiosMyPage();
+  }, []);
+
   const [novelTitleSearch, setNovelTitleSearch] = useState<string>('');
 
   // ! Search input state 저장 함수
@@ -670,18 +678,10 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     ];
     for (const el of entireNovelData) {
       if (el.title.replace(/\s/g, '') === novelTitleSearch.replace(/\s/g, '')) {
-        props.history.push(`/main/novel/$(el.id)`);
+        props.history.push(`/main/novel/${el.id}`);
       }
     }
   };
-
-  // ! handleAxios 함수들 미리 실행시켜두기
-  useEffect(() => {
-    handleAxiosFantasy();
-    handleAxiosMartialArts();
-    handleAxiosRomance();
-    handleAxiosMyPage();
-  }, []);
 
   return (
     <div>
