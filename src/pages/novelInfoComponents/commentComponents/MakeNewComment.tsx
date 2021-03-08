@@ -39,7 +39,10 @@ const MakeNewComment: React.FC<MakeNewCommentProps> = (
           nickname: props.nickname,
           novelId: props.novelData.id,
         })
-        .then(() => props.handleAxiosClickedNovelData(props.novelData.id));
+        .then(() => {
+          setTextChange('');
+          props.handleAxiosClickedNovelData(props.novelData.id);
+        });
     }
   };
 
