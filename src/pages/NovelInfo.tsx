@@ -9,6 +9,10 @@ interface ClickedNovelInfoProps extends RouteComponentProps {
   toggleUserLike: () => void;
   handleNovelLikesCount: (userLike: number) => void;
   handleAxiosClickedNovelData: (parameter: number) => void;
+  handleClickedSpecificEpisode: (parameter: {
+    episodeId: number;
+    novelId: number;
+  }) => void;
   nickname: string;
   clickedNovelData: {
     data: {
@@ -74,6 +78,7 @@ const NovelInfo: React.FC<ClickedNovelInfoProps> = (
         history={props.history}
         location={props.location}
         match={props.match}
+        handleClickedSpecificEpisode={props.handleClickedSpecificEpisode}
       />
       <NovelComments
         clickedNovelData={props.clickedNovelData}

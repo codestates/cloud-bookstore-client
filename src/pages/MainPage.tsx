@@ -134,6 +134,10 @@ interface mainPageProps extends RouteComponentProps {
   handleNovelLikesCount: (userLike: number) => void;
   handleNovelTitleSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSearchClick: () => void;
+  handleClickedSpecificEpisode: (parameter: {
+    episodeId: number;
+    novelId: number;
+  }) => void;
   novelData: {
     ranking: {
       id: number;
@@ -407,6 +411,9 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                 history={props.history}
                 location={props.location}
                 match={props.match}
+                handleClickedSpecificEpisode={
+                  props.handleClickedSpecificEpisode
+                }
               />
             )}
           />

@@ -6,6 +6,10 @@ import EpisodeListDetail from './EpisodeListComponents/EpisodeListDetail';
 import PurchaseCheckList from './EpisodeListComponents/PurchaseCheckList';
 
 interface episodeListProps extends RouteComponentProps {
+  handleClickedSpecificEpisode: (parameter: {
+    episodeId: number;
+    novelId: number;
+  }) => void;
   clickedNovelData: {
     data: {
       id: number;
@@ -92,6 +96,9 @@ const EpisodeList: React.FC<episodeListProps> = (props: episodeListProps) => {
                     history={props.history}
                     location={props.location}
                     match={props.match}
+                    handleClickedSpecificEpisode={
+                      props.handleClickedSpecificEpisode
+                    }
                   />
                 );
               }
@@ -101,6 +108,7 @@ const EpisodeList: React.FC<episodeListProps> = (props: episodeListProps) => {
               history={props.history}
               location={props.location}
               match={props.match}
+              handleClickedSpecificEpisode={props.handleClickedSpecificEpisode}
             />
           </>
         )}

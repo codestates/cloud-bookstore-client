@@ -3,6 +3,10 @@ import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
 interface purchaseCheckListProps extends RouteComponentProps {
+  handleClickedSpecificEpisode: (parameter: {
+    episodeId: number;
+    novelId: number;
+  }) => void;
   episode: {
     id: number;
     episodeNum: number;
@@ -43,6 +47,10 @@ const PurchaseCheckList: React.FC<purchaseCheckListProps> = (
         className="novelList"
         role="presentation"
         onClick={() => {
+          props.handleClickedSpecificEpisode({
+            episodeId: props.episode.episodeNum,
+            novelId: props.episode.novelId,
+          });
           props.history.push(
             `/novel/${props.episode.novelId}/episode/${props.episode.episodeNum}`,
           );
