@@ -43,8 +43,6 @@ const PurchaseCheckList: React.FC<purchaseCheckListProps> = (
         className="novelList"
         role="presentation"
         onClick={() => {
-          console.log(props.episode.novelId);
-          console.log(props.episode.id);
           props.history.push(
             `/novel/${props.episode.novelId}/episode/${props.episode.episodeNum}`,
           );
