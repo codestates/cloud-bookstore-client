@@ -117,6 +117,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 /* 컴퓨터에서 줄였을 때 */
