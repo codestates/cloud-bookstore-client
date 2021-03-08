@@ -1,5 +1,4 @@
 .novelInfoWrapper{
-  border: 1px blue solid; /* 반응형 고려시 총 width크기 참고하세유 */
   width: 943px; /* 어차피 이 길이보다 작으면 media-query줌*/
   display: flex;
   flex-direction: column;
