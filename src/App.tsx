@@ -769,7 +769,9 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
         <Route
           exact
           path="/novel/:id/episode/:episodeId"
-          render={() => <NovelReadStage />}
+          render={() => (
+            <NovelReadStage specificEpisodeData={specificEpisodeData} />
+          )}
         />
       </Switch>
     </div>
