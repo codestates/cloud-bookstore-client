@@ -1,7 +1,10 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import './WriteLure.css';
 
-const WriteLure: React.FC = () => {
+const WriteLure: React.FC<RouteComponentProps> = (
+  props: RouteComponentProps,
+) => {
   return (
     <div className="wholeWriteLureWrapper">
       <div className="WriteLureText">
@@ -15,7 +18,15 @@ const WriteLure: React.FC = () => {
         <div className="WriteLureImgText">
           <p>작품의 첫 페이지를 작성해</p>
           <p>작가로서의 여정을 시작해보세요.</p>
-          <div className="WriteLureBtn">글쓰러 가기</div>
+          <div
+            className="WriteLureBtn"
+            role="presentation"
+            onClick={() => {
+              props.history.push(`/main/mypage/myNovelList`);
+            }}
+          >
+            글쓰러 가기
+          </div>
         </div>
       </div>
     </div>

@@ -116,7 +116,11 @@ const LandingPage: React.FC<RouteComponentProps> = (
           location={props.location}
           match={props.match}
         />
-        <WriteLure />
+        <WriteLure
+          history={props.history}
+          location={props.location}
+          match={props.match}
+        />
         <IntroFunction />
         <div id="verticalLine1" className="verticalLine"></div>
         <div id="verticalLine2" className="verticalLine"></div>
