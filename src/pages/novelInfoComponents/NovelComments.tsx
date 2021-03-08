@@ -81,7 +81,14 @@ const NovelComments: React.FC<CommentsDataProps> = (
             />
             <div className="commentsListWrapper">
               {props.clickedNovelData.comments.map((data) => (
-                <CommentsList key={data.id} data={data} />
+                <CommentsList
+                  key={data.id}
+                  data={data}
+                  handleAxiosClickedNovelData={
+                    props.handleAxiosClickedNovelData
+                  }
+                  novelData={props.clickedNovelData.data}
+                />
               ))}
             </div>
           </>
@@ -90,21 +97,18 @@ const NovelComments: React.FC<CommentsDataProps> = (
             <CantMakeNewComment />
             <div className="commentsListWrapper">
               {props.clickedNovelData.comments.map((data) => (
-                <CommentsList key={data.id} data={data} />
+                <CommentsList
+                  key={data.id}
+                  data={data}
+                  handleAxiosClickedNovelData={
+                    props.handleAxiosClickedNovelData
+                  }
+                  novelData={props.clickedNovelData.data}
+                />
               ))}
             </div>
           </>
         )}
-        {/* <MakeNewComment
-          handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
-          novelData={props.clickedNovelData.data}
-          nickname={props.nickname}
-        />
-        <div className="commentsListWrapper">
-          {props.clickedNovelData.comments.map((data) => (
-            <CommentsList key={data.id} data={data} />
-          ))}
-        </div> */}
       </div>
     </IconContext.Provider>
   );
