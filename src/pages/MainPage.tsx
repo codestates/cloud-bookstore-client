@@ -662,6 +662,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
 
   // ! Search로 넣은 novel title의 id 찾는 함수
   const handleSearchClick = (): void => {
+    setNovelTitleSearch('');
     const entireNovelData = [
       ...fantasyNovelData.data,
       ...martialArtsNovelData.data,
@@ -771,6 +772,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                   onChange={handleNovelTitleSearch}
                   maxLength={50}
                 />
+                {novelTitleSearch}
                 <div className="navSearchBtn">
                   <MdSearch onClick={handleSearchClick} />
                 </div>
