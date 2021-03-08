@@ -44,15 +44,7 @@ interface ClickedNovelInfoProps {
       createdAt: string;
       updatedAt: string;
     }[];
-    userHistory: {
-      id: number;
-      episodeNum: number;
-      title: string;
-      thumbnail: string;
-      cloud: number;
-      novelEpisodeId: number;
-      updatedAt: string;
-    };
+    userHistory: any;
     userLike: boolean;
     userPurchases: {
       episodeId: number;
@@ -72,8 +64,8 @@ const NovelInfo: React.FC<ClickedNovelInfoProps> = (
         toggleUserLike={props.toggleUserLike}
         handleNovelLikesCount={props.handleNovelLikesCount}
       />
-      {props.clickedNovelData.userHistory.id === undefined ? (
-        <div className="emptySpaceNovelInfo"></div>
+      {props.clickedNovelData.userHistory.length === 0 ? (
+        <div className="emptySpaceNovelInfo" />
       ) : (
         <LastUserHistory clickedNovelData={props.clickedNovelData} />
       )}

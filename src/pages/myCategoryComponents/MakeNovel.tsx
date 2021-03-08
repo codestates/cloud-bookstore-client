@@ -89,30 +89,21 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
   };
 
   handleImageChange = (e: any): void => {
-    this.setState(
-      {
-        selectedImage: e,
-      },
-      () => console.log(this.state),
-    );
+    this.setState({
+      selectedImage: e,
+    });
   };
 
   handleNovelTitleChange = (e: any): void => {
-    this.setState(
-      {
-        novelTitle: e.target.value,
-      },
-      () => console.log(this.state),
-    );
+    this.setState({
+      novelTitle: e.target.value,
+    });
   };
 
   handleNovelDescriptionChange = (e: any): void => {
-    this.setState(
-      {
-        novelDescription: e.target.value,
-      },
-      () => console.log(this.state),
-    );
+    this.setState({
+      novelDescription: e.target.value,
+    });
   };
 
   render() {

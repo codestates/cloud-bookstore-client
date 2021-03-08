@@ -180,9 +180,6 @@
   .novelDetailDescription{
     width: 100%;
   }
-  .emptySpaceNovelInfo{
-    height: 200px;
-  }
   .lastUserWrapper{
     margin-top: 280px;
   }
@@ -191,5 +188,8 @@
   }
   .aTagComment{
     height: 51px;
+  }
+  .emptySpaceNovelInfo{
+    height: 200px;
   }
 }

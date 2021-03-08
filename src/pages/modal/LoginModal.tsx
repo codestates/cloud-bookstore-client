@@ -19,7 +19,6 @@ const handleError = () => {};
 
 const LoginModal: React.FC<loginProps> = (props: loginProps) => {
   const handleLogin = (oauth: string, data: any) => {
-    console.log(oauth, data);
     axios
       .post(
         'https://server.cloud-bookstore.com/login',
@@ -40,7 +39,7 @@ const LoginModal: React.FC<loginProps> = (props: loginProps) => {
       <div className="loginPopup">
         <MdClose className="mdClose" onClick={props.handleLoginModalOn} />
         <div className="loginPopupLogo"></div>
-        <div className="oauthLoginWrapper">
+        <div className="hisOauthLoginWrapper">
           <GoogleLogin
             className="googleLogin oauthLoginBox"
             clientId={

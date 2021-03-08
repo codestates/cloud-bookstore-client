@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 
-interface episodeListProps {
+interface purchaseCheckListProps {
   episode: {
     id: number;
     episodeNum: number;
@@ -23,8 +23,8 @@ const getToday = (): string => {
   return `${year}-${month}-${day}`;
 };
 
-const EpisodeListDetail: React.FC<episodeListProps> = (
-  props: episodeListProps,
+const PurchaseCheckList: React.FC<purchaseCheckListProps> = (
+  props: purchaseCheckListProps,
 ) => {
   const refinedUpdatedAt: string = props.episode.updatedAt.slice(0, 10);
 
@@ -34,10 +34,11 @@ const EpisodeListDetail: React.FC<episodeListProps> = (
     if (props.episode.title.length > 13) return true;
     else return false;
   };
+
   return (
     <>
-      {console.log('구입 안 한 경우')}
-      <div className="novelList" style={{ opacity: '.5' }}>
+      {console.log('구입 한 경우')}
+      <div className="novelList">
         <div
           className="thumbnail"
           style={{
@@ -71,4 +72,4 @@ const EpisodeListDetail: React.FC<episodeListProps> = (
   );
 };
 
-export default EpisodeListDetail;
+export default PurchaseCheckList;

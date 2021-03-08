@@ -63,3 +63,11 @@
   color: #464646;
 }
 
+.commentsListEditText {
+  margin: 4px 0 0 0;
+  width: 99%;
+  height: fit-content;
+  min-height: 40px;
+  font-size: 14px;
+  color: #464646;
+}

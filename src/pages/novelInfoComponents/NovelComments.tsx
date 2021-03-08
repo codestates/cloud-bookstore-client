@@ -44,15 +44,7 @@ interface CommentsDataProps {
       createdAt: string;
       updatedAt: string;
     }[];
-    userHistory?: {
-      id: number;
-      episodeNum: number;
-      title: string;
-      thumbnail: string;
-      cloud: number;
-      novelEpisodeId: number;
-      updatedAt: string;
-    };
+    userHistory?: any;
     userLike?: boolean;
     userPurchases?: {
       episodeId: number;
@@ -80,7 +72,23 @@ const NovelComments: React.FC<CommentsDataProps> = (
             <IoMdRefresh />
           </div>
         </div>
-        {props.nickname ? (
+        {props.nickname === 'guest' ? (
+          <>
+            <CantMakeNewComment />
+            <div className="commentsListWrapper">
+              {props.clickedNovelData.comments.map((data) => (
+                <CommentsList
+                  key={data.id}
+                  data={data}
+                  handleAxiosClickedNovelData={
+                    props.handleAxiosClickedNovelData
+                  }
+                  novelData={props.clickedNovelData.data}
+                />
+              ))}
+            </div>
+          </>
+        ) : (
           <>
             <MakeNewComment
               handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
@@ -89,30 +97,18 @@ const NovelComments: React.FC<CommentsDataProps> = (
             />
             <div className="commentsListWrapper">
               {props.clickedNovelData.comments.map((data) => (
-                <CommentsList key={data.id} data={data} />
-              ))}
-            </div>
-          </>
-        ) : (
-          <>
-            <CantMakeNewComment />
-            <div className="commentsListWrapper">
-              {props.clickedNovelData.comments.map((data) => (
-                <CommentsList key={data.id} data={data} />
+                <CommentsList
+                  key={data.id}
+                  data={data}
+                  handleAxiosClickedNovelData={
+                    props.handleAxiosClickedNovelData
+                  }
+                  novelData={props.clickedNovelData.data}
+                />
               ))}
             </div>
           </>
         )}
-        {/* <MakeNewComment
-          handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
-          novelData={props.clickedNovelData.data}
-          nickname={props.nickname}
-        />
-        <div className="commentsListWrapper">
-          {props.clickedNovelData.comments.map((data) => (
-            <CommentsList key={data.id} data={data} />
-          ))}
-        </div> */}
       </div>
     </IconContext.Provider>
   );

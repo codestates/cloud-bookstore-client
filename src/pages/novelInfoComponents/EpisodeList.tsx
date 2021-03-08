@@ -1,5 +1,7 @@
+/* eslint-disable no-console */
 import React from 'react';
 import EpisodeListDetail from './EpisodeListComponents/EpisodeListDetail';
+import PurchaseCheckList from './EpisodeListComponents/PurchaseCheckList';
 
 interface episodeListProps {
   clickedNovelData: {
@@ -36,36 +38,59 @@ interface episodeListProps {
       createdAt: string;
       updatedAt: string;
     }[];
-    userHistory: {
-      id: number;
-      episodeNum: number;
-      title: string;
-      thumbnail: string;
-      cloud: number;
-      novelEpisodeId: number;
-      updatedAt: string;
-    };
+    userHistory: any;
     userLike: boolean;
     userPurchases: {
       episodeId: number;
     }[];
   };
 }
+
+interface episodeProps {
+  id: number;
+  episodeNum: number;
+  novelId: number;
+  title: string;
+  text: string;
+  thumbnail: string;
+  cloud: number;
+  createdAt: string;
+  updatedAt: string;
+}
+
 const EpisodeList: React.FC<episodeListProps> = (props: episodeListProps) => {
-  const reverseEpisodeList = props.clickedNovelData.episodes.reverse();
+  const reversedList = props.clickedNovelData.episodes;
+  reversedList.sort((a: episodeProps, b: episodeProps) => {
+    if (a.episodeNum < b.episodeNum) return 1;
+    if (a.episodeNum > b.episodeNum) return -1;
+    return 0;
+  });
+  const updatedEpisodeList: number[] = props.clickedNovelData.userPurchases.map(
+    (ele) => ele.episodeId,
+  );
+
   return (
     <div className="mainPageNovelWrapper">
       <div className="novelInfoTitle">
         작품 회차 ({props.clickedNovelData.episodes.length})
       </div>
       <div className="mainNovelInnerWrapper">
-        {reverseEpisodeList.map((data) => (
-          <EpisodeListDetail
-            key={data.id}
-            data={data}
-            purchase={props.clickedNovelData.userPurchases}
-          />
-        ))}
+        {props.clickedNovelData.episodes.length === 0 ? (
+          <></>
+        ) : (
+          <>
+            {reversedList.slice(0, -1).map((ele) => {
+              if (updatedEpisodeList.indexOf(ele.id) === -1) {
+                return <EpisodeListDetail episode={ele} key={ele.id} />;
+              } else {
+                return <PurchaseCheckList episode={ele} key={ele.id} />;
+              }
+            })}
+            <PurchaseCheckList
+              episode={reversedList[reversedList.length - 1]}
+            />
+          </>
+        )}
       </div>
     </div>
   );
