@@ -34,7 +34,6 @@ interface State {
   novelTitle: string;
   novelDescription: string;
   imgToggle: number;
-  currentNovelid: number;
 }
 
 const options: OptionType[] = [
@@ -53,7 +52,6 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
       novelTitle: '',
       novelDescription: '',
       imgToggle: 0,
-      currentNovelid: 0,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleImageChange = this.handleImageChange.bind(this);
@@ -66,20 +64,20 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
   }
 
   handleWriteNovel = () => {
-    if (this.state) {
-      axios
-        .post('https://server.cloud-bookstore.com/mypage/write/novel', {
-          thumbnail: this.state.selectedImage,
-          description: this.state.novelDescription,
-          category: this.state.selectedOption.value,
-          title: this.state.novelTitle,
-        })
-        .then((data) => {
-          this.props.handleMyCurrentNewNovel(data.data.currentNovel);
-          this.setState({ currentNovelid: data.data.currentNovel.id });
-          this.props.handleAxiosMyPage();
-        });
-    }
+    axios
+      .post('https://server.cloud-bookstore.com/mypage/write/novel', {
+        thumbnail: this.state.selectedImage,
+        description: this.state.novelDescription,
+        category: this.state.selectedOption.value,
+        title: this.state.novelTitle,
+      })
+      .then((data) => {
+        this.props.handleMyCurrentNewNovel(data.data.currentNovel);
+        this.props.history.push(
+          `/main/mypage/MyNovelEpisodeList/${data.data.currentNovel.id}`,
+        );
+        this.props.handleAxiosMyPage();
+      });
   };
 
   handleChange = (option: any): void => {
@@ -562,13 +560,9 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
             {this.state.novelDescription.length}/250
           </span>
           <div className="BoxLineSecond" />
-          <Link
-            to={`/main/mypage/MyNovelEpisodeList/${this.state.currentNovelid}`}
-            className="saveBtn"
-            onClick={this.handleWriteNovel}
-          >
+          <div className="saveBtn" onClick={this.handleWriteNovel}>
             저장
-          </Link>
+          </div>
           <Link to="myNovelList" className="cancelBtn">
             취소
           </Link>
