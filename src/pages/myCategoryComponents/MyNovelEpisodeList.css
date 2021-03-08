@@ -1,0 +1,288 @@
+.MyNovelEpisodeListWrapper{
+    /* border: 1px blue solid; 반응형 고려시 총 width크기 참고하세유 */
+    width: 943px; /* 어차피 이 길이보다 작으면 media-query줌*/
+    /* display: flex; */
+    /* flex-direction: column; */
+    margin: 0 auto; /* 이 것을 넣어야 창크기에 상관없이 중앙정렬 */
+}
+
+.MyNovelEpisodeListHeader{
+    margin-top: 44px;
+    display: flex;
+}
+
+.MyNovelEpisodeListTitle{
+    font-size: 32px;
+    color: #202020;
+    font-weight: bold;
+    display: flex;
+}
+
+.MyNovelEpisodeListBoxLine{
+    width: 944px;
+    height: 1px;
+    background-color: #d8d8d8;
+    margin-top: 16px;
+    margin-bottom: 32px
+}
+
+.MyNovelEpisodeListSecondBoxLine{
+    width: 944px;
+    height: 1px;
+    background-color: #d8d8d8;
+    margin-top: 16px;
+    margin-bottom: 32px
+}
+
+.MyNovelEpisodeListDetailInfo{
+    display: flex;
+    align-items: space-between;
+}
+
+.NovelEpisodeListThumbnail{
+    /* background-repeat: no-repeat; */
+    background-position: center center;
+    width: 304px;
+  height: 209px;
+  margin-right: 16px;
+}
+.NovelEpisodeListlDescription{
+    width: 624px;
+    color: #464646;
+  }
+  .NovelEpisodeListlButton{
+    width: 144px;
+    height: 44px;
+  border: 1px solid #b8b8b8;
+  margin-right: 16px;
+  color: #b8b8b8;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  cursor: pointer;
+  }
+
+  .NovelEpisodeListlButton:hover{
+      background-color:#2b79fe;
+      color:#fff;
+      border: 1px solid #2b79fe;
+  }
+
+
+  .NovelEpisodeListlSecondButton{
+    width: 144px;
+    height: 44px;
+  border: 1px solid #b8b8b8;
+  color: #b8b8b8;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  cursor: pointer;
+  }
+
+  .NovelEpisodeListlSecondButton:hover{
+    background-color:#2b79fe;
+    color:#fff;
+    border: 1px solid #2b79fe;
+  }
+
+.NovelEpisodeListInfoWrapper{
+    display: flex;
+    flex-direction: column;
+}
+.NovelEpisodeListBtnWrapper{
+    margin-top: 72px;
+    margin-left: 316px;
+    float: right;
+    display: flex;
+}
+
+.myNovelEpisodeListText{
+    margin-top: 72px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.myNovelEpisodeListemtyBox {
+    display: grid;
+    place-items: center;
+    width: 943px;
+    height: 23rem;
+  }
+
+  .myNovelEpisodeListboxGrid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 133px;
+  }
+
+  .myNovelEpisodeEmptyTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #202020;
+    text-align: center;
+  }
+
+  .myNovelEpisodeEmptyEmptyBtn {
+    box-sizing: border-box;
+    margin-top: 16px;
+    width: 224px;
+    height: 44px;
+    background-color: #2b79fe;
+    border-radius: 2px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 15px;
+    cursor: pointer;
+  }
+
+
+@media (max-width: 943px) {
+    .MyNovelEpisodeListWrapper{
+      width: 704px;
+    }
+    .MyNovelEpisodeListBoxLine{
+        width: 704px;
+    }
+    .NovelEpisodeListlDescription{
+        width: 400px;
+      }
+      .NovelEpisodeListBtnWrapper{
+        margin-top: 37px;
+        margin-left: 92px;
+      }
+ 
+}
+
+@media (max-width: 760px) {
+    .MyNovelEpisodeListWrapper{
+  
+      width: 469px;
+    }
+    .MyNovelEpisodeListBoxLine{
+        width: 469px;
+    }
+    .MyNovelEpisodeListSecondBoxLine{
+        width: 469px;
+    }
+    .MyNovelEpisodeListTitle{
+        font-size: 30px;
+    }
+    .myNovelEpisodeListemtyBox {
+        width: 469px;
+    }
+    .MyNovelEpisodeListDetailInfo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .NovelEpisodeListThumbnail{
+        margin-bottom: 24px;
+        margin-right: 0px;
+        width: 304px;
+        height: 209px;
+
+      }
+      .NovelEpisodeListlDescription{
+        margin-bottom: 24px;
+        font-size: 16px;
+        width: 304px;
+        text-align: center;
+      }
+
+      .NovelEpisodeListBtnWrapper{
+        margin-top: 0px;
+        margin-left: 0px;
+      }
+
+}
+
+@media (max-width: 740px) {
+    .MyNovelEpisodeListWrapper{    
+      width: 469px;
+    }
+    .MyNovelEpisodeListBoxLine{
+        width: 469px;
+    }
+    .MyNovelEpisodeListSecondBoxLine{
+        width: 469px;
+    }
+    .myNovelEpisodeListemtyBox {
+        width: 469px;
+    }
+    .MyNovelEpisodeListTitle{
+        font-size: 30px;
+    }
+    .NovelEpisodeListThumbnail{
+        margin-bottom: 24px;
+        margin-right: 0px;
+        width: 304px;
+        height: 209px;
+      }
+      .NovelEpisodeListlDescription{
+        margin-bottom: 24px;
+        font-size: 16px;
+        width: 304px;
+        text-align: center;
+      }
+      .MyNovelEpisodeListDetailInfo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .NovelEpisodeListBtnWrapper{
+        margin-top: 0px;
+        margin-left: 0px;
+      }
+   
+}
+
+@media (max-width: 414px) {
+    .MyNovelEpisodeListWrapper{    
+        width: 370px;
+      }
+      .myNovelEpisodeListemtyBox {
+        width: 370px;
+    }
+    .MyNovelEpisodeListBoxLine{
+        width: 370px;
+    }
+    .MyNovelEpisodeListSecondBoxLine{
+        width: 370px;
+    }
+
+      .NovelEpisodeListThumbnail{
+        margin-bottom: 24px;
+        margin-right: 0px;
+        width: 304px;
+        height: 209px;
+      }
+      .NovelEpisodeListlDescription{
+        margin-bottom: 24px;
+        font-size: 16px;
+        width: 304px;
+        text-align: center;
+    }
+    .MyNovelEpisodeListDetailInfo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .NovelEpisodeListBtnWrapper{
+        margin-top: 0px;
+        margin-left: 0px;
+      }
+    }

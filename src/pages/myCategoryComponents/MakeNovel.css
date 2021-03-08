@@ -95,7 +95,12 @@ input::placeholder {
     outline:none;
 }
 
-
+.novelDescriptionNewText{
+    float: right;
+    font-size: 12px;
+  font-weight: bold;
+  color: #b8b8b8;
+}
 
 textarea::placeholder{
     font-size: 16px;
