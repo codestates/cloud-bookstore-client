@@ -1,11 +1,11 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import NovelDetail from './novelInfoComponents/NovelDetail';
 import LastUserHistory from './novelInfoComponents/LastUserHistory';
 import EpisodeList from './novelInfoComponents/EpisodeList';
 import NovelComments from './novelInfoComponents/NovelComments';
 import '../css/NovelInfo.css';
-
-interface ClickedNovelInfoProps {
+interface ClickedNovelInfoProps extends RouteComponentProps {
   toggleUserLike: () => void;
   handleNovelLikesCount: (userLike: number) => void;
   handleAxiosClickedNovelData: (parameter: number) => void;
@@ -69,7 +69,12 @@ const NovelInfo: React.FC<ClickedNovelInfoProps> = (
       ) : (
         <LastUserHistory clickedNovelData={props.clickedNovelData} />
       )}
-      <EpisodeList clickedNovelData={props.clickedNovelData} />
+      <EpisodeList
+        clickedNovelData={props.clickedNovelData}
+        history={props.history}
+        location={props.location}
+        match={props.match}
+      />
       <NovelComments
         clickedNovelData={props.clickedNovelData}
         handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}

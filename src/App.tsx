@@ -4,6 +4,7 @@ import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import LandingPage from './pages/LandingPage';
 import MainPage from './pages/MainPage';
+import NovelReadStage from './pages/novelInfoComponents/EpisodeListComponents/NovelReadStage/NovelReadStage';
 
 const App: React.FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(false);
@@ -110,6 +111,7 @@ const App: React.FC = () => {
           )}
         />
         <Route
+          exact
           path="/"
           render={() => {
             if (isLogin) {
@@ -117,6 +119,10 @@ const App: React.FC = () => {
             }
             return <Redirect to="/LandingPage" />;
           }}
+        />
+        <Route
+          path="/novel/:id/episode/:episodeId"
+          render={() => <NovelReadStage />}
         />
       </Switch>
     </div>

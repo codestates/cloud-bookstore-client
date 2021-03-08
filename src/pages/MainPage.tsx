@@ -873,6 +873,9 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                 nickname={props.nickname}
                 toggleUserLike={toggleUserLike}
                 handleNovelLikesCount={handleNovelLikesCount}
+                history={props.history}
+                location={props.location}
+                match={props.match}
               />
             )}
           />
