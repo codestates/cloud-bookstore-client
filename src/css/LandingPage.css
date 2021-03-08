@@ -35,8 +35,10 @@
     }
 
     .goToMainBtn {
-      width: 59px;
-      height: 24px;
+      background-color: #2b79fe;
+      border-radius: 500px;
+      width: 80px;
+      height: 38px;
       font-size: 16px;
       font-weight: bold;
       color: #ffffff;
