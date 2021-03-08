@@ -72,13 +72,9 @@ const NovelComments: React.FC<CommentsDataProps> = (
             <IoMdRefresh />
           </div>
         </div>
-        {props.nickname ? (
+        {props.nickname === 'guest' ? (
           <>
-            <MakeNewComment
-              handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
-              novelData={props.clickedNovelData.data}
-              nickname={props.nickname}
-            />
+            <CantMakeNewComment />
             <div className="commentsListWrapper">
               {props.clickedNovelData.comments.map((data) => (
                 <CommentsList
@@ -94,7 +90,11 @@ const NovelComments: React.FC<CommentsDataProps> = (
           </>
         ) : (
           <>
-            <CantMakeNewComment />
+            <MakeNewComment
+              handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
+              novelData={props.clickedNovelData.data}
+              nickname={props.nickname}
+            />
             <div className="commentsListWrapper">
               {props.clickedNovelData.comments.map((data) => (
                 <CommentsList
