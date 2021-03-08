@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../css/LandingPage.css';
@@ -11,7 +11,9 @@ import WriteLure from './landingPageComponent/WriteLure';
 import IntroFunction from './landingPageComponent/IntroFunction';
 import Footer from './Footer';
 
-const LandingPage: React.FC = () => {
+const LandingPage: React.FC<RouteComponentProps> = (
+  props: RouteComponentProps,
+) => {
   AOS.init();
 
   const [novelData, setNovelData] = useState({
@@ -108,7 +110,12 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
         <Cover />
-        <BestNovel novelData={novelData} />
+        <BestNovel
+          novelData={novelData}
+          history={props.history}
+          location={props.location}
+          match={props.match}
+        />
         <WriteLure />
         <IntroFunction />
         <div id="verticalLine1" className="verticalLine"></div>

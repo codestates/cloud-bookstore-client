@@ -1,9 +1,10 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import './BestNovel.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-interface BestNovelProps {
+interface BestNovelProps extends RouteComponentProps {
   novelData: {
     ranking: {
       id: number;
@@ -76,8 +77,12 @@ const BestNovel: React.FC<BestNovelProps> = (props: BestNovelProps) => {
       <div
         id="bestNovelContainer1"
         className="bestNovelContainer"
+        role="presentation"
         data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
+        onClick={() => {
+          props.history.push(`/main/novel/${props.novelData.fantasy[0].id}`);
+        }}
       >
         <div id="bestNovelThumb1" className="bestNovelThumb"></div>
         <div className="bestNovelTitle">{props.novelData.fantasy[0].title}</div>
@@ -88,9 +93,15 @@ const BestNovel: React.FC<BestNovelProps> = (props: BestNovelProps) => {
       <div
         id="bestNovelContainer2"
         className="bestNovelContainer"
+        role="presentation"
         data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
         data-aos-offset="300"
+        onClick={() => {
+          props.history.push(
+            `/main/novel/${props.novelData.martialArts[0].id}`,
+          );
+        }}
       >
         <div id="bestNovelThumb2" className="bestNovelThumb"></div>
         <div className="bestNovelTitle">
@@ -103,9 +114,13 @@ const BestNovel: React.FC<BestNovelProps> = (props: BestNovelProps) => {
       <div
         id="bestNovelContainer3"
         className="bestNovelContainer"
+        role="presentation"
         data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
         data-aos-offset="500"
+        onClick={() => {
+          props.history.push(`/main/novel/${props.novelData.romance[0].id}`);
+        }}
       >
         <div id="bestNovelThumb3" className="bestNovelThumb"></div>
         <div className="bestNovelTitle">{props.novelData.romance[0].title}</div>
