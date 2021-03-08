@@ -678,7 +678,12 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     ];
     for (const el of entireNovelData) {
       if (el.title.replace(/\s/g, '') === novelTitleSearch.replace(/\s/g, '')) {
-        props.history.push(`/main/novel/${el.id}`);
+        axios
+          .get(`https://server.cloud-bookstore.com/novel/${el.id}`)
+          .then((data) => {
+            setClickedNovelData(data.data);
+            props.history.push(`/main/novel/${data.data.id}`);
+          });
       }
     }
   };
