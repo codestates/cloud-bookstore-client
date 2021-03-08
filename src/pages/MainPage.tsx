@@ -771,8 +771,8 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                   placeholder="검색해주세요."
                   onChange={handleNovelTitleSearch}
                   maxLength={50}
+                  value={novelTitleSearch}
                 />
-                {novelTitleSearch}
                 <div className="navSearchBtn">
                   <MdSearch onClick={handleSearchClick} />
                 </div>
