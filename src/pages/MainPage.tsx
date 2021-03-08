@@ -732,6 +732,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                   className="categoryBtn"
                   onClick={() => {
                     handleMyOn();
+                    handleAxiosMyPage();
                     props.history.push('/main/mypage/recentNovelList');
                   }}
                   aria-hidden="true"
