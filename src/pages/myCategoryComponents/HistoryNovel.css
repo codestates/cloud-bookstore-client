@@ -10,14 +10,15 @@
   display: flex;
   flex-flow: row wrap;
   margin-top: 48px;
-  margin-bottom: 56px;
+  margin-bottom: 88px;
   gap: 16px
 }
 
 /* 컴퓨터에서 줄였을 때 */
+
 @media (max-width: 951px) {
-  .wholeHistoryNovelWrapper {
-    width: 710px;
+  .historyNovelInnerWrapper {
+    margin-bottom: 100px;
   }
 }
 /* 아이패드 크기 */
