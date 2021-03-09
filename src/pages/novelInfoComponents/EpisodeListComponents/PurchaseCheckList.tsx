@@ -1,7 +1,12 @@
 /* eslint-disable no-console */
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 
-interface purchaseCheckListProps {
+interface purchaseCheckListProps extends RouteComponentProps {
+  handleClickedSpecificEpisode: (parameter: {
+    episodeId: number;
+    novelId: number;
+  }) => void;
   episode: {
     id: number;
     episodeNum: number;
@@ -38,7 +43,19 @@ const PurchaseCheckList: React.FC<purchaseCheckListProps> = (
   return (
     <>
       {console.log('구입 한 경우')}
-      <div className="novelList">
+      <div
+        className="novelList"
+        role="presentation"
+        onClick={() => {
+          props.handleClickedSpecificEpisode({
+            episodeId: props.episode.episodeNum,
+            novelId: props.episode.novelId,
+          });
+          props.history.push(
+            `/novel/${props.episode.novelId}/episode/${props.episode.episodeNum}`,
+          );
+        }}
+      >
         <div
           className="thumbnail"
           style={{
