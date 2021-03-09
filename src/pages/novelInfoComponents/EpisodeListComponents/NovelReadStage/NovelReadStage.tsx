@@ -33,6 +33,7 @@ const NovelReadStage: React.FC<SpecificEpisodeDataProps> = (
     <>
       <div className="wholeNovelReadStageWrapper">
         <NovelReadNav
+          specificEpisodeData={props.specificEpisodeData}
           history={props.history}
           location={props.location}
           match={props.match}
