@@ -1,47 +1,35 @@
 /* eslint-disable */
-import React, { Component } from 'react';
-import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 import axios from 'axios';
-import Select from 'react-select';
-import './MakeNovel.css';
-interface handleAxiosMyPageProps extends RouteComponentProps {
-  handleAxiosMyPage: () => void;
-  handleMyCurrentNewNovel: (data: CurrentNewNovelProps) => void;
+import React, { Component } from 'react';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
+import './WriteNovelEpisode.css';
+
+interface myCurrentNewNovelProps extends RouteComponentProps {
+  handleAxiosMyNovelEpisodeList: (novelId: number) => void;
+  myCurrentNewNovel: {
+    id: number;
+    title: string;
+    author: string;
+    category: number;
+    description: string;
+    cloud: number;
+    userLike: number;
+    episodeCount: number;
+    complete: boolean;
+    thumbnail: string;
+    createdAt: string;
+    updatedAt: string;
+  };
 }
 
-interface CurrentNewNovelProps {
-  id: number;
-  title: string;
-  author: string;
-  category: number;
-  description: string;
-  cloud: number;
-  userLike: number;
-  episodeCount: number;
-  complete: boolean;
-  thumbnail: string;
-  createdAt: string;
-  updatedAt: string;
-}
-
-interface OptionType {
-  value: number;
-  label: string;
-}
 interface State {
-  selectedOption: OptionType;
-  selectedImage: string;
-  novelTitle: string;
-  novelDescription: string;
+  EpsisodeTitle: string;
   imgToggle: number;
+  selectedImage: string;
+  novelEpisode: string;
+  complete: boolean;
+  episodeNum: number;
 }
-
-const options: OptionType[] = [
-  { value: 0, label: '장르선택' },
-  { value: 1, label: '판타지' },
-  { value: 2, label: '무협' },
-  { value: 3, label: '로맨스' },
-];
 
 const fantasyThumbnails: string[] = [
   'https://user-images.githubusercontent.com/70982342/110403401-61ee1080-80c0-11eb-8458-4e24791b8667.png',
@@ -69,46 +57,27 @@ const romanceThumbnails: string[] = [
   'https://user-images.githubusercontent.com/70982342/110404066-8991a880-80c1-11eb-9e05-dbe452671880.png',
   'https://user-images.githubusercontent.com/70982342/110404067-8a2a3f00-80c1-11eb-80cb-4924458395af.png',
 ];
-class MakeNovel extends Component<handleAxiosMyPageProps, State> {
-  constructor(props: handleAxiosMyPageProps) {
+
+class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
+  constructor(props: myCurrentNewNovelProps) {
     super(props);
     this.state = {
-      selectedOption: options[0],
-      selectedImage: '',
-      novelTitle: '',
-      novelDescription: '',
+      EpsisodeTitle: '',
       imgToggle: 0,
+      selectedImage: '',
+      novelEpisode: '',
+      complete: false,
+      episodeNum: 0,
     };
-    this.handleChange = this.handleChange.bind(this);
+    this.handleEpsisodeTitleChange = this.handleEpsisodeTitleChange.bind(this);
     this.handleImageChange = this.handleImageChange.bind(this);
-    this.handleNovelTitleChange = this.handleNovelTitleChange.bind(this);
-    this.handleNovelDescriptionChange = this.handleNovelDescriptionChange.bind(
-      this,
-    );
-    this.handleWriteNovel = this.handleWriteNovel.bind(this);
-    // this.handleImgToggle = this.handleImgToggle.bind(this);
+    this.handleCompete = this.handleCompete.bind(this);
+    this.handleEpisodeNumChange = this.handleEpisodeNumChange.bind(this);
   }
 
-  handleWriteNovel = () => {
-    axios
-      .post('https://server.cloud-bookstore.com/mypage/write/novel', {
-        thumbnail: this.state.selectedImage,
-        description: this.state.novelDescription,
-        category: this.state.selectedOption.value,
-        title: this.state.novelTitle,
-      })
-      .then(async (data) => {
-        await this.props.handleAxiosMyPage();
-        await this.props.handleMyCurrentNewNovel(data.data.currentNovel);
-        await this.props.history.push(
-          `/main/mypage/MyNovelEpisodeList/${data.data.currentNovel.id}`,
-        );
-      });
-  };
-
-  handleChange = (option: any): void => {
+  handleEpsisodeTitleChange = (e: any): void => {
     this.setState({
-      selectedOption: option,
+      EpsisodeTitle: e.target.value,
     });
   };
 
@@ -117,25 +86,57 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
       selectedImage: e,
     });
   };
-
-  handleNovelTitleChange = (e: any): void => {
+  handleNovelEpisodeChange = (e: any): void => {
     this.setState({
-      novelTitle: e.target.value,
+      novelEpisode: e.target.value,
+    });
+  };
+  handleEpisodeNumChange = (e: any): void => {
+    this.setState({
+      episodeNum: +e.target.value,
     });
   };
 
-  handleNovelDescriptionChange = (e: any): void => {
-    this.setState({
-      novelDescription: e.target.value,
-    });
+  handleCompete = (): void => {
+    if (!this.state.complete) {
+      this.setState({
+        complete: true,
+      });
+    } else {
+      this.setState({
+        complete: false,
+      });
+    }
+  };
+
+  handleEpsisodeWriteNovel = () => {
+    axios
+      .post('https://server.cloud-bookstore.com/mypage/write/episode', {
+        complete: this.state.complete,
+        novelId: this.props.myCurrentNewNovel.id,
+        episodeNum: this.state.episodeNum,
+        thumbnail: this.state.selectedImage,
+        text: this.state.novelEpisode,
+        title: this.state.EpsisodeTitle,
+      })
+      .then(() => {
+        this.props.handleAxiosMyNovelEpisodeList(
+          this.props.myCurrentNewNovel.id,
+        );
+        this.props.history.push(
+          `/main/mypage/MyNovelEpisodeList/${this.props.myCurrentNewNovel.id}`,
+        );
+      });
   };
 
   render() {
     return (
       <>
-        <div className="MakeNovelWrapper">
+        <div className="WriteNovelWrapper">
           <div className="MakeNovelHeader">
-            <div className="MakeNovelTitle">새 작품 쓰기</div>
+            <div className="MakeNovelTitle">
+              {this.props.myCurrentNewNovel.title} 회차쓰기
+            </div>
           </div>
           <div className="BoxLine" />
           <div className="SmallText">
@@ -146,29 +147,24 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
             있습니다
           </div>
           <div className="BoxLineSecond" />
-          <div className="aline">
-            <input
-              placeholder="작품제목"
-              className="TitleTextBox"
-              onChange={this.handleNovelTitleChange}
-            ></input>
-            <div className="textLine">
-              장르
-              <Select
-                className="position"
-                defaultValue={this.state.selectedOption}
-                onChange={(option) => this.handleChange(option)}
-                options={options}
-              />
-            </div>
-          </div>
+          <input
+            placeholder="회차 넘버를 선택하세요"
+            type="number"
+            min={1}
+            className="NumberBox"
+            onChange={this.handleEpisodeNumChange}
+          />
+          <div className="BoxLineSecond" />
+          <input
+            placeholder="회차제목"
+            className="TitleTextBox"
+            onChange={this.handleEpsisodeTitleChange}
+          />
           <div className="BoxLineSecond" />
           <div className="textLineImg">
-            <div>표지 이미지</div>
+            <div>회차이미지</div>
             <div>
-              {this.state.selectedOption.value === 0 ? (
-                <div></div>
-              ) : this.state.selectedOption.value === 1 ? (
+              {this.props.myCurrentNewNovel.category === 1 ? (
                 <div className="CoverImage">
                   <div className="ImageWrapper">
                     {this.state.imgToggle === 1 ? (
@@ -309,7 +305,7 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
                     )}
                   </div>
                 </div>
-              ) : this.state.selectedOption.value === 2 ? (
+              ) : this.props.myCurrentNewNovel.category === 2 ? (
                 <div className="CoverImage">
                   <div className="ImageWrapper">
                     {this.state.imgToggle === 7 ? (
@@ -440,7 +436,7 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
                     )}
                   </div>
                 </div>
-              ) : this.state.selectedOption.value === 3 ? (
+              ) : this.props.myCurrentNewNovel.category === 3 ? (
                 <div className="CoverImage">
                   <div className="ImageWrapper">
                     {this.state.imgToggle === 13 ? (
@@ -572,30 +568,66 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
                   </div>
                 </div>
               ) : (
-                <div>표지이미지</div>
+                <div>이미지가 없습니다.</div>
               )}
             </div>
+            <div className="BoxLineSecond" />
+            <textarea
+              placeholder="작품내용"
+              onChange={this.handleNovelEpisodeChange}
+              maxLength={1000}
+            ></textarea>
+            <span className="novelDescriptionNewText">
+              {this.state.novelEpisode.length}/1000
+            </span>
           </div>
           <div className="BoxLineSecond" />
-          <textarea
-            placeholder="작품내용"
-            onChange={this.handleNovelDescriptionChange}
-            maxLength={250}
-          ></textarea>
-          <span className="novelDescriptionNewText">
-            {this.state.novelDescription.length}/250
-          </span>
+          <div>
+            {this.state.complete === true ? (
+              <div
+                role="button"
+                aria-hidden="true"
+                onClick={() => this.handleCompete()}
+                className="roundBoxWrapper"
+              >
+                <div className="SroundBox"></div>
+                <div className="Stext">완결</div>
+              </div>
+            ) : (
+              <div
+                role="button"
+                aria-hidden="true"
+                onClick={() => this.handleCompete()}
+                className="roundBoxWrapper"
+              >
+                <div className="roundBox"></div>
+                <div className="Ctext">완결</div>
+              </div>
+            )}
+          </div>
           <div className="BoxLineSecond" />
-          <div className="saveBtn" onClick={this.handleWriteNovel}>
+          <div
+            role="button"
+            aria-hidden="true"
+            className="saveBtn"
+            onClick={() => this.handleEpsisodeWriteNovel()}
+          >
             저장
           </div>
-          <Link to="myNovelList" className="cancelBtn">
+          <div
+            className="cancelBtn"
+            onClick={() =>
+              this.props.history.push(
+                `/main/mypage/MyNovelEpisodeList/${this.props.myCurrentNewNovel.id}`,
+              )
+            }
+          >
             취소
-          </Link>
+          </div>
         </div>
       </>
     );
   }
 }
 
-export default withRouter(MakeNovel);
+export default withRouter(WriteNovelEpisode);

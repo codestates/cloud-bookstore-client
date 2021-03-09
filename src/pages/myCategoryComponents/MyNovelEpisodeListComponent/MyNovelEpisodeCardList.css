@@ -12,21 +12,6 @@
     height: 140px;
   }
   
-  .novelListCompleteObject {
-    position: absolute;
-    margin: 12px 0 0 12px;
-    border: 1px #d0800d solid;
-    border-radius: 11.5px;
-    background-color: #d0800d;
-    width: 47px;
-    height: 19px;
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
   
   .EpNovelListContentWrapper {
     margin: 17px 16px 0 16px;
@@ -56,6 +41,22 @@
     height: 8px;
     background-image: url('../../../asset/mainpage/cloudImg.svg');
   }
+
+  .novelListCompleteObject {
+    position: absolute;
+    margin: 12px 0 0 12px;
+    border: 1px solid #d0800d;
+    border-radius: 11.5px;
+    background-color: #d0800d;
+    width: 47px;
+    height: 19px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
   
   .EpNovelListSubjectWrapper {
     position: relative;
