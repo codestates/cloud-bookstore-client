@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState } from 'react';
 import {
   withRouter,
@@ -228,6 +229,7 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
               match={props.match}
               userWorksData={props.myPageData.userWorks}
               handleAxiosMyNovelEpisodeList={handleAxiosMyNovelEpisodeList}
+              handleMyCurrentNewNovel={handleMyCurrentNewNovel}
             />
           )}
         />
