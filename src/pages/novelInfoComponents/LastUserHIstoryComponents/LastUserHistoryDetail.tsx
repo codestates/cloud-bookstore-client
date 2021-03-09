@@ -1,6 +1,11 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 
-interface lastUserHistoryProps {
+interface lastUserHistoryProps extends RouteComponentProps {
+  handleClickedSpecificEpisode: (parameter: {
+    episodeId: number;
+    novelId: number;
+  }) => void;
   clickedNovelData: {
     data: {
       id: number;
@@ -73,7 +78,20 @@ const LastUserHistoryDetail: React.FC<lastUserHistoryProps> = (
   };
 
   return (
-    <div className="novelList">
+    <div
+      className="novelList"
+      role="presentation"
+      onClick={() => {
+        props.handleClickedSpecificEpisode({
+          episodeId:
+            props.clickedNovelData.userHistory.episodeDetail.episodeNum,
+          novelId: props.clickedNovelData.data.id,
+        });
+        props.history.push(
+          `/novel/${props.clickedNovelData.data.id}/episode/${props.clickedNovelData.userHistory.episodeDetail.episodeNum}`,
+        );
+      }}
+    >
       <div
         className="thumbnail"
         style={{

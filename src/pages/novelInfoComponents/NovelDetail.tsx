@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-scroll';
+import { RouteComponentProps } from 'react-router-dom';
 import './NovelDetail.css';
 import { MdModeComment, MdStars, MdShare } from 'react-icons/md';
 import axios from 'axios';
 import ShareModal from '../../pages/modal/ShareModal';
 
-interface novelDetailProps {
+interface novelDetailProps extends RouteComponentProps {
   toggleUserLike: () => void;
   handleNovelLikesCount: (userLike: number) => void;
+  handleClickedSpecificEpisode: (parameter: {
+    episodeId: number;
+    novelId: number;
+  }) => void;
   clickedNovelData: {
     data: {
       id: number;
@@ -164,7 +169,21 @@ const NovelDetail: React.FC<novelDetailProps> = (props: novelDetailProps) => {
           <div className="novelDetailDescription">
             {props.clickedNovelData.data.description}
           </div>
-          <div className="firstEpisodeButton">첫 화 보기</div>
+          <div
+            className="firstEpisodeButton"
+            role="presentation"
+            onClick={() => {
+              props.handleClickedSpecificEpisode({
+                episodeId: 1,
+                novelId: props.clickedNovelData.data.id,
+              });
+              props.history.push(
+                `/novel/${props.clickedNovelData.data.id}/episode/${1}`,
+              );
+            }}
+          >
+            첫 화 보기
+          </div>
         </div>
       </div>
     </div>

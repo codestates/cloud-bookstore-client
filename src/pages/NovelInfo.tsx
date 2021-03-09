@@ -1,14 +1,18 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import NovelDetail from './novelInfoComponents/NovelDetail';
 import LastUserHistory from './novelInfoComponents/LastUserHistory';
 import EpisodeList from './novelInfoComponents/EpisodeList';
 import NovelComments from './novelInfoComponents/NovelComments';
 import '../css/NovelInfo.css';
-
-interface ClickedNovelInfoProps {
+interface ClickedNovelInfoProps extends RouteComponentProps {
   toggleUserLike: () => void;
   handleNovelLikesCount: (userLike: number) => void;
   handleAxiosClickedNovelData: (parameter: number) => void;
+  handleClickedSpecificEpisode: (parameter: {
+    episodeId: number;
+    novelId: number;
+  }) => void;
   nickname: string;
   clickedNovelData: {
     data: {
@@ -63,13 +67,29 @@ const NovelInfo: React.FC<ClickedNovelInfoProps> = (
         clickedNovelData={props.clickedNovelData}
         toggleUserLike={props.toggleUserLike}
         handleNovelLikesCount={props.handleNovelLikesCount}
+        history={props.history}
+        location={props.location}
+        match={props.match}
+        handleClickedSpecificEpisode={props.handleClickedSpecificEpisode}
       />
       {props.clickedNovelData.userHistory.length === 0 ? (
         <div className="emptySpaceNovelInfo" />
       ) : (
-        <LastUserHistory clickedNovelData={props.clickedNovelData} />
+        <LastUserHistory
+          clickedNovelData={props.clickedNovelData}
+          history={props.history}
+          location={props.location}
+          match={props.match}
+          handleClickedSpecificEpisode={props.handleClickedSpecificEpisode}
+        />
       )}
-      <EpisodeList clickedNovelData={props.clickedNovelData} />
+      <EpisodeList
+        clickedNovelData={props.clickedNovelData}
+        history={props.history}
+        location={props.location}
+        match={props.match}
+        handleClickedSpecificEpisode={props.handleClickedSpecificEpisode}
+      />
       <NovelComments
         clickedNovelData={props.clickedNovelData}
         handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
