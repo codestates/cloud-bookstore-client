@@ -1,0 +1,106 @@
+.WholeUserNav {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.userNavGreyUnderLine {
+  display: flex;
+  justify-content: center;
+  border-bottom: solid 1px #f2f2f2;
+  width: 943px;
+  height: 48px;
+}
+
+  .NovelReadNavLeftBox {
+    display: flex;
+    align-items: center;
+  }
+    .userNavLogo {
+      width: 75px;
+      height: 24px;
+      background-image: url('../../../../asset/usernav/userNav.svg');
+      cursor: pointer;
+    }
+    .NovelReadTitle,
+    .NovelReadEpisodeTitle {
+      margin: 0 0 0 16px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #202020;
+      cursor: default;
+    }
+    .NovelReadEpisodeTitle {
+      font-weight: normal;
+    }
+
+  .NovelReadNavRightBox {
+    width: 119px;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+    .goToHomeBtn,
+    .goToListBtn {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+      .goToHomeText,
+      .goToListText {
+        margin: 0 0 0 5px;
+        font-size: 16px;
+        color: #464646;
+      }
+
+.UserNavInnerWrapper {
+  width: 943px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 컴퓨터에서 줄였을 때 */
+@media (max-width: 943px) {
+  .WholeUserNav,
+  .userNavGreyUnderLine {
+    width: 704px;
+  }
+}
+/* 아이패드 크기 */
+@media (max-width: 768px) {
+  .WholeUserNav,
+  .userNavGreyUnderLine {
+    width: 469px;
+  }
+}
+@media (max-width: 470px) {
+  .WholeUserNav,
+  .userNavGreyUnderLine {
+    width: 370px;
+  }
+}
+
+
+/* 스마트폰(max) 크기 */
+@media (max-width: 414px) {
+  .WholeUserNav,
+  .userNavGreyUnderLine {
+    width: 370px;
+  }
+  .NovelReadTitle,
+  .NovelReadEpisodeTitle {
+    line-height: 1px;
+  }
+  .NovelReadNavRightBox {
+    width: 60px
+  }
+  .goToHomeText,
+  .goToListText {
+    display: none;
+  }
+}

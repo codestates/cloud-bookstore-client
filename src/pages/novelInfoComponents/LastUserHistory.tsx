@@ -1,8 +1,13 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import './LastUserHIstoryComponents/LastUserHistory.css';
 import LastUserHistoryDetail from './LastUserHIstoryComponents/LastUserHistoryDetail';
 
-interface lastUserHistoryProps {
+interface lastUserHistoryProps extends RouteComponentProps {
+  handleClickedSpecificEpisode: (parameter: {
+    episodeId: number;
+    novelId: number;
+  }) => void;
   clickedNovelData: {
     data: {
       id: number;
@@ -52,7 +57,13 @@ const LastUserHistory: React.FC<lastUserHistoryProps> = (
     <div className="lastUserWrapper">
       <div className="novelInfoTitle">마지막으로 읽은 회차</div>
       <div className="mainNovelInnerWrapper">
-        <LastUserHistoryDetail clickedNovelData={props.clickedNovelData} />
+        <LastUserHistoryDetail
+          clickedNovelData={props.clickedNovelData}
+          history={props.history}
+          location={props.location}
+          match={props.match}
+          handleClickedSpecificEpisode={props.handleClickedSpecificEpisode}
+        />
       </div>
     </div>
   );
