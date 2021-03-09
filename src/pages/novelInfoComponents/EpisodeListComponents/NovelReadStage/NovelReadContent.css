@@ -1,0 +1,19 @@
+.wholeSpecificEpisodeTextWrapper {
+  width: 500px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #464646;
+}
+
+.specificEpisodeTextInnerWrapper {
+  margin: 69px 0 88px 0;
+}
+
+@media (max-width: 414px) {
+  .wholeSpecificEpisodeTextWrapper {
+    width: 375px;
+  }
+  .specificEpisodeTextInnerWrapper {
+    margin: 69px 15px 88px 15px;
+  }
+}

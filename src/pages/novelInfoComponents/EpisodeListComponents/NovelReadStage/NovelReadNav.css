@@ -1,5 +1,4 @@
 .WholeUserNav {
-  border: 1px red solid;
   width: 100%;
   height: 48px;
   display: flex;
@@ -17,7 +16,6 @@
 }
 
   .NovelReadNavLeftBox {
-    border: 1px blue solid;
     display: flex;
     align-items: center;
   }
@@ -32,6 +30,7 @@
       margin: 0 0 0 16px;
       font-size: 16px;
       font-weight: bold;
+      color: #202020;
       cursor: default;
     }
     .NovelReadEpisodeTitle {
@@ -39,7 +38,6 @@
     }
 
   .NovelReadNavRightBox {
-    border: 1px green solid;
     width: 119px;
     height: 25px;
     display: flex;

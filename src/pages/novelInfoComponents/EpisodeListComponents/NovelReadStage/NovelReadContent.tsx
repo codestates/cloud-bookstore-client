@@ -1,4 +1,5 @@
 import React from 'react';
+import './NovelReadContent.css';
 
 interface SpecificEpisodeTextProps {
   specificEpisodeText: string;
@@ -7,7 +8,13 @@ interface SpecificEpisodeTextProps {
 const NovelReadContent: React.FC<SpecificEpisodeTextProps> = (
   props: SpecificEpisodeTextProps,
 ) => {
-  return <div>{props.specificEpisodeText}</div>;
+  return (
+    <div className="wholeSpecificEpisodeTextWrapper">
+      <div className="specificEpisodeTextInnerWrapper">
+        {props.specificEpisodeText}
+      </div>
+    </div>
+  );
 };
 
 export default NovelReadContent;
