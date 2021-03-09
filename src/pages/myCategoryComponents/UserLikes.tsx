@@ -26,9 +26,13 @@ const UserLikes: React.FC<userHistoriesDataProps> = (
   return (
     <div className="wholeHistoryNovelWrapper">
       <div className="historyNovelInnerWrapper">
-        {props.userLikesData.map((ele) => (
-          <UserLikesList key={ele.id} userLikes={ele} />
-        ))}
+        {props.userLikesData.length === 0 ? (
+          <></>
+        ) : (
+          props.userLikesData.map((ele) => (
+            <UserLikesList key={ele.id} userLikes={ele} />
+          ))
+        )}
       </div>
     </div>
   );
