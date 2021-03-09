@@ -11,6 +11,7 @@ import axios from 'axios';
 import LandingPage from './pages/LandingPage';
 import MainPage from './pages/MainPage';
 import NovelReadStage from './pages/novelInfoComponents/EpisodeListComponents/NovelReadStage/NovelReadStage';
+import ScrollToTop from './ScrollToTop';
 
 interface ClickedSpecificEpisode {
   episodeId: number;
@@ -778,6 +779,7 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
             />
           )}
         />
+        <ScrollToTop />
       </Switch>
     </div>
   );
