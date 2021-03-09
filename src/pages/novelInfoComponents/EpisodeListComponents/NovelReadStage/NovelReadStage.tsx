@@ -1,9 +1,12 @@
-/* eslint-disable */
-
 import React from 'react';
-import './NovelReadStage.css';
+import { RouteComponentProps } from 'react-router-dom';
 
-interface SpecificEpisodeDataProps {
+import './NovelReadStage.css';
+import NovelReadNav from './NovelReadNav';
+import NovelReadContent from './NovelReadContent';
+import Footer from '../../../Footer';
+
+interface SpecificEpisodeDataProps extends RouteComponentProps {
   specificEpisodeData: {
     episode: {
       id: number;
@@ -25,9 +28,21 @@ interface SpecificEpisodeDataProps {
 const NovelReadStage: React.FC<SpecificEpisodeDataProps> = (
   props: SpecificEpisodeDataProps,
 ) => {
-  console.log(props.specificEpisodeData);
+  // console.log(props.specificEpisodeData);
   return (
-    <div className="wholeNovelReadStageWrapper">Hello NovelReadStage World</div>
+    <>
+      <div className="wholeNovelReadStageWrapper">
+        <NovelReadNav
+          history={props.history}
+          location={props.location}
+          match={props.match}
+        />
+        <NovelReadContent
+          specificEpisodeText={props.specificEpisodeData.episode.text}
+        />
+      </div>
+      <Footer />
+    </>
   );
 };
 

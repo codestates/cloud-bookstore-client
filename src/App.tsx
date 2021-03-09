@@ -770,7 +770,12 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
           exact
           path="/novel/:id/episode/:episodeId"
           render={() => (
-            <NovelReadStage specificEpisodeData={specificEpisodeData} />
+            <NovelReadStage
+              specificEpisodeData={specificEpisodeData}
+              history={props.history}
+              location={props.location}
+              match={props.match}
+            />
           )}
         />
       </Switch>
