@@ -1,0 +1,911 @@
+.WriteNovelWrapper{
+    /* border: 1px blue solid; 반응형 고려시 총 width크기 참고하세유 */
+    width: 943px; /* 어차피 이 길이보다 작으면 media-query줌*/
+    /* display: flex; */
+    /* flex-direction: column; */
+    margin: 0 auto; /* 이 것을 넣어야 창크기에 상관없이 중앙정렬 */
+}
+
+.FanSelcetCoverImageBox01{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url('https://user-images.githubusercontent.com/70982342/110403401-61ee1080-80c0-11eb-8458-4e24791b8667.png');
+}
+
+
+.FanCoverImageBox01{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    url('https://user-images.githubusercontent.com/70982342/110403401-61ee1080-80c0-11eb-8458-4e24791b8667.png');
+
+}
+
+.FanSelcetCoverImageBox02{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url('https://user-images.githubusercontent.com/70982342/110403406-63b7d400-80c0-11eb-8d3a-9723ee736002.png');
+}
+
+
+.FanCoverImageBox02{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    url('https://user-images.githubusercontent.com/70982342/110403406-63b7d400-80c0-11eb-8d3a-9723ee736002.png');
+
+}
+
+.FanSelcetCoverImageBox03{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url('https://user-images.githubusercontent.com/70982342/110403410-64506a80-80c0-11eb-8a15-32b002795ed4.png')
+}
+
+
+.FanCoverImageBox03{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    url('https://user-images.githubusercontent.com/70982342/110403410-64506a80-80c0-11eb-8a15-32b002795ed4.png')
+
+}
+
+.FanSelcetCoverImageBox04{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url('https://user-images.githubusercontent.com/70982342/110403412-64e90100-80c0-11eb-8ab1-81ca81930f3f.png')
+}
+
+
+.FanCoverImageBox04{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    url('https://user-images.githubusercontent.com/70982342/110403412-64e90100-80c0-11eb-8ab1-81ca81930f3f.png')
+
+}
+
+.FanSelcetCoverImageBox05{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url('https://user-images.githubusercontent.com/70982342/110403414-661a2e00-80c0-11eb-88a6-7f13eb13a8d4.png')
+}
+
+
+.FanCoverImageBox05{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    url('https://user-images.githubusercontent.com/70982342/110403414-661a2e00-80c0-11eb-88a6-7f13eb13a8d4.png')
+
+}
+
+.FanSelcetCoverImageBox06{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url('https://user-images.githubusercontent.com/70982342/110403416-66b2c480-80c0-11eb-84a6-47672b5cc429.png')
+}
+
+
+.FanCoverImageBox06{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    url('https://user-images.githubusercontent.com/70982342/110403416-66b2c480-80c0-11eb-84a6-47672b5cc429.png')
+
+}
+
+.MaSelcetCoverImageBox01{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url('https://user-images.githubusercontent.com/70982342/110403843-2869d500-80c1-11eb-8c2e-9ea6ccbf011e.png')
+}
+
+
+.MaCoverImageBox01{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    url('https://user-images.githubusercontent.com/70982342/110403843-2869d500-80c1-11eb-8c2e-9ea6ccbf011e.png')
+
+}
+
+.MaSelcetCoverImageBox02{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url('https://user-images.githubusercontent.com/70982342/110403847-2a339880-80c1-11eb-8c20-9d536a575377.png')
+}
+
+
+.MaCoverImageBox02{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    url('https://user-images.githubusercontent.com/70982342/110403847-2a339880-80c1-11eb-8c20-9d536a575377.png')
+
+}
+
+.MaSelcetCoverImageBox03{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url( 'https://user-images.githubusercontent.com/70982342/110403848-2a339880-80c1-11eb-98fc-f2acb17f2379.png')
+}
+
+
+.MaCoverImageBox03{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    url( 'https://user-images.githubusercontent.com/70982342/110403848-2a339880-80c1-11eb-98fc-f2acb17f2379.png')
+
+}
+
+.MaSelcetCoverImageBox04{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url( 'https://user-images.githubusercontent.com/70982342/110403850-2acc2f00-80c1-11eb-8341-463c08f153a4.png')
+}
+
+
+.MaCoverImageBox04{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    url( 'https://user-images.githubusercontent.com/70982342/110403850-2acc2f00-80c1-11eb-8341-463c08f153a4.png')
+
+}
+
+.MaSelcetCoverImageBox05{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url('https://user-images.githubusercontent.com/70982342/110403851-2b64c580-80c1-11eb-9636-a4343348e273.png')
+}
+
+
+.MaCoverImageBox05{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    url('https://user-images.githubusercontent.com/70982342/110403851-2b64c580-80c1-11eb-9636-a4343348e273.png')
+}
+
+.MaSelcetCoverImageBox06{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url('https://user-images.githubusercontent.com/70982342/110403853-2b64c580-80c1-11eb-9052-cf8557732d1d.png');
+}
+
+
+.MaCoverImageBox06{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    url('https://user-images.githubusercontent.com/70982342/110403853-2b64c580-80c1-11eb-9052-cf8557732d1d.png');
+}
+
+.RoSelcetCoverImageBox01{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url('https://user-images.githubusercontent.com/70982342/110404054-85658b00-80c1-11eb-940e-ead57bb015bf.png');
+}
+
+
+.RoCoverImageBox01{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    url('https://user-images.githubusercontent.com/70982342/110404054-85658b00-80c1-11eb-940e-ead57bb015bf.png');
+}
+
+.RoSelcetCoverImageBox02{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url('https://user-images.githubusercontent.com/70982342/110404057-872f4e80-80c1-11eb-9224-da333ba17a8b.png');
+}
+
+
+.RoCoverImageBox02{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    url('https://user-images.githubusercontent.com/70982342/110404057-872f4e80-80c1-11eb-9224-da333ba17a8b.png');
+}
+
+.RoSelcetCoverImageBox03{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url('https://user-images.githubusercontent.com/70982342/110404059-88607b80-80c1-11eb-8306-62edab87c68c.png');
+}
+
+
+.RoCoverImageBox03{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    url('https://user-images.githubusercontent.com/70982342/110404059-88607b80-80c1-11eb-8306-62edab87c68c.png');
+}
+
+.RoSelcetCoverImageBox04{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url('https://user-images.githubusercontent.com/70982342/110404063-88f91200-80c1-11eb-99d8-18359208b629.png');
+}
+
+
+.RoCoverImageBox04{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    url('https://user-images.githubusercontent.com/70982342/110404063-88f91200-80c1-11eb-99d8-18359208b629.png');
+}
+
+.RoSelcetCoverImageBox05{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url('https://user-images.githubusercontent.com/70982342/110404066-8991a880-80c1-11eb-9e05-dbe452671880.png');
+}
+
+
+.RoCoverImageBox05{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    url('https://user-images.githubusercontent.com/70982342/110404066-8991a880-80c1-11eb-9e05-dbe452671880.png');
+}
+
+.RoSelcetCoverImageBox06{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    linear-gradient(#2b78fe79, #2b78fe79),
+    url('https://user-images.githubusercontent.com/70982342/110404067-8a2a3f00-80c1-11eb-80cb-4924458395af.png')
+}
+
+
+.RoCoverImageBox06{
+    width:144px;
+    height:90px;
+    margin-right: 13px;
+    background-size: cover;
+    background-image: 
+    url('https://user-images.githubusercontent.com/70982342/110404067-8a2a3f00-80c1-11eb-80cb-4924458395af.png')
+}
+
+.roundBoxWrapper{
+    display:flex;
+    align-items: center;
+}
+
+.roundBox{
+    width:24px;
+    height:24px;
+    border-radius:4px;
+    border: 2px solid #2b78fe
+}
+
+.Ctext{
+    margin-top: 3px;
+    margin-left:8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #202020;
+}
+
+.SroundBox{
+    width:24px;
+    height:24px;
+    border-radius:4px;
+    border: 2px solid #2b78fe;
+    background-color: #2b78fe;
+
+}
+
+.Stext{
+    margin-top: 3px;
+    margin-left:8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #202020;
+}
+
+.NumberBox{
+    box-sizing: border-box;
+    /* padding: 10px 10px; */
+    width:200px;
+    height: 34px;
+    /* margin-right: 200px; */
+    /* border: 1px solid #6b6b6b; */
+    font-size: 16px;
+    font-weight: bold;
+    color: #202020;
+    outline:none;
+    border:none;
+    /* border-radius: 3px; */
+}
+
+
+
+@media (max-width: 943px) {
+    .WriteNovelWrapper{
+      width: 704px;
+    }
+    .FanSelcetCoverImageBox01{
+        margin-top: 16px
+    }
+    .FanCoverImageBox01{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox02{
+        margin-top: 16px
+    }
+    .FanCoverImageBox02{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox03{
+        margin-top: 16px
+    }
+    .FanCoverImageBox03{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox04{
+        margin-top: 16px
+    }
+    .FanCoverImageBox04{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox05{
+        margin-top: 16px
+    }
+    .FanCoverImageBox05{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox06{
+        margin-top: 16px
+    }
+    .FanCoverImageBox06{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox01{
+        margin-top: 16px
+    }
+    .MaCoverImageBox01{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox02{
+        margin-top: 16px
+    }
+    .MaCoverImageBox02{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox03{
+        margin-top: 16px
+    }
+    .MaCoverImageBox03{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox04{
+        margin-top: 16px
+    }
+    .MaCoverImageBox04{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox05{
+        margin-top: 16px
+    }
+    .MaCoverImageBox05{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox06{
+        margin-top: 16px
+    }
+    .MaCoverImageBox06{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox01{
+        margin-top: 16px
+    }
+    .RoCoverImageBox01{
+        margin-top: 16px
+    }
+
+    .RoCoverImageBox02{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox02{
+        margin-top: 16px
+    }
+    .RoCoverImageBox02{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox03{
+        margin-top: 16px
+    }
+    .RoCoverImageBox03{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox04{
+        margin-top: 16px
+    }
+    .RoCoverImageBox04{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox05{
+        margin-top: 16px
+    }
+    .RoCoverImageBox05{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox06{
+        margin-top: 16px
+    }
+    .RoCoverImageBox06{
+        margin-top: 16px
+    }
+}
+
+
+
+@media (max-width: 760px) {
+    .WriteNovelWrapper{    
+      width: 469px;
+    }
+    .FanSelcetCoverImageBox01{
+        margin-top: 16px
+    }
+    .FanCoverImageBox01{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox02{
+        margin-top: 16px
+    }
+    .FanCoverImageBox02{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox03{
+        margin-top: 16px
+    }
+    .FanCoverImageBox03{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox04{
+        margin-top: 16px
+    }
+    .FanCoverImageBox04{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox05{
+        margin-top: 16px
+    }
+    .FanCoverImageBox05{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox06{
+        margin-top: 16px
+    }
+    .FanCoverImageBox06{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox01{
+        margin-top: 16px
+    }
+    .MaCoverImageBox01{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox02{
+        margin-top: 16px
+    }
+    .MaCoverImageBox02{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox03{
+        margin-top: 16px
+    }
+    .MaCoverImageBox03{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox04{
+        margin-top: 16px
+    }
+    .MaCoverImageBox04{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox05{
+        margin-top: 16px
+    }
+    .MaCoverImageBox05{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox06{
+        margin-top: 16px
+    }
+    .MaCoverImageBox06{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox01{
+        margin-top: 16px
+    }
+    .RoCoverImageBox01{
+        margin-top: 16px
+    }
+
+    .RoCoverImageBox02{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox02{
+        margin-top: 16px
+    }
+    .RoCoverImageBox02{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox03{
+        margin-top: 16px
+    }
+    .RoCoverImageBox03{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox04{
+        margin-top: 16px
+    }
+    .RoCoverImageBox04{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox05{
+        margin-top: 16px
+    }
+    .RoCoverImageBox05{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox06{
+        margin-top: 16px
+    }
+    .RoCoverImageBox06{
+        margin-top: 16px
+    }
+
+}
+   
+
+
+@media (max-width: 740px) {
+    .WriteNovelWrapper{    
+      width: 469px;
+    }
+    .FanSelcetCoverImageBox01{
+        margin-top: 16px
+    }
+    .FanCoverImageBox01{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox02{
+        margin-top: 16px
+    }
+    .FanCoverImageBox02{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox03{
+        margin-top: 16px
+    }
+    .FanCoverImageBox03{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox04{
+        margin-top: 16px
+    }
+    .FanCoverImageBox04{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox05{
+        margin-top: 16px
+    }
+    .FanCoverImageBox05{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox06{
+        margin-top: 16px
+    }
+    .FanCoverImageBox06{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox01{
+        margin-top: 16px
+    }
+    .MaCoverImageBox01{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox02{
+        margin-top: 16px
+    }
+    .MaCoverImageBox02{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox03{
+        margin-top: 16px
+    }
+    .MaCoverImageBox03{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox04{
+        margin-top: 16px
+    }
+    .MaCoverImageBox04{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox05{
+        margin-top: 16px
+    }
+    .MaCoverImageBox05{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox06{
+        margin-top: 16px
+    }
+    .MaCoverImageBox06{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox01{
+        margin-top: 16px
+    }
+    .RoCoverImageBox01{
+        margin-top: 16px
+    }
+
+    .RoCoverImageBox02{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox02{
+        margin-top: 16px
+    }
+    .RoCoverImageBox02{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox03{
+        margin-top: 16px
+    }
+    .RoCoverImageBox03{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox04{
+        margin-top: 16px
+    }
+    .RoCoverImageBox04{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox05{
+        margin-top: 16px
+    }
+    .RoCoverImageBox05{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox06{
+        margin-top: 16px
+    }
+    .RoCoverImageBox06{
+        margin-top: 16px
+    }
+
+}
+
+
+@media (max-width: 414px) {
+    .WriteNovelWrapper{    
+        width: 370px;
+      }
+      .FanSelcetCoverImageBox01{
+        margin-top: 16px
+    }
+
+    .FanCoverImageBox01{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox02{
+        margin-top: 16px
+    }
+    .FanCoverImageBox02{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox03{
+        margin-top: 16px
+    }
+    .FanCoverImageBox03{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox04{
+        margin-top: 16px
+    }
+    .FanCoverImageBox04{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox05{
+        margin-top: 16px
+    }
+    .FanCoverImageBox05{
+        margin-top: 16px
+    }
+    .FanSelcetCoverImageBox06{
+        margin-top: 16px
+    }
+    .FanCoverImageBox06{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox01{
+        margin-top: 16px
+    }
+    .MaCoverImageBox01{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox02{
+        margin-top: 16px
+    }
+    .MaCoverImageBox02{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox03{
+        margin-top: 16px
+    }
+    .MaCoverImageBox03{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox04{
+        margin-top: 16px
+    }
+    .MaCoverImageBox04{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox05{
+        margin-top: 16px
+    }
+    .MaCoverImageBox05{
+        margin-top: 16px
+    }
+    .MaSelcetCoverImageBox06{
+        margin-top: 16px
+    }
+    .MaCoverImageBox06{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox01{
+        margin-top: 16px
+    }
+    .RoCoverImageBox01{
+        margin-top: 16px
+    }
+
+    .RoCoverImageBox02{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox02{
+        margin-top: 16px
+    }
+    .RoCoverImageBox02{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox03{
+        margin-top: 16px
+    }
+    .RoCoverImageBox03{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox04{
+        margin-top: 16px
+    }
+    .RoCoverImageBox04{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox05{
+        margin-top: 16px
+    }
+    .RoCoverImageBox05{
+        margin-top: 16px
+    }
+    .RoSelcetCoverImageBox06{
+        margin-top: 16px
+    }
+    .RoCoverImageBox06{
+        margin-top: 16px
+    }
+}

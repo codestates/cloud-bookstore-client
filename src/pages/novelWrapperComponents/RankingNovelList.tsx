@@ -63,6 +63,7 @@ const NovelList: React.FC<RankingDataProps> = (props: RankingDataProps) => {
           <></>
         )}
       </div>
+
       <div className="novelListContentWrapper">
         <div className="countCloud">
           <div className="countCloudText">

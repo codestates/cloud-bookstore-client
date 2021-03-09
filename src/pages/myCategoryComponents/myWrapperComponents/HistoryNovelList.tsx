@@ -55,7 +55,7 @@ const NovelList: React.FC<HistoryDataProps> = (props: HistoryDataProps) => {
         }}
       >
         {props.userHistories.novels.complete ? (
-          <div className="novelListCompleteObject">완결</div>
+          <div className="HynovelListCompleteObject">완결</div>
         ) : (
           <></>
         )}

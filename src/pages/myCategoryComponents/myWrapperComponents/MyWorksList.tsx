@@ -19,6 +19,20 @@ interface CurrentNewNovelProps {
 interface UserWorksDataProps extends RouteComponentProps {
   handleAxiosMyNovelEpisodeList: (novelId: number) => void;
   handleMyCurrentNewNovel: (data: CurrentNewNovelProps) => void;
+  myCurrentNewNovel: {
+    id: number;
+    title: string;
+    author: string;
+    category: number;
+    description: string;
+    cloud: number;
+    userLike: number;
+    episodeCount: number;
+    complete: boolean;
+    thumbnail: string;
+    createdAt: string;
+    updatedAt: string;
+  };
   userWorksData: {
     id: number;
     title: string;
@@ -78,6 +92,11 @@ const MyWorksList: React.FC<UserWorksDataProps> = (
             backgroundImage: `url(${props.userWorksData.thumbnail})`,
           }}
         />
+        {props.userWorksData.complete ? (
+          <div className="CompleteObject">완결</div>
+        ) : (
+          <></>
+        )}
         <div className="MyWorkshomeNovelListContentWrapper">
           <div className="MyWorksCountCloud">
             <div className="MyWorkscountCloudText">
@@ -104,7 +123,19 @@ const MyWorksList: React.FC<UserWorksDataProps> = (
           </div>
         </div>
       </div>
-      <div className="MygoNovelEpisode">회차쓰기</div>
+      <div
+        className="MygoNovelEpisode"
+        role="button"
+        aria-hidden="true"
+        onClick={async () => {
+          await props.handleMyCurrentNewNovel(props.userWorksData);
+          await props.history.push(
+            `/main/mypage/MyNovelEpisodeWrite/${props.userWorksData.id}`,
+          );
+        }}
+      >
+        회차쓰기
+      </div>
     </div>
   );
 };

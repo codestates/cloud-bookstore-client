@@ -95,7 +95,18 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
               <div className="myNovelEpisodeEmptyTitle">
                 등록된 회차가 없습니다.
               </div>
-              <div className="myNovelEpisodeEmptyEmptyBtn">회차쓰기</div>
+              <div
+                className="myNovelEpisodeEmptyEmptyBtn"
+                role="button"
+                aria-hidden="true"
+                onClick={() =>
+                  props.history.push(
+                    `/main/mypage/MyNovelEpisodeWrite/${props.myCurrentNewNovel.id}`,
+                  )
+                }
+              >
+                회차쓰기
+              </div>
             </div>
           </div>
         </>
@@ -144,7 +155,18 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
           </div>
           <div className="NovelEpisodeWrite">
             <div className="myNovelEpisodeListText">내 작품 회차</div>
-            <div className="EpWriteBtn">회차쓰기</div>
+            <div
+              className="EpWriteBtn"
+              role="button"
+              aria-hidden="true"
+              onClick={() =>
+                props.history.push(
+                  `/main/mypage/MyNovelEpisodeWrite/${props.myCurrentNewNovel.id}`,
+                )
+              }
+            >
+              회차쓰기
+            </div>
           </div>
 
           <div className="MyNovelEpisodeListSecondBoxLine" />

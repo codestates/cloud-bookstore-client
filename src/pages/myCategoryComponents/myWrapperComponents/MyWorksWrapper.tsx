@@ -20,6 +20,20 @@ interface CurrentNewNovelProps {
 interface UserWorksDataProps extends RouteComponentProps {
   handleAxiosMyNovelEpisodeList: (novelId: number) => void;
   handleMyCurrentNewNovel: (data: CurrentNewNovelProps) => void;
+  myCurrentNewNovel: {
+    id: number;
+    title: string;
+    author: string;
+    category: number;
+    description: string;
+    cloud: number;
+    userLike: number;
+    episodeCount: number;
+    complete: boolean;
+    thumbnail: string;
+    createdAt: string;
+    updatedAt: string;
+  };
   userWorksData: {
     id: number;
     title: string;
@@ -54,6 +68,7 @@ const MyWorksWrapper: React.FC<UserWorksDataProps> = (
               handleAxiosMyNovelEpisodeList={
                 props.handleAxiosMyNovelEpisodeList
               }
+              myCurrentNewNovel={props.myCurrentNewNovel}
             />
           ))}
         </div>
