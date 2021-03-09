@@ -18,7 +18,6 @@ import Mypage from './Mypage';
 import HistoryNovel from './myCategoryComponents/HistoryNovel';
 import Setting from './Setting';
 import NovelInfo from './NovelInfo';
-import LoginModal from './modal/LoginModal';
 
 interface CategoryDatas {
   data: {
@@ -40,6 +39,7 @@ interface CategoryDatas {
 interface MyData {
   userHistories: {
     novels: {
+      id: number;
       title: string;
       complete: boolean;
       thumbnail: string;
@@ -402,6 +402,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
               <Mypage
                 handleAxiosMyPage={props.handleAxiosMyPage}
                 myPageData={props.myPageData}
+                handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
               />
             )}
           />
@@ -410,6 +411,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
             render={() => (
               <HistoryNovel
                 userHistoriesData={props.myPageData.userHistories}
+                handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
               />
             )}
           />
