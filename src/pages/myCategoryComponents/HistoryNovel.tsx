@@ -27,9 +27,13 @@ const HistoryNovel: React.FC<userHistoriesDataProps> = (
   return (
     <div className="wholeHistoryNovelWrapper">
       <div className="historyNovelInnerWrapper">
-        {props.userHistoriesData.map((ele) => (
-          <HistoryNovelList key={ele.episodes.id} userHistories={ele} />
-        ))}
+        {props.userHistoriesData.length === 0 ? (
+          <></>
+        ) : (
+          props.userHistoriesData.map((ele) => (
+            <HistoryNovelList key={ele.episodes.id} userHistories={ele} />
+          ))
+        )}
       </div>
     </div>
   );
