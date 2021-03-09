@@ -4,6 +4,7 @@ import './HistoryNovel.css';
 import UserLikesList from '../myCategoryComponents/myWrapperComponents/UserLikesList';
 
 interface userHistoriesDataProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (data: number) => void;
   userLikesData: {
     id: number;
     title: string;
@@ -30,7 +31,11 @@ const UserLikes: React.FC<userHistoriesDataProps> = (
           <></>
         ) : (
           props.userLikesData.map((ele) => (
-            <UserLikesList key={ele.id} userLikes={ele} />
+            <UserLikesList
+              key={ele.id}
+              userLikes={ele}
+              handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
+            />
           ))
         )}
       </div>

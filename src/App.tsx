@@ -328,6 +328,7 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
     userHistories: [
       {
         novels: {
+          id: 1,
           title: '잊지마 4시1분',
           complete: false,
           thumbnail:
@@ -345,11 +346,12 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
       },
       {
         novels: {
+          id: 1,
           title: '잊지마 4시1분',
           complete: false,
           thumbnail:
             'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
-          updatedAt: '2021-02-26T02:55:20.000Z',
+          updatedAt: '2021-03-09T02:55:20.000Z',
         },
         episodes: {
           id: 3,
@@ -362,11 +364,12 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
       },
       {
         novels: {
+          id: 1,
           title: '잊지마 4시1분',
           complete: false,
           thumbnail:
             'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
-          updatedAt: '2021-02-26T02:55:20.000Z',
+          updatedAt: '2021-03-09T02:55:20.000Z',
         },
         episodes: {
           id: 3,
@@ -379,11 +382,12 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
       },
       {
         novels: {
+          id: 1,
           title: '잊지마 4시1분',
           complete: false,
           thumbnail:
             'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
-          updatedAt: '2021-02-26T02:55:20.000Z',
+          updatedAt: '2021-03-09T02:55:20.000Z',
         },
         episodes: {
           id: 3,
@@ -396,11 +400,12 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
       },
       {
         novels: {
+          id: 1,
           title: '잊지마 4시1분',
           complete: false,
           thumbnail:
             'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
-          updatedAt: '2021-02-26T02:55:20.000Z',
+          updatedAt: '2021-03-09T02:55:20.000Z',
         },
         episodes: {
           id: 3,
@@ -413,11 +418,48 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
       },
       {
         novels: {
+          id: 1,
           title: '잊지마 4시1분',
           complete: false,
           thumbnail:
             'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
-          updatedAt: '2021-02-26T02:55:20.000Z',
+          updatedAt: '2021-03-09T02:55:20.000Z',
+        },
+        episodes: {
+          id: 3,
+          episodeNum: 2,
+          cloud: 3,
+          thumbnail:
+            'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          title: '이런 날이...',
+        },
+      },
+      {
+        novels: {
+          id: 1,
+          title: '잊지마 4시1분',
+          complete: false,
+          thumbnail:
+            'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          updatedAt: '2021-03-09T02:55:20.000Z',
+        },
+        episodes: {
+          id: 3,
+          episodeNum: 2,
+          cloud: 3,
+          thumbnail:
+            'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          title: '이런 날이...',
+        },
+      },
+      {
+        novels: {
+          id: 1,
+          title: '잊지마 4시1분',
+          complete: false,
+          thumbnail:
+            'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
+          updatedAt: '2021-03-09T02:55:20.000Z',
         },
         episodes: {
           id: 3,

@@ -4,8 +4,10 @@ import './HistoryNovel.css';
 import HistoryNovelList from '../myCategoryComponents/myWrapperComponents/HistoryNovelList';
 
 interface userHistoriesDataProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (data: number) => void;
   userHistoriesData: {
     novels: {
+      id: number;
       title: string;
       complete: boolean;
       thumbnail: string;
@@ -31,7 +33,11 @@ const HistoryNovel: React.FC<userHistoriesDataProps> = (
           <></>
         ) : (
           props.userHistoriesData.map((ele) => (
-            <HistoryNovelList key={ele.episodes.id} userHistories={ele} />
+            <HistoryNovelList
+              key={ele.episodes.id}
+              userHistories={ele}
+              handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
+            />
           ))
         )}
       </div>

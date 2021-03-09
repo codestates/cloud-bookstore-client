@@ -3,8 +3,10 @@ import { withRouter, RouteComponentProps } from 'react-router-dom';
 import './HistoryNovelList.css';
 
 interface HistoryDataProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (data: number) => void;
   userHistories: {
     novels: {
+      id: number;
       title: string;
       complete: boolean;
       thumbnail: string;
@@ -45,6 +47,10 @@ const NovelList: React.FC<HistoryDataProps> = (props: HistoryDataProps) => {
   const getBoolEpisodeTitleLength = (): boolean => {
     if (props.userHistories.episodes.title.length > 12) return true;
     else return false;
+  };
+  const routing = () => {
+    props.handleAxiosClickedNovelData(props.userHistories.novels.id);
+    props.history.push(`/main/novel/${props.userHistories.novels.id}`);
   };
   return (
     <div className="novelHisList">
@@ -87,7 +93,14 @@ const NovelList: React.FC<HistoryDataProps> = (props: HistoryDataProps) => {
           </div>
         </div>
       </div>
-      <div className="goNovelEpisode">작품리스트로 이동</div>
+      <div
+        className="goNovelEpisode"
+        role="button"
+        aria-hidden="true"
+        onClick={routing}
+      >
+        작품리스트로 이동
+      </div>
     </div>
   );
 };

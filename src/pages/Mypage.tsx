@@ -17,10 +17,12 @@ import MyNovelEpisodeList from './myCategoryComponents/MyNovelEpisodeList';
 import axios from 'axios';
 
 interface MyNovelDataProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (data: number) => void;
   handleAxiosMyPage: () => void;
   myPageData: {
     userHistories: {
       novels: {
+        id: number;
         title: string;
         complete: boolean;
         thumbnail: string;
@@ -211,13 +213,19 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
         <Route
           path="/main/mypage/recentNovelList"
           render={() => (
-            <HistoryNovel userHistoriesData={props.myPageData.userHistories} />
+            <HistoryNovel
+              userHistoriesData={props.myPageData.userHistories}
+              handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
+            />
           )}
         />
         <Route
           path="/main/mypage/concernNovelList"
           render={() => (
-            <UserLikes userLikesData={props.myPageData.userLikes} />
+            <UserLikes
+              userLikesData={props.myPageData.userLikes}
+              handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
+            />
           )}
         />
         <Route

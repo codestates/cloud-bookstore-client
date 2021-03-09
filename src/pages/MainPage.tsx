@@ -39,6 +39,7 @@ interface CategoryDatas {
 interface MyData {
   userHistories: {
     novels: {
+      id: number;
       title: string;
       complete: boolean;
       thumbnail: string;
@@ -388,6 +389,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
               <Mypage
                 handleAxiosMyPage={props.handleAxiosMyPage}
                 myPageData={props.myPageData}
+                handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
               />
             )}
           />
@@ -396,6 +398,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
             render={() => (
               <HistoryNovel
                 userHistoriesData={props.myPageData.userHistories}
+                handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
               />
             )}
           />
