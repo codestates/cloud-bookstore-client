@@ -33,10 +33,10 @@ const NovelList: React.FC<MartialArtsDataProps> = (
 ) => {
   const refinedUpdatedAt: string = props.martialArtsData.updatedAt.slice(0, 10);
 
-  const sliceTitle: string = props.martialArtsData.title.slice(0, 9);
+  const sliceTitle: string = props.martialArtsData.title.slice(0, 13);
   const sliceAuthor: string = props.martialArtsData.author.slice(0, 12);
   const getBoolTitleLength = (): boolean => {
-    if (props.martialArtsData.title.length > 9) return true;
+    if (props.martialArtsData.title.length > 13) return true;
     else return false;
   };
   const getBoolAuthorLength = (): boolean => {
