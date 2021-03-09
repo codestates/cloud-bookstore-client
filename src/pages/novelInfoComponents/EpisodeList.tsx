@@ -1,11 +1,9 @@
-/* eslint-disable no-console */
 import React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
 
 import EpisodeListDetail from './EpisodeListComponents/EpisodeListDetail';
 import PurchaseCheckList from './EpisodeListComponents/PurchaseCheckList';
 
-interface episodeListProps extends RouteComponentProps {
+interface episodeListProps {
   handleClickedSpecificEpisode: (parameter: {
     episodeId: number;
     novelId: number;
@@ -87,15 +85,20 @@ const EpisodeList: React.FC<episodeListProps> = (props: episodeListProps) => {
           <>
             {reversedList.slice(0, -1).map((ele) => {
               if (updatedEpisodeList.indexOf(ele.id) === -1) {
-                return <EpisodeListDetail episode={ele} key={ele.id} />;
+                return (
+                  <EpisodeListDetail
+                    episode={ele}
+                    key={ele.id}
+                    handleClickedSpecificEpisode={
+                      props.handleClickedSpecificEpisode
+                    }
+                  />
+                );
               } else {
                 return (
                   <PurchaseCheckList
                     episode={ele}
                     key={ele.id}
-                    history={props.history}
-                    location={props.location}
-                    match={props.match}
                     handleClickedSpecificEpisode={
                       props.handleClickedSpecificEpisode
                     }
@@ -105,9 +108,6 @@ const EpisodeList: React.FC<episodeListProps> = (props: episodeListProps) => {
             })}
             <PurchaseCheckList
               episode={reversedList[reversedList.length - 1]}
-              history={props.history}
-              location={props.location}
-              match={props.match}
               handleClickedSpecificEpisode={props.handleClickedSpecificEpisode}
             />
           </>

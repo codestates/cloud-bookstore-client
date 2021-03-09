@@ -18,6 +18,7 @@ import Mypage from './Mypage';
 import HistoryNovel from './myCategoryComponents/HistoryNovel';
 import Setting from './Setting';
 import NovelInfo from './NovelInfo';
+import LoginModal from './modal/LoginModal';
 
 interface CategoryDatas {
   data: {
@@ -221,6 +222,21 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     setIsCategoryOn('/main/mypage/recentNovelList');
   };
 
+  const [loginModal, setLoginModal] = useState<boolean>(false);
+
+  const handleLoginModalOn = (): void => {
+    setLoginModal(!loginModal);
+  };
+
+  const handleMyPage = (): void => {
+    if (props.isLogin) {
+      handleMyOn();
+      props.handleAxiosMyPage();
+      props.history.push('/main/mypage/recentNovelList');
+    } else {
+      setLoginModal(!loginModal);
+    }
+  };
   return (
     <div>
       <div className="wholeMainPageWrapper">
@@ -233,6 +249,8 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
           history={props.history}
           location={props.location}
           match={props.match}
+          handleLoginModalOn={handleLoginModalOn}
+          loginModal={loginModal}
         />
         <nav>
           <div className="wholeCategoryNav">
@@ -292,11 +310,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                       : ''
                   }
                   className="categoryBtn"
-                  onClick={() => {
-                    handleMyOn();
-                    props.handleAxiosMyPage();
-                    props.history.push('/main/mypage/recentNovelList');
-                  }}
+                  onClick={() => handleMyPage()}
                   aria-hidden="true"
                 >
                   MY

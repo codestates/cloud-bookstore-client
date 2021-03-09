@@ -28,7 +28,6 @@ interface SpecificEpisodeDataProps extends RouteComponentProps {
 const NovelReadStage: React.FC<SpecificEpisodeDataProps> = (
   props: SpecificEpisodeDataProps,
 ) => {
-  // console.log(props.specificEpisodeData);
   return (
     <>
       <div className="wholeNovelReadStageWrapper">
