@@ -11,6 +11,7 @@ import axios from 'axios';
 import LandingPage from './pages/LandingPage';
 import MainPage from './pages/MainPage';
 import NovelReadStage from './pages/novelInfoComponents/EpisodeListComponents/NovelReadStage/NovelReadStage';
+import ScrollToTop from './ScrollToTop';
 
 interface ClickedSpecificEpisode {
   episodeId: number;
@@ -360,7 +361,7 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
           complete: false,
           thumbnail:
             'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
-          updatedAt: '2021-02-26T02:55:20.000Z',
+          updatedAt: '2021-03-09T02:55:20.000Z',
         },
         episodes: {
           id: 3,
@@ -778,6 +779,7 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
             />
           )}
         />
+        <ScrollToTop />
       </Switch>
     </div>
   );

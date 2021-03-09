@@ -111,7 +111,7 @@
 
 .novelListNewObject {
   position: absolute;
-  margin: 0px 0 0 142px;
+  margin: 0px 0 0 145px;
   border: 1px #2b79fe solid;
   border-radius: 11.5px;
   background-color: #2b79fe;
@@ -160,7 +160,10 @@
     width: 178px;
     height: 140px;
   }
-  .goNovelEpisode{
+  .novelListNewObject {
+    margin: 0px 0 0 120px;
+  }
+  .goNovelEpisode {
     font-size: 12px;
     padding: 9px 40px 8px;
   }

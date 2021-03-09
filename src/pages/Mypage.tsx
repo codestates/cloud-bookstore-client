@@ -10,6 +10,7 @@ import '../css/MypageNav.css';
 import MyWorks from './myCategoryComponents/MyWorks';
 import HistoryNovel from './myCategoryComponents/HistoryNovel';
 import UserLikes from './myCategoryComponents/UserLikes';
+import EditNovel from './myCategoryComponents/EditNovel';
 import MakeNovel from './myCategoryComponents/MakeNovel';
 import MyNovelEpisodeList from './myCategoryComponents/MyNovelEpisodeList';
 import axios from 'axios';
@@ -240,9 +241,20 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
           )}
         />
         <Route
+          path="/main/mypage/editNovel/:id"
+          render={() => (
+            <EditNovel
+              myCurrentNewNovel={myCurrentNewNovel}
+              handleAxiosMyPage={props.handleAxiosMyPage}
+              handleMyCurrentNewNovel={handleMyCurrentNewNovel}
+            />
+          )}
+        />
+        <Route
           path="/main/mypage/MyNovelEpisodeList/:id"
           render={() => (
             <MyNovelEpisodeList
+              handleAxiosMyPage={props.handleAxiosMyPage}
               myCurrentNewNovel={myCurrentNewNovel}
               myNovelEpisodeList={myNovelEpisodeList}
             />

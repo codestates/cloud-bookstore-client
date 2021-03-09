@@ -6,10 +6,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
+import ScrollToTop from './ScrollToTop';
 
 axios.defaults.withCredentials = true;
 ReactDOM.render(
   <BrowserRouter>
+    <ScrollToTop />
     <App />
   </BrowserRouter>,
   document.getElementById('root'),
