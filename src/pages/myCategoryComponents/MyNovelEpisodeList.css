@@ -101,8 +101,15 @@
     display: flex;
 }
 
+
+.emptyMyNovelEpisodeListText{
+  margin-top: 88px;
+  font-size: 18px;
+    font-weight: bold;
+}
+
 .myNovelEpisodeListText{
-    margin-top: 72px;
+    
     font-size: 18px;
     font-weight: bold;
 }
@@ -128,6 +135,7 @@
     color: #202020;
     text-align: center;
   }
+  
 
   .myNovelEpisodeEmptyEmptyBtn {
     box-sizing: border-box;
@@ -144,6 +152,25 @@
     cursor: pointer;
   }
 
+  .NovelEpisodeWrite{
+    display: flex;
+    margin-top: 72px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .EpWriteBtn{
+    width: 144px;
+    height: 44px;
+    background-color:#2b79fe;
+    color: #fff;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold; 
+  }
 
 @media (max-width: 943px) {
     .MyNovelEpisodeListWrapper{
@@ -151,6 +178,9 @@
     }
     .MyNovelEpisodeListBoxLine{
         width: 704px;
+    }
+    .MyNovelEpisodeListSecondBoxLine{
+      width: 704px;
     }
     .NovelEpisodeListlDescription{
         width: 400px;

@@ -54,6 +54,7 @@ const MakeNewComment: React.FC<MakeNewCommentProps> = (
         placeholder="주제와 무관한 댓글, 욕설 및 악플은 삭제될 수 있습니다."
         onChange={handleChange}
         maxLength={500}
+        value={textChange}
       />
       <span className="makeNewCommentTextCounter">{textChange.length}/500</span>
       <div className="makeNewCommentBtnWrapper">

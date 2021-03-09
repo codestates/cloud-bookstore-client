@@ -1,0 +1,35 @@
+.EpNovelWrapper {
+    display: flex;
+    flex-flow: column wrap;
+    margin-bottom: 88px;
+  }
+
+  .EpNovelInnerWrapper{
+    margin: 16px 0 0 0;
+    width: 943px;
+    display: inline-flex;
+    flex-flow: row wrap;
+    gap: 12px;
+  }
+
+  /* 컴퓨터에서 줄였을 때 */
+@media (max-width: 943px) {
+    .EpNovelInnerWrapper {
+      width: 692px;
+    }
+  }
+  /* 아이패드 크기 */
+  @media (max-width: 767px) {
+    .EpNovelInnerWrapper {
+      width: 469px;
+    }
+  }
+  /* 스마트폰(max) 크기 */
+  @media (max-width: 414px) {
+    .EpNovelInnerWrapper {
+      width: 370px;
+      margin: 16px 0 0 3px;
+      gap: 5px;
+    }
+
+  }

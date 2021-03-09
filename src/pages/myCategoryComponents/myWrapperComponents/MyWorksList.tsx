@@ -1,7 +1,9 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router';
 import '../myCategoryCSS/MyWorksList.css';
 
-interface UserWorksDataProps {
+interface UserWorksDataProps extends RouteComponentProps {
+  handleAxiosMyNovelEpisodeList: (novelId: number) => void;
   userWorksData: {
     id: number;
     title: string;
@@ -43,7 +45,17 @@ const MyWorksList: React.FC<UserWorksDataProps> = (
   };
   return (
     <div className="MyWorksList">
-      <div className="Pointer">
+      <div
+        role="button"
+        aria-hidden="true"
+        className="Pointer"
+        onClick={() => {
+          props.handleAxiosMyNovelEpisodeList(props.userWorksData.id);
+          props.history.push(
+            `/main/mypage/MyNovelEpisodeList/${props.userWorksData.id}`,
+          );
+        }}
+      >
         <div
           className="MyWorksThumbnail"
           style={{

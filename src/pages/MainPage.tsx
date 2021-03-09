@@ -520,7 +520,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         updatedAt: '2021-02-26T13:54:55.252Z',
       },
       {
-        id: 34,
+        id: 35,
         title: '나의 님',
         author: 'chris',
         category: 3,
@@ -535,7 +535,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         updatedAt: '2021-02-26T13:54:55.252Z',
       },
       {
-        id: 34,
+        id: 36,
         title: '나의 님',
         author: 'chris',
         category: 3,
@@ -550,7 +550,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         updatedAt: '2021-02-26T13:54:55.252Z',
       },
       {
-        id: 34,
+        id: 37,
         title: '나의 님',
         author: 'chris',
         category: 3,
@@ -565,7 +565,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         updatedAt: '2021-02-26T13:54:55.252Z',
       },
       {
-        id: 34,
+        id: 38,
         title: '나의 님',
         author: 'chris',
         category: 3,
@@ -580,7 +580,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         updatedAt: '2021-02-26T13:54:55.252Z',
       },
       {
-        id: 34,
+        id: 39,
         title: '나의 님',
         author: 'chris',
         category: 3,
@@ -595,7 +595,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         updatedAt: '2021-02-26T13:54:55.252Z',
       },
       {
-        id: 34,
+        id: 40,
         title: '나의 님',
         author: 'chris',
         category: 3,
@@ -610,7 +610,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
         updatedAt: '2021-02-26T13:54:55.252Z',
       },
       {
-        id: 34,
+        id: 41,
         title: '나의 님',
         author: 'chris',
         category: 3,
@@ -658,6 +658,35 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
     handleAxiosRomance();
     handleAxiosMyPage();
   }, []);
+
+  const [novelTitleSearch, setNovelTitleSearch] = useState<string>('');
+
+  // ! Search input state 저장 함수
+  const handleNovelTitleSearch = (
+    e: React.ChangeEvent<HTMLInputElement>,
+  ): void => {
+    setNovelTitleSearch(e.target.value);
+  };
+
+  // ! Search로 넣은 novel title의 id 찾는 함수
+  const handleSearchClick = (): void => {
+    setNovelTitleSearch('');
+    const entireNovelData = [
+      ...fantasyNovelData.data,
+      ...martialArtsNovelData.data,
+      ...romanceNovelData.data,
+    ];
+    for (const el of entireNovelData) {
+      if (el.title.replace(/\s/g, '') === novelTitleSearch.replace(/\s/g, '')) {
+        axios
+          .get(`https://server.cloud-bookstore.com/novel/${el.id}`)
+          .then((data) => {
+            setClickedNovelData(data.data);
+            props.history.push(`/main/novel/${data.data.id}`);
+          });
+      }
+    }
+  };
 
   return (
     <div>
@@ -740,19 +769,17 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                   MY
                 </div>
               </div>
-              <form
-                className="navSearchWrapper"
-                name="google_search"
-                method="get"
-                action="https://www.google.co.kr/search"
-              >
+              <form className="navSearchWrapper">
                 <input
                   type="text"
                   className="navSearchBox"
                   placeholder="검색해주세요."
+                  onChange={handleNovelTitleSearch}
+                  maxLength={50}
+                  value={novelTitleSearch}
                 />
                 <div className="navSearchBtn">
-                  <MdSearch />
+                  <MdSearch onClick={handleSearchClick} />
                 </div>
               </form>
             </div>
@@ -828,6 +855,9 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
               <Mypage
                 handleAxiosMyPage={handleAxiosMyPage}
                 myPageData={myPageData}
+                // history={props.history}
+                // location={props.location}
+                // match={props.match}
               />
             )}
           />

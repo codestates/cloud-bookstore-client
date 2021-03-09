@@ -35,8 +35,10 @@
     }
 
     .goToMainBtn {
-      width: 59px;
-      height: 24px;
+      background-color: #2b79fe;
+      border-radius: 500px;
+      width: 80px;
+      height: 38px;
       font-size: 16px;
       font-weight: bold;
       color: #ffffff;
@@ -49,7 +51,7 @@
   position: absolute;
   margin: 48px 0 0 0;
   width: 1px;
-  height: 5382px;
+  height: 5182px;
   z-index: 1;
   opacity: 0.15;
   background-color: #d8d8d8;
@@ -67,7 +69,7 @@
 
 @media (max-width: 1366px) {
   .verticalLine {
-    height: 5000px;
+    height: 4802px;
   }
 }
 @media (max-width: 768px) {
