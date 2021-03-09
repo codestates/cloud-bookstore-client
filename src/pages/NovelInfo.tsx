@@ -67,11 +67,21 @@ const NovelInfo: React.FC<ClickedNovelInfoProps> = (
         clickedNovelData={props.clickedNovelData}
         toggleUserLike={props.toggleUserLike}
         handleNovelLikesCount={props.handleNovelLikesCount}
+        history={props.history}
+        location={props.location}
+        match={props.match}
+        handleClickedSpecificEpisode={props.handleClickedSpecificEpisode}
       />
       {props.clickedNovelData.userHistory.length === 0 ? (
         <div className="emptySpaceNovelInfo" />
       ) : (
-        <LastUserHistory clickedNovelData={props.clickedNovelData} />
+        <LastUserHistory
+          clickedNovelData={props.clickedNovelData}
+          history={props.history}
+          location={props.location}
+          match={props.match}
+          handleClickedSpecificEpisode={props.handleClickedSpecificEpisode}
+        />
       )}
       <EpisodeList
         clickedNovelData={props.clickedNovelData}

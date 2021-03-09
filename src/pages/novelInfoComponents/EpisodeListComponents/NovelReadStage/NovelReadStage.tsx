@@ -27,7 +27,7 @@ const NovelReadStage: React.FC<SpecificEpisodeDataProps> = (
 ) => {
   console.log(props.specificEpisodeData);
   return (
-    <div className="wholeNovelDetailsWrapper">Hello NovelDetails World</div>
+    <div className="wholeNovelReadStageWrapper">Hello NovelReadStage World</div>
   );
 };
 
