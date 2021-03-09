@@ -77,7 +77,14 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
                 >
                   작품 정보 수정
                 </div>
-                <div className="NovelEpisodeListlSecondButton">작품 삭제</div>
+                <div
+                  className="NovelEpisodeListlSecondButton"
+                  role="button"
+                  aria-hidden="true"
+                  onClick={() => deleteEpisode()}
+                >
+                  작품 삭제
+                </div>
               </div>
             </div>
           </div>
@@ -128,7 +135,7 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
                   className="NovelEpisodeListlSecondButton"
                   role="button"
                   aria-hidden="true"
-                  onClick={deleteEpisode}
+                  onClick={() => deleteEpisode()}
                 >
                   작품 삭제
                 </div>

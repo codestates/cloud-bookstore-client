@@ -91,7 +91,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
 
   handleWriteNovel = () => {
     axios
-      .post('https://server.cloud-bookstore.com/mypage/edit/novel', {
+      .patch('https://server.cloud-bookstore.com/mypage/edit/novel', {
         id: this.props.myCurrentNewNovel.id,
         thumbnail: this.state.selectedImage,
         description: this.state.novelDescription,
@@ -114,9 +114,12 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
   };
 
   handleImageChange = (e: any): void => {
-    this.setState({
-      selectedImage: e,
-    },()=>console.log(this.state));
+    this.setState(
+      {
+        selectedImage: e,
+      },
+      () => console.log(this.state),
+    );
   };
 
   handleNovelTitleChange = (e: any): void => {
@@ -590,9 +593,14 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
           <div className="saveBtn" onClick={this.handleWriteNovel}>
             저장
           </div>
-          <Link to="myNovelList" className="cancelBtn">
+          <div
+            className="cancelBtn"
+            onClick={() => {
+              this.props.history.push('/main/mypage/myNovelList');
+            }}
+          >
             취소
-          </Link>
+          </div>
         </div>
       </>
     );

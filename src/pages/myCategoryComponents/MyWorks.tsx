@@ -3,8 +3,24 @@ import React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import '../../css/MyWorks.css';
 import MyWorksWrapper from './myWrapperComponents/MyWorksWrapper';
+
+interface CurrentNewNovelProps {
+  id: number;
+  title: string;
+  author: string;
+  category: number;
+  description: string;
+  cloud: number;
+  userLike: number;
+  episodeCount: number;
+  complete: boolean;
+  thumbnail: string;
+  createdAt: string;
+  updatedAt: string;
+}
 interface UserWorksDataProps extends RouteComponentProps {
   handleAxiosMyNovelEpisodeList: (novelId: number) => void;
+  handleMyCurrentNewNovel: (data: CurrentNewNovelProps) => void;
   userWorksData: {
     id: number;
     title: string;
@@ -31,6 +47,7 @@ const MyWorks: React.FC<UserWorksDataProps> = (props: UserWorksDataProps) => {
             location={props.location}
             match={props.match}
             userWorksData={props.userWorksData}
+            handleMyCurrentNewNovel={props.handleMyCurrentNewNovel}
             handleAxiosMyNovelEpisodeList={props.handleAxiosMyNovelEpisodeList}
           />
         </>
