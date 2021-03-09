@@ -11,14 +11,11 @@ interface userNavProps extends RouteComponentProps {
   toggleLogin: () => void;
   nickname: string;
   handleNickname: (nickname: string) => void;
+  handleLoginModalOn: () => void;
+  loginModal: boolean;
 }
 
 const UserNav: React.FC<userNavProps> = (props: userNavProps) => {
-  const [loginModal, setLoginModal] = useState<boolean>(false);
-  const handleLoginModalOn = (): void => {
-    setLoginModal(!loginModal);
-  };
-
   const handleSetting = (): void => {
     props.history.push('/main/setting');
   };
@@ -65,20 +62,20 @@ const UserNav: React.FC<userNavProps> = (props: userNavProps) => {
             <div
               className="loginBtn"
               role="presentation"
-              onClick={handleLoginModalOn}
+              onClick={props.handleLoginModalOn}
             >
               로그인
             </div>
           )}
         </div>
       </div>
-      {loginModal ? (
+      {props.loginModal ? (
         <LoginModal
           isLogin={props.isLogin}
           toggleLogin={props.toggleLogin}
           nickname={props.nickname}
           handleNickname={props.handleNickname}
-          handleLoginModalOn={handleLoginModalOn}
+          handleLoginModalOn={props.handleLoginModalOn}
         />
       ) : (
         <></>
