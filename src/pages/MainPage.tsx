@@ -18,7 +18,6 @@ import Mypage from './Mypage';
 import HistoryNovel from './myCategoryComponents/HistoryNovel';
 import Setting from './Setting';
 import NovelInfo from './NovelInfo';
-import LoginModal from './modal/LoginModal';
 
 interface CategoryDatas {
   data: {
