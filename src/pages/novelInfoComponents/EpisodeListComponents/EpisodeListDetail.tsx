@@ -1,7 +1,10 @@
-/* eslint-disable no-console */
 import React from 'react';
 
 interface episodeListProps {
+  handleClickedSpecificEpisode: (parameter: {
+    episodeId: number;
+    novelId: number;
+  }) => void;
   episode: {
     id: number;
     episodeNum: number;
@@ -34,10 +37,20 @@ const EpisodeListDetail: React.FC<episodeListProps> = (
     if (props.episode.title.length > 13) return true;
     else return false;
   };
+
   return (
     <>
-      {console.log('구입 안 한 경우')}
-      <div className="novelList" style={{ opacity: '.5' }}>
+      <div
+        role="presentation"
+        className="novelList"
+        style={{ opacity: '.5' }}
+        onClick={() =>
+          props.handleClickedSpecificEpisode({
+            episodeId: props.episode.id,
+            novelId: props.episode.novelId,
+          })
+        }
+      >
         <div
           className="thumbnail"
           style={{

@@ -59,8 +59,6 @@ interface ClickedNovelInfoProps extends RouteComponentProps {
 const NovelInfo: React.FC<ClickedNovelInfoProps> = (
   props: ClickedNovelInfoProps,
 ) => {
-  // eslint-disable-next-line no-console
-  console.log(props);
   return (
     <div className="novelInfoWrapper">
       <NovelDetail
@@ -85,9 +83,6 @@ const NovelInfo: React.FC<ClickedNovelInfoProps> = (
       )}
       <EpisodeList
         clickedNovelData={props.clickedNovelData}
-        history={props.history}
-        location={props.location}
-        match={props.match}
         handleClickedSpecificEpisode={props.handleClickedSpecificEpisode}
       />
       <NovelComments

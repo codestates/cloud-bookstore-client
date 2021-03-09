@@ -13,7 +13,7 @@ import MainPage from './pages/MainPage';
 import NovelReadStage from './pages/novelInfoComponents/EpisodeListComponents/NovelReadStage/NovelReadStage';
 import ScrollToTop from './ScrollToTop';
 
-interface ClickedSpecificEpisode {
+interface ClickedSpecificEpisodeProps {
   episodeId: number;
   novelId: number;
 }
@@ -112,7 +112,11 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
     episodeId: 1,
     novelId: 2,
   });
-  const handleClickedSpecificEpisode = (parameter: ClickedSpecificEpisode) => {
+  const handleClickedSpecificEpisode = (
+    parameter: ClickedSpecificEpisodeProps,
+  ) => {
+    // eslint-disable-next-line no-console
+    console.log(parameter);
     setClickedSpecificEpisode(parameter);
     handleAxiosSpecificEpisodeData();
   };
@@ -140,9 +144,24 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
         `https://server.cloud-bookstore.com/novel/${clickedSpecificEpisode.novelId}/${clickedSpecificEpisode.episodeId}`,
       )
       .then((res) => {
-        setSpecificEpisodeData(res.data);
+        if (res.data === '다음 회차를 보기 위해 로그인을 해주세요') {
+          alert('다음 회차를 보기 위해 로그인을 해주세요');
+        } else if (
+          res.data ===
+          '구름을 모두 사용하셨습니다. 기다리면 내일 무료 구름 3개가 충전됩니다.'
+        ) {
+          alert(
+            '구름을 모두 사용하셨습니다. 기다리면 내일 무료 구름 3개가 충전됩니다.',
+          );
+        } else {
+          setSpecificEpisodeData(res.data);
+          props.history.push(
+            `/novel/${res.data.episode.novelId}/episode/${res.data.episode.episodeNum}`,
+          );
+        }
       });
   };
+
   const handleAxiosClickedNovelData = (parameter: number) => {
     axios
       .get(`https://server.cloud-bookstore.com/novel/${parameter}`)
@@ -723,7 +742,7 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
           .get(`https://server.cloud-bookstore.com/novel/${el.id}`)
           .then((data) => {
             setClickedNovelData(data.data);
-            props.history.push(`/main/novel/${data.data.id}`);
+            props.history.push(`/main/novel/${el.id}`);
           });
       }
     }
