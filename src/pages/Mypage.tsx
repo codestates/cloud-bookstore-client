@@ -14,6 +14,7 @@ import EditNovel from './myCategoryComponents/EditNovel';
 import MakeNovel from './myCategoryComponents/MakeNovel';
 import MyNovelEpisodeList from './myCategoryComponents/MyNovelEpisodeList';
 import axios from 'axios';
+import WriteNovelEpisode from './myCategoryComponents/WriteNovelEpisode';
 
 interface MyNovelDataProps extends RouteComponentProps {
   handleAxiosClickedNovelData: (data: number) => void;
@@ -237,6 +238,7 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
               userWorksData={props.myPageData.userWorks}
               handleAxiosMyNovelEpisodeList={handleAxiosMyNovelEpisodeList}
               handleMyCurrentNewNovel={handleMyCurrentNewNovel}
+              myCurrentNewNovel={myCurrentNewNovel}
             />
           )}
         />
@@ -269,7 +271,15 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
             />
           )}
         />
-        <Route></Route>
+        <Route
+          path="/main/mypage/MyNovelEpisodeWrite/:id"
+          render={() => (
+            <WriteNovelEpisode
+              handleAxiosMyNovelEpisodeList={handleAxiosMyNovelEpisodeList}
+              myCurrentNewNovel={myCurrentNewNovel}
+            />
+          )}
+        />
       </Switch>
     </div>
   );

@@ -26,9 +26,9 @@
     background-position: center center;
   }
   
-  .MyWorksNovelListCompleteObject {
+  .CompleteObject {
     position: absolute;
-    margin: 12px 0 0 12px;
+    margin: -128px 0 0 12px;
     border: 1px #d0800d solid;
     border-radius: 11.5px;
     background-color: #d0800d;
