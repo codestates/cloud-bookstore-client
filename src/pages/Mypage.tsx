@@ -148,10 +148,6 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
     setMyCurrentNewNovel(data);
   };
 
-  // useEffect(() => {
-  //   handleAxiosMyNovelEpisodeList(novelId: number);
-  // }, []);
-
   return (
     <div>
       <nav>
@@ -264,6 +260,7 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
             />
           )}
         />
+        <Route></Route>
       </Switch>
     </div>
   );
