@@ -68,7 +68,7 @@
   border: none;
   border-radius: 2px;
   color: #ffffff00;
-  box-shadow: rgb(0 0 0 / 24%) 0px 2px 2px 0px, rgb(0 0 0 / 24%) 0px 0px 1px 0px;
+  box-shadow: rgb(0 0 0 / 24%) 0px 2px 5px 0px, rgb(0 0 0 / 24%) 0px 0px 1px 0px;
   background-image: url('../../asset/img/googlelogo.svg');
   background-repeat: no-repeat;
   background-size: cover;
