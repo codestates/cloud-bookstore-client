@@ -10,6 +10,7 @@
   padding: 0;
   width: 224px;
   height: 140px;
+  background-size: cover;
 }
 
 .novelListCompleteObject {
