@@ -1,8 +1,11 @@
 import React from 'react';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
 import './MyNovelEpisodeList.css';
 import MyNovelEpisodeListWrapper from './MyNovelEpisodeListComponent/MyNovelEpisodeListWrapper';
+import axios from 'axios';
 
-interface MyNovelEpisodeListProps {
+interface MyNovelEpisodeListProps extends RouteComponentProps {
+  handleAxiosMyPage: () => void;
   myCurrentNewNovel: {
     id: number;
     title: string;
@@ -33,6 +36,13 @@ interface MyNovelEpisodeListProps {
 const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
   props: MyNovelEpisodeListProps,
 ) => {
+  const deleteEpisode = async () => {
+    await axios
+      .delete(
+        `https://server.cloud-bookstore.com/mypage/delete/novel/${props.myCurrentNewNovel.id}`,
+      )
+      .then(() => props.handleAxiosMyPage());
+  };
   return (
     <div className="MyNovelEpisodeListWrapper">
       {props.myNovelEpisodeList.length === 0 ? (
@@ -55,7 +65,18 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
                 {props.myCurrentNewNovel.description}
               </div>
               <div className="NovelEpisodeListBtnWrapper">
-                <div className="NovelEpisodeListlButton">작품 정보 수정</div>
+                <div
+                  className="NovelEpisodeListlButton"
+                  role="button"
+                  aria-hidden="true"
+                  onClick={() =>
+                    props.history.push(
+                      `/main/mypage/editNovel/${props.myCurrentNewNovel.id}`,
+                    )
+                  }
+                >
+                  작품 정보 수정
+                </div>
                 <div className="NovelEpisodeListlSecondButton">작품 삭제</div>
               </div>
             </div>
@@ -91,8 +112,26 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
                 {props.myCurrentNewNovel.description}
               </div>
               <div className="NovelEpisodeListBtnWrapper">
-                <div className="NovelEpisodeListlButton">작품 정보 수정</div>
-                <div className="NovelEpisodeListlSecondButton">작품 삭제</div>
+                <div
+                  className="NovelEpisodeListlButton"
+                  role="button"
+                  aria-hidden="true"
+                  onClick={() =>
+                    props.history.push(
+                      `/main/mypage/editNovel/${props.myCurrentNewNovel.id}`,
+                    )
+                  }
+                >
+                  작품 정보 수정
+                </div>
+                <div
+                  className="NovelEpisodeListlSecondButton"
+                  role="button"
+                  aria-hidden="true"
+                  onClick={deleteEpisode}
+                >
+                  작품 삭제
+                </div>
               </div>
             </div>
           </div>
@@ -111,4 +150,4 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
   );
 };
 
-export default MyNovelEpisodeList;
+export default withRouter(MyNovelEpisodeList);

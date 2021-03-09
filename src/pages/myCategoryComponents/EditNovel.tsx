@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { Component } from 'react';
+import React, { Component, Dispatch, SetStateAction } from 'react';
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import Select from 'react-select';
@@ -7,6 +7,7 @@ import './MakeNovel.css';
 interface handleAxiosMyPageProps extends RouteComponentProps {
   handleAxiosMyPage: () => void;
   handleMyCurrentNewNovel: (data: CurrentNewNovelProps) => void;
+  myCurrentNewNovel: CurrentNewNovelProps;
 }
 
 interface CurrentNewNovelProps {
@@ -42,15 +43,40 @@ const options: OptionType[] = [
   { value: 2, label: '무협' },
   { value: 3, label: '로맨스' },
 ];
+const fantasyThumbnails: string[] = [
+  'https://user-images.githubusercontent.com/70982342/110403401-61ee1080-80c0-11eb-8458-4e24791b8667.png',
+  'https://user-images.githubusercontent.com/70982342/110403406-63b7d400-80c0-11eb-8d3a-9723ee736002.png',
+  'https://user-images.githubusercontent.com/70982342/110403410-64506a80-80c0-11eb-8a15-32b002795ed4.png',
+  'https://user-images.githubusercontent.com/70982342/110403412-64e90100-80c0-11eb-8ab1-81ca81930f3f.png',
+  'https://user-images.githubusercontent.com/70982342/110403414-661a2e00-80c0-11eb-88a6-7f13eb13a8d4.png',
+  'https://user-images.githubusercontent.com/70982342/110403416-66b2c480-80c0-11eb-84a6-47672b5cc429.png',
+];
 
+const martialArtsThumbnails: string[] = [
+  'https://user-images.githubusercontent.com/70982342/110403843-2869d500-80c1-11eb-8c2e-9ea6ccbf011e.png',
+  'https://user-images.githubusercontent.com/70982342/110403847-2a339880-80c1-11eb-8c20-9d536a575377.png',
+  'https://user-images.githubusercontent.com/70982342/110403848-2a339880-80c1-11eb-98fc-f2acb17f2379.png',
+  'https://user-images.githubusercontent.com/70982342/110403850-2acc2f00-80c1-11eb-8341-463c08f153a4.png',
+  'https://user-images.githubusercontent.com/70982342/110403851-2b64c580-80c1-11eb-9636-a4343348e273.png',
+  'https://user-images.githubusercontent.com/70982342/110403853-2b64c580-80c1-11eb-9052-cf8557732d1d.png',
+];
+
+const romanceThumbnails: string[] = [
+  'https://user-images.githubusercontent.com/70982342/110404054-85658b00-80c1-11eb-940e-ead57bb015bf.png',
+  'https://user-images.githubusercontent.com/70982342/110404057-872f4e80-80c1-11eb-9224-da333ba17a8b.png',
+  'https://user-images.githubusercontent.com/70982342/110404059-88607b80-80c1-11eb-8306-62edab87c68c.png',
+  'https://user-images.githubusercontent.com/70982342/110404063-88f91200-80c1-11eb-99d8-18359208b629.png',
+  'https://user-images.githubusercontent.com/70982342/110404066-8991a880-80c1-11eb-9e05-dbe452671880.png',
+  'https://user-images.githubusercontent.com/70982342/110404067-8a2a3f00-80c1-11eb-80cb-4924458395af.png',
+];
 class EditNovel extends Component<handleAxiosMyPageProps, State> {
   constructor(props: handleAxiosMyPageProps) {
     super(props);
     this.state = {
-      selectedOption: options[0],
-      selectedImage: '',
-      novelTitle: '',
-      novelDescription: '',
+      selectedOption: options[this.props.myCurrentNewNovel.category],
+      selectedImage: this.props.myCurrentNewNovel.thumbnail,
+      novelTitle: this.props.myCurrentNewNovel.title,
+      novelDescription: this.props.myCurrentNewNovel.description,
       imgToggle: 0,
     };
     this.handleChange = this.handleChange.bind(this);
@@ -65,7 +91,8 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
 
   handleWriteNovel = () => {
     axios
-      .post('https://server.cloud-bookstore.com/mypage/write/novel', {
+      .post('https://server.cloud-bookstore.com/mypage/edit/novel', {
+        id: this.props.myCurrentNewNovel.id,
         thumbnail: this.state.selectedImage,
         description: this.state.novelDescription,
         category: this.state.selectedOption.value,
@@ -73,9 +100,9 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
       })
       .then(async (data) => {
         await this.props.handleAxiosMyPage();
-        await this.props.handleMyCurrentNewNovel(data.data.currentNovel);
+        await this.props.handleMyCurrentNewNovel(data.data.data);
         await this.props.history.push(
-          `/main/mypage/MyNovelEpisodeList/${data.data.currentNovel.id}`,
+          `/main/mypage/MyNovelEpisodeList/${data.data.data.id}`,
         );
       });
   };
@@ -89,7 +116,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
   handleImageChange = (e: any): void => {
     this.setState({
       selectedImage: e,
-    });
+    },()=>console.log(this.state));
   };
 
   handleNovelTitleChange = (e: any): void => {
@@ -122,7 +149,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
           <div className="BoxLineSecond" />
           <div className="aline">
             <input
-              placeholder="작품제목"
+              value={this.state.novelTitle}
               className="TitleTextBox"
               onChange={this.handleNovelTitleChange}
             ></input>
@@ -162,7 +189,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         className="CoverImageBox"
                         onClick={() => {
                           this.setState({ imgToggle: 1 });
-                          this.handleImageChange('1');
+                          this.handleImageChange(fantasyThumbnails[0]);
                         }}
                       ></div>
                     )}
@@ -185,7 +212,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         className="CoverImageBox"
                         onClick={() => {
                           this.setState({ imgToggle: 2 });
-                          this.handleImageChange('2');
+                          this.handleImageChange(fantasyThumbnails[1]);
                         }}
                       ></div>
                     )}
@@ -208,7 +235,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         className="CoverImageBox"
                         onClick={() => {
                           this.setState({ imgToggle: 3 });
-                          this.handleImageChange('3');
+                          this.handleImageChange(fantasyThumbnails[2]);
                         }}
                       ></div>
                     )}
@@ -231,7 +258,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         className="CoverImageBox"
                         onClick={() => {
                           this.setState({ imgToggle: 4 });
-                          this.handleImageChange('4');
+                          this.handleImageChange(fantasyThumbnails[3]);
                         }}
                       ></div>
                     )}
@@ -254,7 +281,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         className="CoverImageBox"
                         onClick={() => {
                           this.setState({ imgToggle: 5 });
-                          this.handleImageChange('5');
+                          this.handleImageChange(fantasyThumbnails[4]);
                         }}
                       ></div>
                     )}
@@ -277,7 +304,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         className="CoverImageBox"
                         onClick={() => {
                           this.setState({ imgToggle: 6 });
-                          this.handleImageChange('6');
+                          this.handleImageChange(fantasyThumbnails[5]);
                         }}
                       ></div>
                     )}
@@ -303,7 +330,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         className="CoverImageBox"
                         onClick={() => {
                           this.setState({ imgToggle: 7 });
-                          this.handleImageChange('7');
+                          this.handleImageChange(martialArtsThumbnails[0]);
                         }}
                       ></div>
                     )}
@@ -324,7 +351,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         className="CoverImageBox"
                         onClick={() => {
                           this.setState({ imgToggle: 8 });
-                          this.handleImageChange('8');
+                          this.handleImageChange(martialArtsThumbnails[1]);
                         }}
                       ></div>
                     )}
@@ -345,7 +372,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         className="CoverImageBox"
                         onClick={() => {
                           this.setState({ imgToggle: 9 });
-                          this.handleImageChange('9');
+                          this.handleImageChange(martialArtsThumbnails[2]);
                         }}
                       ></div>
                     )}
@@ -366,7 +393,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         className="CoverImageBox"
                         onClick={() => {
                           this.setState({ imgToggle: 10 });
-                          this.handleImageChange('10');
+                          this.handleImageChange(martialArtsThumbnails[3]);
                         }}
                       ></div>
                     )}
@@ -387,7 +414,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         className="CoverImageBox"
                         onClick={() => {
                           this.setState({ imgToggle: 11 });
-                          this.handleImageChange('11');
+                          this.handleImageChange(martialArtsThumbnails[4]);
                         }}
                       ></div>
                     )}
@@ -408,7 +435,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         className="CoverImageBox"
                         onClick={() => {
                           this.setState({ imgToggle: 12 });
-                          this.handleImageChange('12');
+                          this.handleImageChange(martialArtsThumbnails[5]);
                         }}
                       ></div>
                     )}
@@ -434,7 +461,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         className="CoverImageBox"
                         onClick={() => {
                           this.setState({ imgToggle: 13 });
-                          this.handleImageChange('13');
+                          this.handleImageChange(romanceThumbnails[0]);
                         }}
                       ></div>
                     )}
@@ -455,7 +482,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         className="CoverImageBox"
                         onClick={() => {
                           this.setState({ imgToggle: 14 });
-                          this.handleImageChange('14');
+                          this.handleImageChange(romanceThumbnails[1]);
                         }}
                       ></div>
                     )}
@@ -476,7 +503,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         className="CoverImageBox"
                         onClick={() => {
                           this.setState({ imgToggle: 15 });
-                          this.handleImageChange('15');
+                          this.handleImageChange(romanceThumbnails[2]);
                         }}
                       ></div>
                     )}
@@ -497,7 +524,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         className="CoverImageBox"
                         onClick={() => {
                           this.setState({ imgToggle: 16 });
-                          this.handleImageChange('16');
+                          this.handleImageChange(romanceThumbnails[3]);
                         }}
                       ></div>
                     )}
@@ -518,7 +545,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         className="CoverImageBox"
                         onClick={() => {
                           this.setState({ imgToggle: 17 });
-                          this.handleImageChange('17');
+                          this.handleImageChange(romanceThumbnails[4]);
                         }}
                       ></div>
                     )}
@@ -539,7 +566,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         className="CoverImageBox"
                         onClick={() => {
                           this.setState({ imgToggle: 18 });
-                          this.handleImageChange('18');
+                          this.handleImageChange(romanceThumbnails[5]);
                         }}
                       ></div>
                     )}
@@ -552,9 +579,9 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
           </div>
           <div className="BoxLineSecond" />
           <textarea
-            placeholder="작품내용"
             onChange={this.handleNovelDescriptionChange}
             maxLength={250}
+            value={this.state.novelDescription}
           ></textarea>
           <span className="novelDescriptionNewText">
             {this.state.novelDescription.length}/250

@@ -59,17 +59,17 @@ const NovelList: React.FC<HistoryDataProps> = (props: HistoryDataProps) => {
         ) : (
           <></>
         )}
-        {refinedupdatedAt === getToday() ? (
-          <div className="novelListNewObject">NEW</div>
-        ) : (
-          <></>
-        )}
       </div>
       <div className="homeNovelListContentWrapper">
         <div className="countCloud">
           <div className="countCloudText">
             누적구름 {props.userHistories.episodes.cloud}
           </div>
+          {refinedupdatedAt === getToday() ? (
+            <div className="novelListNewObject">NEW</div>
+          ) : (
+            <></>
+          )}
           <div className="countCloudImg"></div>
         </div>
         <div className="novelListSubjectWrapper">
