@@ -245,35 +245,6 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
     }));
   };
 
-  const [novelTitleSearch, setNovelTitleSearch] = useState<string>('');
-
-  // ! Search input state 저장 함수
-  const handleNovelTitleSearch = (
-    e: React.ChangeEvent<HTMLInputElement>,
-  ): void => {
-    setNovelTitleSearch(e.target.value);
-  };
-
-  // ! Search로 넣은 novel title의 id 찾는 함수
-  const handleSearchClick = (): void => {
-    setNovelTitleSearch('');
-    const entireNovelData = [
-      ...fantasyNovelData.data,
-      ...martialArtsNovelData.data,
-      ...romanceNovelData.data,
-    ];
-    for (const el of entireNovelData) {
-      if (el.title.replace(/\s/g, '') === novelTitleSearch.replace(/\s/g, '')) {
-        axios
-          .get(`https://server.cloud-bookstore.com/novel/${el.id}`)
-          .then((data) => {
-            setClickedNovelData(data.data);
-            props.history.push(`/main/novel/${data.data.id}`);
-          });
-      }
-    }
-  };
-
   // ! Fantasy novel Data - axios get
   const [fantasyNovelData, setFantasyNovelData] = useState({
     data: [
@@ -727,6 +698,36 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
     handleAxiosRomance();
     handleAxiosMyPage();
   }, []);
+
+  // * input box title state
+  const [novelTitleSearch, setNovelTitleSearch] = useState<string>('');
+  // * Search input state 저장 함수
+
+  const handleNovelTitleSearch = (
+    e: React.ChangeEvent<HTMLInputElement>,
+  ): void => {
+    setNovelTitleSearch(e.target.value);
+  };
+
+  // * Search로 넣은 novel title의 id 찾는 함수
+  const handleSearchClick = (): void => {
+    setNovelTitleSearch('');
+    const entireNovelData = [
+      ...fantasyNovelData.data,
+      ...martialArtsNovelData.data,
+      ...romanceNovelData.data,
+    ];
+    for (const el of entireNovelData) {
+      if (el.title.replace(/\s/g, '') === novelTitleSearch.replace(/\s/g, '')) {
+        axios
+          .get(`https://server.cloud-bookstore.com/novel/${el.id}`)
+          .then((data) => {
+            setClickedNovelData(data.data);
+            props.history.push(`/main/novel/${data.data.id}`);
+          });
+      }
+    }
+  };
 
   return (
     <div className="wholeWrapper">
