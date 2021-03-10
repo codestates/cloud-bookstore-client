@@ -49,6 +49,7 @@ const NovelFantasyWrapper: React.FC<FantasyDataProps> = (
             history={props.history}
             location={props.location}
             match={props.match}
+            handleFantasyOn={props.handleFantasyOn}
           />
         ))}
       </div>

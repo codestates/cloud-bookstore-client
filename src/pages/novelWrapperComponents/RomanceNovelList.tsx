@@ -4,6 +4,7 @@ import './NovelList.css';
 
 interface RomanceDataProps extends RouteComponentProps {
   handleAxiosClickedNovelData: (parameter: number) => void;
+  handleRomanceOn: () => void;
   romanceData: {
     id: number;
     title: string;
@@ -47,6 +48,7 @@ const NovelList: React.FC<RomanceDataProps> = (props: RomanceDataProps) => {
       className="novelList"
       role="presentation"
       onClick={() => {
+        props.handleRomanceOn();
         props.handleAxiosClickedNovelData(props.romanceData.id);
         props.history.push(`/main/novel/${props.romanceData.id}`);
       }}

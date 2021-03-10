@@ -50,6 +50,7 @@ const NovelRomanceWrapper: React.FC<RomanceDataProps> = (
             history={props.history}
             location={props.location}
             match={props.match}
+            handleRomanceOn={props.handleRomanceOn}
           />
         ))}
       </div>
