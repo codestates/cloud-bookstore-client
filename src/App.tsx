@@ -432,7 +432,7 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
               setSpecificEpisodeData={setSpecificEpisodeData}
               clickedNovelData={clickedNovelData}
               handleAxiosClickedNovelData={handleAxiosClickedNovelData}
-              isLogin={!isLogin}
+              isLogin={isLogin}
               toggleLogin={toggleLogin}
               nickname={nickname}
               handleNickname={handleNickname}

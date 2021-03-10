@@ -144,9 +144,9 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
               }}
             />
             <div className="NovelEpisodeListInfoWrapper">
-              <div className="NovelEpisodeListDescription">
+              <pre className="NovelEpisodeListDescription">
                 {props.myCurrentNewNovel.description}
-              </div>
+              </pre>
               <div className="NovelEpisodeListBtnWrapper">
                 <div
                   className="NovelEpisodeListButton"

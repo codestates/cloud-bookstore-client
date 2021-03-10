@@ -72,7 +72,7 @@ const NovelComments: React.FC<CommentsDataProps> = (
             <IoMdRefresh />
           </div>
         </div>
-        {props.nickname === '' ? (
+        {props.nickname.length === 0 ? (
           <>
             <CantMakeNewComment />
             <div className="commentsListWrapper">
