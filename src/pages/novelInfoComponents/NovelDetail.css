@@ -38,6 +38,7 @@
 
 .aTagComment{
   height: 58px;
+  margin-right: 11px;
 }
 
 .novelHeaderButtons > div:last-child{
@@ -49,6 +50,12 @@
   color: #464646;
   text-align: center;
 }
+
+.LikePosition{
+  margin-right: 49px;
+}
+
+
 
 .novelLikesButton, .novelShareButton{
   margin-top: 8px;
@@ -178,6 +185,13 @@
     font-size: 25px;
     margin-right: 32px;
   }
+
+  .novelHeaderButtons {
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+    margin-left: 9px;
+}
   .novelDetailDescription{
     width: 100%;
   }
@@ -189,6 +203,7 @@
   }
   .aTagComment{
     height: 51px;
+
   }
   .emptySpaceNovelInfo{
     height: 200px;
