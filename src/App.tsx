@@ -12,6 +12,7 @@ import LandingPage from './pages/LandingPage';
 import MainPage from './pages/MainPage';
 import NovelReadStage from './pages/novelInfoComponents/EpisodeListComponents/NovelReadStage/NovelReadStage';
 import ScrollToTop from './ScrollToTop';
+import { useStateWithCallbackLazy } from 'use-state-with-callback';
 
 interface ClickedSpecificEpisodeProps {
   episodeId: number;
@@ -108,17 +109,21 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
   });
 
   // ? 클릭한 특정 에피소드 정보 뽑아오기
-  const [clickedSpecificEpisode, setClickedSpecificEpisode] = useState({
-    episodeId: 1,
-    novelId: 2,
+  const [
+    clickedSpecificEpisode,
+    setClickedSpecificEpisode,
+  ] = useStateWithCallbackLazy({
+    episodeId: 0,
+    novelId: 0,
   });
   const handleClickedSpecificEpisode = async (
     parameter: ClickedSpecificEpisodeProps,
   ) => {
     // eslint-disable-next-line no-console
     console.log(parameter);
-    await setClickedSpecificEpisode(parameter);
-    await handleAxiosSpecificEpisodeData();
+    setClickedSpecificEpisode(parameter, () =>
+      handleAxiosSpecificEpisodeData(),
+    );
   };
   // ? 위에서 뽑아온 정보로 axios 날려 받은 정보
   const [specificEpisodeData, setSpecificEpisodeData] = useState({
