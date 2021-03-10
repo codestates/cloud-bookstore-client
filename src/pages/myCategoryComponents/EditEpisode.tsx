@@ -6,6 +6,20 @@ import './WriteNovelEpisode.css';
 
 interface myCurrentNewNovelProps extends RouteComponentProps {
   handleAxiosMyNovelEpisodeList: (novelId: number) => void;
+  specificEpisodeData: {
+    episode: {
+      id: number;
+      episodeNum: number;
+      novelId: number;
+      title: string;
+      text: string;
+      thumbnail: string;
+      cloud: number;
+      createdAt: string;
+      updatedAt: string;
+    };
+    novelTitle: { title: string };
+  };
   myCurrentNewNovel: {
     id: number;
     title: string;
@@ -58,16 +72,16 @@ const romanceThumbnails: string[] = [
   'https://user-images.githubusercontent.com/70982342/110404067-8a2a3f00-80c1-11eb-80cb-4924458395af.png',
 ];
 
-class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
+class EditEpisode extends Component<myCurrentNewNovelProps, State> {
   constructor(props: myCurrentNewNovelProps) {
     super(props);
     this.state = {
-      episodeTitle: '',
+      episodeTitle: this.props.specificEpisodeData.episode.title,
       imgToggle: 0,
-      selectedImage: '',
-      novelEpisode: '',
+      selectedImage: this.props.specificEpisodeData.episode.thumbnail,
+      novelEpisode: this.props.specificEpisodeData.episode.text,
       complete: false,
-      episodeNum: 0,
+      episodeNum: this.props.specificEpisodeData.episode.episodeNum,
     };
     this.handleEpisodeTitleChange = this.handleEpisodeTitleChange.bind(this);
     this.handleImageChange = this.handleImageChange.bind(this);
@@ -109,15 +123,16 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
     }
   };
 
-  handleEpisodeWriteNovel = () => {
+  handelEpisodeEdit = (): void => {
     axios
-      .post('https://server.cloud-bookstore.com/mypage/write/episode', {
-        complete: this.state.complete,
+      .post('https://server.cloud-bookstore.com/mypage/edit/episode', {
+        id: this.props.specificEpisodeData.episode.id,
         novelId: this.props.myCurrentNewNovel.id,
         episodeNum: this.state.episodeNum,
         thumbnail: this.state.selectedImage,
-        text: this.state.novelEpisode,
         title: this.state.episodeTitle,
+        text: this.state.novelEpisode,
+        complete: this.state.complete,
       })
       .then(() => {
         this.props.handleAxiosMyNovelEpisodeList(
@@ -135,7 +150,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
         <div className="WriteNovelWrapper">
           <div className="MakeNovelHeader">
             <div className="MakeNovelTitle">
-              {this.props.myCurrentNewNovel.title} 회차쓰기
+              {this.props.specificEpisodeData.novelTitle.title} 회차쓰기
             </div>
           </div>
           <div className="BoxLine" />
@@ -610,7 +625,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
             role="button"
             aria-hidden="true"
             className="saveBtn"
-            onClick={() => this.handleEpisodeWriteNovel()}
+            onClick={() => this.handelEpisodeEdit()}
           >
             저장
           </div>
@@ -630,4 +645,4 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
   }
 }
 
-export default withRouter(WriteNovelEpisode);
+export default withRouter(EditEpisode);

@@ -798,9 +798,11 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
           path="/main"
           render={() => (
             <MainPage
+              specificEpisodeData={specificEpisodeData}
+              setSpecificEpisodeData={setSpecificEpisodeData}
               clickedNovelData={clickedNovelData}
               handleAxiosClickedNovelData={handleAxiosClickedNovelData}
-              isLogin={isLogin}
+              isLogin={!isLogin}
               toggleLogin={toggleLogin}
               nickname={nickname}
               handleNickname={handleNickname}

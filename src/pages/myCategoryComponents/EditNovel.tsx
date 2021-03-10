@@ -86,7 +86,6 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
       this,
     );
     this.handleWriteNovel = this.handleWriteNovel.bind(this);
-    // this.handleImgToggle = this.handleImgToggle.bind(this);
   }
 
   handleWriteNovel = () => {
@@ -102,7 +101,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
         await this.props.handleAxiosMyPage();
         await this.props.handleMyCurrentNewNovel(data.data.data);
         await this.props.history.push(
-          `/main/mypage/MyNovelEpisodeList/${data.data.data.id}`,
+          `/main/mypage/myNovelEpisodeList/${data.data.data.id}`,
         );
       });
   };

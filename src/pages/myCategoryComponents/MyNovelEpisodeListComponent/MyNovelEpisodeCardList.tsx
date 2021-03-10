@@ -1,7 +1,26 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
 import './MyNovelEpisodeCardList.css';
+import axios from 'axios';
 
-interface MyNovelEpisodeProps {
+interface MyNovelEpisodeProps extends RouteComponentProps {
+  handleAxiosMyNovelEpisodeList: (novelId: number) => void;
+  setSpecificEpisodeData: Dispatch<
+    SetStateAction<{
+      episode: {
+        id: number;
+        episodeNum: number;
+        novelId: number;
+        title: string;
+        text: string;
+        thumbnail: string;
+        cloud: number;
+        createdAt: string;
+        updatedAt: string;
+      };
+      novelTitle: { title: string };
+    }>
+  >;
   episodes: {
     id: number;
     episodeNum: number;
@@ -13,6 +32,7 @@ interface MyNovelEpisodeProps {
     createdAt: string;
     updatedAt: string;
   };
+  novelTitle: string;
 }
 
 const MyNovelEpisodeCardList: React.FC<MyNovelEpisodeProps> = (
@@ -28,6 +48,38 @@ const MyNovelEpisodeCardList: React.FC<MyNovelEpisodeProps> = (
     if (props.episodes.createdAt.length > 12) return true;
     else return false;
   };
+
+  const handleEditMyEpisode = (): void => {
+    props.setSpecificEpisodeData({
+      episode: {
+        id: props.episodes.id,
+        episodeNum: props.episodes.episodeNum,
+        novelId: props.episodes.novelId,
+        title: props.episodes.title,
+        text: props.episodes.text,
+        thumbnail: props.episodes.thumbnail,
+        cloud: props.episodes.cloud,
+        createdAt: props.episodes.createdAt,
+        updatedAt: props.episodes.updatedAt,
+      },
+      novelTitle: { title: props.novelTitle },
+    });
+    props.history.push('/main/mypage/editEpisode/${props.episodes.id}');
+  };
+
+  const handleDeleteMyEpisode = (): void => {
+    axios
+      .post(
+        `https://server.cloud-bookstore.com/mypage/delete/episode/${props.episodes.novelId}/${props.episodes.id}`,
+      )
+      .then(() => {
+        props.handleAxiosMyNovelEpisodeList(props.episodes.novelId);
+        props.history.push(
+          '/main/mypage/myNovelEpisodeList/${props.episodes.novelId}',
+        );
+      });
+  };
+
   return (
     <div className="EpNovelList">
       <div
@@ -42,8 +94,20 @@ const MyNovelEpisodeCardList: React.FC<MyNovelEpisodeProps> = (
             누적구름 {props.episodes.cloud}
           </div>
           <div className="EpCountCloudImg" />
-          <div className="EpNovelBtn">수정</div>
-          <div className="EpNovelDeBtn">삭제</div>
+          <div
+            role="presentation"
+            className="EpNovelBtn"
+            onClick={handleEditMyEpisode}
+          >
+            수정
+          </div>
+          <div
+            role="presentation"
+            className="EpNovelDeBtn"
+            onClick={handleDeleteMyEpisode}
+          >
+            삭제
+          </div>
         </div>
         <div className="EpNovelListSubjectWrapper">
           <div className="HomeNovelListSubject">
@@ -62,4 +126,4 @@ const MyNovelEpisodeCardList: React.FC<MyNovelEpisodeProps> = (
   );
 };
 
-export default MyNovelEpisodeCardList;
+export default withRouter(MyNovelEpisodeCardList);
