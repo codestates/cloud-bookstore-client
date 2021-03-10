@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import './MyNovelEpisodeList.css';
 import MyNovelEpisodeListWrapper from './MyNovelEpisodeListComponent/MyNovelEpisodeListWrapper';
 import axios from 'axios';
 
 interface MyNovelEpisodeListProps extends RouteComponentProps {
+  handleAxiosMyNovelEpisodeList: (novelId: number) => void;
   handleAxiosMyPage: () => void;
+  setSpecificEpisodeData: Dispatch<
+    SetStateAction<{
+      episode: {
+        id: number;
+        episodeNum: number;
+        novelId: number;
+        title: string;
+        text: string;
+        thumbnail: string;
+        cloud: number;
+        createdAt: string;
+        updatedAt: string;
+      };
+      novelTitle: { title: string };
+    }>
+  >;
   myCurrentNewNovel: {
     id: number;
     title: string;
@@ -61,12 +78,12 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
               }}
             />
             <div className="NovelEpisodeListInfoWrapper">
-              <div className="NovelEpisodeListlDescription">
+              <div className="NovelEpisodeListDescription">
                 {props.myCurrentNewNovel.description}
               </div>
               <div className="NovelEpisodeListBtnWrapper">
                 <div
-                  className="NovelEpisodeListlButton"
+                  className="NovelEpisodeListButton"
                   role="button"
                   aria-hidden="true"
                   onClick={() =>
@@ -78,7 +95,7 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
                   작품 정보 수정
                 </div>
                 <div
-                  className="NovelEpisodeListlSecondButton"
+                  className="NovelEpisodeListSecondButton"
                   role="button"
                   aria-hidden="true"
                   onClick={() => deleteEpisode()}
@@ -90,8 +107,8 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
           </div>
           <div className="emptyMyNovelEpisodeListText">내 작품 회차</div>
           <div className="MyNovelEpisodeListSecondBoxLine" />
-          <div className="myNovelEpisodeListemtyBox">
-            <div className="myNovelEpisodeListboxGrid">
+          <div className="myNovelEpisodeListEmptyBox">
+            <div className="myNovelEpisodeListBoxGrid">
               <div className="myNovelEpisodeEmptyTitle">
                 등록된 회차가 없습니다.
               </div>
@@ -101,7 +118,7 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
                 aria-hidden="true"
                 onClick={() =>
                   props.history.push(
-                    `/main/mypage/MyNovelEpisodeWrite/${props.myCurrentNewNovel.id}`,
+                    `/main/mypage/myNovelEpisodeWrite/${props.myCurrentNewNovel.id}`,
                   )
                 }
               >
@@ -126,12 +143,12 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
               }}
             />
             <div className="NovelEpisodeListInfoWrapper">
-              <div className="NovelEpisodeListlDescription">
+              <div className="NovelEpisodeListDescription">
                 {props.myCurrentNewNovel.description}
               </div>
               <div className="NovelEpisodeListBtnWrapper">
                 <div
-                  className="NovelEpisodeListlButton"
+                  className="NovelEpisodeListButton"
                   role="button"
                   aria-hidden="true"
                   onClick={() =>
@@ -143,7 +160,7 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
                   작품 정보 수정
                 </div>
                 <div
-                  className="NovelEpisodeListlSecondButton"
+                  className="NovelEpisodeListSecondButton"
                   role="button"
                   aria-hidden="true"
                   onClick={() => deleteEpisode()}
@@ -161,7 +178,7 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
               aria-hidden="true"
               onClick={() =>
                 props.history.push(
-                  `/main/mypage/MyNovelEpisodeWrite/${props.myCurrentNewNovel.id}`,
+                  `/main/mypage/myNovelEpisodeWrite/${props.myCurrentNewNovel.id}`,
                 )
               }
             >
@@ -171,6 +188,9 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
 
           <div className="MyNovelEpisodeListSecondBoxLine" />
           <MyNovelEpisodeListWrapper
+            novelTitle={props.myCurrentNewNovel.title}
+            setSpecificEpisodeData={props.setSpecificEpisodeData}
+            handleAxiosMyNovelEpisodeList={props.handleAxiosMyNovelEpisodeList}
             myNovelEpisodeList={props.myNovelEpisodeList}
           />
         </>

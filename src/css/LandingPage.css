@@ -19,33 +19,33 @@
   z-index: 3;
 }
 
-  .landingNavBtnWrapper {
-    width: 50%;
-    height: 48px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.landingNavBtnWrapper {
+  width: 50%;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .logoBtn {
-      width: 75px;
-      height: 24px;
-      background-image: url('../asset/landingpage/landingLogo.svg');
-      cursor: pointer;
-    }
+.logoBtn {
+  width: 67px;
+  height: 23px;
+  background-image: url('../asset/landingpage/landingLogo.svg');
+  cursor: pointer;
+}
 
-    .goToMainBtn {
-      background-color: #2b79fe;
-      border-radius: 500px;
-      width: 80px;
-      height: 38px;
-      font-size: 16px;
-      font-weight: bold;
-      color: #ffffff;
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-    }
+.goToMainBtn {
+  background-color: #2b79fe;
+  border-radius: 500px;
+  width: 80px;
+  height: 38px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
 
 .verticalLine {
   position: absolute;
@@ -57,15 +57,15 @@
   background-color: #d8d8d8;
 }
 
-  #verticalLine1 {
-    left: 25%;
-  }
-  #verticalLine2 {
-    left: 50%;
-  }
-  #verticalLine3 {
-    left: 75%;
-  }
+#verticalLine1 {
+  left: 25%;
+}
+#verticalLine2 {
+  left: 50%;
+}
+#verticalLine3 {
+  left: 75%;
+}
 
 @media (max-width: 1366px) {
   .verticalLine {

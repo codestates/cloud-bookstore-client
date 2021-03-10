@@ -15,47 +15,49 @@
   height: 48px;
 }
 
-  .NovelReadNavLeftBox {
-    display: flex;
-    align-items: center;
-  }
-    .userNavLogo {
-      width: 75px;
-      height: 24px;
-      background-image: url('../../../../asset/usernav/userNav.svg');
-      cursor: pointer;
-    }
-    .NovelReadTitle,
-    .NovelReadEpisodeTitle {
-      margin: 0 0 0 16px;
-      font-size: 16px;
-      font-weight: bold;
-      color: #202020;
-      cursor: default;
-    }
-    .NovelReadEpisodeTitle {
-      font-weight: normal;
-    }
+.NovelReadNavLeftBox {
+  display: flex;
+  align-items: center;
+}
 
-  .NovelReadNavRightBox {
-    width: 119px;
-    height: 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-    .goToHomeBtn,
-    .goToListBtn {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-    }
-      .goToHomeText,
-      .goToListText {
-        margin: 0 0 0 5px;
-        font-size: 16px;
-        color: #464646;
-      }
+.userNavLogo {
+  width: 67px;
+  height: 23px;
+  background-size: cover;
+  background-image: url('../../../../asset/usernav/userNav.svg');
+  cursor: pointer;
+}
+.NovelReadTitle,
+.NovelReadEpisodeTitle {
+  margin: 0 0 0 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #202020;
+  cursor: default;
+}
+.NovelReadEpisodeTitle {
+  font-weight: normal;
+}
+
+.NovelReadNavRightBox {
+  width: 119px;
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.goToHomeBtn,
+.goToListBtn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.goToHomeText,
+.goToListText {
+  margin: 0 0 0 5px;
+  font-size: 16px;
+  color: #464646;
+}
 
 .UserNavInnerWrapper {
   width: 943px;

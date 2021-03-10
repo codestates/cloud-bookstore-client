@@ -24,8 +24,9 @@
 }
 
 .userNavLogo {
-  width: 75px;
-  height: 24px;
+  width: 66px;
+  height: 23px;
+  background-size: cover;
   background-image: url('../asset/usernav/userNav.svg');
   cursor: pointer;
 }

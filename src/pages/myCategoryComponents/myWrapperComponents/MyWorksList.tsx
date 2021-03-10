@@ -49,19 +49,9 @@ interface UserWorksDataProps extends RouteComponentProps {
   };
 }
 
-// const getToday = (): string => {
-//   const date: Date = new Date();
-//   const year: number = date.getFullYear();
-//   const month: string = ('0' + (1 + date.getMonth())).slice(-2);
-//   const day: string = ('0' + date.getDate()).slice(-2);
-//   return `${year}-${month}-${day}`;
-// };
-
 const MyWorksList: React.FC<UserWorksDataProps> = (
   props: UserWorksDataProps,
 ) => {
-  // const refinedupdatedAt: string = props.userWorksData.updatedAt.slice(0, 10);
-
   const sliceTitle: string = props.userWorksData.title.slice(0, 16);
   const sliceAuthor: string = props.userWorksData.author.slice(0, 12);
   const getBoolTitleLength = (): boolean => {
@@ -82,7 +72,7 @@ const MyWorksList: React.FC<UserWorksDataProps> = (
           props.handleAxiosMyNovelEpisodeList(props.userWorksData.id);
           props.handleMyCurrentNewNovel(props.userWorksData);
           props.history.push(
-            `/main/mypage/MyNovelEpisodeList/${props.userWorksData.id}`,
+            `/main/mypage/myNovelEpisodeList/${props.userWorksData.id}`,
           );
         }}
       >
@@ -130,7 +120,7 @@ const MyWorksList: React.FC<UserWorksDataProps> = (
         onClick={async () => {
           await props.handleMyCurrentNewNovel(props.userWorksData);
           await props.history.push(
-            `/main/mypage/MyNovelEpisodeWrite/${props.userWorksData.id}`,
+            `/main/mypage/myNovelEpisodeWrite/${props.userWorksData.id}`,
           );
         }}
       >

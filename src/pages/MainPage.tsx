@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Dispatch, SetStateAction } from 'react';
 import {
   RouteComponentProps,
   withRouter,
@@ -135,6 +135,36 @@ interface mainPageProps extends RouteComponentProps {
   handleNovelLikesCount: (userLike: number) => void;
   handleNovelTitleSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSearchClick: () => void;
+  setSpecificEpisodeData: Dispatch<
+    SetStateAction<{
+      episode: {
+        id: number;
+        episodeNum: number;
+        novelId: number;
+        title: string;
+        text: string;
+        thumbnail: string;
+        cloud: number;
+        createdAt: string;
+        updatedAt: string;
+      };
+      novelTitle: { title: string };
+    }>
+  >;
+  specificEpisodeData: {
+    episode: {
+      id: number;
+      episodeNum: number;
+      novelId: number;
+      title: string;
+      text: string;
+      thumbnail: string;
+      cloud: number;
+      createdAt: string;
+      updatedAt: string;
+    };
+    novelTitle: { title: string };
+  };
   handleClickedSpecificEpisode: (parameter: {
     episodeId: number;
     novelId: number;
@@ -406,6 +436,8 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
             path="/main/mypage"
             render={() => (
               <Mypage
+                specificEpisodeData={props.specificEpisodeData}
+                setSpecificEpisodeData={props.setSpecificEpisodeData}
                 handleAxiosMyPage={props.handleAxiosMyPage}
                 myPageData={props.myPageData}
                 handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
