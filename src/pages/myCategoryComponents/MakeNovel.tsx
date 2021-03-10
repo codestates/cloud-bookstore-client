@@ -7,6 +7,7 @@ import './MakeNovel.css';
 interface handleAxiosMyPageProps extends RouteComponentProps {
   handleAxiosMyPage: () => void;
   handleMyCurrentNewNovel: (data: CurrentNewNovelProps) => void;
+  handleAxiosMyNovelEpisodeList: (novelId: number) => void;
 }
 
 interface CurrentNewNovelProps {
@@ -100,6 +101,9 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
       .then(async (data) => {
         await this.props.handleAxiosMyPage();
         await this.props.handleMyCurrentNewNovel(data.data.currentNovel);
+        await this.props.handleAxiosMyNovelEpisodeList(
+          data.data.currentNovel.id,
+        );
         await this.props.history.push(
           `/main/mypage/myNovelEpisodeList/${data.data.currentNovel.id}`,
         );

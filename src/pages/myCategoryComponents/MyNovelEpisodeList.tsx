@@ -58,7 +58,8 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
       .delete(
         `https://server.cloud-bookstore.com/mypage/delete/novel/${props.myCurrentNewNovel.id}`,
       )
-      .then(() => props.handleAxiosMyPage());
+      .then(() => props.handleAxiosMyPage())
+      .then(() => props.history.push('/main/mypage/myNovelEpisodeList'));
   };
   return (
     <div className="MyNovelEpisodeListWrapper">

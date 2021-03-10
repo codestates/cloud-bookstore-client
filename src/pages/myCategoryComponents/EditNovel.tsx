@@ -178,7 +178,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="SelcetCoverImageBox"
+                        className="FanSelcetCoverImageBox01"
                         onClick={() => {
                           this.setState({ imgToggle: 0 });
                           this.handleImageChange('');
@@ -188,7 +188,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="CoverImageBox"
+                        className="FanCoverImageBox01"
                         onClick={() => {
                           this.setState({ imgToggle: 1 });
                           this.handleImageChange(fantasyThumbnails[0]);
@@ -200,7 +200,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         <div
                           role="button"
                           aria-hidden="true"
-                          className="SelcetCoverImageBox"
+                          className="FanSelcetCoverImageBox02"
                           onClick={() => {
                             this.setState({ imgToggle: 0 });
                             this.handleImageChange('');
@@ -211,7 +211,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="CoverImageBox"
+                        className="FanCoverImageBox02"
                         onClick={() => {
                           this.setState({ imgToggle: 2 });
                           this.handleImageChange(fantasyThumbnails[1]);
@@ -223,7 +223,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         <div
                           role="button"
                           aria-hidden="true"
-                          className="SelcetCoverImageBox"
+                          className="FanSelcetCoverImageBox03"
                           onClick={() => {
                             this.setState({ imgToggle: 0 });
                             this.handleImageChange('');
@@ -234,7 +234,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="CoverImageBox"
+                        className="FanCoverImageBox03"
                         onClick={() => {
                           this.setState({ imgToggle: 3 });
                           this.handleImageChange(fantasyThumbnails[2]);
@@ -246,7 +246,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         <div
                           role="button"
                           aria-hidden="true"
-                          className="SelcetCoverImageBox"
+                          className="FanSelcetCoverImageBox04"
                           onClick={() => {
                             this.setState({ imgToggle: 0 });
                             this.handleImageChange('');
@@ -257,7 +257,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="CoverImageBox"
+                        className="FanCoverImageBox04"
                         onClick={() => {
                           this.setState({ imgToggle: 4 });
                           this.handleImageChange(fantasyThumbnails[3]);
@@ -269,7 +269,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         <div
                           role="button"
                           aria-hidden="true"
-                          className="SelcetCoverImageBox"
+                          className="FanSelcetCoverImageBox05"
                           onClick={() => {
                             this.setState({ imgToggle: 0 });
                             this.handleImageChange('');
@@ -280,7 +280,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="CoverImageBox"
+                        className="FanCoverImageBox05"
                         onClick={() => {
                           this.setState({ imgToggle: 5 });
                           this.handleImageChange(fantasyThumbnails[4]);
@@ -292,7 +292,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                         <div
                           role="button"
                           aria-hidden="true"
-                          className="SelcetCoverImageBox"
+                          className="FanSelcetCoverImageBox06"
                           onClick={() => {
                             this.setState({ imgToggle: 0 });
                             this.handleImageChange('');
@@ -303,7 +303,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="CoverImageBox"
+                        className="FanCoverImageBox06"
                         onClick={() => {
                           this.setState({ imgToggle: 6 });
                           this.handleImageChange(fantasyThumbnails[5]);
@@ -319,7 +319,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="SelcetCoverImageBox"
+                        className="MaSelcetCoverImageBox01"
                         onClick={() => {
                           this.setState({ imgToggle: 0 });
                           this.handleImageChange('');
@@ -329,7 +329,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="CoverImageBox"
+                        className="MaCoverImageBox01"
                         onClick={() => {
                           this.setState({ imgToggle: 7 });
                           this.handleImageChange(martialArtsThumbnails[0]);
@@ -340,7 +340,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="SelcetCoverImageBox"
+                        className="MaSelcetCoverImageBox02"
                         onClick={() => {
                           this.setState({ imgToggle: 0 });
                           this.handleImageChange('');
@@ -350,7 +350,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="CoverImageBox"
+                        className="MaCoverImageBox02"
                         onClick={() => {
                           this.setState({ imgToggle: 8 });
                           this.handleImageChange(martialArtsThumbnails[1]);
@@ -361,7 +361,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="SelcetCoverImageBox"
+                        className="MaSelcetCoverImageBox03"
                         onClick={() => {
                           this.setState({ imgToggle: 0 });
                           this.handleImageChange('');
@@ -371,7 +371,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="CoverImageBox"
+                        className="MaCoverImageBox03"
                         onClick={() => {
                           this.setState({ imgToggle: 9 });
                           this.handleImageChange(martialArtsThumbnails[2]);
@@ -382,7 +382,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="SelcetCoverImageBox"
+                        className="MaSelcetCoverImageBox04"
                         onClick={() => {
                           this.setState({ imgToggle: 0 });
                           this.handleImageChange('');
@@ -392,7 +392,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="CoverImageBox"
+                        className="MaCoverImageBox04"
                         onClick={() => {
                           this.setState({ imgToggle: 10 });
                           this.handleImageChange(martialArtsThumbnails[3]);
@@ -403,7 +403,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="SelcetCoverImageBox"
+                        className="MaSelcetCoverImageBox05"
                         onClick={() => {
                           this.setState({ imgToggle: 0 });
                           this.handleImageChange('');
@@ -413,7 +413,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="CoverImageBox"
+                        className="MaCoverImageBox05"
                         onClick={() => {
                           this.setState({ imgToggle: 11 });
                           this.handleImageChange(martialArtsThumbnails[4]);
@@ -424,7 +424,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="SelcetCoverImageBox"
+                        className="MaSelcetCoverImageBox06"
                         onClick={() => {
                           this.setState({ imgToggle: 0 });
                           this.handleImageChange('');
@@ -434,7 +434,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="CoverImageBox"
+                        className="MaCoverImageBox06"
                         onClick={() => {
                           this.setState({ imgToggle: 12 });
                           this.handleImageChange(martialArtsThumbnails[5]);
@@ -450,7 +450,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="SelcetCoverImageBox"
+                        className="RoSelcetCoverImageBox01"
                         onClick={() => {
                           this.setState({ imgToggle: 0 });
                           this.handleImageChange('');
@@ -460,7 +460,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="CoverImageBox"
+                        className="RoCoverImageBox01"
                         onClick={() => {
                           this.setState({ imgToggle: 13 });
                           this.handleImageChange(romanceThumbnails[0]);
@@ -471,7 +471,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="SelcetCoverImageBox"
+                        className="RoSelcetCoverImageBox02"
                         onClick={() => {
                           this.setState({ imgToggle: 0 });
                           this.handleImageChange('');
@@ -481,7 +481,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="CoverImageBox"
+                        className="RoCoverImageBox02"
                         onClick={() => {
                           this.setState({ imgToggle: 14 });
                           this.handleImageChange(romanceThumbnails[1]);
@@ -492,7 +492,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="SelcetCoverImageBox"
+                        className="RoSelcetCoverImageBox03"
                         onClick={() => {
                           this.setState({ imgToggle: 0 });
                           this.handleImageChange('');
@@ -502,7 +502,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="CoverImageBox"
+                        className="RoCoverImageBox03"
                         onClick={() => {
                           this.setState({ imgToggle: 15 });
                           this.handleImageChange(romanceThumbnails[2]);
@@ -513,7 +513,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="SelcetCoverImageBox"
+                        className="RoSelcetCoverImageBox04"
                         onClick={() => {
                           this.setState({ imgToggle: 0 });
                           this.handleImageChange('');
@@ -523,7 +523,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="CoverImageBox"
+                        className="RoCoverImageBox04"
                         onClick={() => {
                           this.setState({ imgToggle: 16 });
                           this.handleImageChange(romanceThumbnails[3]);
@@ -534,7 +534,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="SelcetCoverImageBox"
+                        className="RoSelcetCoverImageBox05"
                         onClick={() => {
                           this.setState({ imgToggle: 0 });
                           this.handleImageChange('');
@@ -544,7 +544,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="CoverImageBox"
+                        className="RoCoverImageBox05"
                         onClick={() => {
                           this.setState({ imgToggle: 17 });
                           this.handleImageChange(romanceThumbnails[4]);
@@ -555,7 +555,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="SelcetCoverImageBox"
+                        className="RoSelcetCoverImageBox06"
                         onClick={() => {
                           this.setState({ imgToggle: 0 });
                           this.handleImageChange('');
@@ -565,7 +565,7 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
                       <div
                         role="button"
                         aria-hidden="true"
-                        className="CoverImageBox"
+                        className="RoCoverImageBox06"
                         onClick={() => {
                           this.setState({ imgToggle: 18 });
                           this.handleImageChange(romanceThumbnails[5]);
