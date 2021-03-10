@@ -112,13 +112,13 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
     episodeId: 1,
     novelId: 2,
   });
-  const handleClickedSpecificEpisode = (
+  const handleClickedSpecificEpisode = async (
     parameter: ClickedSpecificEpisodeProps,
   ) => {
     // eslint-disable-next-line no-console
     console.log(parameter);
-    setClickedSpecificEpisode(parameter);
-    handleAxiosSpecificEpisodeData();
+    await setClickedSpecificEpisode(parameter);
+    await handleAxiosSpecificEpisodeData();
   };
   // ? 위에서 뽑아온 정보로 axios 날려 받은 정보
   const [specificEpisodeData, setSpecificEpisodeData] = useState({
