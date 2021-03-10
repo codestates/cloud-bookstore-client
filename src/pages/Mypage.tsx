@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Dispatch, SetStateAction } from 'react';
 import {
   withRouter,
   Route,
@@ -15,10 +15,40 @@ import MakeNovel from './myCategoryComponents/MakeNovel';
 import MyNovelEpisodeList from './myCategoryComponents/MyNovelEpisodeList';
 import axios from 'axios';
 import WriteNovelEpisode from './myCategoryComponents/WriteNovelEpisode';
-
+import EditEpisode from './myCategoryComponents/EditEpisode';
 interface MyNovelDataProps extends RouteComponentProps {
   handleAxiosClickedNovelData: (data: number) => void;
   handleAxiosMyPage: () => void;
+  setSpecificEpisodeData: Dispatch<
+    SetStateAction<{
+      episode: {
+        id: number;
+        episodeNum: number;
+        novelId: number;
+        title: string;
+        text: string;
+        thumbnail: string;
+        cloud: number;
+        createdAt: string;
+        updatedAt: string;
+      };
+      novelTitle: { title: string };
+    }>
+  >;
+  specificEpisodeData: {
+    episode: {
+      id: number;
+      episodeNum: number;
+      novelId: number;
+      title: string;
+      text: string;
+      thumbnail: string;
+      cloud: number;
+      createdAt: string;
+      updatedAt: string;
+    };
+    novelTitle: { title: string };
+  };
   myPageData: {
     userHistories: {
       novels: {
@@ -262,20 +292,32 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
           )}
         />
         <Route
-          path="/main/mypage/MyNovelEpisodeList/:id"
+          path="/main/mypage/myNovelEpisodeList/:id"
           render={() => (
             <MyNovelEpisodeList
+              setSpecificEpisodeData={props.setSpecificEpisodeData}
               handleAxiosMyPage={props.handleAxiosMyPage}
               myCurrentNewNovel={myCurrentNewNovel}
               myNovelEpisodeList={myNovelEpisodeList}
+              handleAxiosMyNovelEpisodeList={handleAxiosMyNovelEpisodeList}
             />
           )}
         />
         <Route
-          path="/main/mypage/MyNovelEpisodeWrite/:id"
+          path="/main/mypage/myNovelEpisodeWrite/:id"
           render={() => (
             <WriteNovelEpisode
               handleAxiosMyNovelEpisodeList={handleAxiosMyNovelEpisodeList}
+              myCurrentNewNovel={myCurrentNewNovel}
+            />
+          )}
+        />
+        <Route
+          path="/main/mypage/editEpisode/:id"
+          render={() => (
+            <EditEpisode
+              handleAxiosMyNovelEpisodeList={handleAxiosMyNovelEpisodeList}
+              specificEpisodeData={props.specificEpisodeData}
               myCurrentNewNovel={myCurrentNewNovel}
             />
           )}

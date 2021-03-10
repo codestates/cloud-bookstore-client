@@ -46,11 +46,11 @@
   height: 209px;
   margin-right: 16px;
 }
-.NovelEpisodeListlDescription{
+.NovelEpisodeListDescription{
     width: 624px;
     color: #464646;
   }
-  .NovelEpisodeListlButton{
+  .NovelEpisodeListButton{
     width: 144px;
     height: 44px;
   border: 1px solid #b8b8b8;
@@ -64,14 +64,14 @@
   cursor: pointer;
   }
 
-  .NovelEpisodeListlButton:hover{
+  .NovelEpisodeListButton:hover{
       background-color:#2b79fe;
       color:#fff;
       border: 1px solid #2b79fe;
   }
 
 
-  .NovelEpisodeListlSecondButton{
+  .NovelEpisodeListSecondButton{
     width: 144px;
     height: 44px;
   border: 1px solid #b8b8b8;
@@ -84,7 +84,7 @@
   cursor: pointer;
   }
 
-  .NovelEpisodeListlSecondButton:hover{
+  .NovelEpisodeListSecondButton:hover{
     background-color:#2b79fe;
     color:#fff;
     border: 1px solid #2b79fe;
@@ -114,14 +114,14 @@
     font-weight: bold;
 }
 
-.myNovelEpisodeListemtyBox {
+.myNovelEpisodeListEmptyBox {
     display: grid;
     place-items: center;
     width: 943px;
     height: 23rem;
   }
 
-  .myNovelEpisodeListboxGrid {
+  .myNovelEpisodeListBoxGrid {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -182,7 +182,7 @@
     .MyNovelEpisodeListSecondBoxLine{
       width: 704px;
     }
-    .NovelEpisodeListlDescription{
+    .NovelEpisodeListDescription{
         width: 400px;
       }
       .NovelEpisodeListBtnWrapper{
@@ -206,7 +206,7 @@
     .MyNovelEpisodeListTitle{
         font-size: 30px;
     }
-    .myNovelEpisodeListemtyBox {
+    .myNovelEpisodeListEmptyBox {
         width: 469px;
     }
     .MyNovelEpisodeListDetailInfo{
@@ -223,7 +223,7 @@
         height: 209px;
 
       }
-      .NovelEpisodeListlDescription{
+      .NovelEpisodeListDescription{
         margin-bottom: 24px;
         font-size: 16px;
         width: 304px;
@@ -247,7 +247,7 @@
     .MyNovelEpisodeListSecondBoxLine{
         width: 469px;
     }
-    .myNovelEpisodeListemtyBox {
+    .myNovelEpisodeListEmptyBox {
         width: 469px;
     }
     .MyNovelEpisodeListTitle{
@@ -259,7 +259,7 @@
         width: 304px;
         height: 209px;
       }
-      .NovelEpisodeListlDescription{
+      .NovelEpisodeListDescription{
         margin-bottom: 24px;
         font-size: 16px;
         width: 304px;
@@ -283,7 +283,7 @@
     .MyNovelEpisodeListWrapper{    
         width: 370px;
       }
-      .myNovelEpisodeListemtyBox {
+      .myNovelEpisodeListEmptyBox {
         width: 370px;
     }
     .MyNovelEpisodeListBoxLine{
@@ -299,7 +299,7 @@
         width: 304px;
         height: 209px;
       }
-      .NovelEpisodeListlDescription{
+      .NovelEpisodeListDescription{
         margin-bottom: 24px;
         font-size: 16px;
         width: 304px;

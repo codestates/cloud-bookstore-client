@@ -101,7 +101,7 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
         await this.props.handleAxiosMyPage();
         await this.props.handleMyCurrentNewNovel(data.data.currentNovel);
         await this.props.history.push(
-          `/main/mypage/MyNovelEpisodeList/${data.data.currentNovel.id}`,
+          `/main/mypage/myNovelEpisodeList/${data.data.currentNovel.id}`,
         );
       });
   };
