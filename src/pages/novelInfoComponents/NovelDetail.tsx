@@ -172,12 +172,12 @@ const NovelDetail: React.FC<novelDetailProps> = (props: novelDetailProps) => {
           <div
             className="firstEpisodeButton"
             role="presentation"
-            onClick={() => {
-              props.handleClickedSpecificEpisode({
+            onClick={async () => {
+              await props.handleClickedSpecificEpisode({
                 episodeId: 1,
                 novelId: props.clickedNovelData.data.id,
               });
-              props.history.push(
+              await props.history.push(
                 `/novel/${props.clickedNovelData.data.id}/episode/${1}`,
               );
             }}
