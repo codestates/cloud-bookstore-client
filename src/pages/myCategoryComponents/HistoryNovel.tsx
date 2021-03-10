@@ -28,19 +28,23 @@ const HistoryNovel: React.FC<userHistoriesDataProps> = (
 ) => {
   return (
     <div className="wholeHistoryNovelWrapper">
-      <div className="historyNovelInnerWrapper">
-        {props.userHistoriesData.length === 0 ? (
-          <></>
-        ) : (
-          props.userHistoriesData.map((ele) => (
+      {props.userHistoriesData.length === 0 ? (
+        <div className="emtyBox">
+          <div className="boxGrid">
+            <div className="emptyTitle">최근 본 작품이 없습니다</div>
+          </div>
+        </div>
+      ) : (
+        <div className="historyNovelInnerWrapper">
+          {props.userHistoriesData.map((ele) => (
             <HistoryNovelList
               key={ele.episodes.id}
               userHistories={ele}
               handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
             />
-          ))
-        )}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

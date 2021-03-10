@@ -26,19 +26,23 @@ const UserLikes: React.FC<userHistoriesDataProps> = (
 ) => {
   return (
     <div className="wholeHistoryNovelWrapper">
-      <div className="historyNovelInnerWrapper">
-        {props.userLikesData.length === 0 ? (
-          <></>
-        ) : (
-          props.userLikesData.map((ele) => (
+      {props.userLikesData.length === 0 ? (
+        <div className="emtyBox">
+          <div className="boxGrid">
+            <div className="emptyTitle">관심 작품이 없습니다</div>
+          </div>
+        </div>
+      ) : (
+        <div className="historyNovelInnerWrapper">
+          {props.userLikesData.map((ele) => (
             <UserLikesList
               key={ele.id}
               userLikes={ele}
               handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
             />
-          ))
-        )}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

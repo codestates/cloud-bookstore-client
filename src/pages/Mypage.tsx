@@ -155,18 +155,6 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
       createdAt: '2021-02-24T21:24:59.962Z',
       updatedAt: '2021-02-26T14:43:22.768Z',
     },
-    {
-      id: 11,
-      episodeNum: 2,
-      novelId: 34,
-      title: '두 번째 만남',
-      text: '그를 본 순간, 나는 느꼈다...',
-      thumbnail:
-        'https://user-images.githubusercontent.com/72306693/108985620-99c68280-76d4-11eb-9305-50ef35e77c93.png',
-      cloud: 0,
-      createdAt: '2021-02-26T16:01:48.765Z',
-      updatedAt: '2021-02-26T16:01:48.765Z',
-    },
   ]);
 
   const handleAxiosMyNovelEpisodeList = (novelId: number) => {
@@ -276,6 +264,7 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
           path="/main/mypage/makeNovel"
           render={() => (
             <MakeNovel
+              handleAxiosMyNovelEpisodeList={handleAxiosMyNovelEpisodeList}
               handleAxiosMyPage={props.handleAxiosMyPage}
               handleMyCurrentNewNovel={handleMyCurrentNewNovel}
             />
