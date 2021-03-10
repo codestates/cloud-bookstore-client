@@ -136,6 +136,9 @@ interface mainPageProps extends RouteComponentProps {
   handleNovelTitleSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSearchClick: () => void;
   handleAxiosSpecificEpisodeData: (novelId: number, episodeId: number) => void;
+  handleAxiosFantasy: () => void;
+  handleAxiosMartialArts: () => void;
+  handleAxiosRomance: () => void;
   setSpecificEpisodeData: Dispatch<
     SetStateAction<{
       episode: {
@@ -437,6 +440,9 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                 handleAxiosMyPage={props.handleAxiosMyPage}
                 myPageData={props.myPageData}
                 handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
+                handleAxiosFantasy={props.handleAxiosFantasy}
+                handleAxiosMartialArts={props.handleAxiosMartialArts}
+                handleAxiosRomance={props.handleAxiosRomance}
               />
             )}
           />

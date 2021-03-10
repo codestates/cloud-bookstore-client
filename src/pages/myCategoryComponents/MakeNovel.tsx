@@ -8,6 +8,9 @@ interface handleAxiosMyPageProps extends RouteComponentProps {
   handleAxiosMyPage: () => void;
   handleMyCurrentNewNovel: (data: CurrentNewNovelProps) => void;
   handleAxiosMyNovelEpisodeList: (novelId: number) => void;
+  handleAxiosFantasy: () => void;
+  handleAxiosMartialArts: () => void;
+  handleAxiosRomance: () => void;
 }
 
 interface CurrentNewNovelProps {
@@ -87,8 +90,19 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
       this,
     );
     this.handleWriteNovel = this.handleWriteNovel.bind(this);
+    this.handleReRendering = this.handleReRendering.bind(this);
     // this.handleImgToggle = this.handleImgToggle.bind(this);
   }
+
+  handleReRendering = () => {
+    if (this.state.selectedOption.value === 1) {
+      this.props.handleAxiosFantasy();
+    } else if (this.state.selectedOption.value === 2) {
+      this.props.handleAxiosMartialArts();
+    } else if (this.state.selectedOption.value === 3) {
+      this.props.handleAxiosRomance();
+    }
+  };
 
   handleWriteNovel = () => {
     axios
@@ -590,7 +604,13 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
             {this.state.novelDescription.length}/250
           </span>
           <div className="BoxLineSecond" />
-          <div className="saveBtn" onClick={this.handleWriteNovel}>
+          <div
+            className="saveBtn"
+            onClick={() => {
+              this.handleWriteNovel();
+              this.handleReRendering();
+            }}
+          >
             저장
           </div>
           <Link to="myNovelList" className="cancelBtn">
