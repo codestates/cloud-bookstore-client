@@ -70,7 +70,7 @@ const PurchaseCheckList: React.FC<purchaseCheckListProps> = (
           </div>
           <div className="novelListSubjectWrapper">
             <div className="HomeNovelListSubject">
-              {props.episode.episodeNum}화{' '}
+              {props.episode.episodeNum}화.{' '}
               {getBoolTitleLength()
                 ? `${slicedTitle} ...`
                 : props.episode.title}

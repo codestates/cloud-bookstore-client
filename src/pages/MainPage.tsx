@@ -268,11 +268,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
       setLoginModal(!loginModal);
     }
   };
-  const enterEvent = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      props.handleSearchClick();
-    }
-  };
+
   return (
     <div>
       <div className="wholeMainPageWrapper">
@@ -360,7 +356,6 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                   onChange={props.handleNovelTitleSearch}
                   maxLength={50}
                   value={props.novelTitleSearch}
-                  onKeyPress={enterEvent}
                 />
                 <div className="navSearchBtn">
                   <MdSearch onClick={props.handleSearchClick} />
@@ -455,6 +450,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
             )}
           />
           <Route
+            exact
             path="/main/novel/:id"
             render={() => (
               <NovelInfo

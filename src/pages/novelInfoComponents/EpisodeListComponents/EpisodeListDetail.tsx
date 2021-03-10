@@ -69,7 +69,7 @@ const EpisodeListDetail: React.FC<episodeListProps> = (
           </div>
           <div className="novelListSubjectWrapper">
             <div className="HomeNovelListSubject">
-              {props.episode.episodeNum}화{' '}
+              {props.episode.episodeNum}화.{' '}
               {getBoolTitleLength()
                 ? `${slicedTitle} ...`
                 : props.episode.title}

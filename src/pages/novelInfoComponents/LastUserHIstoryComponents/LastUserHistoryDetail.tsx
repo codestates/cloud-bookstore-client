@@ -124,7 +124,7 @@ const LastUserHistoryDetail: React.FC<lastUserHistoryProps> = (
         </div>
         <div className="novelListSubjectWrapper">
           <div className="HomeNovelListSubject">
-            {props.clickedNovelData.userHistory.episodeDetail.episodeNum}화{' '}
+            {props.clickedNovelData.userHistory.episodeDetail.episodeNum}화.{' '}
             {getBoolTitleLength()
               ? `${slicedTitle} ...`
               : props.clickedNovelData.userHistory.userHistory[0].title}

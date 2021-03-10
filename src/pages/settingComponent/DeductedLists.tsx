@@ -26,7 +26,7 @@ const DeductedLists: React.FC<deductedProps> = (props: deductedProps) => {
           </div>
           <div className="cloudInfo">{props.deductedData.title.title}</div>
           <div className="cloudEpisodeTitle">
-            {`${props.deductedData.episode.episodeNum}화 ${props.deductedData.episode.title}`}
+            {`${props.deductedData.episode.episodeNum}화. ${props.deductedData.episode.title}`}
           </div>
         </div>
       </div>
