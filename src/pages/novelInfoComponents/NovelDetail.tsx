@@ -89,6 +89,10 @@ const NovelDetail: React.FC<novelDetailProps> = (props: novelDetailProps) => {
       .then(() => props.toggleUserLike());
   };
 
+  const firstEpisodeId = props.clickedNovelData.episodes.filter(
+    (data) => data.episodeNum === 1,
+  );
+
   return (
     <div className="novelDetailWrapper">
       <div className="novelHeader">
@@ -172,14 +176,11 @@ const NovelDetail: React.FC<novelDetailProps> = (props: novelDetailProps) => {
           <div
             className="firstEpisodeButton"
             role="presentation"
-            onClick={async () => {
-              await props.handleClickedSpecificEpisode({
-                episodeId: 1,
+            onClick={() => {
+              props.handleClickedSpecificEpisode({
+                episodeId: firstEpisodeId[0].id,
                 novelId: props.clickedNovelData.data.id,
               });
-              await props.history.push(
-                `/novel/${props.clickedNovelData.data.id}/episode/${1}`,
-              );
             }}
           >
             첫 화 보기
