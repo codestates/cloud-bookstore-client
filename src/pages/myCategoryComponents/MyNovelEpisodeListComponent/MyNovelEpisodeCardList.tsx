@@ -69,7 +69,7 @@ const MyNovelEpisodeCardList: React.FC<MyNovelEpisodeProps> = (
 
   const handleDeleteMyEpisode = (): void => {
     axios
-      .post(
+      .delete(
         `https://server.cloud-bookstore.com/mypage/delete/episode/${props.episodes.novelId}/${props.episodes.id}`,
       )
       .then(() => {
