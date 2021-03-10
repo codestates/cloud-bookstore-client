@@ -5,6 +5,7 @@ import { RouteComponentProps, withRouter } from 'react-router-dom';
 import './WriteNovelEpisode.css';
 
 interface myCurrentNewNovelProps extends RouteComponentProps {
+  handleNovelComplete: () => void;
   handleAxiosMyNovelEpisodeList: (novelId: number) => void;
   specificEpisodeData: {
     episode: {
@@ -134,6 +135,7 @@ class EditEpisode extends Component<myCurrentNewNovelProps, State> {
         text: this.state.novelEpisode,
         complete: this.state.complete,
       })
+      .then(() => this.props.handleNovelComplete())
       .then(() => {
         this.props.handleAxiosMyNovelEpisodeList(
           this.props.myCurrentNewNovel.id,
