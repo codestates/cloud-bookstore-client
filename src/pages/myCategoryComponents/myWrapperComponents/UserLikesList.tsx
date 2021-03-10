@@ -58,14 +58,14 @@ const UserLikes: React.FC<HistoryDataProps> = (props: HistoryDataProps) => {
         ) : (
           <></>
         )}
-        {refinedupdatedAt === getToday() ? (
-          <div className="novelListNewObject">NEW</div>
-        ) : (
-          <></>
-        )}
       </div>
       <div className="homeNovelListContentWrapper">
         <div className="countCloud">
+          {refinedupdatedAt === getToday() ? (
+            <div className="novelListNewObject">NEW</div>
+          ) : (
+            <></>
+          )}
           <div className="countCloudText">누적구름 {props.userLikes.cloud}</div>
           <div className="countCloudImg"></div>
         </div>
