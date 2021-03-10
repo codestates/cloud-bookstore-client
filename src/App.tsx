@@ -486,6 +486,9 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
               handleAxiosMyPage={handleAxiosMyPage}
               handleAxiosSpecificEpisodeData={handleAxiosSpecificEpisodeData}
               handleClickedSpecificEpisode={handleClickedSpecificEpisode}
+              handleAxiosFantasy={handleAxiosFantasy}
+              handleAxiosMartialArts={handleAxiosMartialArts}
+              handleAxiosRomance={handleAxiosRomance}
             />
           )}
         />

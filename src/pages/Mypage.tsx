@@ -19,6 +19,9 @@ import EditEpisode from './myCategoryComponents/EditEpisode';
 interface MyNovelDataProps extends RouteComponentProps {
   handleAxiosClickedNovelData: (data: number) => void;
   handleAxiosMyPage: () => void;
+  handleAxiosFantasy: () => void;
+  handleAxiosMartialArts: () => void;
+  handleAxiosRomance: () => void;
   setSpecificEpisodeData: Dispatch<
     SetStateAction<{
       episode: {
@@ -267,6 +270,9 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
               handleAxiosMyNovelEpisodeList={handleAxiosMyNovelEpisodeList}
               handleAxiosMyPage={props.handleAxiosMyPage}
               handleMyCurrentNewNovel={handleMyCurrentNewNovel}
+              handleAxiosFantasy={props.handleAxiosFantasy}
+              handleAxiosMartialArts={props.handleAxiosMartialArts}
+              handleAxiosRomance={props.handleAxiosRomance}
             />
           )}
         />
