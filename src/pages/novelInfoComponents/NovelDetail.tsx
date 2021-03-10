@@ -128,7 +128,7 @@ const NovelDetail: React.FC<novelDetailProps> = (props: novelDetailProps) => {
                 />
                 <div
                   role="presentation"
-                  className="novelLikesButton LikePosition"
+                  className="novelLikesButton"
                   onClick={() => handleUserDislike()}
                 >
                   관심
@@ -139,7 +139,7 @@ const NovelDetail: React.FC<novelDetailProps> = (props: novelDetailProps) => {
                 <MdStars onClick={() => handleUserLike()} />
                 <div
                   role="presentation"
-                  className="novelLikesButton LikePosition"
+                  className="novelLikesButton"
                   onClick={() => handleUserLike()}
                 >
                   관심
@@ -174,18 +174,22 @@ const NovelDetail: React.FC<novelDetailProps> = (props: novelDetailProps) => {
           <div className="novelDetailDescription">
             {props.clickedNovelData.data.description}
           </div>
-          <div
-            className="firstEpisodeButton"
-            role="presentation"
-            onClick={() => {
-              props.handleClickedSpecificEpisode({
-                episodeId: firstEpisodeId[0].id,
-                novelId: props.clickedNovelData.data.id,
-              });
-            }}
-          >
-            첫 화 보기
-          </div>
+          {props.clickedNovelData.episodes.length === 0 ? (
+            <></>
+          ) : (
+            <div
+              className="firstEpisodeButton"
+              role="presentation"
+              onClick={() => {
+                props.handleClickedSpecificEpisode({
+                  episodeId: firstEpisodeId[0].id,
+                  novelId: props.clickedNovelData.data.id,
+                });
+              }}
+            >
+              첫 화 보기
+            </div>
+          )}
         </div>
       </div>
     </div>
