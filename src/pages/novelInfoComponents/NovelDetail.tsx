@@ -128,7 +128,7 @@ const NovelDetail: React.FC<novelDetailProps> = (props: novelDetailProps) => {
                 />
                 <div
                   role="presentation"
-                  className="novelLikesButton"
+                  className="novelLikesButton LikePosition"
                   onClick={() => handleUserDislike()}
                 >
                   관심
@@ -177,12 +177,8 @@ const NovelDetail: React.FC<novelDetailProps> = (props: novelDetailProps) => {
           <div
             className="firstEpisodeButton"
             role="presentation"
-            onClick={async () => {
-              await props.handleAxiosSpecificEpisodeData(
-                props.clickedNovelData.data.id,
-                firstEpisodeId[0].id,
-              );
-              await props.handleClickedSpecificEpisode({
+            onClick={() => {
+              props.handleClickedSpecificEpisode({
                 episodeId: firstEpisodeId[0].id,
                 novelId: props.clickedNovelData.data.id,
               });
