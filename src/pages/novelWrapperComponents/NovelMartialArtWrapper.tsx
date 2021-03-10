@@ -50,6 +50,7 @@ const NovelMartialArtWrapper: React.FC<MartialArtsDataProps> = (
             history={props.history}
             location={props.location}
             match={props.match}
+            handleMartialArtOn={props.handleMartialArtOn}
           />
         ))}
       </div>
