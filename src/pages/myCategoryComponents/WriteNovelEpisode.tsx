@@ -573,7 +573,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
             </div>
             <div className="BoxLineSecond" />
             <textarea
-              placeholder="작품내용"
+              placeholder="회차내용"
               onChange={this.handleNovelEpisodeChange}
               maxLength={1000}
             ></textarea>

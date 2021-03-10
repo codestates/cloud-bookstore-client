@@ -22,7 +22,7 @@ const WriteLure: React.FC<RouteComponentProps> = (
             className="WriteLureBtn"
             role="presentation"
             onClick={() => {
-              props.history.push(`/main/mypage/myNovelList`);
+              props.history.push('/main/mypage');
             }}
           >
             글쓰러 가기
