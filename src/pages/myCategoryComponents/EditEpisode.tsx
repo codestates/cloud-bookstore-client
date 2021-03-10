@@ -125,7 +125,7 @@ class EditEpisode extends Component<myCurrentNewNovelProps, State> {
 
   handelEpisodeEdit = (): void => {
     axios
-      .post('https://server.cloud-bookstore.com/mypage/edit/episode', {
+      .patch('https://server.cloud-bookstore.com/mypage/edit/episode', {
         id: this.props.specificEpisodeData.episode.id,
         novelId: this.props.myCurrentNewNovel.id,
         episodeNum: this.state.episodeNum,
@@ -168,12 +168,14 @@ class EditEpisode extends Component<myCurrentNewNovelProps, State> {
             min={1}
             className="NumberBox"
             onChange={this.handleEpisodeNumChange}
+            value={this.state.episodeNum}
           />
           <div className="BoxLineSecond" />
           <input
             placeholder="회차제목"
             className="TitleTextBox"
             onChange={this.handleEpisodeTitleChange}
+            value={this.state.episodeTitle}
           />
           <div className="BoxLineSecond" />
           <div className="textLineImg">
@@ -588,9 +590,10 @@ class EditEpisode extends Component<myCurrentNewNovelProps, State> {
             </div>
             <div className="BoxLineSecond" />
             <textarea
-              placeholder="작품내용"
+              placeholder="회차내용"
               onChange={this.handleNovelEpisodeChange}
               maxLength={1000}
+              value={this.state.novelEpisode}
             ></textarea>
             <span className="novelDescriptionNewText">
               {this.state.novelEpisode.length}/1000
