@@ -63,12 +63,6 @@ const CommentsList: React.FC<CommentsDataProps> = (
     axios
       .delete(
         `https://server.cloud-bookstore.com/novel/comment/delete/${props.novelData.id}/${props.data.id}`,
-        {
-          data: {
-            novelId: props.novelData.id,
-            commentId: props.data.id,
-          },
-        },
       )
       .then(() => props.handleAxiosClickedNovelData(props.novelData.id));
   };
