@@ -138,12 +138,13 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
       title: '잊지마 4시1분',
     },
   });
-  const handleAxiosSpecificEpisodeData = () => {
+  const handleAxiosSpecificEpisodeData = (
+    novelId: number = clickedSpecificEpisode.novelId,
+    episodeId: number = clickedSpecificEpisode.episodeId,
+  ) => {
     axios
-      .get(
-        `https://server.cloud-bookstore.com/novel/${clickedSpecificEpisode.novelId}/${clickedSpecificEpisode.episodeId}`,
-      )
-      .then((res) => {
+      .get(`https://server.cloud-bookstore.com/novel/${novelId}/${episodeId}`)
+      .then(async (res) => {
         if (res.data === '다음 회차를 보기 위해 로그인을 해주세요') {
           alert('다음 회차를 보기 위해 로그인을 해주세요');
         } else if (
@@ -154,8 +155,8 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
             '구름을 모두 사용하셨습니다. 기다리면 내일 무료 구름 3개가 충전됩니다.',
           );
         } else {
-          setSpecificEpisodeData(res.data);
-          props.history.push(
+          await setSpecificEpisodeData(res.data);
+          await props.history.push(
             `/novel/${res.data.episode.novelId}/episode/${res.data.episode.episodeNum}`,
           );
         }
@@ -474,6 +475,7 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
               romanceNovelData={romanceNovelData}
               myPageData={myPageData}
               handleAxiosMyPage={handleAxiosMyPage}
+              handleAxiosSpecificEpisodeData={handleAxiosSpecificEpisodeData}
               handleClickedSpecificEpisode={handleClickedSpecificEpisode}
             />
           )}

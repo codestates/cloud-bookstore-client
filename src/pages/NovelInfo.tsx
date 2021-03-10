@@ -9,6 +9,7 @@ interface ClickedNovelInfoProps extends RouteComponentProps {
   toggleUserLike: () => void;
   handleNovelLikesCount: (userLike: number) => void;
   handleAxiosClickedNovelData: (parameter: number) => void;
+  handleAxiosSpecificEpisodeData: (novelId: number, episodeId: number) => void;
   handleClickedSpecificEpisode: (parameter: {
     episodeId: number;
     novelId: number;
@@ -69,6 +70,7 @@ const NovelInfo: React.FC<ClickedNovelInfoProps> = (
         location={props.location}
         match={props.match}
         handleClickedSpecificEpisode={props.handleClickedSpecificEpisode}
+        handleAxiosSpecificEpisodeData={props.handleAxiosSpecificEpisodeData}
       />
       {props.clickedNovelData.userHistory.length === 0 ? (
         <div className="emptySpaceNovelInfo" />

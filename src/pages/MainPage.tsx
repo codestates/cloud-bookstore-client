@@ -135,6 +135,7 @@ interface mainPageProps extends RouteComponentProps {
   handleNovelLikesCount: (userLike: number) => void;
   handleNovelTitleSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleSearchClick: () => void;
+  handleAxiosSpecificEpisodeData: (novelId: number, episodeId: number) => void;
   setSpecificEpisodeData: Dispatch<
     SetStateAction<{
       episode: {
@@ -457,6 +458,9 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
             path="/main/novel/:id"
             render={() => (
               <NovelInfo
+                handleAxiosSpecificEpisodeData={
+                  props.handleAxiosSpecificEpisodeData
+                }
                 clickedNovelData={props.clickedNovelData}
                 handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
                 nickname={props.nickname}
