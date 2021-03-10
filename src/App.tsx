@@ -120,9 +120,13 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
     parameter: ClickedSpecificEpisodeProps,
   ) => {
     // eslint-disable-next-line no-console
-    console.log(parameter);
-    setClickedSpecificEpisode(parameter, () =>
-      handleAxiosSpecificEpisodeData(),
+    setClickedSpecificEpisode(
+      parameter,
+      (currentClickedSpecificEpisode: { novelId: number; episodeId: number }) =>
+        handleAxiosSpecificEpisodeData(
+          currentClickedSpecificEpisode.novelId,
+          currentClickedSpecificEpisode.episodeId,
+        ),
     );
   };
   // ? 위에서 뽑아온 정보로 axios 날려 받은 정보
