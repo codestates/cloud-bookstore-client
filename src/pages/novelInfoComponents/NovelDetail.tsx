@@ -138,7 +138,7 @@ const NovelDetail: React.FC<novelDetailProps> = (props: novelDetailProps) => {
                 <MdStars onClick={() => handleUserLike()} />
                 <div
                   role="presentation"
-                  className="novelLikesButton"
+                  className="novelLikesButton LikePosition"
                   onClick={() => handleUserLike()}
                 >
                   관심
