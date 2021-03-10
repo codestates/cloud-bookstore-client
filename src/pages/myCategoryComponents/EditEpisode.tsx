@@ -80,7 +80,7 @@ class EditEpisode extends Component<myCurrentNewNovelProps, State> {
       imgToggle: 0,
       selectedImage: this.props.specificEpisodeData.episode.thumbnail,
       novelEpisode: this.props.specificEpisodeData.episode.text,
-      complete: false,
+      complete: this.props.myCurrentNewNovel.complete,
       episodeNum: this.props.specificEpisodeData.episode.episodeNum,
     };
     this.handleEpisodeTitleChange = this.handleEpisodeTitleChange.bind(this);
