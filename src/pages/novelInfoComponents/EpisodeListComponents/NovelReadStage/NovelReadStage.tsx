@@ -7,6 +7,7 @@ import NovelReadContent from './NovelReadContent';
 import Footer from '../../../Footer';
 
 interface SpecificEpisodeDataProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (novelId: number) => void;
   specificEpisodeData: {
     episode: {
       id: number;
@@ -36,6 +37,7 @@ const NovelReadStage: React.FC<SpecificEpisodeDataProps> = (
           history={props.history}
           location={props.location}
           match={props.match}
+          handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
         />
         <NovelReadContent
           specificEpisodeText={props.specificEpisodeData.episode.text}

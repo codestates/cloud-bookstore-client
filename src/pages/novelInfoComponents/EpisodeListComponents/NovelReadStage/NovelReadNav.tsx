@@ -6,6 +6,7 @@ import { HiHome } from 'react-icons/hi';
 import { FaList } from 'react-icons/fa';
 
 interface NovelReadNavProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (novelId: number) => void;
   specificEpisodeData: {
     episode: {
       id: number;
@@ -42,7 +43,7 @@ const UserNav: React.FC<NovelReadNavProps> = (props: NovelReadNavProps) => {
                 {props.specificEpisodeData.novelTitle.title}
               </div>
               <div className="NovelReadEpisodeTitle">
-                {props.specificEpisodeData.episode.episodeNum}화{' '}
+                {props.specificEpisodeData.episode.episodeNum}화.{' '}
                 {props.specificEpisodeData.episode.title}
               </div>
             </div>
@@ -60,8 +61,11 @@ const UserNav: React.FC<NovelReadNavProps> = (props: NovelReadNavProps) => {
               <div
                 className="goToListBtn"
                 role="presentation"
-                onClick={() => {
-                  props.history.push(
+                onClick={async () => {
+                  await props.handleAxiosClickedNovelData(
+                    props.specificEpisodeData.episode.novelId,
+                  );
+                  await props.history.push(
                     `/main/novel/${props.specificEpisodeData.episode.novelId}`,
                   );
                 }}

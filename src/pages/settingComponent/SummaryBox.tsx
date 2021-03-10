@@ -31,24 +31,24 @@ interface deductedProps {
 const SummaryBox: React.FC<summaryProps> = (props: summaryProps) => {
   const [accumulatedHistories, setAccumulatedHistories] = useState([
     {
-      date: '2021-02-27T13:15:10.779Z',
-      cloud: 10,
+      date: '',
+      cloud: 0,
     },
   ]);
   const [deductedHistories, setDeductedHistories] = useState([
     {
       title: {
-        title: '잊지마 4시1분',
+        title: '',
       },
       episode: {
-        id: 2,
-        episodeNum: 2,
-        title: '그 다음날',
+        id: 0,
+        episodeNum: 0,
+        title: '',
         thumbnail: '',
-        cloud: 19,
+        cloud: 0,
       },
-      date: '2021-02-26T10:22:50.676Z',
-      cloud: -1,
+      date: '',
+      cloud: 0,
     },
   ]);
 
