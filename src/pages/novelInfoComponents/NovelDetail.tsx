@@ -9,6 +9,7 @@ import ShareModal from '../../pages/modal/ShareModal';
 interface novelDetailProps extends RouteComponentProps {
   toggleUserLike: () => void;
   handleNovelLikesCount: (userLike: number) => void;
+  handleAxiosSpecificEpisodeData: (novelId: number, episodeId: number) => void;
   handleClickedSpecificEpisode: (parameter: {
     episodeId: number;
     novelId: number;
@@ -176,8 +177,12 @@ const NovelDetail: React.FC<novelDetailProps> = (props: novelDetailProps) => {
           <div
             className="firstEpisodeButton"
             role="presentation"
-            onClick={() => {
-              props.handleClickedSpecificEpisode({
+            onClick={async () => {
+              await props.handleAxiosSpecificEpisodeData(
+                props.clickedNovelData.data.id,
+                firstEpisodeId[0].id,
+              );
+              await props.handleClickedSpecificEpisode({
                 episodeId: firstEpisodeId[0].id,
                 novelId: props.clickedNovelData.data.id,
               });
