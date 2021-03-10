@@ -10,9 +10,9 @@ const NovelReadContent: React.FC<SpecificEpisodeTextProps> = (
 ) => {
   return (
     <div className="wholeSpecificEpisodeTextWrapper">
-      <div className="specificEpisodeTextInnerWrapper">
+      <pre className="specificEpisodeTextInnerWrapper">
         {props.specificEpisodeText}
-      </div>
+      </pre>
     </div>
   );
 };
