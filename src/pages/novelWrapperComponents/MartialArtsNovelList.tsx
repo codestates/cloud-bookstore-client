@@ -4,6 +4,7 @@ import './NovelList.css';
 
 interface MartialArtsDataProps extends RouteComponentProps {
   handleAxiosClickedNovelData: (parameter: number) => void;
+  handleMartialArtOn: () => void;
   martialArtsData: {
     id: number;
     title: string;
@@ -49,6 +50,7 @@ const NovelList: React.FC<MartialArtsDataProps> = (
       className="novelList"
       role="presentation"
       onClick={() => {
+        props.handleMartialArtOn();
         props.handleAxiosClickedNovelData(props.martialArtsData.id);
         props.history.push(`/main/novel/${props.martialArtsData.id}`);
       }}

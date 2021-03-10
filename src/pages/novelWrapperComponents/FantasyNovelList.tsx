@@ -4,6 +4,7 @@ import './NovelList.css';
 
 interface FantasyDataProps extends RouteComponentProps {
   handleAxiosClickedNovelData: (parameter: number) => void;
+  handleFantasyOn: () => void;
   fantasyData: {
     id: number;
     title: string;
@@ -47,6 +48,7 @@ const NovelList: React.FC<FantasyDataProps> = (props: FantasyDataProps) => {
       className="novelList"
       role="presentation"
       onClick={() => {
+        props.handleFantasyOn();
         props.handleAxiosClickedNovelData(props.fantasyData.id);
         props.history.push(`/main/novel/${props.fantasyData.id}`);
       }}

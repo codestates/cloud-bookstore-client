@@ -54,7 +54,9 @@ const CommentsList: React.FC<CommentsDataProps> = (
           commentId: props.data.id,
         },
       })
-      .then(() => props.handleAxiosClickedNovelData(props.novelData.id));
+      .then(() => {
+        props.handleAxiosClickedNovelData(props.novelData.id);
+      });
   };
 
   const handleDeleteComment = () => {
@@ -83,7 +85,10 @@ const CommentsList: React.FC<CommentsDataProps> = (
             <div
               role="presentation"
               className="commentsListEditBtn"
-              onClick={() => handleEditComment()}
+              onClick={() => {
+                handleEditComment();
+                handleEditCommentOn();
+              }}
             >
               확인
             </div>
@@ -91,7 +96,10 @@ const CommentsList: React.FC<CommentsDataProps> = (
             <div
               role="presentation"
               className="commentsListEditBtn"
-              onClick={() => handleEditCommentOn()}
+              onClick={() => {
+                setEditCommentText(props.data.comment);
+                handleEditCommentOn();
+              }}
             >
               수정
             </div>
@@ -118,6 +126,7 @@ const CommentsList: React.FC<CommentsDataProps> = (
       {editComment ? (
         <textarea
           className="commentsListEditText"
+          value={editCommentText}
           onChange={handleChange}
           maxLength={500}
         ></textarea>
