@@ -4,7 +4,6 @@ import './ModalEditNickname.css';
 import { MdClose } from 'react-icons/md';
 
 interface editNicknameProps {
-  // eslint-disable-next-line no-unused-vars
   handleNickname: (nickname: string) => void;
   toggleNicknameModal: () => void;
 }

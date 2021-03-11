@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { Component } from 'react';
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
 import axios from 'axios';
@@ -598,10 +597,9 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
           </span>
           <div className="BoxLineSecond" />
           <div
+            role="presentation"
             className="saveBtn"
-            onClick={() => 
-              this.handleWriteNovel()
-            }
+            onClick={() => this.handleWriteNovel()}
           >
             저장
           </div>

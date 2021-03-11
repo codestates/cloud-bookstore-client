@@ -31,7 +31,7 @@ const getToday = (): string => {
 };
 
 const NovelList: React.FC<HistoryDataProps> = (props: HistoryDataProps) => {
-  const refinedupdatedAt: string = props.userHistories.novels.updatedAt.slice(
+  const refinedUpdatedAt: string = props.userHistories.novels.updatedAt.slice(
     0,
     10,
   );
@@ -59,19 +59,13 @@ const NovelList: React.FC<HistoryDataProps> = (props: HistoryDataProps) => {
         style={{
           backgroundImage: `url(${props.userHistories.episodes.thumbnail})`,
         }}
-      >
-        {props.userHistories.novels.complete ? (
-          <div className="HynovelListCompleteObject">완결</div>
-        ) : (
-          <></>
-        )}
-      </div>
+      />
       <div className="homeNovelListContentWrapper">
         <div className="countCloud">
           <div className="countCloudText">
             누적구름 {props.userHistories.episodes.cloud}
           </div>
-          {refinedupdatedAt === getToday() ? (
+          {refinedUpdatedAt === getToday() ? (
             <div className="novelListNewObject">NEW</div>
           ) : (
             <></>

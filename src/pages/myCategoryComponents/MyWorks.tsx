@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import '../../css/MyWorks.css';

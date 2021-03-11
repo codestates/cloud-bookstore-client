@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React from 'react';
 
 interface purchaseCheckListProps {
@@ -41,7 +40,6 @@ const PurchaseCheckList: React.FC<purchaseCheckListProps> = (
 
   return (
     <>
-      {console.log(props.episode.id, props.episode.novelId)}
       <div
         className="novelList"
         role="presentation"

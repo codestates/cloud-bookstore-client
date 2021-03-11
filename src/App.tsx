@@ -163,6 +163,7 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
             '구름을 모두 사용하셨습니다. 기다리면 내일 무료 구름 3개가 충전됩니다.',
           );
         } else {
+          alert('구름 하나를 사용하셨습니다.');
           await setSpecificEpisodeData(res.data);
           await props.history.push(
             `/novel/${res.data.episode.novelId}/episode/${res.data.episode.episodeNum}`,

@@ -1,4 +1,3 @@
-/* eslint-disable */
 import axios from 'axios';
 import React, { Component } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
@@ -23,7 +22,6 @@ interface myCurrentNewNovelProps extends RouteComponentProps {
   handleMyCurrentNewNovel: (data: CurrentNewNovelprops) => void;
   handleAxiosMyPage: () => void;
   handleAxiosClickedNovelData: (novelId: number) => void;
-  // handleNovelComplete: (data: boolean) => void;
   handleAxiosMyNovelEpisodeList: (novelId: number) => void;
   handleAxiosFantasy: () => void;
   handleAxiosMartialArts: () => void;
@@ -172,7 +170,6 @@ class EditEpisode extends Component<myCurrentNewNovelProps, State> {
           createdAt: this.props.myCurrentNewNovel.createdAt,
           updatedAt: this.props.myCurrentNewNovel.updatedAt,
         });
-        // this.props.handleNovelComplete(this.state.complete);
         this.props.handleAxiosClickedNovelData(this.props.myCurrentNewNovel.id);
       })
       .then(() => {
@@ -681,6 +678,7 @@ class EditEpisode extends Component<myCurrentNewNovelProps, State> {
             저장
           </div>
           <div
+            role="presentation"
             className="cancelBtn"
             onClick={() =>
               this.props.history.push(

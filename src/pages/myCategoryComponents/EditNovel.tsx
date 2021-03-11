@@ -1,6 +1,5 @@
-/* eslint-disable */
-import React, { Component, Dispatch, SetStateAction } from 'react';
-import { Link, RouteComponentProps, withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import Select from 'react-select';
 import './MakeNovel.css';
@@ -113,12 +112,9 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
   };
 
   handleImageChange = (e: any): void => {
-    this.setState(
-      {
-        selectedImage: e,
-      },
-      () => console.log(this.state),
-    );
+    this.setState({
+      selectedImage: e,
+    });
   };
 
   handleNovelTitleChange = (e: any): void => {
@@ -589,10 +585,15 @@ class EditNovel extends Component<handleAxiosMyPageProps, State> {
             {this.state.novelDescription.length}/250
           </span>
           <div className="BoxLineSecond" />
-          <div className="saveBtn" onClick={this.handleWriteNovel}>
+          <div
+            role="presentation"
+            className="saveBtn"
+            onClick={this.handleWriteNovel}
+          >
             저장
           </div>
           <div
+            role="presentation"
             className="cancelBtn"
             onClick={() => {
               this.props.history.push('/main/mypage/myNovelList');
