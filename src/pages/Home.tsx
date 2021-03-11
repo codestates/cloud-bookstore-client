@@ -76,11 +76,7 @@ const Home: React.FC<NovelDataProps> = (props: NovelDataProps) => {
   return (
     <div className="mainpageContentWrapper">
       <div className="sliderWrapper">
-        <HomeSlider
-          history={props.history}
-          location={props.location}
-          match={props.match}
-        />
+        <HomeSlider />
       </div>
       <NovelRankingWrapper
         handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}

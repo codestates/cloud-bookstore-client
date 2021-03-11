@@ -4,7 +4,9 @@ import './MyNovelEpisodeListWrapper.css';
 // import { RouteComponentProps } from 'react-router-dom';
 
 interface MyNovelEpisodeListProps {
+  handleAxiosClickedNovelData: (data: number) => void;
   handleAxiosMyNovelEpisodeList: (novelId: number) => void;
+  handleAxiosMyPage: () => void;
   setSpecificEpisodeData: Dispatch<
     SetStateAction<{
       episode: {
@@ -45,8 +47,10 @@ const MyNovelEpisodeListWrapper: React.FC<MyNovelEpisodeListProps> = (
           <MyNovelEpisodeCardList
             key={data.id}
             episodes={data}
+            handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
             handleAxiosMyNovelEpisodeList={props.handleAxiosMyNovelEpisodeList}
             setSpecificEpisodeData={props.setSpecificEpisodeData}
+            handleAxiosMyPage={props.handleAxiosMyPage}
             novelTitle={props.novelTitle}
           />
         ))}

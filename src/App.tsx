@@ -119,7 +119,6 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
   const handleClickedSpecificEpisode = async (
     parameter: ClickedSpecificEpisodeProps,
   ) => {
-    // eslint-disable-next-line no-console
     setClickedSpecificEpisode(
       parameter,
       (currentClickedSpecificEpisode: { novelId: number; episodeId: number }) =>
@@ -254,6 +253,12 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
       },
     ],
   });
+
+  const handleWholeNovelData = () => {
+    axios.get('https://server.cloud-bookstore.com/novels').then((res) => {
+      setNovelData(res.data);
+    });
+  };
 
   // !userLike toggle 함수
   const toggleUserLike = () => {
@@ -418,9 +423,7 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
 
   // ! handleAxios 함수들 미리 실행시켜두기
   useEffect(() => {
-    axios.get('https://server.cloud-bookstore.com/novels').then((res) => {
-      setNovelData(res.data);
-    });
+    handleWholeNovelData();
     handleAxiosFantasy();
     handleAxiosMartialArts();
     handleAxiosRomance();
@@ -489,6 +492,7 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
               handleAxiosFantasy={handleAxiosFantasy}
               handleAxiosMartialArts={handleAxiosMartialArts}
               handleAxiosRomance={handleAxiosRomance}
+              handleWholeNovelData={handleWholeNovelData}
             />
           )}
         />

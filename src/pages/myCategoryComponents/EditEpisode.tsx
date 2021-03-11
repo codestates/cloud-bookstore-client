@@ -4,9 +4,31 @@ import React, { Component } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import './WriteNovelEpisode.css';
 
+interface CurrentNewNovelprops {
+  id: number;
+  title: string;
+  author: string;
+  category: number;
+  description: string;
+  cloud: number;
+  userLike: number;
+  episodeCount: number;
+  complete: boolean;
+  thumbnail: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 interface myCurrentNewNovelProps extends RouteComponentProps {
-  handleNovelComplete: () => void;
+  handleMyCurrentNewNovel: (data: CurrentNewNovelprops) => void;
+  handleAxiosMyPage: () => void;
+  handleAxiosClickedNovelData: (novelId: number) => void;
+  // handleNovelComplete: (data: boolean) => void;
   handleAxiosMyNovelEpisodeList: (novelId: number) => void;
+  handleAxiosFantasy: () => void;
+  handleAxiosMartialArts: () => void;
+  handleAxiosRomance: () => void;
+  handleWholeNovelData: () => void;
   specificEpisodeData: {
     episode: {
       id: number;
@@ -135,7 +157,31 @@ class EditEpisode extends Component<myCurrentNewNovelProps, State> {
         text: this.state.novelEpisode,
         complete: this.state.complete,
       })
-      .then(() => this.props.handleNovelComplete())
+      .then(() => {
+        this.props.handleMyCurrentNewNovel({
+          id: this.props.myCurrentNewNovel.id,
+          title: this.props.specificEpisodeData.novelTitle.title,
+          author: this.props.myCurrentNewNovel.author,
+          category: this.props.myCurrentNewNovel.category,
+          description: this.props.myCurrentNewNovel.description,
+          cloud: this.props.myCurrentNewNovel.cloud,
+          userLike: this.props.myCurrentNewNovel.userLike,
+          episodeCount: this.props.myCurrentNewNovel.episodeCount,
+          complete: this.state.complete,
+          thumbnail: this.props.myCurrentNewNovel.thumbnail,
+          createdAt: this.props.myCurrentNewNovel.createdAt,
+          updatedAt: this.props.myCurrentNewNovel.updatedAt,
+        });
+        // this.props.handleNovelComplete(this.state.complete);
+        this.props.handleAxiosClickedNovelData(this.props.myCurrentNewNovel.id);
+      })
+      .then(() => {
+        this.props.handleAxiosFantasy();
+        this.props.handleAxiosMartialArts();
+        this.props.handleAxiosRomance();
+        this.props.handleWholeNovelData();
+        this.props.handleAxiosMyPage();
+      })
       .then(() => {
         this.props.handleAxiosMyNovelEpisodeList(
           this.props.myCurrentNewNovel.id,

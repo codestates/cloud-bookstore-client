@@ -139,6 +139,7 @@ interface mainPageProps extends RouteComponentProps {
   handleAxiosFantasy: () => void;
   handleAxiosMartialArts: () => void;
   handleAxiosRomance: () => void;
+  handleWholeNovelData: () => void;
   setSpecificEpisodeData: Dispatch<
     SetStateAction<{
       episode: {
@@ -351,7 +352,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                   MY
                 </div>
               </div>
-              <form className="navSearchWrapper">
+              <div className="navSearchWrapper">
                 <input
                   type="text"
                   className="navSearchBox"
@@ -359,11 +360,12 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                   onChange={props.handleNovelTitleSearch}
                   maxLength={50}
                   value={props.novelTitleSearch}
+                  // onKeyDown={handleOnClickEnter}
                 />
                 <div className="navSearchBtn">
                   <MdSearch onClick={props.handleSearchClick} />
                 </div>
-              </form>
+              </div>
             </div>
           </div>
         </nav>
@@ -443,6 +445,7 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                 handleAxiosFantasy={props.handleAxiosFantasy}
                 handleAxiosMartialArts={props.handleAxiosMartialArts}
                 handleAxiosRomance={props.handleAxiosRomance}
+                handleWholeNovelData={props.handleWholeNovelData}
               />
             )}
           />
