@@ -20,6 +20,9 @@
   .historyNovelInnerWrapper {
     margin-bottom: 100px;
   }
+  .wholeHistoryNovelWrapper {
+    width: 704px;
+  }
 }
 /* 아이패드 크기 */
 @media (max-width: 767px) {
