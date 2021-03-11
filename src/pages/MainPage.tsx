@@ -360,7 +360,6 @@ const MainPage: React.FC<mainPageProps> = (props: mainPageProps) => {
                   onChange={props.handleNovelTitleSearch}
                   maxLength={50}
                   value={props.novelTitleSearch}
-                  // onKeyDown={handleOnClickEnter}
                 />
                 <div className="navSearchBtn">
                   <MdSearch onClick={props.handleSearchClick} />

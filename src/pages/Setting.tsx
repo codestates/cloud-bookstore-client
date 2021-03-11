@@ -5,7 +5,6 @@ import SummaryBox from './settingComponent/SummaryBox';
 
 interface settingProps extends RouteComponentProps {
   nickname: string;
-  // eslint-disable-next-line no-unused-vars
   handleNickname: (nickname: string) => void;
 }
 const UserNav: React.FC<settingProps> = (props: settingProps) => {

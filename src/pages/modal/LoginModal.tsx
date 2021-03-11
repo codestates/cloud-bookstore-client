@@ -1,4 +1,3 @@
-/*eslint-disable*/
 import React from 'react';
 import { MdClose } from 'react-icons/md';
 import './LoginModal.css';
@@ -15,7 +14,9 @@ interface loginProps {
   handleNickname: (nickname: string) => void;
 }
 
-const handleError = () => {};
+const handleError = () => {
+  alert('로그인에 실패하셨습니다.');
+};
 
 const LoginModal: React.FC<loginProps> = (props: loginProps) => {
   const handleLogin = (oauth: string, data: any) => {

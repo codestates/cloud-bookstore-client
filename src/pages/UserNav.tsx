@@ -1,5 +1,4 @@
-/*eslint-disable*/
-import React, { useState } from 'react';
+import React from 'react';
 import '../css/UserNav.css';
 import { RouteComponentProps } from 'react-router-dom';
 import LoginModal from './modal/LoginModal';
@@ -43,7 +42,7 @@ const UserNav: React.FC<userNavProps> = (props: userNavProps) => {
             <div className="guestDetails">
               <div
                 className="nickname"
-                role="button"
+                role="presentation"
                 onClick={handleSetting}
                 onKeyPress={handleSetting}
               >

@@ -170,13 +170,6 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
     setMyCurrentNewNovel(data);
   };
 
-  // const handleNovelComplete = (data: boolean): void => {
-  //   setMyCurrentNewNovel((prevState) => ({
-  //     ...prevState,
-  //     complete: data,
-  //   }));
-  // };
-
   return (
     <div>
       <nav>
@@ -325,7 +318,6 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
               handleMyCurrentNewNovel={handleMyCurrentNewNovel}
               handleAxiosMyPage={props.handleAxiosMyPage}
               handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
-              // handleNovelComplete={handleNovelComplete}
               handleAxiosMyNovelEpisodeList={handleAxiosMyNovelEpisodeList}
               specificEpisodeData={props.specificEpisodeData}
               myCurrentNewNovel={myCurrentNewNovel}

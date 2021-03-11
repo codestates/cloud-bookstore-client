@@ -32,7 +32,7 @@ const getToday = (): string => {
 const CategoryNovelList: React.FC<CategoryNovelProps> = (
   props: CategoryNovelProps,
 ) => {
-  const refinedupdatedAt: string = props.data.updatedAt.slice(0, 10);
+  const refinedUpdatedAt: string = props.data.updatedAt.slice(0, 10);
 
   const sliceTitle: string = props.data.title.slice(0, 13);
   const sliceAuthor: string = props.data.author.slice(0, 12);
@@ -68,7 +68,7 @@ const CategoryNovelList: React.FC<CategoryNovelProps> = (
         <div className="countCloud">
           <div className="countCloudText">누적구름 {props.data.cloud}</div>
           <div className="countCloudImg" />
-          {refinedupdatedAt === getToday() ? (
+          {refinedUpdatedAt === getToday() ? (
             <div className="novelListNewObject">NEW</div>
           ) : (
             <></>

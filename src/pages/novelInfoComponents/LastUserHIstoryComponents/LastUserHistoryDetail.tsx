@@ -81,29 +81,19 @@ const LastUserHistoryDetail: React.FC<lastUserHistoryProps> = (
     <div
       className="novelList"
       role="presentation"
-      onClick={() => {
+      onClick={() =>
         props.handleClickedSpecificEpisode({
-          episodeId:
-            props.clickedNovelData.userHistory.episodeDetail.episodeNum,
+          episodeId: props.clickedNovelData.userHistory.episodeDetail.id,
           novelId: props.clickedNovelData.data.id,
-        });
-        props.history.push(
-          `/novel/${props.clickedNovelData.data.id}/episode/${props.clickedNovelData.userHistory.episodeDetail.episodeNum}`,
-        );
-      }}
+        })
+      }
     >
       <div
         className="thumbnail"
         style={{
           backgroundImage: `url(${props.clickedNovelData.userHistory.episodeDetail.thumbnail})`,
         }}
-      >
-        {props.clickedNovelData.data.complete ? (
-          <div className="novelListCompleteObject">완결</div>
-        ) : (
-          <></>
-        )}
-      </div>
+      />
       <div className="homeNovelListContentWrapper">
         <div className="countCloud">
           <div className="countCloudText countCloudLastUserHistory">

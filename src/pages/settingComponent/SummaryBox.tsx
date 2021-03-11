@@ -8,7 +8,6 @@ import ModalEditNickname from '../modal/ModalEditNickname';
 
 interface summaryProps extends RouteComponentProps {
   nickname: string;
-  // eslint-disable-next-line no-unused-vars
   handleNickname: (nickname: string) => void;
 }
 interface accumulatedProps {

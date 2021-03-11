@@ -1,4 +1,3 @@
-/* eslint-disable */
 import axios from 'axios';
 import React, { Component } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
@@ -169,7 +168,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                   <div className="ImageWrapper">
                     {this.state.imgToggle === 1 ? (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="FanSelcetCoverImageBox01"
                         onClick={() => {
@@ -179,7 +178,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                       ></div>
                     ) : (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="FanCoverImageBox01"
                         onClick={() => {
@@ -188,33 +187,35 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                         }}
                       ></div>
                     )}
-                    {this.state.imgToggle === 2 ? (
-                      <div>
+                    <>
+                      {this.state.imgToggle === 2 ? (
+                        <div>
+                          <div
+                            role="presentation"
+                            aria-hidden="true"
+                            className="FanSelcetCoverImageBox02"
+                            onClick={() => {
+                              this.setState({ imgToggle: 0 });
+                              this.handleImageChange('');
+                            }}
+                          ></div>
+                        </div>
+                      ) : (
                         <div
-                          role="button"
+                          role="presentation"
                           aria-hidden="true"
-                          className="FanSelcetCoverImageBox02"
+                          className="FanCoverImageBox02"
                           onClick={() => {
-                            this.setState({ imgToggle: 0 });
-                            this.handleImageChange('');
+                            this.setState({ imgToggle: 2 });
+                            this.handleImageChange(fantasyThumbnails[1]);
                           }}
                         ></div>
-                      </div>
-                    ) : (
-                      <div
-                        role="button"
-                        aria-hidden="true"
-                        className="FanCoverImageBox02"
-                        onClick={() => {
-                          this.setState({ imgToggle: 2 });
-                          this.handleImageChange(fantasyThumbnails[1]);
-                        }}
-                      ></div>
-                    )}
+                      )}
+                    </>
                     {this.state.imgToggle === 3 ? (
                       <div>
                         <div
-                          role="button"
+                          role="presentation"
                           aria-hidden="true"
                           className="FanSelcetCoverImageBox03"
                           onClick={() => {
@@ -225,7 +226,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                       </div>
                     ) : (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="FanCoverImageBox03"
                         onClick={() => {
@@ -237,7 +238,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                     {this.state.imgToggle === 4 ? (
                       <div>
                         <div
-                          role="button"
+                          role="presentation"
                           aria-hidden="true"
                           className="FanSelcetCoverImageBox04"
                           onClick={() => {
@@ -248,7 +249,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                       </div>
                     ) : (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="FanCoverImageBox04"
                         onClick={() => {
@@ -260,7 +261,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                     {this.state.imgToggle === 5 ? (
                       <div>
                         <div
-                          role="button"
+                          role="presentation"
                           aria-hidden="true"
                           className="FanSelcetCoverImageBox05"
                           onClick={() => {
@@ -271,7 +272,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                       </div>
                     ) : (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="FanCoverImageBox05"
                         onClick={() => {
@@ -283,7 +284,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                     {this.state.imgToggle === 6 ? (
                       <div>
                         <div
-                          role="button"
+                          role="presentation"
                           aria-hidden="true"
                           className="FanSelcetCoverImageBox06"
                           onClick={() => {
@@ -294,7 +295,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                       </div>
                     ) : (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="FanCoverImageBox06"
                         onClick={() => {
@@ -310,7 +311,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                   <div className="ImageWrapper">
                     {this.state.imgToggle === 7 ? (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="MaSelcetCoverImageBox01"
                         onClick={() => {
@@ -320,7 +321,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                       ></div>
                     ) : (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="MaCoverImageBox01"
                         onClick={() => {
@@ -331,7 +332,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                     )}
                     {this.state.imgToggle === 8 ? (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="MaSelcetCoverImageBox02"
                         onClick={() => {
@@ -341,7 +342,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                       ></div>
                     ) : (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="MaCoverImageBox02"
                         onClick={() => {
@@ -352,7 +353,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                     )}
                     {this.state.imgToggle === 9 ? (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="MaSelcetCoverImageBox03"
                         onClick={() => {
@@ -362,7 +363,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                       ></div>
                     ) : (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="MaCoverImageBox03"
                         onClick={() => {
@@ -373,7 +374,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                     )}
                     {this.state.imgToggle === 10 ? (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="MaSelcetCoverImageBox04"
                         onClick={() => {
@@ -383,7 +384,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                       ></div>
                     ) : (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="MaCoverImageBox04"
                         onClick={() => {
@@ -394,7 +395,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                     )}
                     {this.state.imgToggle === 11 ? (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="MaSelcetCoverImageBox05"
                         onClick={() => {
@@ -404,7 +405,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                       ></div>
                     ) : (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="MaCoverImageBox05"
                         onClick={() => {
@@ -415,7 +416,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                     )}
                     {this.state.imgToggle === 12 ? (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="MaSelcetCoverImageBox06"
                         onClick={() => {
@@ -425,7 +426,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                       ></div>
                     ) : (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="MaCoverImageBox06"
                         onClick={() => {
@@ -441,7 +442,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                   <div className="ImageWrapper">
                     {this.state.imgToggle === 13 ? (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="RoSelcetCoverImageBox01"
                         onClick={() => {
@@ -451,7 +452,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                       ></div>
                     ) : (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="RoCoverImageBox01"
                         onClick={() => {
@@ -462,7 +463,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                     )}
                     {this.state.imgToggle === 14 ? (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="RoSelcetCoverImageBox02"
                         onClick={() => {
@@ -472,7 +473,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                       ></div>
                     ) : (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="RoCoverImageBox02"
                         onClick={() => {
@@ -483,7 +484,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                     )}
                     {this.state.imgToggle === 15 ? (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="RoSelcetCoverImageBox03"
                         onClick={() => {
@@ -493,7 +494,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                       ></div>
                     ) : (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="RoCoverImageBox03"
                         onClick={() => {
@@ -504,7 +505,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                     )}
                     {this.state.imgToggle === 16 ? (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="RoSelcetCoverImageBox04"
                         onClick={() => {
@@ -514,7 +515,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                       ></div>
                     ) : (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="RoCoverImageBox04"
                         onClick={() => {
@@ -525,7 +526,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                     )}
                     {this.state.imgToggle === 17 ? (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="RoSelcetCoverImageBox05"
                         onClick={() => {
@@ -535,7 +536,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                       ></div>
                     ) : (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="RoCoverImageBox05"
                         onClick={() => {
@@ -546,7 +547,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                     )}
                     {this.state.imgToggle === 18 ? (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="RoSelcetCoverImageBox06"
                         onClick={() => {
@@ -556,7 +557,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
                       ></div>
                     ) : (
                       <div
-                        role="button"
+                        role="presentation"
                         aria-hidden="true"
                         className="RoCoverImageBox06"
                         onClick={() => {
@@ -585,7 +586,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
           <div>
             {this.state.complete === true ? (
               <div
-                role="button"
+                role="presentation"
                 aria-hidden="true"
                 onClick={() => this.handleCompete()}
                 className="roundBoxWrapper"
@@ -595,7 +596,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
               </div>
             ) : (
               <div
-                role="button"
+                role="presentation"
                 aria-hidden="true"
                 onClick={() => this.handleCompete()}
                 className="roundBoxWrapper"
@@ -607,7 +608,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
           </div>
           <div className="BoxLineSecond" />
           <div
-            role="button"
+            role="presentation"
             aria-hidden="true"
             className="saveBtn"
             onClick={() => this.handleEpisodeWriteNovel()}
@@ -615,6 +616,7 @@ class WriteNovelEpisode extends Component<myCurrentNewNovelProps, State> {
             저장
           </div>
           <div
+            role="presentation"
             className="cancelBtn"
             onClick={() =>
               this.props.history.push(
