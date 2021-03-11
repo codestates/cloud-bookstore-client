@@ -169,6 +169,13 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
     setMyCurrentNewNovel(data);
   };
 
+  const handleNovelComplete = (): void => {
+    setMyCurrentNewNovel((prevState) => ({
+      ...prevState,
+      complete: !prevState.complete,
+    }));
+  };
+
   return (
     <div>
       <nav>
@@ -308,6 +315,7 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
           path="/main/mypage/editEpisode/:id"
           render={() => (
             <EditEpisode
+              handleNovelComplete={handleNovelComplete}
               handleAxiosMyNovelEpisodeList={handleAxiosMyNovelEpisodeList}
               specificEpisodeData={props.specificEpisodeData}
               myCurrentNewNovel={myCurrentNewNovel}
