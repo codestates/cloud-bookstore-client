@@ -1,14 +1,11 @@
 import React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 
-const HomeSlider: React.FC<RouteComponentProps> = (
-  props: RouteComponentProps,
-) => {
+const HomeSlider: React.FC = () => {
   SwiperCore.use([Navigation, Pagination, Autoplay]);
 
   return (

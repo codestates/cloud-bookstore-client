@@ -5,8 +5,13 @@ import MyNovelEpisodeListWrapper from './MyNovelEpisodeListComponent/MyNovelEpis
 import axios from 'axios';
 
 interface MyNovelEpisodeListProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (data: number) => void;
   handleAxiosMyNovelEpisodeList: (novelId: number) => void;
   handleAxiosMyPage: () => void;
+  handleAxiosFantasy: () => void;
+  handleAxiosMartialArts: () => void;
+  handleAxiosRomance: () => void;
+  handleWholeNovelData: () => void;
   setSpecificEpisodeData: Dispatch<
     SetStateAction<{
       episode: {
@@ -58,7 +63,13 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
       .delete(
         `https://server.cloud-bookstore.com/mypage/delete/novel/${props.myCurrentNewNovel.id}`,
       )
-      .then(() => props.handleAxiosMyPage())
+      .then(async () => {
+        await props.handleAxiosFantasy();
+        await props.handleAxiosMartialArts();
+        await props.handleAxiosRomance();
+        await props.handleAxiosMyPage();
+        await props.handleWholeNovelData();
+      })
       .then(() => props.history.push('/main/mypage/myNovelList'));
   };
   return (
@@ -189,6 +200,8 @@ const MyNovelEpisodeList: React.FC<MyNovelEpisodeListProps> = (
 
           <div className="MyNovelEpisodeListSecondBoxLine" />
           <MyNovelEpisodeListWrapper
+            handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
+            handleAxiosMyPage={props.handleAxiosMyPage}
             novelTitle={props.myCurrentNewNovel.title}
             setSpecificEpisodeData={props.setSpecificEpisodeData}
             handleAxiosMyNovelEpisodeList={props.handleAxiosMyNovelEpisodeList}

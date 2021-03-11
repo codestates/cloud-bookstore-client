@@ -22,6 +22,7 @@ interface MyNovelDataProps extends RouteComponentProps {
   handleAxiosFantasy: () => void;
   handleAxiosMartialArts: () => void;
   handleAxiosRomance: () => void;
+  handleWholeNovelData: () => void;
   setSpecificEpisodeData: Dispatch<
     SetStateAction<{
       episode: {
@@ -169,12 +170,12 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
     setMyCurrentNewNovel(data);
   };
 
-  const handleNovelComplete = (): void => {
-    setMyCurrentNewNovel((prevState) => ({
-      ...prevState,
-      complete: !prevState.complete,
-    }));
-  };
+  // const handleNovelComplete = (data: boolean): void => {
+  //   setMyCurrentNewNovel((prevState) => ({
+  //     ...prevState,
+  //     complete: data,
+  //   }));
+  // };
 
   return (
     <div>
@@ -277,6 +278,7 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
               handleAxiosFantasy={props.handleAxiosFantasy}
               handleAxiosMartialArts={props.handleAxiosMartialArts}
               handleAxiosRomance={props.handleAxiosRomance}
+              handleWholeNovelData={props.handleWholeNovelData}
             />
           )}
         />
@@ -299,6 +301,11 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
               myCurrentNewNovel={myCurrentNewNovel}
               myNovelEpisodeList={myNovelEpisodeList}
               handleAxiosMyNovelEpisodeList={handleAxiosMyNovelEpisodeList}
+              handleAxiosFantasy={props.handleAxiosFantasy}
+              handleAxiosMartialArts={props.handleAxiosMartialArts}
+              handleAxiosRomance={props.handleAxiosRomance}
+              handleWholeNovelData={props.handleWholeNovelData}
+              handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
             />
           )}
         />
@@ -315,10 +322,17 @@ const Mypage: React.FC<MyNovelDataProps> = (props: MyNovelDataProps) => {
           path="/main/mypage/editEpisode/:id"
           render={() => (
             <EditEpisode
-              handleNovelComplete={handleNovelComplete}
+              handleMyCurrentNewNovel={handleMyCurrentNewNovel}
+              handleAxiosMyPage={props.handleAxiosMyPage}
+              handleAxiosClickedNovelData={props.handleAxiosClickedNovelData}
+              // handleNovelComplete={handleNovelComplete}
               handleAxiosMyNovelEpisodeList={handleAxiosMyNovelEpisodeList}
               specificEpisodeData={props.specificEpisodeData}
               myCurrentNewNovel={myCurrentNewNovel}
+              handleAxiosFantasy={props.handleAxiosFantasy}
+              handleAxiosMartialArts={props.handleAxiosMartialArts}
+              handleAxiosRomance={props.handleAxiosRomance}
+              handleWholeNovelData={props.handleWholeNovelData}
             />
           )}
         />

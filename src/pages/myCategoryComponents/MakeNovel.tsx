@@ -11,6 +11,7 @@ interface handleAxiosMyPageProps extends RouteComponentProps {
   handleAxiosFantasy: () => void;
   handleAxiosMartialArts: () => void;
   handleAxiosRomance: () => void;
+  handleWholeNovelData: () => void;
 }
 
 interface CurrentNewNovelProps {
@@ -90,19 +91,7 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
       this,
     );
     this.handleWriteNovel = this.handleWriteNovel.bind(this);
-    this.handleReRendering = this.handleReRendering.bind(this);
-    // this.handleImgToggle = this.handleImgToggle.bind(this);
   }
-
-  handleReRendering = () => {
-    if (this.state.selectedOption.value === 1) {
-      this.props.handleAxiosFantasy();
-    } else if (this.state.selectedOption.value === 2) {
-      this.props.handleAxiosMartialArts();
-    } else if (this.state.selectedOption.value === 3) {
-      this.props.handleAxiosRomance();
-    }
-  };
 
   handleWriteNovel = () => {
     axios
@@ -113,7 +102,11 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
         title: this.state.novelTitle,
       })
       .then(async (data) => {
+        await this.props.handleAxiosFantasy();
+        await this.props.handleAxiosMartialArts();
+        await this.props.handleAxiosRomance();
         await this.props.handleAxiosMyPage();
+        this.props.handleWholeNovelData();
         await this.props.handleMyCurrentNewNovel(data.data.currentNovel);
         await this.props.handleAxiosMyNovelEpisodeList(
           data.data.currentNovel.id,
@@ -606,10 +599,9 @@ class MakeNovel extends Component<handleAxiosMyPageProps, State> {
           <div className="BoxLineSecond" />
           <div
             className="saveBtn"
-            onClick={() => {
-              this.handleWriteNovel();
-              this.handleReRendering();
-            }}
+            onClick={() => 
+              this.handleWriteNovel()
+            }
           >
             저장
           </div>

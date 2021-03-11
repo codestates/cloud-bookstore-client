@@ -4,7 +4,9 @@ import './MyNovelEpisodeCardList.css';
 import axios from 'axios';
 
 interface MyNovelEpisodeProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (data: number) => void;
   handleAxiosMyNovelEpisodeList: (novelId: number) => void;
+  handleAxiosMyPage: () => void;
   setSpecificEpisodeData: Dispatch<
     SetStateAction<{
       episode: {
@@ -39,13 +41,8 @@ const MyNovelEpisodeCardList: React.FC<MyNovelEpisodeProps> = (
   props: MyNovelEpisodeProps,
 ) => {
   const sliceTitle: string = props.episodes.title.slice(0, 9);
-  const sliceAuthor: string = props.episodes.createdAt.slice(0, 12);
   const getBoolTitleLength = (): boolean => {
     if (props.episodes.title.length > 9) return true;
-    else return false;
-  };
-  const getBoolAuthorLength = (): boolean => {
-    if (props.episodes.createdAt.length > 12) return true;
     else return false;
   };
 
@@ -73,6 +70,8 @@ const MyNovelEpisodeCardList: React.FC<MyNovelEpisodeProps> = (
         `https://server.cloud-bookstore.com/mypage/delete/episode/${props.episodes.novelId}/${props.episodes.id}`,
       )
       .then(() => {
+        props.handleAxiosClickedNovelData(props.episodes.novelId);
+        props.handleAxiosMyPage();
         props.handleAxiosMyNovelEpisodeList(props.episodes.novelId);
         props.history.push(
           '/main/mypage/myNovelEpisodeList/${props.episodes.novelId}',
@@ -116,9 +115,7 @@ const MyNovelEpisodeCardList: React.FC<MyNovelEpisodeProps> = (
         </div>
         <div className="homeNovelListAuthorFavWrapper">
           <div className="EpNovelListAuthor">
-            {getBoolAuthorLength()
-              ? `${sliceAuthor} ...`
-              : props.episodes.createdAt}
+            {props.episodes.createdAt.slice(0, 10)}
           </div>
         </div>
       </div>
