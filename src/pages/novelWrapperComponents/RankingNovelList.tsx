@@ -46,9 +46,9 @@ const NovelList: React.FC<RankingDataProps> = (props: RankingDataProps) => {
     <div
       className="novelList"
       role="presentation"
-      onClick={() => {
-        props.handleAxiosClickedNovelData(props.rankingData.id);
-        props.history.push(`/main/novel/${props.rankingData.id}`);
+      onClick={async () => {
+        await props.handleAxiosClickedNovelData(props.rankingData.id);
+        await props.history.push(`/main/novel/${props.rankingData.id}`);
       }}
     >
       <div

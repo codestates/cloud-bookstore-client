@@ -21,26 +21,11 @@ const HomeSlider: React.FC<RouteComponentProps> = (
       loop={true}
       autoplay={{ delay: 5000 }}
     >
-      <SwiperSlide
-        className="slideImg1"
-        onClick={() => props.history.push('/main/novel/4')}
-      />
-      <SwiperSlide
-        className="slideImg2"
-        onClick={() => props.history.push('/main/novel/12')}
-      />
-      <SwiperSlide
-        className="slideImg3"
-        onClick={() => props.history.push('/main/novel/14')}
-      />
-      <SwiperSlide
-        className="slideImg4"
-        onClick={() => props.history.push('/main/novel/20')}
-      />
-      <SwiperSlide
-        className="slideImg5"
-        onClick={() => props.history.push('/main/novel/27')}
-      />
+      <SwiperSlide className="slideImg1" />
+      <SwiperSlide className="slideImg2" />
+      <SwiperSlide className="slideImg3" />
+      <SwiperSlide className="slideImg4" />
+      <SwiperSlide className="slideImg5" />
     </Swiper>
   );
 };
