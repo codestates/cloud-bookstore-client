@@ -28,9 +28,9 @@ const IntroFunction: React.FC = () => {
         <div id="introFunction3" className="introFunctionBox">
           <div id="functionIcon3" className="introFunctionInnerIcon"></div>
           <div className="introFunctionInnerText">
-            <p>구름주기</p>
-            <p>응원하고 싶은 작품에</p>
-            <p>구름을 주어요!</p>
+            <p>구름사용</p>
+            <p>구름으로 원하는</p>
+            <p>소설을 읽어요!</p>
           </div>
         </div>
         <div id="introFunction4" className="introFunctionBox">
