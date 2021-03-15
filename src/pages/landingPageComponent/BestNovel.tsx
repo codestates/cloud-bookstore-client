@@ -5,6 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 interface BestNovelProps extends RouteComponentProps {
+  handleAxiosClickedNovelData: (parameter: number) => void;
   novelData: {
     ranking: {
       id: number;
@@ -81,6 +82,7 @@ const BestNovel: React.FC<BestNovelProps> = (props: BestNovelProps) => {
         data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
         onClick={() => {
+          props.handleAxiosClickedNovelData(props.novelData.fantasy[0].id);
           props.history.push(`/main/novel/${props.novelData.fantasy[0].id}`);
         }}
       >
@@ -98,6 +100,7 @@ const BestNovel: React.FC<BestNovelProps> = (props: BestNovelProps) => {
         data-aos-anchor-placement="top-bottom"
         data-aos-offset="300"
         onClick={() => {
+          props.handleAxiosClickedNovelData(props.novelData.martialArts[0].id);
           props.history.push(
             `/main/novel/${props.novelData.martialArts[0].id}`,
           );
@@ -119,6 +122,7 @@ const BestNovel: React.FC<BestNovelProps> = (props: BestNovelProps) => {
         data-aos-anchor-placement="top-bottom"
         data-aos-offset="500"
         onClick={() => {
+          props.handleAxiosClickedNovelData(props.novelData.romance[0].id);
           props.history.push(`/main/novel/${props.novelData.romance[0].id}`);
         }}
       >
