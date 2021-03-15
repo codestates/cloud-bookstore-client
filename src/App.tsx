@@ -464,7 +464,15 @@ const App: React.FC<RouteComponentProps> = (props: RouteComponentProps) => {
   return (
     <div className="wholeWrapper">
       <Switch>
-        <Route path="/LandingPage" render={() => <LandingPage />} />
+        <Route
+          path="/LandingPage"
+          render={() => (
+            <LandingPage
+              novelData={novelData}
+              handleAxiosClickedNovelData={handleAxiosClickedNovelData}
+            />
+          )}
+        />
         <Route
           path="/main"
           render={() => (
