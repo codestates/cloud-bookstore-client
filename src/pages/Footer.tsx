@@ -14,7 +14,11 @@ const Footer: React.FC = () => {
               <div id="companyText" className="firstFooterText">
                 COMPANY
               </div>
-              <a href="#" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/codestates/cloud-bookstore-client/wiki/Team-Members"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <div className="aboutUs">About Us</div>
               </a>
             </div>
